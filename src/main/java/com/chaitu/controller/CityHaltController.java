@@ -35,8 +35,7 @@ public class CityHaltController {
     ServletContext servletContext;
     
     @GetMapping("/")
-    public ModelAndView openAll() {
-    	
+    public ModelAndView openAll() {    	
         return new ModelAndView("index");
     }
 
