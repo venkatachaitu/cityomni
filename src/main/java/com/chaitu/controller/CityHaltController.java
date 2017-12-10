@@ -36,6 +36,7 @@ public class CityHaltController {
     
     @GetMapping("/")
     public ModelAndView openAll() {
+    	
         return new ModelAndView("index");
     }
 
