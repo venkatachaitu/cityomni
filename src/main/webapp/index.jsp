@@ -21,8 +21,7 @@
 		<meta name="og_url" property="og:url" content="https://www.cityhalt.com"/>
 		<meta name="og_site_name" property="og:site_name" content="cityhalt"/>			
 	
-		<!-- <meta name="google-site-verification" content="Y05U8rXl7f5D8-vNIO8wPVogzjsW99-OsDpY-K5yCzQ"> -->			
-		<meta name="google-site-verification" content="LnTwqM2hSXY8qh3-Zf0eBpgNrfTYqKtVXEfT2JnJYgY" />
+		<meta name="google-site-verification" content="9WUvJhUCG0WqXWwFpKyFMnQyYm2Xk79zTUKk6HZdbdA" />
 		
 		<meta name=distribution content=global>
 		<meta name=copyright content=cityhalt>			

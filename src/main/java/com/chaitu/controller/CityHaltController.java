@@ -1,5 +1,4 @@
 package com.chaitu.controller;
-
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -26,6 +25,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.chaitu.constants.GetPath;
+
 @RequestMapping("/")
 @Controller
 public class CityHaltController {
@@ -35,7 +36,7 @@ public class CityHaltController {
     ServletContext servletContext;
     
     @GetMapping("/")
-    public ModelAndView openAll() {    	
+    public ModelAndView openAll() {
         return new ModelAndView("index");
     }
 
@@ -83,19 +84,18 @@ public class CityHaltController {
     public ModelAndView metroCities() {
         return new ModelAndView("metroCities");
     }
-
+    
+    @Autowired
+    GetPath gpath;
     ///rest/get/getCat/{city}}
     @GetMapping("/rest/get/getCat/{city}")
     public ResponseEntity < Map < String, Integer >> getCategories(@PathVariable String city) throws Exception {
         System.out.println("CityHaltController : /rest/get/getCat/" + city);
         JSONParser parser = new JSONParser();
-        String sourceLocation = servletContext.getRealPath("/")+"/data/";
-        sourceLocation = sourceLocation.replace('\\', '/');
+        String sourceLocation = gpath.getPath().replace('\\', '/');
         Map < String, Integer > m = new HashMap < String, Integer > ();
         if (city != null) {
-       		System.out.println(sourceLocation + city.toLowerCase() + "/");
-	File fdf = new File("abc.json");
-		System.out.println("fdf Path : " + fdf.getAbsolutePath());
+       		//System.out.println(sourceLocation + city.toLowerCase() + "/");
             File file = new File(sourceLocation + city.toLowerCase() + "/");
             File[] files = file.listFiles();
             if (files != null) {
@@ -129,8 +129,7 @@ public class CityHaltController {
         System.out.println("CityHaltController : /rest/searchPage/" + city + "/" + category + "/" + keyword);
         JSONParser parser = new JSONParser();
         JSONArray ja = new JSONArray();
-        String sourceLocation = servletContext.getRealPath("/")+"/data/";
-        sourceLocation = sourceLocation.replace('\\', '/');
+        String sourceLocation = gpath.getPath().replace('\\', '/');
         try {
             String[] searchKeyWords = keyword.split("\\+");
             File file0 = new File(sourceLocation);
@@ -258,8 +257,7 @@ public class CityHaltController {
             if (map.containsKey(city + "_" + category)) {
                 obj = map.get(city + "_" + category);
             } else {
-            	String sourceLocation = servletContext.getRealPath("/")+"/data/";
-                sourceLocation = sourceLocation.replace('\\', '/');
+            	String sourceLocation = gpath.getPath().replace('\\', '/');
                 obj = readDataByCategory(sourceLocation + city.toLowerCase() + "/" + category + ".json", category);
                 map.put(city + "_" + category, obj);
             }

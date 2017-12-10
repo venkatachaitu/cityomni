@@ -4,12 +4,13 @@ import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLDecoder;
 
+import org.springframework.context.annotation.Configuration;
+@Configuration
 public class GetPath {
 
 	public String getPath(){
 		// URL returned "/C:/Program%20Files/Tomcat%206.0/webapps/myapp/WEB-INF/classes/"
-				URL r = this.getClass().getResource("/");
-				 
+				URL r = this.getClass().getResource("./");
 				// path decoded "/C:/Program Files/Tomcat 6.0/webapps/myapp/WEB-INF/classes/"
 				String decoded = null;
 				try {
@@ -20,8 +21,13 @@ public class GetPath {
 				    decoded = decoded.replaceFirst("/", "");
 				}
 				
-				decoded = decoded+"resources/";
+				//decoded = decoded+"src/main/webapp/data/";
+				 
+				System.out.println("server location : "+decoded);
 				
-				return decoded;
+				//return "/app/src/main/webapp/data/";
+				
+				return "D:/test-workspace/cityhaltweb/src/main/webapp/data/";
+					//"/app/src/main/webapp/data/";//decoded;
 	}
 }
