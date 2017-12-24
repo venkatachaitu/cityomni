@@ -60,16 +60,19 @@ public class CityHaltController {
     }
     
     
-    @GetMapping("/viewAllServices")
-    public ModelAndView viewAllServices() {
-        return new ModelAndView("viewAllServices");
+    @GetMapping("/services")
+    public ModelAndView services() {
+        return new ModelAndView("services");
     }
 
-    @GetMapping("/viewDetails")
-    public ModelAndView viewDetails() {
-        return new ModelAndView("viewDetails");
+    @GetMapping("/viewList")
+    public ModelAndView viewList() {
+        return new ModelAndView("viewList");
     }
-
+    @GetMapping("/view")
+    public ModelAndView openView() {
+        return new ModelAndView("view");
+    }
     @GetMapping("/search")
     public ModelAndView openSearch() {
         return new ModelAndView("search");

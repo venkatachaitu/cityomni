@@ -12,7 +12,7 @@
   				loc = loc11;
  			}	   			
  			if(loc == ""){
- 				console.log("viewDetails : location is "+loc);
+ 				console.log("viewList : location is "+loc);
  				setCookieWithOutReload("location", "chennai", 365);
  				loc = getCookie("location");
  			}

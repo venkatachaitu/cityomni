@@ -288,6 +288,19 @@ function addStarsToString(str) {
     return temp;
 }
 
+function removeAmbers(str) {
+    var s = str.trim();    
+    var temp = "";
+    for (var i = 0; i < s.length; i++) {
+    	if (s[i] == '&') {
+            temp = temp + "";
+        }else{
+        	temp = temp + s[i];
+        }
+    }
+    return temp;
+}
+
 function removeSpaces(str) {
     var s = str.trim();
     var temp = "";
@@ -488,7 +501,7 @@ function deg2rad(deg) {
     return deg * (Math.PI / 180);
 }
 
-function addStarsToString(str) {
+/*function addStarsToString(str) {
     var s = str.trim();
     var temp = "";
     for (var i = 0; i < s.length; i++) {
@@ -504,4 +517,4 @@ function addStarsToString(str) {
     }
     //console.log(temp);
     return temp;
-}
+}*/

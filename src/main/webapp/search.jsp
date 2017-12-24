@@ -148,8 +148,8 @@
                            });
                        }
                    });    
-                   document.getElementById("viewDetails").innerHTML = out;
-                   //$("#viewDetails").append(out);
+                   document.getElementById("viewList").innerHTML = out;
+                   //$("#viewList").append(out);
                   sortByDistance();
                    //sorting(jsonArr, 'distance');                  
                    //loadMore();
@@ -187,7 +187,7 @@
 	function loadMore() {
 		console.log(jsonArr);
 		for (var i = ct; i < (ct+lit); i++) {   			 
-			$("#viewDetails").append(dar[i]);
+			$("#viewList").append(dar[i]);
 			document.getElementById("loadingImage").style.display = "none";
 			document.getElementById("loadMoreButton").style.display = "block";
 		}		
@@ -207,7 +207,7 @@
 	}
    
    function sortByDistance(){	   
-	   var $wrapper = $('#viewDetails');
+	   var $wrapper = $('#viewList');
 	   $wrapper.find('.article').sort(function(a, b) {
 	       return +a.getAttribute('data-percentage') - +b.getAttribute('data-percentage');
 	   })
@@ -233,9 +233,9 @@
 	            $.each(data, function(key, val) {
 	                if (key != "undefined") { 
 	                	if(cat1 == key){
-	                		menuItems = menuItems + "<a href=viewDetails?location="+loloc+"&category="+key+" class='w3-bar-item w3-button' style='font-weight: 600;color: #209cff;'>"+addSpaces(key)+"</a>";
+	                		menuItems = menuItems + "<a href=viewList?location="+loloc+"&category="+key+" class='w3-bar-item w3-button' style='font-weight: 600;color: #209cff;'>"+addSpaces(key)+"</a>";
 	                	}else{	                	
-	                   		menuItems = menuItems + "<a href=viewDetails?location="+loloc+"&category="+key+" class='w3-bar-item w3-button'>"+addSpaces(key)+"</a>";
+	                   		menuItems = menuItems + "<a href=viewList?location="+loloc+"&category="+key+" class='w3-bar-item w3-button'>"+addSpaces(key)+"</a>";
 	                	}
 	                }
 	            }); 
@@ -253,12 +253,12 @@
    <div class="inner">
    <!-- <div style="display: none;" id="tempContent"></div> -->
       <header style="margin: 0;">
-      	<p onclick="openLeftNavOpen()" id="viewAllServicesLink" class="viewAllServicesLinkBars" ><i class="fa fa-bars" aria-hidden="true"></i></p>
-         <h3  class="viewAllServicesTitle" id="titleHeader">Search Result</h3>
+      	<p onclick="openLeftNavOpen()" id="servicesLink" class="servicesLinkBars" ><i class="fa fa-bars" aria-hidden="true"></i></p>
+         <h3  class="servicesTitle" id="titleHeader">Search Result</h3>
            <!-- <p style="float: right;margin-top: -31px;" id="sortByLink" onclick="sortByDistance()">Sort by Distance</p> -->  
          <hr>
       </header>
-      <div class="flex flex-2 viewDetails" id="viewDetails">	
+      <div class="flex flex-2 viewList" id="viewList">	
          <img id="loadingImage" class="loadingImage" src="images/loading2.gif" alt="loading" />		 
       </div>
       <p id="loadMoreButton" class="loadMoreButton" onclick="loadMore()">load more...</p>
@@ -338,7 +338,7 @@
    margin-left: calc(5% - 35px);
    transition: .5s;
    }
-   .viewDetails img{
+   .viewList img{
    width: 193px;
    height: 150px;
    float: left;

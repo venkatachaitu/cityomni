@@ -89,7 +89,7 @@
                <a class="headerMenu" href="./">Home</a>
                <a class="headerMenu" href="./aboutUS">AboutUs</a>
                <a class="headerMenu" href="./metroCities">Metro Cities</a>
-               <a class="headerMenu" href="./viewAllServices">Services</a>
+               <a class="headerMenu" href="./services">Services</a>
                <!-- <a href="https://cityhalt.com">Login</a> -->
             </nav>
             <!-- <a href="https://cityhalt.com" class="logo"><strong>city</strong> HALT</a>  -->
@@ -165,21 +165,21 @@
             </script>	
             <div class="flex ">
                <div style="cursor: pointer;">
-	               <a href="./viewDetails?category=hotels">
+	               <a href="./viewList?category=hotels">
 	                  <span class="icon fa fa-bed"></span>
 	                  <h3>Hotels</h3>
 	                  <p>5, 3, 2 Star Hotels</p>
 	                </a>
                </div>
                <div style="cursor: pointer;">
-               	<a href="./viewDetails?category=banks">
+               	<a href="./viewList?category=banks">
                   <span class="icon fa-university"></span>
                   <h3>Banks</h3>
                   <p>Central, State Banks, etc.</p>
                   </a>
                </div>
                <div style="cursor: pointer;">
-               	<a href="./viewDetails?category=coffee_shops">
+               	<a href="./viewList?category=coffee_shops">
                   <span class="icon fa-coffee"></span>
                   <h3>Coffee Shops</h3>
                   <p>CoffeeDay, Barista, etc.</p>
@@ -187,14 +187,14 @@
                </div>
             </div>
             <footer>
-               <a id="viewAllServicesLink" href="./viewAllServices" class="button viewAllButtonHomePage">View All Services</a>
+               <a id="servicesLink" href="./services" class="button viewAllButtonHomePage">View All Services</a>
             </footer>
          </div>
       </section>
       <section id="three" class="wrapper align-center" >
          <div class="inner">
             <div class="flex flex-2">
-			    <a class="indexPageCityBlock" href="./viewAllServices?location=bangalore">
+			    <a class="indexPageCityBlock" href="./services?location=bangalore">
 			    <article>
 			        <div class="image round">
 			            <img src="images/bangalore.png" alt="Bangalore">
@@ -204,10 +204,10 @@
 			        </header>
 			        <p style="text-align: justify;color: #5f5f5f;">Bangalore officially known as Bengaluru is the capital of the Indian state of Karnataka. It has a population of about 8.42 million and a metropolitan population of about 8.52 million, making it the third most populous city and fifth most populous urban agglomeration in India.Its elevation is over 900 m (3,000 ft) above sea level, the highest of India's major cities.</p>
 			        <footer>
-			            <a href="./viewAllServices?location=bangalore" class="button">View More</a>
+			            <a href="./services?location=bangalore" class="button">View More</a>
 			        </footer>
 			    </article>
-			    </a><a class="indexPageCityBlock" href="./viewAllServices?location=chennai">
+			    </a><a class="indexPageCityBlock" href="./services?location=chennai">
 			    <article>
 			        <div class="image round">
 			            <img src="images/chennai.png" alt="Chennai">
@@ -217,10 +217,10 @@
 			        </header>
 			        <p style="text-align: justify;color: #5f5f5f;">Chennai formerly known as Madras is the capital of the Indian state of Tamil Nadu. Located on the Coromandel Coast off the Bay of Bengal, it is one of the biggest cultural, economic and educational centres in South India. According to the 2011 Indian census (adjusted for the new limits of Chennai city), it is the fifth-largest city and fourth-most populous urban agglomeration in India.</p>
 			        <footer>
-			            <a href="./viewAllServices?location=chennai" class="button">View More</a>
+			            <a href="./services?location=chennai" class="button">View More</a>
 			        </footer>
 			    </article>
-			    </a><a class="indexPageCityBlock" href="./viewAllServices?location=hyderabad">
+			    </a><a class="indexPageCityBlock" href="./services?location=hyderabad">
 			    <article>
 			        <div class="image round">
 			            <img src="images/hyderabad.png" alt="Hyderabad">
@@ -230,10 +230,10 @@
 			        </header>
 			        <p style="text-align: justify;color: #5f5f5f;">Hyderabad is the capital of the southern Indian state of Telangana and de jure capital of Andhra Pradesh. Occupying 650 square kilometres (250 sq mi) along the banks of the Musi River, it has a population of about 6.7 million and a metropolitan population of about 7.75 million, making it the fourth most populous city and sixth most populous urban agglomeration in India.</p>
 			        <footer>
-			            <a href="./viewAllServices?location=hyderabad" class="button">View More</a>
+			            <a href="./services?location=hyderabad" class="button">View More</a>
 			        </footer>
 			    </article>
-			    </a><a class="indexPageCityBlock" href="./viewAllServices?location=vijayawada">
+			    </a><a class="indexPageCityBlock" href="./services?location=vijayawada">
 			    <article>
 			        <div class="image round">
 			            <img src="images/vijayawada.png" alt="Vijayawada">
@@ -243,10 +243,10 @@
 			        </header>
 			        <p style="text-align: justify;color: #5f5f5f;">Vijayawada is a city on the banks of Krishna River in the Indian state of Andhra Pradesh. It is a commercial city in Krishna district and forms a part of Andhra Pradesh Capital Region. It is one of the million-plus cities in India, with a population of 1,034,358.As per the Demographia World Urban Areas:2016, the city is the third most densely populated, in terms of urban population of built-up areas in the world.</p>
 			        <footer>
-			            <a href="./viewAllServices?location=vijayawada" class="button">View More</a>
+			            <a href="./services?location=vijayawada" class="button">View More</a>
 			        </footer>
 			    </article>
-			    </a><a class="indexPageCityBlock" href="./viewAllServices?location=visakhapatnam">
+			    </a><a class="indexPageCityBlock" href="./services?location=visakhapatnam">
 			    <article>
 			        <div class="image round">
 			            <img src="images/vizag.png" alt="Visakhapatnam">
@@ -256,10 +256,10 @@
 			        </header>
 			        <p style="text-align: justify;color: #5f5f5f;">Visakhapatnam also known as Vizag is the largest city and Financial Capital of the Indian state of Andhra Pradesh. The city is the administrative headquarters of Visakhapatnam district and Eastern Naval Command. It is the most populous city in the India, with a population of 2,035,922.The core city and its surrounding settlements together constitute Visakhapatnam Metropolitan Region.</p>
 			        <footer>
-			            <a href="./viewAllServices?location=visakhapatnam" class="button">View More</a>
+			            <a href="./services?location=visakhapatnam" class="button">View More</a>
 			        </footer>
 			    </article>
-			    </a><a class="indexPageCityBlock" href="./viewAllServices?location=tirupati">
+			    </a><a class="indexPageCityBlock" href="./services?location=tirupati">
 			    <article>
 			        <div class="image round">
 			            <img src="images/tirupati.png" alt="Tirupati">
@@ -269,7 +269,7 @@
 			        </header>
 			        <p style="text-align: justify;color: #5f5f5f;">Tirupati is a city in Chittoor district of the Indian state of Andhra Pradesh. It is a municipal corporation.It is the seventh most urban agglomerated city in the state, with a population of 459,985.Tirupati is considered one of the holiest Hindu pilgrimage sites because of Tirumala Venkateswara Temple, besides other historical temples, and is referred to as the "Spiritual Capital of Andhra Pradesh".</p>
 			        <footer>
-			            <a href="./viewAllServices?location=tirupati" class="button">View More</a>
+			            <a href="./services?location=tirupati" class="button">View More</a>
 			        </footer>
 			    </article>
 			    </a>

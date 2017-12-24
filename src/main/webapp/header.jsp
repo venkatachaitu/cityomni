@@ -100,7 +100,7 @@
                <a class="headerMenu" href="./">Home</a>
                <a class="headerMenu" href="./aboutUS">AboutUs</a>
                <a class="headerMenu" href="./metroCities">Metro Cities</a>
-               <a class="headerMenu" href="./viewAllServices">Services</a>
+               <a class="headerMenu" href="./services">Services</a>
                <!-- <a href="https://cityhalt.com">Login</a> -->
             </nav>
             <!-- <a href="https://cityhalt.com" class="logo"><strong>city</strong> HALT</a> -->
@@ -110,7 +110,7 @@
          <section id="searchBlock" class="wrapper align-center" style="display:none;padding-top: 0;">
             <div class="inner" style="background-color: #ffffff;padding: 0px 13px;border-radius: 3px;">
                <header style="margin-bottom: 0 !important;">
-                  <h3 style="padding-top: 7px;" class="viewAllServicesTitle" id="titleHeaderSearch">Search</h3>
+                  <h3 style="padding-top: 7px;" class="servicesTitle" id="titleHeaderSearch">Search</h3>
                   <hr style="margin: 0 !important;border-color: #ff2436;">
                </header>
                <form action="./search" method="get"  onsubmit="return Submit()">

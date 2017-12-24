@@ -4,8 +4,8 @@
 
 </style>
 <script>
-   window.onload = loadViewAllServicesPage();
-   	function loadViewAllServicesPage(){			
+   window.onload = loadServicesPage();
+   	function loadServicesPage(){			
    		try{ 
    			updateGPSLocation();
    			//if(isLocationEnable()){   			
@@ -17,7 +17,7 @@
 	       			}
 	   			}
 	   			if(loc == ""){
-	   				console.log("viewAllServices : location is "+loc);
+	   				console.log("services : location is "+loc);
 	   				setCookieWithOutReload("location", "chennai", 365);
 	   				loc = getCookie("location");
 	   			}
@@ -36,21 +36,21 @@
 					    	 if(val != '999999'){
 								  out = out + "<article><header>";
 								  out = out + "<a href=";
-								  out = out + u+"viewDetails?location=" + loc + "&category="+key;
+								  out = out + u+"viewList?location=" + loc + "&category="+key;
 								  out = out + "><h4><img class='viewAllServiceIcons' src='images/serviceIcons/"+key+".png'>";
 								  out = out + addSpaces(key);								 
 								  out = out + "</h4></a></header></article>"
 					    	 }
 				  		 }
 				  });
-				  document.getElementById("viewAllServices").innerHTML = out;	
+				  document.getElementById("services").innerHTML = out;	
 				  document.getElementById("titleHeader").innerHTML = "Services in "+loc;
 				  
 				});
 	   			
    			/* }else{
    				promptForLocation();
-   				loadViewAllServicesPage();
+   				loadServicesPage();
    			} */   				
    		}catch(e){alert(e);}			
    	}
@@ -69,10 +69,10 @@
 <section id="three" class="wrapper align-center">
    <div class="inner">
       <header>
-         <h3 class="viewAllServicesTitle" id="titleHeader">Services</h3>
+         <h3 class="servicesTitle" id="titleHeader">Services</h3>
          <hr>
       </header>
-      <div class="flex flex-2 viewAllServices" id="viewAllServices">
+      <div class="flex flex-2 services" id="services">
          <img class="loadingImage" src="images/loading2.gif" alt="loading" />
       </div>
    </div>

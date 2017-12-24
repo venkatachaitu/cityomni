@@ -1,5 +1,5 @@
 @media screen and (max-width: 770px) {
-    .viewDetails img {
+    .viewList img {
         float: none !important;
         margin-bottom: -10px !important;
         transition: .5s;
@@ -6003,7 +6003,7 @@ td.visible-print {
     border-radius: 0 2px 2px 0 !important;
     border-color: #bfbfc4 !important;
 }
-.viewAllServices article {
+.services article {
     /*margin-bottom: 26px !important;
     padding-bottom: 22px;*/
     
@@ -6011,14 +6011,14 @@ td.visible-print {
     /*border: 1px solid #5cb85c;
 	box-shadow: 3px 3px 4px 0px #03A9F4;*/
 }
-.viewAllServices article header a{
+.services article header a{
 	    text-align: justify;
 }
 .viewAllServiceIcons{
 	padding-right: 1em;
    	padding-left: 2em;
 }
-.viewAllServices article h4 {
+.services article h4 {
     font-size: 1em;
     font-family: inherit;
     color: #ff4f17;
@@ -6033,36 +6033,36 @@ td.visible-print {
     border-bottom: 1px solid rgb(255, 36, 54);
     box-shadow: 3px 3px 3px 0px #ff2436;
 }
-.viewAllServices article h4:HOVER {
+.services article h4:HOVER {
     font-weight: 700;
     border-bottom: 1px solid #2c92ff;
     color: #2c92ff;
     box-shadow: 3px 3px 3px 0px #03A9F4;
 }
-.viewAllServices article footer a {
+.services article footer a {
     border-radius: 0;
     margin-bottom: -23px;
     line-height: 2.5em;
     float: right;
 }
-.viewDetails article {
+.viewList article {
     width: 100% !important;
     border: 1px solid rgba(204, 204, 204, 0.46);
     box-shadow: 4px 4px 9px -6px #7d7c7c;
     border-radius: 2px;
     border-style: outset;
 }
-.viewDetails table {
+.viewList table {
     margin: 0 !important;
 }
-.viewDetails table tr {
+.viewList table tr {
     background-color: #fff !important;
 }
-.viewDetails table tr td {
+.viewList table tr td {
     vertical-align: top;
     padding: 0;
 }
-.viewAllServicesTitle {
+.servicesTitle {
     text-transform: capitalize;
     color: #ff4f17;
     font-size: 2em;
@@ -6209,4 +6209,16 @@ td.visible-print {
 .indexPageCityBlock h3{
 	color: #5f5c5c;
 }
-
+.previewButton{
+	font-size: 1em;
+    font-weight: 600;
+    float: right;
+    background-color: #ff2436;
+    color: white;
+    padding: 6px 17px;
+    width: 100%;
+    margin-top: -6px;
+}
+.previewButton:HOVER{
+	background-color: #03A9F4;
+}

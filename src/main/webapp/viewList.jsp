@@ -4,8 +4,8 @@ var dar = [];
 var lit = 10;
 var ct = 0;
 var tFlag = false;
-   window.onload = loadViewDetailsPage();
-   	function loadViewDetailsPage(){
+   window.onload = loadviewListPage();
+   	function loadviewListPage(){
    		try{ 
    			updateGPSLocation();
    			//if(isLocationEnable()){				
@@ -17,7 +17,7 @@ var tFlag = false;
 	   			}
 	   			
 	   			if(loc == ""){
-	   				console.log("viewDetails : location is "+loc);
+	   				console.log("viewList : location is "+loc);
 	   				setCookieWithOutReload("location", "chennai", 365);
 	   				loc = getCookie("location");
 	   			}
@@ -43,7 +43,7 @@ var tFlag = false;
 	   					  if(key != null){
 	   						  count++;
 	   					   	var img_url="", name="", address = "", website = "", phoneNumber = "", rating = "", 
-	   			   				lon = "", lat = "", distance = "", map = "", adr = "", reviews="", reviewsLink="";
+	   			   				lon = "", lat = "", distance = "", map = "", adr = "", reviews="", reviewsLink="",locationUrl ="";
 	   					   	$.each( val, function( key, val ) {							    	
 	   							  if(key != 0){
 	   								  if(key == 'img_url')
@@ -107,11 +107,13 @@ var tFlag = false;
 	   					    	out = out + "<div  ><a target=# class=bottom href=http://www."+ website+"><i class='fa fa-globe' aria-hidden='true'></i></a></div>";
 	   					    }
 	   					 	//distance = findDistance(lat, lon);
-	   					 	
-	   						var ad = addStarsToString(adr);
+	   					 	 
+	   						var ad = addStarsToString(adr.replace(/&amp;/g, '&'));
 	   						var nm = addStarsToString(name);
-	   						if(adr != "" ){						    	
-						    	out = out + "<div  ><a target=# class=bottom href=https://www.google.co.in/maps/place/"+nm+"+"+ad+"/@"+lat+","+lon+"><i class='fa fa-map-marker fa-fw' aria-hidden='true'></i></a></div>";
+	   						
+	   						if(adr != "" ){	
+	   							locationUrl = "https://www.google.co.in/maps/place/"+nm+"+"+ad+"/@"+lat+","+lon;
+						    	out = out + "<div  ><a target=# class=bottom href="+locationUrl+"><i class='fa fa-map-marker fa-fw' aria-hidden='true'></i></a></div>";
 						    }
 	   						if(distance != 'null' && add != 'null'){
 	   							map = "https://www.google.co.in/maps/dir/"+add+"/"+nm+"+"+ad+"/@"+lat+","+lon;	
@@ -123,22 +125,29 @@ var tFlag = false;
 	   					    out = out + map;
 	   					    out = out + "><i class='fa fa-location-arrow' aria-hidden='true'></i></a></div>";						    
 	   					    
-	   					    if(reviews != "" && reviews.length > 1 && reviews != null && reviews.indexOf("null") == -1){
+	   					    if(reviews != "" && reviews.length >= 1 && reviews != null && reviews.indexOf("null") == -1){
 	   					    	if(reviews == '1'){
-	   					    		out = out + "<div  ><a style='color: #ef3a00;text-decoration: none;' target=# class=bottom href="+reviewsLink+"><i style='margin:0px;' class='fa fa-pencil' aria-hidden='true'></i>&nbsp;"+reviews+"&nbsp;review.</a></div>";
+	   					    		reviews = reviews+ "review";
+	   					    	}else{
+	   					    		reviews = reviews+ "reviews";
 	   					    	}
-	   					    	out = out + "<div ><a target=# class=bottom href="+reviewsLink+"><i style='margin:0px;' class='fa fa-pencil' aria-hidden='true'></i>&nbsp;"+reviews+"&nbsp;reviews.</a></div>";
-	   					    }
+	   					    	
+	   					 		out = out + "<div ><a target=# class=bottom href="+reviewsLink+"><i style='margin:0px;' class='fa fa-pencil' aria-hidden='true'></i>&nbsp;"+reviews+".</a></div>";
+   					    	
+   					    	}
 							   
 							 if(distance != 'null'  && add != 'null'){
 	   					    	out = out + "<div ><i class='fa fa-car' aria-hidden='true'></i>&nbsp;<span id='dis'>"+Math.floor(distance)+ "</span>&nbsp;km.(approx.)</div>";
-							 }
-	   					    out = out + "</footer><br></li> </ul> </article>";
+							 } 
+	   					    out = out + "</footer><br></li> </ul>";
+	   					 	out = out + "<a href=./view?name="+nm+"&address="+removeAmbers(ad)+"&website="+website+"&img_url="+img_url+"&locationUrl="+locationUrl+"&root="+map+"&distance="+Math.floor(distance)+"&phoneNumber="+normalizePhno(phoneNumber)+"&rating="+rating+"&reviews="+reviews+"&reviewsLink="+reviewsLink;
+	   					 	
+	   					 	out = out + " class='previewButton'>Preview<a/> </article>";
 	   					 	dar.push(out);
 	   					  } 
 	   				  }); 
 	   				  //out = out + "";
-						//document.getElementById("viewDetails").innerHTML = out;
+						//document.getElementById("viewList").innerHTML = out;
 						//sortByDistance();	
 						loadMore();
 						document.getElementById("titleHeader").innerHTML = addSpaces(category)+" in "+loc;
@@ -168,7 +177,7 @@ var tFlag = false;
 	function loadMore() {
 		//console.log("loadMore()");
 		for (var i = ct; i < (ct+lit); i++) {   			 
-			$("#viewDetails").append(dar[i]);
+			$("#viewList").append(dar[i]);
 			document.getElementById("loadingImage").style.display = "none";
 			//document.getElementById("loadMoreButton").style.display = "none";
 		}		
@@ -185,7 +194,7 @@ var tFlag = false;
    		
    		var ss = window.location.toString().split("?");	
    		var u = getWebsiteURL();
-   		window.location.href = u+"viewDetails?location="+loc+"&category="+category+"&page="+page;			
+   		window.location.href = u+"viewList?location="+loc+"&category="+category+"&page="+page;			
    	}
 
     $(document).ready(function() {
@@ -221,9 +230,9 @@ var tFlag = false;
 	            $.each(data, function(key, val) {
 	                if (key != "undefined") { 
 	                	if(cat1 == key){
-	                		menuItems = menuItems + "<a href=viewDetails?location="+loloc+"&category="+key+" class='w3-bar-item w3-button' style='font-weight: 600;color: #209cff;'>"+addSpaces(key)+"</a>";
+	                		menuItems = menuItems + "<a href=viewList?location="+loloc+"&category="+key+" class='w3-bar-item w3-button' style='font-weight: 600;color: #209cff;'>"+addSpaces(key)+"</a>";
 	                	}else{	                	
-	                   		menuItems = menuItems + "<a href=viewDetails?location="+loloc+"&category="+key+" class='w3-bar-item w3-button'>"+addSpaces(key)+"</a>";
+	                   		menuItems = menuItems + "<a href=viewList?location="+loloc+"&category="+key+" class='w3-bar-item w3-button'>"+addSpaces(key)+"</a>";
 	                	}
 	                }
 	            }); 
@@ -241,8 +250,8 @@ var tFlag = false;
 <section id="three" class="wrapper align-center">
    <div class="inner">
       <header style="margin: 0;">
-         <p onclick="openLeftNavOpen()" id="viewAllServicesLink" class="viewAllServicesLinkBars"><i class="fa fa-bars" aria-hidden="true"></i></p>
-         <h3  class="viewAllServicesTitle" id="titleHeader">Services</h3>
+         <p onclick="openLeftNavOpen()" id="servicesLink" class="servicesLinkBars"><i class="fa fa-bars" aria-hidden="true"></i></p>
+         <h3  class="servicesTitle" id="titleHeader">Services</h3>
          <hr>
       </header>
       <!-- <div class="paging" id="paging1">
@@ -251,7 +260,7 @@ var tFlag = false;
          <button  id = "pre1" value="" onclick="goTo(this.value)"><i class="fa fa-step-backward" aria-hidden="true"></i>&nbsp;Prev.</button>
       </div> -->
       <br>
-      <div class="flex flex-2 viewDetails" id="viewDetails">	
+      <div class="flex flex-2 viewList" id="viewList">	
          <img id="loadingImage" class="loadingImage" src="images/loading2.gif" alt="loading" />		 
       </div><br> <br>
       
@@ -330,7 +339,7 @@ var tFlag = false;
    margin-left: calc(5% - 35px);
    transition: .5s;
    }
-   .viewDetails img{
+   .viewList img{
    width: 193px;
    height: 150px;
    float: left;

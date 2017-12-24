@@ -1664,7 +1664,7 @@ article.wrapper article header {
     article.wrapper header {
         margin-bottom: 0em;
     }
-    .viewAllServices article {
+    .services article {
         margin-bottom: 1.25em !important;
     }
     .w3-sidebar{
@@ -3143,13 +3143,13 @@ button:disabled,
     /* background: rgba(0, 0, 0, 0.64);
     position: fixed; */
 }
-.viewAllServicesLinkBars{
+.servicesLinkBars{
 	float: left;
 	cursor: pointer; 
 	text-decoration: none;
 	color: #f93223;
 	font-size: 2em !important;
 }
-.viewAllServicesLinkBars:HOVER {
+.servicesLinkBars:HOVER {
 	color: #03A9F4;
 }
