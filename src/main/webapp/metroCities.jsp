@@ -119,7 +119,7 @@
     </p>
     <p><a class="metroCityHeader" href="./services?location=delhi" target="delhi">1. DELHI- 4.60 Crore:</a></p>
     <p>
-        <br>
+        <br> 
     </p>
     <p>delhi, Top 10 Metropolitan Cities in India 2019</p>
     <p>Among all metropolitan cities in India, Delhi stands on top with a population of 4.6 Crore. National Capital Territory of Delhi or Delhi is one of the largest commercial centres of the country with a GDP of more than $160 Billion. Delhi is also a centre of esteemed educational institutions of different domains like engineering, medical, law, commerce, science, etc. IIT Delhi, Delhi Technological University, All India Institute of Medical Sciences (AIIMS), National Law University, St. Stephen's College and Sriram College of Commerce are some of the esteemed educational institutions in Delhi. Dehli is also a preferred holiday destination in India as it has numerous places to see. Akshardham Temple, Red Fort, India Gate, Qutub Minar, Jantar Mantar and Connaught Place are some of the tourist attractions in Delhi.</p>
