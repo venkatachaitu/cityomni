@@ -3151,5 +3151,7 @@ button:disabled,
 	font-size: 2em !important;
 }
 .servicesLinkBars:HOVER {
-	color: #03A9F4;
+	color: #008eff;
+    transform: rotate(90deg);
+    cursor: -webkit-grab;
 }

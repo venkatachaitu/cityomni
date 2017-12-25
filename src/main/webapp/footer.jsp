@@ -55,13 +55,9 @@
            <a href="mailto:info@cityhalt.com" style="color: #fff;">
 				<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;info@cityhalt.com        
       		</a>
-      		<!-- <a href="http://feedjit.com/ir1/053f5116b6a77b5d667c0349e5dade84/">
-      			<img src="http://feedjit.com/b/053f5116b6a77b5d667c0349e5dade84.png" alt="" border="0" ISMAP />
-     		</a> -->
         </div>
         <div id="locationCheckYellowBottom" class="locationCheckYellowBottom"><i>your Location is Disabled.</i></div>
     </div>
-    <a href="http://feedjit.com/ir1/e78f4b6106525e316e8cb6dcafb8241f/"><img src="http://feedjit.com/b/e78f4b6106525e316e8cb6dcafb8241f.png" alt="" border="0" ISMAP /></a> 
 </footer>
 <i class="fa fa-map-marker fa-fw" aria-hidden="true" id="gpsIcon" onclick="isGPSEnable()"></i>
 <a href="#top" id="topArrow" class="arrowTop"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>

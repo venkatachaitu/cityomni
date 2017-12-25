@@ -98,7 +98,7 @@ var tFlag = false;
 	   					    out = out + "<footer class=bottom>";
 	   					    
 	   					    if(phoneNumber != "" && phoneNumber.length > 1 && phoneNumber != null && phoneNumber.indexOf("null") == -1){						    	
-	   					    	out = out + "<div ><i class='fa fa-phone' aria-hidden='true'></i>&nbsp;"+normalizePhno(phoneNumber) + "</div>";
+	   					    	out = out + "<div ><a href=tel:"+normalizePhno(phoneNumber) + "><i class='fa fa-phone' aria-hidden='true'></i>&nbsp;"+normalizePhno(phoneNumber) + "</a></div>";
 	   					    }
 	   					    if(rating != "" && rating.length > 1 && rating != null && rating.indexOf("null") == -1){						    	
 	   					    	out = out + "<div ><i class='fa fa-star' aria-hidden='true'></i>&nbsp;"+rating.trim()+ "</div>";
@@ -121,7 +121,7 @@ var tFlag = false;
 	   							map = "https://www.google.co.in/maps/dir/"+loc+"/"+nm+"+"+ad+"/@"+lat+","+lon;
 	   						}						
 	   						
-	   						out = out + "<div  ><a target=# class=bottom href=";
+	   						out = out + "<div><a style='cursor: alias;' target=# class=bottom href=";
 	   					    out = out + map;
 	   					    out = out + "><i class='fa fa-location-arrow' aria-hidden='true'></i></a></div>";						    
 	   					    

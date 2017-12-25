@@ -41,6 +41,7 @@
     box-shadow: 4px 4px 9px -6px #7d7c7c;
     border-radius: 2px;
     border-style: outset;
+    padding-top: 2em;
 }
 .list img {
 	width: 193px;
@@ -68,43 +69,44 @@
       <%-- <header>
          <h3 class="servicesTitle" id="titleHeader"><%= request.getParameter("name") %></h3>
          <hr>
-      </header> --%><br>
+      </header> --%><br><br>
       <div class="flex flex-2 list" >
          <article class="article">
 		   <ul>
-		      <li> <span class="imageSpan"><img src="<%= request.getParameter("img_url") %>" width="100%" id="1" style="cursor:pointer;"></span></li>
+		      <li> <span class="imageSpan"><img src="<%= request.getParameter("img_url") %>" width="100%" id="1" style="cursor:pointer;"onclick="openPreview(1)"></span></li>
 		      <li>
 		         <span class="detailsSpan">
-		            <header>
+		            <header style="margin-top:  1em;margin-bottom: 1em;">
 		               <label>
-		                   <a href="#">
+		                   <a href="#" style="color: #ff2436;">
 		                     <h3><%= request.getParameter("name") %></h3>
 		                  </a> 
 		               </label>
 		            </header>
-		            <br> 
+		              
 		            <p class="address"><i><%= request.getParameter("address") %></i></p>
 		            <footer class="bottom">
 		            <%
 		            	if(!request.getParameter("phoneNumber").equalsIgnoreCase("null")){
 		            		%>
-		            		<div><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;<%= request.getParameter("phoneNumber") %></div>				            
+		            		<div><a href="tel:<%= request.getParameter("phoneNumber") %>"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;<%= request.getParameter("phoneNumber") %></a></div>				            
 		            		<%
 		            	}
-		            System.out.println("rating:"+request.getParameter("rating"));
+		            System.out.println("website:"+request.getParameter("website"));
 			            if(!request.getParameter("rating").equalsIgnoreCase("null")){
 		            		%>
 		            		<div><i class="fa fa-star" aria-hidden="true"></i>&nbsp;<%= request.getParameter("rating") %></div>
 		            		<%
 		            	}
-						if(!request.getParameter("website").equalsIgnoreCase("null")){
+			             
+						if(!request.getParameter("website").equalsIgnoreCase("null") && !request.getParameter("website").isEmpty()){
 		            		%>
 		            		<div><a target="#" class="bottom" href="http://<%= request.getParameter("website") %>"><i class="fa fa-globe" aria-hidden="true"></i></a></div>		               
 		               		<%
 		            	}
 		            %>
 		            <div><a target="#" class="bottom" href="<%= request.getParameter("locationUrl") %>"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i></a></div>
-		            <div><a target="#" class="bottom" href="<%= request.getParameter("root") %>"><i class="fa fa-location-arrow" aria-hidden="true"></i></a></div>
+		            <div><a  style='cursor: alias;' target="#" class="bottom" href="<%= request.getParameter("root") %>"><i class="fa fa-location-arrow" aria-hidden="true"></i></a></div>
 		            <%
 			            if(!request.getParameter("reviews").equalsIgnoreCase("null")){
 		            		%>
@@ -122,5 +124,95 @@
       </div>
    </div>
 </section>
-
+<style>
+   /* The modalImage (background) */
+   .modalImage {
+   display: none; /* Hidden by default */
+   position: fixed; /* Stay in place */
+   z-index: 99999999999999999999999999999999; /* Sit on top */
+   padding-top: 100px; /* Location of the box */
+   left: 0;
+   top: 0;
+   width: 100%; /* Full width */
+   height: 100%; /* Full height */
+   overflow: auto; /* Enable scroll if needed */
+   background-color: rgb(0,0,0); /* Fallback color */
+   background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+   }
+   /* modalImage contentImage (image) */
+   .modal-contentImage {
+   margin: auto;
+   display: block;
+   width: 80%;
+   max-width: 700px;
+   }
+   /* Caption of modalImage Image */
+   #caption {
+   margin: auto;
+   display: block;
+   width: 80%;
+   max-width: 700px;
+   text-align: center;
+   color: #ccc;
+   padding: 10px 0;
+   height: 150px;
+   }
+   /* Add Animation */
+   .modal-contentImage, #caption {    
+   -webkit-animation-name: zoom;
+   -webkit-animation-duration: 0.6s;
+   animation-name: zoom;
+   animation-duration: 0.6s;
+   }
+   @-webkit-keyframes zoom {
+   from {-webkit-transform:scale(0)} 
+   to {-webkit-transform:scale(1)}
+   }
+   @keyframes zoom {
+   from {transform:scale(0)} 
+   to {transform:scale(1)}
+   }
+   /* The closeImage Button */
+   .closeImage {
+   position: absolute;
+   top: 15px;
+   right: 35px;
+   color: #f1f1f1;
+   font-size: 40px;
+   font-weight: bold;
+   transition: 0.3s;
+   }
+   .closeImage:hover,
+   .closeImage:focus {
+   color: #bbb;
+   text-decoration: none;
+   cursor: pointer;
+   }
+   /* 100% Image Width on Smaller Screens */
+   @media only screen and (max-width: 700px){
+   .modal-contentImage {
+   width: 100%;
+   }
+   }
+</style>
+<div id="myModalImage" class="modalImage">
+   <span class="closeImage">&times;</span>
+   <img class="modal-contentImage" id="img01Image">
+   <div id="caption"></div>
+</div>
+<script>
+   function openPreview(imgImage){
+   	var modalImage = document.getElementById('myModalImage');
+   	var modalImg = document.getElementById("img01Image");
+   	modalImage.style.display = "block";	
+   	
+   	modalImg.src = document.getElementById(imgImage).src;
+   }
+   
+   var spanImage = document.getElementsByClassName("closeImage")[0];
+   spanImage.onclick = function() { 
+   	var modalImage = document.getElementById("myModalImage");
+   	modalImage.style.display = "none";
+   };
+</script>
 <%@include file="footer.jsp" %>

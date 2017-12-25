@@ -21,7 +21,13 @@
 		}catch(e){alert(e);}
 	}	   	
 </script>
+<style>
+.metroCityHeader{
+	color: red;
+	font-weight: bold;
+}
 
+</style>
 <br><br><br><br><br>
 <section id="" style="height: 100%;padding-top: 2em;">
 	<div class="inner">
@@ -30,7 +36,7 @@
 	</header>
 	<article>     
     <br>
-    <p>10. JAIPUR- 30.73 Lakh:</p>
+    <p><a class="metroCityHeader" href="./services?location=jaipur" target="jaipur">10. JAIPUR- 30.73 Lakh:</a></p>
     <p>
         <br>
     </p>
@@ -39,7 +45,7 @@
     <p>
         <br>
     </p>
-    <p>9. SURAT-44.62 Lakh:</p>
+    <p><a class="metroCityHeader" href="./services?location=surat" target="surat">9. SURAT-44.62 Lakh:</a></p>
     <p>
         <br>
     </p>
@@ -48,7 +54,7 @@
     <p>
         <br>
     </p>
-    <p>8. PUNE-50.49 Lakh:</p>
+    <p><a class="metroCityHeader" href="./services?location=pune" target="pune">8. PUNE-50.49 Lakh:</a></p>
     <p>
         <br>
     </p>
@@ -57,7 +63,7 @@
     <p>
         <br>
     </p>
-    <p>7. AHMEDABAD-63.52 Lakh:</p>
+    <p><a class="metroCityHeader" href="./services?location=ahmedabad" target="ahmedabad">7. AHMEDABAD-63.52 Lakh:</a></p>
     <p>
         <br>
     </p>
@@ -66,7 +72,7 @@
     <p>
         <br>
     </p>
-    <p>6. HYDERABAD: 77.49 Lakh:</p>
+    <p><a class="metroCityHeader" href="./services?location=hyderabad" target="hyderabad">6. HYDERABAD: 77.49 Lakh:</a></p>
     <p>
         <br>
     </p>
@@ -75,7 +81,7 @@
     <p>
         <br>
     </p>
-    <p>5. BANGALORE-84.99 Lakh:</p>
+    <p><a class="metroCityHeader" href="./services?location=bangalore" target="bangalore">5. BANGALORE-84.99 Lakh:</a></p>
     <p>
         <br>
     </p>
@@ -84,7 +90,7 @@
     <p>
         <br>
     </p>
-    <p>4. CHENNAI- 86.96 Lakh:</p>
+    <p><a class="metroCityHeader" href="./services?location=chennai" target="chennai">4. CHENNAI- 86.96 Lakh:</a></p>
     <p>
         <br>
     </p>
@@ -93,7 +99,7 @@
     <p>
         <br>
     </p>
-    <p>3. KOLKATA- 1.41 Crore:</p>
+    <p><a class="metroCityHeader" href="./services?location=kolkata" target="kolkata">3. KOLKATA- 1.41 Crore:</a></p>
     <p>
         <br>
     </p>
@@ -102,7 +108,7 @@
     <p>
         <br>
     </p>
-    <p>2. MUMBAI-1.84 Crore:</p>
+    <p><a class="metroCityHeader" href="./services?location=mumbai" target="mumbai">2. MUMBAI-1.84 Crore:</a></p>
     <p>
         <br>
     </p>
@@ -111,7 +117,7 @@
     <p>
         <br>
     </p>
-    <p>1. DELHI- 4.60 Crore:</p>
+    <p><a class="metroCityHeader" href="./services?location=delhi" target="delhi">1. DELHI- 4.60 Crore:</a></p>
     <p>
         <br>
     </p>
