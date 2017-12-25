@@ -27,7 +27,7 @@ public class GetPath {
 				
 				//return "/app/src/main/webapp/data/";
 				
-				return "D:/test-workspace/cityhaltweb/src/main/webapp/data/";
-					//"/app/src/main/webapp/data/";//decoded;
+				return //"D:/test-workspace/cityhaltweb/src/main/webapp/data/";
+					"/app/src/main/webapp/data/";//decoded;
 	}
 }
