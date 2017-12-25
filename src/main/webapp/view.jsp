@@ -43,9 +43,8 @@
     border-style: outset;
 }
 .list img {
-	width: 38%;
-    height: 3%;
-    margin: 23px;
+	width: 193px;
+    height: 150px;
     /* margin-left: calc(10% - 35px); */
     transition: .5s;
     border: 1px solid rgb(255, 79, 23);

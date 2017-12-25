@@ -25,9 +25,9 @@ public class GetPath {
 				 
 				System.out.println("server location : "+decoded);
 				
-				return "/app/src/main/webapp/data/";
+				//return "/app/src/main/webapp/data/";
 				
-				//return "D:/test-workspace/cityhaltweb/src/main/webapp/data/";
+				return "D:/test-workspace/cityhaltweb/src/main/webapp/data/";
 					//"/app/src/main/webapp/data/";//decoded;
 	}
 }

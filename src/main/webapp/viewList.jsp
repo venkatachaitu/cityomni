@@ -140,7 +140,7 @@ var tFlag = false;
 	   					    	out = out + "<div ><i class='fa fa-car' aria-hidden='true'></i>&nbsp;<span id='dis'>"+Math.floor(distance)+ "</span>&nbsp;km.(approx.)</div>";
 							 } 
 	   					    out = out + "</footer><br></li> </ul>";
-	   					 	out = out + "<a href=./view?name="+nm+"&address="+removeAmbers(ad)+"&website="+website+"&img_url="+img_url+"&locationUrl="+locationUrl+"&root="+map+"&distance="+Math.floor(distance)+"&phoneNumber="+normalizePhno(phoneNumber)+"&rating="+rating+"&reviews="+reviews+"&reviewsLink="+reviewsLink;
+	   					 	out = out + "<a target="+nm+" href=./view?name="+nm+"&address="+removeAmbers(ad)+"&website="+website+"&img_url="+img_url+"&locationUrl="+locationUrl+"&root="+map+"&distance="+Math.floor(distance)+"&phoneNumber="+normalizePhno(phoneNumber)+"&rating="+rating+"&reviews="+reviews+"&reviewsLink="+reviewsLink;
 	   					 	
 	   					 	out = out + " class='previewButton'>Preview<a/> </article>";
 	   					 	dar.push(out);

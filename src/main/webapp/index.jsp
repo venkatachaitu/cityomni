@@ -65,7 +65,7 @@
 	      ga('send', 'pageview');
 	    </script>
 	    
-	    <style>.async-hide { opacity: 0 !important} </style>
+	    <!-- <style>.async-hide { opacity: 0 !important} </style> -->
 	    <script>
 		    (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
 		    h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
@@ -165,21 +165,21 @@
             </script>	
             <div class="flex ">
                <div style="cursor: pointer;">
-	               <a href="./viewList?category=hotels">
+	               <a target="hotels" href="./viewList?category=hotels">
 	                  <span class="icon fa fa-bed"></span>
 	                  <h3>Hotels</h3>
 	                  <p>5, 3, 2 Star Hotels</p>
 	                </a>
                </div>
                <div style="cursor: pointer;">
-               	<a href="./viewList?category=banks">
+               	<a target="banks" href="./viewList?category=banks">
                   <span class="icon fa-university"></span>
                   <h3>Banks</h3>
                   <p>Central, State Banks, etc.</p>
                   </a>
                </div>
                <div style="cursor: pointer;">
-               	<a href="./viewList?category=coffee_shops">
+               	<a target="coffee_shops" href="./viewList?category=coffee_shops">
                   <span class="icon fa-coffee"></span>
                   <h3>Coffee Shops</h3>
                   <p>CoffeeDay, Barista, etc.</p>

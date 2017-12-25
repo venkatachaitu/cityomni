@@ -64,7 +64,7 @@
 	      ga('send', 'pageview');
     </script>
     
-    <style>.async-hide { opacity: 0 !important} </style>
+    <!-- <style>.async-hide { opacity: 0 !important} </style> -->
     <script>
 	    (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
 	    h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};

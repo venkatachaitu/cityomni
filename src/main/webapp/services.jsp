@@ -21,13 +21,9 @@
 	   				setCookieWithOutReload("location", "chennai", 365);
 	   				loc = getCookie("location");
 	   			}
-	   			document.getElementById('locationHome').innerHTML = loc;
-	   			
-	   			
+	   			document.getElementById('locationHome').innerHTML = loc; 
 	   			var u = getWebsiteURL();
-	   			
-	   			$('head').append('<meta name="description" content="Welcome to CITYHALT one place for complete city information and services like Atms, Auto Mobiles, Banks, Bars, Beauty Parlours, Blood And Eye Banks, Bus Stations, Coffee Shops, Colleges, Computer Institutes, Computer Services, Dance Schools, Fashion And Cloth Stores, Fire Stations, Gas And Petrol Stations, Gift Shops, Govt Offices, Grocery Stores, Hardware Shops, Hospitals, Hostels, Hotels, Insurance Companies, Jewellery Shops, Libraries, Lodges, Mobile Shops, Museums, Packers And Movers, Parcel And Couriers, Parks, Party Halls, Pharmacy, Photo Studios, Play Schools, Police Stations, Railway Stations, Real Estate Agents, Restaurents, Schools, Shopping Malls, Software Companies, Stadiums, Temples, Theaters, Tours And Travels, Universities in cityhalt, city halt, cityhalt.com services in "+loc+">');
-	   			
+	   			 
 	   			$.getJSON(u+"rest/get/getCat/"+loc.toLowerCase(), function( data ) {
 				  var out = "";		
 				  data = sortObject(data);				  
@@ -35,7 +31,7 @@
 					     if(key != "undefined"){
 					    	 if(val != '999999'){
 								  out = out + "<article><header>";
-								  out = out + "<a href=";
+								  out = out + "<a target="+key+" href=";
 								  out = out + u+"viewList?location=" + loc + "&category="+key;
 								  out = out + "><h4><img class='viewAllServiceIcons' src='images/serviceIcons/"+key+".png'>";
 								  out = out + addSpaces(key);								 
