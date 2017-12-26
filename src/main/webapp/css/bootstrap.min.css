@@ -6091,6 +6091,20 @@ td.visible-print {
     text-decoration: none;
     color: #fff !important;
 }
+.viewAllMetroCities{
+	margin: auto;
+    background-color: red;
+    color: #fff !important;
+    margin-bottom: -6em;
+    margin-top: 3em;
+    border-radius: 0;
+    border: 0;
+}
+.viewAllMetroCities:HOVER{
+	background-color: #03A9F4 !important;
+    text-decoration: none;
+    color: #fff !important;
+}
 .searchIcon {
     cursor: pointer;
     color: #fff !important;
@@ -6208,6 +6222,10 @@ td.visible-print {
 }
 .indexPageCityBlock h3{
 	color: #5f5c5c;
+}
+.metrocitiesPageFlex article{
+	width: 40%;
+	 margin-bottom: 3em;
 }
 .previewButton{
 	font-size: 1em;

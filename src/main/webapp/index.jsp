@@ -111,24 +111,42 @@
                      <div class="flex flex-2 searchInnerDiv" id="" style="margin: 0;">
                         <article style="background-color: rgba(255, 0, 0, 0);">
                            <header class="selectCity" style="background-color: rgba(255, 0, 0, 0);">
-                              <select name="city" id="searchCity" onchange="changeCity()" required>
+                              <!-- <select name="city" id="searchCity" onchange="changeCity()" required>
                                  <option value="-1">Select City</option>
-                                 <option value="delhi">Delhi</option>
-                                 <!-- <option value="bangalore">Bangalore</option> -->                                 
+                                 <option value="delhi">Delhi</option>                                 
                                  <option value="chennai">Chennai</option>
-                                 <!-- <option value="hyderabad">Hyderabad</option> -->
-                                 <option value="vijayawada">Vijayawada</option>
-                                 <!-- <option value="visakhapatnam">Visakhapatnam</option> -->                                 
+                                 <option value="vijayawada">Vijayawada</option>                                 
                                  <option value="tirupati">Tirupati</option>
-                              </select>
+                              </select> -->
+                              <select name="city" id="searchCity" required=""><!-- onchange="changeCity()" -->
+								<option value="-1">Select City</option>
+								<option value="delhi">Delhi</option>
+								<option value="mumbai">Mumbai</option>
+								<option value="kolkata">Kolkata</option>
+								<option value="chennai">Chennai</option>
+								<option value="bangalore">Bangalore</option>
+								<option value="hyderabad">Hyderabad</option>
+								<option value="ahmedabad">Ahmedabad</option>
+								<option value="pune">Pune</option>
+								<option value="surat">Surat</option>
+								<option value="jaipur">Jaipur</option>
+							</select>
                            </header>
                         </article>
-                        &nbsp;&nbsp;&nbsp; 
+                        <!-- &nbsp;&nbsp;&nbsp; 
                         <article style="background-color: rgba(255, 0, 0, 0);">
                            <header class="selectCity" style="background-color: rgba(255, 0, 0, 0);">
                               <select name="category" id="searchCategories" required>
                                  <option value="-1">Select Category</option>
                               </select>
+                           </header>
+                        </article> -->
+                        &nbsp;&nbsp;&nbsp; 
+                        <article style="background-color: rgba(255, 0, 0, 0);">
+                           <header class="selectCity" style="background-color: rgba(255, 0, 0, 0);">
+                              <select name="category" id="searchCategories" required="">                                 
+								<option value="all">All</option><option value="atms">atms</option><option value="auto_mobiles">auto mobiles</option><option value="banks">banks</option><option value="bars">bars</option><option value="beauty_parlours">beauty parlours</option><option value="blood_and_eye_banks">blood and eye banks</option><option value="bus_stations">bus stations</option><option value="coffee_shops">coffee shops</option><option value="colleges">colleges</option><option value="computer_institutes">computer institutes</option><option value="computer_services">computer services</option><option value="dance_schools">dance schools</option><option value="fashion_and_cloth_stores">fashion and cloth stores</option><option value="fire_stations">fire stations</option><option value="gas_and_petrol_stations">gas and petrol stations</option><option value="gift_shops">gift shops</option><option value="govt_offices">govt offices</option><option value="grocery_stores">grocery stores</option><option value="hardware_shops">hardware shops</option><option value="hospitals">hospitals</option><option value="hostels">hostels</option><option value="hotels">hotels</option><option value="insurance_companies">insurance companies</option><option value="jewellery_shops">jewellery shops</option><option value="libraries">libraries</option><option value="lodges">lodges</option><option value="mobile_shops">mobile shops</option><option value="museums">museums</option><option value="packers_and_movers">packers and movers</option><option value="parcel_and_couriers">parcel and couriers</option><option value="parks">parks</option><option value="party_halls">party halls</option><option value="pharmacy">pharmacy</option><option value="photo_studios">photo studios</option><option value="play_schools">play schools</option><option value="police_stations">police stations</option><option value="railway_stations">railway stations</option><option value="real_estate_agents">real estate agents</option><option value="restaurents">restaurents</option><option value="schools">schools</option><option value="shopping_malls">shopping malls</option><option value="software_companies">software companies</option><option value="stadiums">stadiums</option><option value="temples">temples</option><option value="theaters">theaters</option><option value="tours_and_travels">tours and travels</option><option value="universities">universities</option>
+			  				  </select>
                            </header>
                         </article>
                      </div>
@@ -193,86 +211,95 @@
       </section>
       <section id="three" class="wrapper align-center" >
          <div class="inner">
+         <header>
+	         <h3 class="servicesTitle" id="titleHeader">Metro Cities in India</h3>
+	      </header>
             <div class="flex flex-2">
+			    <a class="indexPageCityBlock" href="./services?location=delhi">
+				    <article>
+				        <div class="image round">
+				            <img src="images/delhi.png" alt="Delhi">
+				        </div>
+				        <header>
+				            <h3>1. Delhi</h3>
+				        </header>
+				        <p style="text-align: justify;color: #5f5f5f;">Among all metropolitan cities in India, Delhi stands on top with a population of 4.6 Crore. National Capital Territory of Delhi or Delhi is one of the largest commercial centres of the country with a GDP of more than $160 Billion. Delhi is also a centre of esteemed educational institutions of different domains like engineering, medical, law, commerce, science, etc.</p>
+				        <footer>
+				            <a href="./services?location=delhi" class="button">View More</a>
+				        </footer>
+				    </article>
+			    </a>
+			    <a class="indexPageCityBlock" href="./services?location=mumbai">
+				    <article>
+				        <div class="image round">
+				            <img src="images/mumbai.png" alt="Mumbai">
+				        </div>
+				        <header>
+				            <h3>2. Mumbai</h3>
+				        </header>
+				        <p style="text-align: justify;color: #5f5f5f;">Popularly known as City of Dreams, Mumbai with a population of 1.84 Crore stand at 2nd in the list of top 10 metropolitan cities in India. Being Financial Capital of India, Mumbai contributes more than 6% of the country's GDP and has a GDP of more than $200 Billion. Mumbai is the headquarter of many public sector companies, government institutions and giant corporations.</p>
+				        <footer>
+				            <a href="./services?location=mumbai" class="button">View More</a>
+				        </footer>
+				    </article>
+			    </a>
+			    <a class="indexPageCityBlock" href="./services?location=kolkata">
+				    <article>
+				        <div class="image round">
+				            <img src="images/kolkata.png" alt="Kolkata">
+				        </div>
+				        <header>
+				            <h3>3. Kolkata</h3>
+				        </header>
+				        <p style="text-align: justify;color: #5f5f5f;">Kolkata, also known as Cultural Capital of India is among the most developed cities in India and occupied 3rd place in this list. Capital City of West Bengal, Kolkata with a GDP of more than $150 Billion is 3rd largest city in the country in terms of GDP. Kolkata is the largest commercial city of the eastern part of India and a centre of numerous private and public sector companies.</p>
+				        <footer>
+				            <a href="./services?location=kolkata" class="button">View More</a>
+				        </footer>
+				    </article>
+			    </a>
+			    <a class="indexPageCityBlock" href="./services?location=chennai">
+				    <article>
+				        <div class="image round">
+				            <img src="images/chennai.png" alt="chennai">
+				        </div>
+				        <header>
+				            <h3>4. Chennai</h3>
+				        </header>
+				        <p style="text-align: justify;color: #5f5f5f;">Chennai formerly known as Madras is the capital of the Indian state of Tamil Nadu. Located on the Coromandel Coast off the Bay of Bengal, it is one of the biggest cultural, economic and educational centres in South India. According to the 2011 Indian census (adjusted for the new limits of Chennai city), it is the fifth-largest city and fourth-most populous urban agglomeration in India.</p>
+				        <footer>
+				            <a href="./services?location=chennai" class="button">View More</a>
+				        </footer>
+				    </article>
+			    </a>
 			    <a class="indexPageCityBlock" href="./services?location=bangalore">
 			    <article>
 			        <div class="image round">
-			            <img src="images/bangalore.png" alt="Bangalore">
+			            <img src="images/bangalore.png" alt="Chennai">
 			        </div>
 			        <header>
-			            <h3>Bangalore</h3>
+			            <h3>5. Bangalore</h3>
 			        </header>
 			        <p style="text-align: justify;color: #5f5f5f;">Bangalore officially known as Bengaluru is the capital of the Indian state of Karnataka. It has a population of about 8.42 million and a metropolitan population of about 8.52 million, making it the third most populous city and fifth most populous urban agglomeration in India.Its elevation is over 900 m (3,000 ft) above sea level, the highest of India's major cities.</p>
 			        <footer>
 			            <a href="./services?location=bangalore" class="button">View More</a>
 			        </footer>
 			    </article>
-			    </a><a class="indexPageCityBlock" href="./services?location=chennai">
-			    <article>
-			        <div class="image round">
-			            <img src="images/chennai.png" alt="Chennai">
-			        </div>
-			        <header>
-			            <h3>Chennai</h3>
-			        </header>
-			        <p style="text-align: justify;color: #5f5f5f;">Chennai formerly known as Madras is the capital of the Indian state of Tamil Nadu. Located on the Coromandel Coast off the Bay of Bengal, it is one of the biggest cultural, economic and educational centres in South India. According to the 2011 Indian census (adjusted for the new limits of Chennai city), it is the fifth-largest city and fourth-most populous urban agglomeration in India.</p>
-			        <footer>
-			            <a href="./services?location=chennai" class="button">View More</a>
-			        </footer>
-			    </article>
-			    </a><a class="indexPageCityBlock" href="./services?location=hyderabad">
-			    <article>
-			        <div class="image round">
-			            <img src="images/hyderabad.png" alt="Hyderabad">
-			        </div>
-			        <header>
-			            <h3>Hyderabad</h3>
-			        </header>
-			        <p style="text-align: justify;color: #5f5f5f;">Hyderabad is the capital of the southern Indian state of Telangana and de jure capital of Andhra Pradesh. Occupying 650 square kilometres (250 sq mi) along the banks of the Musi River, it has a population of about 6.7 million and a metropolitan population of about 7.75 million, making it the fourth most populous city and sixth most populous urban agglomeration in India.</p>
-			        <footer>
-			            <a href="./services?location=hyderabad" class="button">View More</a>
-			        </footer>
-			    </article>
-			    </a><a class="indexPageCityBlock" href="./services?location=vijayawada">
-			    <article>
-			        <div class="image round">
-			            <img src="images/vijayawada.png" alt="Vijayawada">
-			        </div>
-			        <header>
-			            <h3>Vijayawada</h3>
-			        </header>
-			        <p style="text-align: justify;color: #5f5f5f;">Vijayawada is a city on the banks of Krishna River in the Indian state of Andhra Pradesh. It is a commercial city in Krishna district and forms a part of Andhra Pradesh Capital Region. It is one of the million-plus cities in India, with a population of 1,034,358.As per the Demographia World Urban Areas:2016, the city is the third most densely populated, in terms of urban population of built-up areas in the world.</p>
-			        <footer>
-			            <a href="./services?location=vijayawada" class="button">View More</a>
-			        </footer>
-			    </article>
-			    </a><a class="indexPageCityBlock" href="./services?location=visakhapatnam">
-			    <article>
-			        <div class="image round">
-			            <img src="images/vizag.png" alt="Visakhapatnam">
-			        </div>
-			        <header>
-			            <h3>Visakhapatnam</h3>
-			        </header>
-			        <p style="text-align: justify;color: #5f5f5f;">Visakhapatnam also known as Vizag is the largest city and Financial Capital of the Indian state of Andhra Pradesh. The city is the administrative headquarters of Visakhapatnam district and Eastern Naval Command. It is the most populous city in the India, with a population of 2,035,922.The core city and its surrounding settlements together constitute Visakhapatnam Metropolitan Region.</p>
-			        <footer>
-			            <a href="./services?location=visakhapatnam" class="button">View More</a>
-			        </footer>
-			    </article>
-			    </a><a class="indexPageCityBlock" href="./services?location=tirupati">
-			    <article>
-			        <div class="image round">
-			            <img src="images/tirupati.png" alt="Tirupati">
-			        </div>
-			        <header>
-			            <h3>Tirupati</h3>
-			        </header>
-			        <p style="text-align: justify;color: #5f5f5f;">Tirupati is a city in Chittoor district of the Indian state of Andhra Pradesh. It is a municipal corporation.It is the seventh most urban agglomerated city in the state, with a population of 459,985.Tirupati is considered one of the holiest Hindu pilgrimage sites because of Tirumala Venkateswara Temple, besides other historical temples, and is referred to as the "Spiritual Capital of Andhra Pradesh".</p>
-			        <footer>
-			            <a href="./services?location=tirupati" class="button">View More</a>
-			        </footer>
-			    </article>
 			    </a>
+			    <a class="indexPageCityBlock" href="./services?location=hyderabad">
+				    <article>
+				        <div class="image round">
+				            <img src="images/hyderabad.png" alt="Hyderabad">
+				        </div>
+				        <header>
+				            <h3>6. Hyderabad</h3>
+				        </header>
+				        <p style="text-align: justify;color: #5f5f5f;">Hyderabad is the capital of the southern Indian state of Telangana and de jure capital of Andhra Pradesh. Occupying 650 square kilometres (250 sq mi) along the banks of the Musi River, it has a population of about 6.7 million and a metropolitan population of about 7.75 million, making it the fourth most populous city and sixth most populous urban agglomeration in India.</p>
+				        <footer>
+				            <a href="./services?location=hyderabad" class="button">View More</a>
+				        </footer>
+				    </article>
+			    </a>
+			    <a id="servicesLink" href="./metroCities" class="button viewAllMetroCities" >View All Metro cities in Inida</a>
 			</div>
          </div>
       </section>     

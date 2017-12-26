@@ -214,12 +214,12 @@
 	   .appendTo($wrapper);
    }
 </script>
-<div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-left" style="display:none; height: 100%;" id="mySidebar">
+<!-- <div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-left" style="display:none; height: 100%;" id="mySidebar">
   <p class="rightNavMenuClose " onclick="openLeftNavClose()">close</p>
   <div id="rightNavMenu" class="rightNavMenu">
   	<img src="images/loading2.gif" alt="loading" style="width: 60px !important;height: 60px !important;margin-top: 45% !important;margin-left: 28%;"/>
   </div>
-</div>
+</div> -->
 <script>
 	var flagCheck = true;
 	function openLeftNavOpen() {
@@ -228,10 +228,20 @@
 		var loloc = document.getElementById("locationHome").innerHTML;        
         var u = getWebsiteURL();
         if(flagCheck){
-	        $.getJSON(u + "rest/get/getCat/" + loloc.toLowerCase(), function(data) {
+        	var arr=["atms","auto_mobiles","banks","bars","beauty_parlours","blood_and_eye_banks","bus_stations","coffee_shops","colleges","computer_institutes","computer_services","dance_schools","fashion_and_cloth_stores","fire_stations","gas_and_petrol_stations","gift_shops","govt_offices","grocery_stores","hardware_shops","hospitals","hostels","hotels","insurance_companies","jewellery_shops","libraries","lodges","mobile_shops","museums","packers_and_movers","parcel_and_couriers","parks","party_halls","pharmacy","photo_studios","play_schools","police_stations","railway_stations","real_estate_agents","restaurents","schools","shopping_malls","software_companies","stadiums","temples","theaters","tours_and_travels","universities"];
+	        for(var i=0; i< arr.length; i++){
+	        	key = arr[i];
+	        	if(cat1 == key){
+            		menuItems = menuItems + "<a href=viewList?location="+loloc+"&category="+key+" class='w3-bar-item w3-button' style='font-weight: 600;color: #209cff;'>"+addSpaces(key)+"</a>";
+            	}else{	                	
+               		menuItems = menuItems + "<a href=viewList?location="+loloc+"&category="+key+" class='w3-bar-item w3-button'>"+addSpaces(key)+"</a>";
+            	}
+	        }
+        	/* $.getJSON(u + "rest/get/getCat/" + loloc.toLowerCase(), function(data) {
 	            data = sortObject(data);
 	            $.each(data, function(key, val) {
 	                if (key != "undefined") { 
+	                	//console.log(key);
 	                	if(cat1 == key){
 	                		menuItems = menuItems + "<a href=viewList?location="+loloc+"&category="+key+" class='w3-bar-item w3-button' style='font-weight: 600;color: #209cff;'>"+addSpaces(key)+"</a>";
 	                	}else{	                	
@@ -241,7 +251,8 @@
 	            }); 
 	            flagCheck = false;
 	            document.getElementById("rightNavMenu").innerHTML = menuItems;
-	        });
+	        }); */
+        	document.getElementById("rightNavMenu").innerHTML = menuItems;
 		}
 	    document.getElementById("mySidebar").style.display = "block";
 	}
@@ -253,7 +264,7 @@
    <div class="inner">
    <!-- <div style="display: none;" id="tempContent"></div> -->
       <header style="margin: 0;">
-      	<p onclick="openLeftNavOpen()" id="servicesLink" class="servicesLinkBars" ><i class="fa fa-bars" aria-hidden="true"></i></p>
+      	<!-- <p onclick="openLeftNavOpen()" id="servicesLink" class="servicesLinkBars" ><i class="fa fa-bars" aria-hidden="true"></i></p> -->
          <h3  class="servicesTitle" id="titleHeader">Search Result</h3>
            <!-- <p style="float: right;margin-top: -31px;" id="sortByLink" onclick="sortByDistance()">Sort by Distance</p> -->  
          <hr>
