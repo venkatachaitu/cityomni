@@ -3,6 +3,19 @@
 <style>
 
 </style>
+
+<!-- Three --><br><br>
+<section id="three" class="wrapper align-center">
+   <div class="inner">
+      <header>
+         <h3 class="servicesTitle" id="titleHeader">Services</h3>
+         <hr>
+      </header>
+      <div class="flex flex-2 services" id="services">
+         <img class="loadingImage" src="images/loading2.gif" alt="loading" />
+      </div>
+   </div>
+</section>
 <script>
    window.onload = loadServicesPage();
    	function loadServicesPage(){			
@@ -23,8 +36,22 @@
 	   			}
 	   			document.getElementById('locationHome').innerHTML = loc; 
 	   			var u = getWebsiteURL();
-	   			 
-	   			$.getJSON(u+"rest/get/getCat/"+loc.toLowerCase(), function( data ) {
+	   			
+	   			var out = "", key="";
+	   			var arry=["atms","auto_mobiles","banks","bars","beauty_parlours","blood_and_eye_banks","bus_stations","coffee_shops","colleges","computer_institutes","computer_services","dance_schools","fashion_and_cloth_stores","fire_stations","gas_and_petrol_stations","gift_shops","govt_offices","grocery_stores","hardware_shops","hospitals","hostels","hotels","insurance_companies","jewellery_shops","libraries","lodges","mobile_shops","museums","packers_and_movers","parcel_and_couriers","parks","party_halls","pharmacy","photo_studios","play_schools","police_stations","railway_stations","real_estate_agents","restaurents","schools","shopping_malls","software_companies","stadiums","temples","theaters","tours_and_travels","universities"];
+		        for(var i=0; i< arry.length; i++){
+		        	key = arry[i];
+		        	out = out + "<article><header>";
+					out = out + "<a target="+key+" href=";
+					out = out + u+"viewList?location=" + loc + "&category="+key;
+					out = out + "><h4><img class='viewAllServiceIcons' src='images/serviceIcons/"+key+".png'>";
+					out = out + addSpaces(key);								 
+					out = out + "</h4></a></header></article>";
+				 }
+		        document.getElementById("services").innerHTML = out;	
+			  	document.getElementById("titleHeader").innerHTML = "Services in "+loc;
+	   			
+	   			/* $.getJSON(u+"rest/get/getCat/"+loc.toLowerCase(), function( data ) {
 				  var out = "";		
 				  data = sortObject(data);				  
 				  $.each( data, function( key, val ) {
@@ -42,7 +69,7 @@
 				  document.getElementById("services").innerHTML = out;	
 				  document.getElementById("titleHeader").innerHTML = "Services in "+loc;
 				  
-				});
+				}); */
 	   			
    			/* }else{
    				promptForLocation();
@@ -61,16 +88,4 @@
    	    }
    	}
 </script>
-<!-- Three --><br><br>
-<section id="three" class="wrapper align-center">
-   <div class="inner">
-      <header>
-         <h3 class="servicesTitle" id="titleHeader">Services</h3>
-         <hr>
-      </header>
-      <div class="flex flex-2 services" id="services">
-         <img class="loadingImage" src="images/loading2.gif" alt="loading" />
-      </div>
-   </div>
-</section>
 <%@include file="footer.jsp" %>
