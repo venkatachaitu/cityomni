@@ -40,9 +40,9 @@
 	   		var request = {
 	   			  location: new google.maps.LatLng(lat, lon),//(12.9066751, 80.0945172),
 	   			  radius: 100000,
-	   			  //name: category,
-	   			  types: category
-	   			  keyword: searchContent
+	   			  name: searchContent,
+	   			  //types: category,
+	   			  keyword: category
 	           };
 	   		
 	           service.radarSearch(request, callback3);
