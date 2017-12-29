@@ -1,7 +1,7 @@
-function loadIndexPage() {
-    if (!isLocationEnable()) {    	
-      // promptForLocation();
+function loadIndexPage() { 
+    if (!isLocationEnable()) { 
     	
+      // promptForLocation(); 
     	var loc = getCookie("location");
 			var loc11 = getUrlVars()["location"];
 			if(typeof loc11 !== "undefined"){
@@ -22,8 +22,34 @@ function loadIndexPage() {
             selectCityInIndexPage();
         }
     }
+    updateLocationinSearchBox();
 }
-
+function updateLocationinSearchBox() {
+	document.getElementById("searchCity").value = getCookie("locAddress");
+}
+function getLatLogByIp() {
+	$.ajax({
+	    type: "GET",
+	    dataType: 'json',
+	    url: "http://freegeoip.net/json/",
+	     
+	    crossDomain : true,
+	    xhrFields: {
+	        withCredentials: true
+	    }
+	})
+	    .done(function( data ) {
+	    	setCookieWithOutReload("clattitude", data.latitude, 365);
+	    	setCookieWithOutReload("clongitude", data.longitude, 365);
+	    	
+				setAddressForSearchBox(data);
+	         initializeCurrent(data.latitude, data.longitude);
+	    })
+	    .fail( function(xhr, textStatus, errorThrown) {
+	        alert(xhr.responseText);
+	        alert(textStatus);
+	    });
+	}
 function setCookieWithOutReload(cname, cvalue, exdays) {
     try {
         var d = new Date();
@@ -450,13 +476,13 @@ function typeInSearchBox() {
 }
 
 function Submit() {
-    var city = document.getElementById("searchCity").value;
+    var city = document.getElementById("searchCity");
     var cat = document.getElementById("searchCategories").value;
     var box = document.getElementById("searchBoxInput");
 
-    if (city == '-1') {
-        alert("select city.");
-        //city.focus() ;
+    if (city.value.length <= 0) {
+        alert("Enter city");
+        city.focus() ;
         return false;
     }
     if (cat == '-1') {
@@ -464,14 +490,14 @@ function Submit() {
         //cat.focus() ;
         return false;
     }
-    if (cat == 'all' && box.value.length == 0) {
+    /*if (cat == 'all' && box.value.length == 0) {
         //alert("select category.");
         box.focus();
         box.style.borderColor = "red";
         return false;
-    }
-    
-    if (box.value.length > 0 && box.value.length < 3) {
+    }*/
+
+    if (box.value.length <= 2) {
         box.focus();
         box.style.borderColor = "red";
         return false;

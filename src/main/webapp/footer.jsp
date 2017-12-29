@@ -56,7 +56,7 @@
 				<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;info@cityhalt.com        
       		</a>
         </div>
-        <div id="locationCheckYellowBottom" class="locationCheckYellowBottom"><i>your Location is Disabled.</i></div>
+        <div id="locationCheckYellowBottom" class="locationCheckYellowBottom"><i>Location found by your IP</i></div>
     </div>
 </footer>
 <i class="fa fa-map-marker fa-fw" aria-hidden="true" id="gpsIcon" onclick="isGPSEnable()"></i>

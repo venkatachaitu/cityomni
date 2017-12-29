@@ -12,7 +12,7 @@ function isGPSEnable(){
 function hidelocationCheckYellowBottom(){
 	document.getElementById("locationCheckYellowBottom").style.display = 'none';	
 }
-function updateGPSLocation(){
+function updateGPSLocation(){ 
 	try{		
 		if ("geolocation" in navigator){
             navigator.geolocation.getCurrentPosition(show_location, show_error, {timeout:5000, enableHighAccuracy: true}); //position request
@@ -65,14 +65,65 @@ function getCurrentAddress(location) {
 	        'location': location
 	    }, function (results, status) {
 	        if (status == google.maps.GeocoderStatus.OK) {
-	        	setCookie("address", results[0].formatted_address, 365);		        
+	        	setCookie("address", results[0].formatted_address, 365);
+	        	setAddressForSearchBox(results);
+	        	updateLocationinSearchBox();
 	        } else {
 	            console.log('Geocode was not successful for the following reason: ' + status);
 	        }
 	    });
 	}catch(e){console.log("getCurrentAddress() : "+e);};
 }
+function setAddressForSearchBox(results){
+	//var arrAddress = item.address_components;
+	var itemRoute='';
+	var itemLocality='';
+	var itemCountry='';
+	var itemPc='';
+	var itemSnumber='';
+	var city=false,state=false;
+	for (var i = 0; i < results.length; i++) {
+		if ((!city || !state) && results[i].types[0] === "locality") {
+			 city = results[i].address_components[0].long_name,
+			state = results[i].address_components[2].long_name;
+			setCookie("locAddress", city + ", " + state, 365);
+			if(document.getElementById("lat") != null){
+		    	document.getElementById("lat").value = results[i].geometry.location.lat();
+				document.getElementById("lon").value = results[i].geometry.location.lng();
+	    	} 
+		}
+	}
+	// iterate through address_component array
+	/*$.each(arrAddress, function (i, address_component) {
+	    console.log('address_component:'+i);
 
+	    if (address_component.types[0] == "route"){
+	        console.log(i+": route:"+address_component.long_name);
+	        itemRoute = address_component.long_name;
+	    }
+
+	    if (address_component.types[0] == "locality"){
+	        console.log("town:"+address_component.long_name);
+	        itemLocality = address_component.long_name;
+	    }
+
+	    if (address_component.types[0] == "country"){ 
+	        console.log("country:"+address_component.long_name); 
+	        itemCountry = address_component.long_name;
+	    }
+
+	    if (address_component.types[0] == "postal_code_prefix"){ 
+	        console.log("pc:"+address_component.long_name);  
+	        itemPc = address_component.long_name;
+	    }
+
+	    if (address_component.types[0] == "street_number"){ 
+	        console.log("street_number:"+address_component.long_name);  
+	        itemSnumber = address_component.long_name;
+	    }
+	    //return false; // break the loop   
+	});*/
+}
 function getCurAdd(){
 	var add = getCookie("address");
 	if(add != "" && add != "null")
@@ -99,11 +150,13 @@ function getLongitude(){
 function show_error(error){
    switch(error.code) {
         case error.PERMISSION_DENIED:
+        	getLatLogByIp();
         	document.getElementById("locationCheckYellowBottom").style.display = 'block';
         	setTimeout('hidelocationCheckYellowBottom()', 3000);
             setCookie("address", "null", 365);
             break;
         case error.POSITION_UNAVAILABLE:
+        	getLatLogByIp();
             console.log("Location position unavailable.");
             break;
         case error.TIMEOUT:

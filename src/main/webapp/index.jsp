@@ -95,8 +95,9 @@
             <!-- <a href="https://cityhalt.com" class="logo"><strong>city</strong> HALT</a>  -->
             <a href="./"><img class="logo" src="images/logo.png"></a>            
             <a href="#navPanel" class="navPanelToggle" ><span class="fa fa-bars"></span></a> 
-         </div>
+         </div> 
       </header>
+      
       <!-- Banner -->
       <section id="banner" style="height: 100%;padding-top: 2em;">
          <div class="inner">
@@ -118,7 +119,10 @@
                                  <option value="vijayawada">Vijayawada</option>                                 
                                  <option value="tirupati">Tirupati</option>
                               </select> -->
-                              <select name="city" id="searchCity" required=""><!-- onchange="changeCity()" -->
+                              <input class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" />  
+                              <input type="hidden" name="lat" id="lat" value="">
+                              <input type="hidden" name="lon" id="lon" value="">
+                              <!-- <select name="city" id="searchCity" required="">onchange="changeCity()"
 								<option value="-1">Select City</option>
 								<option value="delhi">Delhi</option>
 								<option value="mumbai">Mumbai</option>
@@ -130,7 +134,38 @@
 								<option value="pune">Pune</option>
 								<option value="surat">Surat</option>
 								<option value="jaipur">Jaipur</option>
-							</select>
+							</select> -->
+							<script> 
+							  function initMap() {
+									var autoComplete = new google.maps.places.Autocomplete(
+									/** @type {!HTMLInputElement} */ (
+										document.getElementById('searchCity')), {
+									  types: ['(regions)']  //regions ,cities
+									});
+									
+									google.maps.event.addListener(autoComplete, 'place_changed', function() {
+										var loc = this.getPlace().geometry.location;
+										document.getElementById("lat").value = loc.lat();
+										document.getElementById("lon").value = loc.lng();
+										//alert(loc.lat()+"----"+loc.lng());
+									});
+							  }
+							  
+							</script>
+							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&libraries=places&callback=initMap" async defer></script>
+  						<style>
+  							   .searchCity{
+	  							    transition: .5s;
+								    color: #fff !important;
+								    background-color: rgba(255, 0, 0, 0) !important;
+								    border: 1px solid #c5c5c5;
+								    border-width: 1px;
+								    height: 2em !important;
+								    font-family: inherit;
+								    font-weight: 100;
+								    border-radius: 0 !important;
+						    	}
+  						</style>
                            </header>
                         </article>
                         <!-- &nbsp;&nbsp;&nbsp; 
@@ -145,7 +180,7 @@
                         <article style="background-color: rgba(255, 0, 0, 0);">
                            <header class="selectCity" style="background-color: rgba(255, 0, 0, 0);">
                               <select name="category" id="searchCategories" required="">                                 
-								<option value="all">All</option><option value="atms">atms</option><option value="auto_mobiles">auto mobiles</option><option value="banks">banks</option><option value="bars">bars</option><option value="beauty_parlours">beauty parlours</option><option value="blood_and_eye_banks">blood and eye banks</option><option value="bus_stations">bus stations</option><option value="coffee_shops">coffee shops</option><option value="colleges">colleges</option><option value="computer_institutes">computer institutes</option><option value="computer_services">computer services</option><option value="dance_schools">dance schools</option><option value="fashion_and_cloth_stores">fashion and cloth stores</option><option value="fire_stations">fire stations</option><option value="gas_and_petrol_stations">gas and petrol stations</option><option value="gift_shops">gift shops</option><option value="govt_offices">govt offices</option><option value="grocery_stores">grocery stores</option><option value="hardware_shops">hardware shops</option><option value="hospitals">hospitals</option><option value="hostels">hostels</option><option value="hotels">hotels</option><option value="insurance_companies">insurance companies</option><option value="jewellery_shops">jewellery shops</option><option value="libraries">libraries</option><option value="lodges">lodges</option><option value="mobile_shops">mobile shops</option><option value="museums">museums</option><option value="packers_and_movers">packers and movers</option><option value="parcel_and_couriers">parcel and couriers</option><option value="parks">parks</option><option value="party_halls">party halls</option><option value="pharmacy">pharmacy</option><option value="photo_studios">photo studios</option><option value="play_schools">play schools</option><option value="police_stations">police stations</option><option value="railway_stations">railway stations</option><option value="real_estate_agents">real estate agents</option><option value="restaurents">restaurents</option><option value="schools">schools</option><option value="shopping_malls">shopping malls</option><option value="software_companies">software companies</option><option value="stadiums">stadiums</option><option value="temples">temples</option><option value="theaters">theaters</option><option value="tours_and_travels">tours and travels</option><option value="universities">universities</option>
+								<option value="-1">select category</option><option value="atms">atms</option><option value="auto_mobiles">auto mobiles</option><option value="banks">banks</option><option value="bars">bars</option><option value="beauty_parlours">beauty parlours</option><option value="blood_and_eye_banks">blood and eye banks</option><option value="bus_stations">bus stations</option><option value="coffee_shops">coffee shops</option><option value="colleges">colleges</option><option value="computer_institutes">computer institutes</option><option value="computer_services">computer services</option><option value="dance_schools">dance schools</option><option value="fashion_and_cloth_stores">fashion and cloth stores</option><option value="fire_stations">fire stations</option><option value="gas_and_petrol_stations">gas and petrol stations</option><option value="gift_shops">gift shops</option><option value="govt_offices">govt offices</option><option value="grocery_stores">grocery stores</option><option value="hardware_shops">hardware shops</option><option value="hospitals">hospitals</option><option value="hostels">hostels</option><option value="hotels">hotels</option><option value="insurance_companies">insurance companies</option><option value="jewellery_shops">jewellery shops</option><option value="libraries">libraries</option><option value="lodges">lodges</option><option value="mobile_shops">mobile shops</option><option value="museums">museums</option><option value="packers_and_movers">packers and movers</option><option value="parcel_and_couriers">parcel and couriers</option><option value="parks">parks</option><option value="party_halls">party halls</option><option value="pharmacy">pharmacy</option><option value="photo_studios">photo studios</option><option value="play_schools">play schools</option><option value="police_stations">police stations</option><option value="railway_stations">railway stations</option><option value="real_estate_agents">real estate agents</option><option value="restaurents">restaurents</option><option value="schools">schools</option><option value="shopping_malls">shopping malls</option><option value="software_companies">software companies</option><option value="stadiums">stadiums</option><option value="temples">temples</option><option value="theaters">theaters</option><option value="tours_and_travels">tours and travels</option><option value="universities">universities</option>
 			  				  </select>
                            </header>
                         </article>

@@ -1,6 +1,9 @@
 package com.chaitu.controller;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -21,6 +24,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
@@ -363,4 +368,74 @@ public class CityHaltController {
         return obj;
     }
 
+/*--------------------------------------------------------------------------------------------*/
+    
+	@PostMapping("/rest/write/createDataFile/{city}/{category}")
+    public void createDataFile(@PathVariable String city, @PathVariable String category, @RequestBody JSONObject data) throws Exception {
+
+		String desLoc = "C:/Users/KRISHNA/Desktop/new/";
+		createJsonFile(city, category+".json", data.toString(), desLoc);
+		
+    }
+
+    public static void createJsonFile(String city, String fileName, String data, String destinationLocation) throws IOException{
+		FileOutputStream fop = null;
+		File file;
+		
+		try {
+			//System.out.println(city+"   ---   "+fileName+"   ---   "+destinationLocation);
+			String loc = destinationLocation+city;
+			loc = loc.replace("/", "\\");
+			
+			
+			File dir = new File(loc+"\\");
+	        if (!dir.exists()) {
+	            if (dir.mkdir()) {
+	                System.out.println(dir.getName()+" : Directory is created!");
+	            } else {
+	                System.out.println("Failed to create directory!");
+	            }
+	        }
+
+	        //System.out.println(loc+"\\"+fileName);
+			/*file = new File(destinationLocation+city);
+			System.out.println(file.mkdir());*/
+			
+			file = new File(loc+"\\"+fileName);
+			fop = new FileOutputStream(file);
+
+			// if file doesnt exists, then create it
+			if (!file.exists()) {
+				file.createNewFile();
+			}
+
+			// get the content in bytes
+			byte[] contentInBytes = data.getBytes();
+
+			fop.write(contentInBytes);
+			fop.flush();
+			
+			System.out.println(city+"/"+file.getName()+"  created.");
+			
+
+		}catch(Exception e){System.out.println("createJsonFile(): ");
+				e.printStackTrace();
+		} finally {
+			fop.close();
+		}
+	}
+
+    ///"/rest/get/search/{lat}/{lon}/{cat}/{text}"
+    @GetMapping("/rest/get/search/{lat}/{lon}/{cat}/{text}")
+    public ResponseEntity < Map < String, Integer >> searchGoogleApi(@PathVariable String city) throws Exception {
+    	
+        System.out.println("CityHaltController : /rest/get/getCat/" + city);
+		
+        return null;
+    
+    }
+    
+    
+    
+    
 }
