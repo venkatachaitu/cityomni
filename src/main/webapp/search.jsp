@@ -9,6 +9,7 @@
 	var dar = [];	
 	var lit = 5;
 	var ct = 0;
+	var city, lat, lon, category, searchContent, withIn;
 	var jsonArr = "[";
    window.onload = loadSearchPage();   
     var results; var arr;var map;var infoWindow; var service; var out="", count=1, add="";
@@ -16,30 +17,53 @@
     	try{
     		updateGPSLocation();
             var loc = getCookie("location");
-            var city = getUrlVars()["city"];
+            city = getUrlVars()["city"];
+            withIn = getUrlVars()["withIn"];
             document.getElementById("locationHome").innerHTML = loc;
             if(loc == "" || loc == null){
            	 document.getElementById("locationHome").innerHTML = city;
            	 loc = city;
             }           
-            var category = getUrlVars()["category"];
-            var searchContent = getUrlVars()["searchContent"];
+            category = getUrlVars()["category"];
+            searchContent = getUrlVars()["searchContent"].trim();
             if(searchContent == "" || searchContent == null){
          	   searchContent = "qwertyqwerty";
             }
             var sf = searchContent.split("%2B");
+            //alert(sf.length);
             searchContent = "";
             for(var i = 0; i < sf.length; i++){
-         	   var tf = sf[i] + '+';
-         	   searchContent = searchContent + tf;
+         	   if(sf.length >1){
+	            	var tf = sf[i] + '+';
+	         	   searchContent = searchContent + tf;
+         	   }else{
+         		  searchContent = sf[0]
+         	   }
             }
-            var add = getCurAdd();
-            var lat = getUrlVars()["lat"]; var lon = getUrlVars()["lon"];
+            
+            
+            var add = getCurAdd(); 
+            
+            /* var searchCity, searchLat, searchLon, searchCategory, searchContent;
+            serarchCity = getUrlVars()["city"];
+            searchLat = getUrlVars()["lat"];
+            searchLon = getUrlVars()["lon"];
+            searchCategory = getUrlVars()["category"];
+            
+            serarchCity = serarchCity.replace(/%2C/g,",");
+            
+            setCookieWithOutReload("searchCity", addSpaces(serarchCity), 365);
+            setCookieWithOutReload("searchLat", searchLat, 365);
+            setCookieWithOutReload("searchLon", searchLon, 365);
+            setCookieWithOutReload("searchCategory", searchCategory, 365); */
+            
+            lat = getUrlVars()["lat"]; lon = getUrlVars()["lon"];
+            
 	       map = new google.maps.Map(""); 
 	       service = new google.maps.places.PlacesService(map);
 	   		var request = {
 	   			  location: new google.maps.LatLng(lat, lon),//(12.9066751, 80.0945172),
-	   			  radius: 100000,
+	   			  radius: withIn,
 	   			  name: searchContent,
 	   			  //types: category,
 	   			  keyword: category
@@ -48,14 +72,17 @@
 	           service.radarSearch(request, callback3);
 	          // alert();
     	}catch(e){alert(e);}
+    	
+    	
     }
        	   	  
      function callback3(results, status) {
  	   	 	this.results = results;
- 	   	 	alert(results.length);
+ 	   		document.getElementById("titleHeader").innerHTML = results.length+" items available.";
+        	//alert(results.length+" available.");
  	   	 	console.log("Nb results:" + results.length);
  	           if (status != google.maps.places.PlacesServiceStatus.OK) {
- 	             alert(status);
+ 	             alert("callback3:status: "+status);
  	             return;
  	           }  
  	        viewMoreSearch(); 
@@ -81,7 +108,7 @@
    	  }
    	  function callback1(place, status) {
    			if (status == google.maps.places.PlacesServiceStatus.OK) { 
-   				console.log(kk+"-----"+place.name +"---"+place.geometry.location.lat()); 	
+   				console.log(kk+": "+place.name +"---"+place.geometry.location.lat()); 	
    				/*---------------Start--------------------*/
    				var img_url="", name="", address = "", website = "", phoneNumber = "", rating = "", 
 	   				lon = "", lat = "", distance = "", map = "", adr = "", reviews="", reviewsLink="";
@@ -91,14 +118,14 @@
    				website = place.website;
    				 
               distance = findDistance(place.geometry.location.lat(), place.geometry.location.lng());                                               
-              out = out + "<article class='article' data-percentage='"+distance+"'><ul><li>";                                               
+              out = out + "<article class='article' data-percentage='"+distance+"'><ul>";                                               
               if (img_url.indexOf("cleardot") == -1) {
-                  out = out + "<span class=imageSpan><img src='" + img_url + "' width='100%' id=" + count + " onclick=openPreview(" + count + ") style=cursor:pointer;></span>";
+                  out = out + "<li><span class=imageSpan><img src='" + img_url + "' width='100%' id=" + count + " onclick=openPreview(" + count + ") style=cursor:pointer;></span></li>";
               }
               if (img_url.indexOf("cleardot") != -1) {
-                  out = out + "<span class=imageSpan><img src='images/noImage.jpg' width=100% id=" + count + " style=cursor:pointer;></span>";
-              }
-              out = out + "</li><li><span class=detailsSpan><header><h3>";
+                  out = out + "<li><span class=imageSpan><img src='images/noImage.jpg' width=100% id=" + count + " style=cursor:pointer;></span></li>";
+              } 
+              out = out + "<li><span class=detailsSpan><header><h3>";
               out = out + place.name;
               out = out + "</h3></header><br><p class=address>";
               out = out + adr;
@@ -141,6 +168,7 @@
    			//var dd = document.getElementById("viewList").innerHTML;
    			//dd = dd+out;
    			document.getElementById("viewList").innerHTML = out;
+   			setSelectionWith();
    	  }
  
    function sorting(json_object, key_to_sort_by) {
@@ -433,6 +461,57 @@
    };
 </script>
 <br><br>
+<script>
+	function changeWithIn(){
+		
+		var aa = window.location.toString();
+		var baa = aa.split('?');
+		
+		var ur = baa[0]+ "?city="+city+"&lat="+getUrlVars()["lat"].trim()+"&lon="+getUrlVars()["lon"].trim()+"&withIn="+document.getElementById("withIn").value+"&category="+category.trim()+"&searchContent="+searchContent.trim();
+		/* var aa = paramReplace(window.location, 'withIn', document.getElementById("withIn").value);
+		aa = aa.replace(/(withIn=).*?(&)/,'$1' +  + '$2'); */
+		window.location.href = ur;
+		//alert(baa[0]);
+		 
+          
+	}
+	function setSelectionWith(){
+		var e1 = document.getElementById("withIn");
+        //alert(e1.options.length);
+        for (var ii = 0; ii <= e1.options.length; ii++) {
+            var secLoc = e1.options[ii].value;
+            if (getUrlVars()["withIn"].trim() == secLoc.trim().toLowerCase()) {
+                e1.selectedIndex = ii;
+            }
+        }
+	}
+</script>
+<div class="sortSelection">
+	with in : <select name="withIn" id="withIn" onchange="changeWithIn()">
+		<option value="1000">1000 mtrs.</option>
+		<option value="10000">10000 mtrs.</option>
+		<option value="100000">100000 mtrs.</option>
+		<option value="100000">500000 mtrs.</option>
+		<option value="100000">1000000 mtrs.</option>
+	</select>
+</div>
+
+<style>
+	.sortSelection{
+		    position: fixed;
+		    z-index: 9999999999999999999999999999999999999;
+		    bottom: 0;
+		    margin: auto;
+		    margin-left: calc(50% - 100px);
+		    background-color: white;
+		    color: black;
+		    border: 1px solid #212121;
+		    padding: 1px 14px;
+	}
+	.sortSelection select{
+		border: 0px;
+	}
+</style>
 <%@include file="footer.jsp" %>
 
 

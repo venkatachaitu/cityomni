@@ -25,29 +25,34 @@ function loadIndexPage() {
     updateLocationinSearchBox();
 }
 function updateLocationinSearchBox() {
-	document.getElementById("searchCity").value = getCookie("locAddress");
+	//alert(getCookie("searchCity"))
+	/*if(getCookie("searchCity") != null){
+		if(getCookie("searchCity") != ''){
+			document.getElementById("searchCity").value = getCookie("searchCity");
+		}else{
+			document.getElementById("searchCity").value = getCookie("locAddress");
+		}
+	}else{*/
+			document.getElementById("searchCity").value = getCookie("locAddress");
+	/*}*/
 }
 function getLatLogByIp() {
 	$.ajax({
-	    type: "GET",
-	    dataType: 'json',
-	    url: "http://freegeoip.net/json/",
-	     
-	    crossDomain : true,
-	    xhrFields: {
-	        withCredentials: true
-	    }
-	})
-	    .done(function( data ) {
+		    type: "GET",
+		    dataType: 'json',
+		    url: "http://freegeoip.net/json/",
+		    crossDomain : true,
+		    xhrFields: {
+		        withCredentials: true
+		    }
+		}).done(function( data ) {
 	    	setCookieWithOutReload("clattitude", data.latitude, 365);
 	    	setCookieWithOutReload("clongitude", data.longitude, 365);
-	    	
-				setAddressForSearchBox(data);
-	         initializeCurrent(data.latitude, data.longitude);
-	    })
-	    .fail( function(xhr, textStatus, errorThrown) {
-	        alert(xhr.responseText);
-	        alert(textStatus);
+	    	setAddressForSearchBox(data);
+	        initializeCurrent(data.latitude, data.longitude);
+	    }).fail( function(xhr, textStatus, errorThrown) {
+	        console.log("getLatLogByIp:xhr.responseText"+xhr.responseText);
+	        console.log("getLatLogByIp:textStatus"+textStatus);
 	    });
 	}
 function setCookieWithOutReload(cname, cvalue, exdays) {
@@ -70,7 +75,7 @@ function isLocationEnable() {
     updateGPSLocation();
     var location = getCookie("location");
     if (location != "") {
-        document.getElementById('locationHome').innerHTML = location;
+        //document.getElementById('locationHome').innerHTML = location;
         locationFlag = true;
         return locationFlag;
     } else {
@@ -362,7 +367,7 @@ function addSpaces(str) {
     var s = str.trim();
     var temp = "";
     for (var i = 0; i < s.length; i++) {
-        if (s[i] == "_")
+        if (s[i] == "_" || s[i] == "+")
             temp = temp + " ";
         else
             temp = temp + s[i].toLowerCase();
