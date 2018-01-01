@@ -13,7 +13,6 @@
 	       			}
 	   			}
 	   			if(loc == ""){
-	   				console.log("services : location is "+loc);
 	   				setCookieWithOutReload("location", "chennai", 365);
 	   				loc = getCookie("location");
 	   			}

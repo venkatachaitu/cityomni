@@ -125,7 +125,7 @@ function setAddressForSearchBox(results){
 	});*/
 }
 function getCurAdd(){
-	var add = getCookie("address");
+	var add = getCookie("locAddress");
 	if(add != "" && add != "null")
 		return addStarsToString(add);
 	else

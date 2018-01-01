@@ -20,9 +20,6 @@
 	   				loc = getCookie("location");
 	   			}
 	   			document.getElementById('locationHome').innerHTML = loc;
-	   			
-	   			$('head').append('<meta name="description" content="Welcome to CITYHALT one place for complete city information and services like Atms, Auto Mobiles, Banks, Bars, Beauty Parlours, Blood And Eye Banks, Bus Stations, Coffee Shops, Colleges, Computer Institutes, Computer Services, Dance Schools, Fashion And Cloth Stores, Fire Stations, Gas And Petrol Stations, Gift Shops, Govt Offices, Grocery Stores, Hardware Shops, Hospitals, Hostels, Hotels, Insurance Companies, Jewellery Shops, Libraries, Lodges, Mobile Shops, Museums, Packers And Movers, Parcel And Couriers, Parks, Party Halls, Pharmacy, Photo Studios, Play Schools, Police Stations, Railway Stations, Real Estate Agents, Restaurents, Schools, Shopping Malls, Software Companies, Stadiums, Temples, Theaters, Tours And Travels, Universities in cityhalt, city halt, cityhalt.com services in "+loc+">');
-	   			
 		   	}
 		   	function setCookieWithOutReload(cname, cvalue, exdays) {
 		   	    try {

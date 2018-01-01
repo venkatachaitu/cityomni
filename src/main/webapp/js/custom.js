@@ -10,10 +10,10 @@ function loadIndexPage() {
 	   			}
 			}
 			if(loc == ""){
-				console.log("Home Page : location is "+loc);
 				setCookieWithOutReload("location", "chennai", 365);
 				loc = getCookie("location");
 			}else{			
+				console.log("Home Page : location is "+loc);
 				setCookieWithOutReload("location", loc, 365);
 			}    	
     } else {
@@ -75,7 +75,7 @@ function isLocationEnable() {
     updateGPSLocation();
     var location = getCookie("location");
     if (location != "") {
-        //document.getElementById('locationHome').innerHTML = location;
+        document.getElementById('locationHome').innerHTML = location;
         locationFlag = true;
         return locationFlag;
     } else {

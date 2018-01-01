@@ -41,7 +41,7 @@
       
       
       <!-- Scripts -->		
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&callback=initMap" type="text/javascript"></script> 
+      <script async="" defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&callback=initMap" type="text/javascript"></script> 
       <script src="js/jquery.min.js"></script>
       <script src="js/skel.min.js"></script>
       <script src="js/util.js"></script>
@@ -82,10 +82,10 @@
       <header id="header" >
          <div class="inner">
             <nav id="nav" class="menuNav">
-               <!-- <span onclick="changeLocation()" class="headerMenu" >
+                <span style="display: none;" onclick="changeLocation()" class="headerMenu" >
                <i class="fa fa-map-marker fa-fw"></i>
                <span id="locationHome"></span>
-               </span> -->
+               </span>  
                <a class="headerMenu" href="./">Home</a>
                <a class="headerMenu" href="./aboutUS">AboutUs</a>
                <a class="headerMenu" href="./metroCities">Metro Cities</a>
@@ -152,9 +152,8 @@
 									});
 							  }
 							  
-							</script>
-							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&libraries=places&callback=initMap" async defer></script>
-  						<style>
+							</script> 
+						<style>
   							   .searchCity{
 	  							    transition: .5s;
 								    color: #fff !important;

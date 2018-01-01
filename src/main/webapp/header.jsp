@@ -41,7 +41,7 @@
       
  
       <!-- Scripts -->
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&callback=initMap" type="text/javascript"></script> 
+      <script async="" defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&callback=initMap" type="text/javascript"></script> 
       <script src="js/jquery.min.js"></script>
       <script src="js/skel.min.js"></script>
       <script src="js/util.js"></script>
@@ -93,7 +93,7 @@
             <i id="searchView" style="display: inline-block; font-size:1.2em;" class="fa fa-search searchIcon" id="searchIcon" aria-hidden="true" onclick="viewSearchBox()"></i>
             <i id="searchClose" style="display: none;font-size:1.2em;" class="fa fa-times searchIcon" id="searchIcon" aria-hidden="true" onclick="viewSearchBox()"></i>					
             <nav id="nav" class="menuNav" style="margin-top: -22px;">						
-               <span onclick="changeLocation()" class="headerMenu" >
+               <span style="display: none;" onclick="changeLocation()" class="headerMenu" >
                <i class="fa fa-map-marker fa-fw"></i>
                <span id="locationHome"></span>
                </span>
@@ -117,7 +117,7 @@
                   <div class="flex flex-2 searchInnerDiv" id="">
                      <article style="width: 46% !important;margin-right: 15px;">
                         <header class="selectCity">
-                           <select name="city" id="searchCity" required="">
+                           <!-- <select name="city" id="searchCity" required="">
 								<option value="-1">Select City</option>
 								<option value="delhi">Delhi</option>
 								<option value="mumbai">Mumbai</option>
@@ -129,15 +129,48 @@
 								<option value="pune">Pune</option>
 								<option value="surat">Surat</option>
 								<option value="jaipur">Jaipur</option>
-							</select>
+							</select> -->
+							<input class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" />  
+                            <input type="hidden" name="lat" id="lat" value="">
+                            <input type="hidden" name="lon" id="lon" value="">
+                            <input type="hidden" name="withIn" value="1000">
+                            <script> 
+							  function initMap() {
+									var autoComplete = new google.maps.places.Autocomplete(
+									/** @type {!HTMLInputElement} */ (
+										document.getElementById('searchCity')), {
+									  types: ['(regions)']  //regions ,cities
+									});
+									
+									google.maps.event.addListener(autoComplete, 'place_changed', function() {
+										var loc = this.getPlace().geometry.location;
+										document.getElementById("lat").value = loc.lat();
+										document.getElementById("lon").value = loc.lng();
+										//alert(loc.lat()+"----"+loc.lng());
+									});
+							  }
+							  
+							</script>
+						<style>
+  							   .searchCity{
+	  							    transition: .5s;
+								    color: #fff !important;
+								    background-color: rgba(255, 0, 0, 0) !important;
+								    border: 1px solid #c5c5c5;
+								    border-width: 1px;
+								    height: 2em !important;
+								    font-family: inherit;
+								    font-weight: 100;
+								    border-radius: 0 !important;
+						    	}
+  						</style>
                         </header>
                      </article>
                      <article style="width: 46% !important;">
                         <header class="selectCity">
-                           <select name="category" id="searchCategories" required >
-                              <option value="-1">Select Category</option>
-                              <option value="atms">atms</option><option value="auto_mobiles">auto mobiles</option><option value="banks">banks</option><option value="bars">bars</option><option value="beauty_parlours">beauty parlours</option><option value="blood_and_eye_banks">blood and eye banks</option><option value="bus_stations">bus stations</option><option value="coffee_shops">coffee shops</option><option value="colleges">colleges</option><option value="computer_institutes">computer institutes</option><option value="computer_services">computer services</option><option value="dance_schools">dance schools</option><option value="fashion_and_cloth_stores">fashion and cloth stores</option><option value="fire_stations">fire stations</option><option value="gas_and_petrol_stations">gas and petrol stations</option><option value="gift_shops">gift shops</option><option value="govt_offices">govt offices</option><option value="grocery_stores">grocery stores</option><option value="hardware_shops">hardware shops</option><option value="hospitals">hospitals</option><option value="hostels">hostels</option><option value="hotels">hotels</option><option value="insurance_companies">insurance companies</option><option value="jewellery_shops">jewellery shops</option><option value="libraries">libraries</option><option value="lodges">lodges</option><option value="mobile_shops">mobile shops</option><option value="museums">museums</option><option value="packers_and_movers">packers and movers</option><option value="parcel_and_couriers">parcel and couriers</option><option value="parks">parks</option><option value="party_halls">party halls</option><option value="pharmacy">pharmacy</option><option value="photo_studios">photo studios</option><option value="play_schools">play schools</option><option value="police_stations">police stations</option><option value="railway_stations">railway stations</option><option value="real_estate_agents">real estate agents</option><option value="restaurents">restaurents</option><option value="schools">schools</option><option value="shopping_malls">shopping malls</option><option value="software_companies">software companies</option><option value="stadiums">stadiums</option><option value="temples">temples</option><option value="theaters">theaters</option><option value="tours_and_travels">tours and travels</option><option value="universities">universities</option>			  				  
-                           </select>
+                           <select name="category" id="searchCategories" required="">                                 
+							 <option value="-1">select category</option><option value="atm">atms</option><option value="auto_mobiles">auto mobiles</option><option value="bank">banks</option><option value="bar">bars</option><option value="beauty_parlour">beauty parlours</option><option value="blood_and_eye_bank">blood and eye banks</option><option value="bus_station">bus stations</option><option value="coffee_shop">coffee shops</option><option value="college">colleges</option><option value="computer_institute">computer institutes</option><option value="computer_service">computer services</option><option value="dance_school">dance schools</option><option value="fashion_and_cloth_store">fashion and cloth stores</option><option value="fire_station">fire stations</option><option value="gas_and_petrol_station">gas and petrol stations</option><option value="gift_shop">gift shops</option><option value="govt_office">govt offices</option><option value="grocery_store">grocery stores</option><option value="hardware_shop">hardware shops</option><option value="hospital">hospitals</option><option value="hostel">hostels</option><option value="hotel">hotels</option><option value="insurance_company">insurance companies</option><option value="jewellery_store">jewellery shops</option><option value="library">libraries</option><option value="lodge">lodges</option><option value="mobile_store">mobile shops</option><option value="museum">museums</option><option value="packers_and_movers">packers and movers</option><option value="parcel_and_courier">parcel and couriers</option><option value="park">parks</option><option value="party_hall">party halls</option><option value="pharmacy">pharmacy</option><option value="photo_studio">photo studios</option><option value="play_school">play schools</option><option value="police_station">police stations</option><option value="railway_station">railway stations</option><option value="real_estate_agents">real estate agents</option><option value="restaurent">restaurents</option><option value="school">schools</option><option value="shopping_mall">shopping malls</option><option value="software_company">software companies</option><option value="stadium">stadiums</option><option value="temple">temples</option><option value="cinema">theaters</option><option value="tours_and_travels">tours and travels</option><option value="university">universities</option>
+		  				   </select>
                         </header>
                      </article>
                   </div>

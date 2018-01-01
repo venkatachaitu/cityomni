@@ -12,7 +12,7 @@
 	var city, lat, lon, category, searchContent, withIn;
 	var jsonArr = "[";
    window.onload = loadSearchPage();   
-    var results; var arr;var map;var infoWindow; var service; var out="", count=1, add="";
+    var results; var arr;var map;var infoWindow; var service; var out="", count=1; var add; var lat; var lon;
     function loadSearchPage() {
     	try{
     		updateGPSLocation();
@@ -40,25 +40,9 @@
          		  searchContent = sf[0]
          	   }
             }
-            
-            
-            var add = getCurAdd(); 
-            
-            /* var searchCity, searchLat, searchLon, searchCategory, searchContent;
-            serarchCity = getUrlVars()["city"];
-            searchLat = getUrlVars()["lat"];
-            searchLon = getUrlVars()["lon"];
-            searchCategory = getUrlVars()["category"];
-            
-            serarchCity = serarchCity.replace(/%2C/g,",");
-            
-            setCookieWithOutReload("searchCity", addSpaces(serarchCity), 365);
-            setCookieWithOutReload("searchLat", searchLat, 365);
-            setCookieWithOutReload("searchLon", searchLon, 365);
-            setCookieWithOutReload("searchCategory", searchCategory, 365); */
-            
-            lat = getUrlVars()["lat"]; lon = getUrlVars()["lon"];
-            
+            add = getCurAdd();  
+            lat = getUrlVars()["lat"].trim(); 
+            lon = getUrlVars()["lon"].trim();
 	       map = new google.maps.Map(""); 
 	       service = new google.maps.places.PlacesService(map);
 	   		var request = {
@@ -72,8 +56,6 @@
 	           service.radarSearch(request, callback3);
 	          // alert();
     	}catch(e){alert(e);}
-    	
-    	
     }
        	   	  
      function callback3(results, status) {
@@ -108,14 +90,21 @@
    	  }
    	  function callback1(place, status) {
    			if (status == google.maps.places.PlacesServiceStatus.OK) { 
-   				console.log(kk+": "+place.name +"---"+place.geometry.location.lat()); 	
+   				console.log(kk+": "+place.name); 	
    				/*---------------Start--------------------*/
    				var img_url="", name="", address = "", website = "", phoneNumber = "", rating = "", 
-	   				lon = "", lat = "", distance = "", map = "", adr = "", reviews="", reviewsLink="";
+	   				 lat="", lon="", distance = "", map = "", adr = "", reviews="", reviewsLink="";
                
    				
    				adr = place.formatted_address;
    				website = place.website;
+   				name = place.name;
+
+   	            lat = getUrlVars()["lat"].trim(); 
+   	            lon = getUrlVars()["lon"].trim();
+   				
+   				//lat=place.geometry.location.lat();
+   				//lon=place.geometry.location.lng()
    				 
               distance = findDistance(place.geometry.location.lat(), place.geometry.location.lng());                                               
               out = out + "<article class='article' data-percentage='"+distance+"'><ul>";                                               
@@ -132,11 +121,12 @@
               out = out + "</p>";
               out = out + "<footer class=bottom>";
 
-              if (phoneNumber != ""   && phoneNumber != null && phoneNumber.indexOf("null") == -1) {
+              if (phoneNumber != "" && phoneNumber != null && phoneNumber.indexOf("null") == -1) {
                   out = out + "<div ><i class='fa fa-phone' aria-hidden='true'></i>&nbsp;" + normalizePhno(phoneNumber) + "</div>";
               }
-               out = out + "<div ><i class='fa fa-star' aria-hidden='true'></i>&nbsp;" + place.rating + "</div>";
-              
+              if (place.rating != "" && place.rating != null) {
+	               out = out + "<div ><i class='fa fa-star' aria-hidden='true'></i>&nbsp;" + place.rating + "</div>";
+              }
               if (website != ""  && website != null && website.indexOf("null") == -1) {
                   out = out + "<div  ><a target=# class=bottom href=" + website + "><i class='fa fa-globe' aria-hidden='true'></i></a></div>";
               }
@@ -144,7 +134,7 @@
               var ad = addStarsToString(adr);
               var nm = addStarsToString(name);
 				if(adr != "" ){						    	
-			    	out = out + "<div  ><a target=# class=bottom href=https://www.google.co.in/maps/place/"+nm+"+"+ad+"/@"+lat+","+lon+"><i class='fa fa-map-marker fa-fw' aria-hidden='true'></i></a></div>";
+			    	out = out + "<div  ><a target=# class=bottom href=https://www.google.co.in/maps/place/"+nm+"+"+adr.substr(0, adr.indexOf(' '))+"/@"+place.geometry.location.lat()+","+place.geometry.location.lng()+"><i class='fa fa-map-marker fa-fw' aria-hidden='true'></i></a></div>";
 			    }
               if(distance != 'null'  && add != 'null'){
 					map = "https://www.google.co.in/maps/dir/"+add+"/"+nm+"+"+ad+"/@"+lat+","+lon;	
@@ -193,7 +183,7 @@
 	    return temp;
 	}
 	function loadMore() {
-		console.log(jsonArr);
+		//console.log(jsonArr);
 		for (var i = ct; i < (ct+lit); i++) {   			 
 			$("#viewList").append(dar[i]);
 			document.getElementById("loadingImage").style.display = "none";
@@ -240,21 +230,6 @@
                		menuItems = menuItems + "<a href=viewList?location="+loloc+"&category="+key+" class='w3-bar-item w3-button'>"+addSpaces(key)+"</a>";
             	}
 	        }
-        	/* $.getJSON(u + "rest/get/getCat/" + loloc.toLowerCase(), function(data) {
-	            data = sortObject(data);
-	            $.each(data, function(key, val) {
-	                if (key != "undefined") { 
-	                	//console.log(key);
-	                	if(cat1 == key){
-	                		menuItems = menuItems + "<a href=viewList?location="+loloc+"&category="+key+" class='w3-bar-item w3-button' style='font-weight: 600;color: #209cff;'>"+addSpaces(key)+"</a>";
-	                	}else{	                	
-	                   		menuItems = menuItems + "<a href=viewList?location="+loloc+"&category="+key+" class='w3-bar-item w3-button'>"+addSpaces(key)+"</a>";
-	                	}
-	                }
-	            }); 
-	            flagCheck = false;
-	            document.getElementById("rightNavMenu").innerHTML = menuItems;
-	        }); */
         	document.getElementById("rightNavMenu").innerHTML = menuItems;
 		}
 	    document.getElementById("mySidebar").style.display = "block";
@@ -491,8 +466,8 @@
 		<option value="1000">1000 mtrs.</option>
 		<option value="10000">10000 mtrs.</option>
 		<option value="100000">100000 mtrs.</option>
-		<option value="100000">500000 mtrs.</option>
-		<option value="100000">1000000 mtrs.</option>
+		<option value="500000">500000 mtrs.</option>
+		<option value="1000000">1000000 mtrs.</option>
 	</select>
 </div>
 
