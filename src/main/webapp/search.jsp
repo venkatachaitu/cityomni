@@ -3,7 +3,7 @@
 <%@include file="header.jsp" %>
 <br><br>  
  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.js"></script> -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,visualization&v=3.exp&sensor=false"></script> 
+<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places,visualization&v=3.exp"></script> --> 
 <script>
 	var dar = [];	
 	var lit = 5;
