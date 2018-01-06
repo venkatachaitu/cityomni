@@ -191,8 +191,8 @@
 					<!-- 
 					<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&libraries=places&callback=initMap" async defer></script>							
 					  -->
-					 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,visualization&v=3.exp&callback=initMap" async="defer"></script>
-					 
+					 <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,visualization&v=3.exp&callback=initMap" async="defer"></script>
+					  -->
 					<script>
                     	function clearSearchCity(){
                     		document.getElementById('searchCity').value = '';

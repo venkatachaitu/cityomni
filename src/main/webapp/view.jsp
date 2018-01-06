@@ -1,4 +1,6 @@
 <%@include file="header.jsp" %>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&libraries=places&callback=initMap" async defer></script>							
+					
 <script>
    window.onload = view();
    	function view(){			
