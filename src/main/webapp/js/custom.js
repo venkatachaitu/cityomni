@@ -222,6 +222,7 @@ function viewSearchBox() {
         document.getElementById('searchBlock').style.display = 'block';
         document.getElementById('searchClose').style.display = 'inline-block';
         document.getElementById('searchView').style.display = 'none';
+        document.getElementById("header").style.position = "inherit";
         try {
             var selectCheck = document.getElementById('searchCategories');
             if (selectCheck.options.length < 2) {
@@ -272,6 +273,7 @@ function viewSearchBox() {
     	document.getElementById('searchBlock').style.display = 'none';
     	document.getElementById('searchClose').style.display = 'none';
         document.getElementById('searchView').style.display = 'inline-block';
+        document.getElementById("header").style.position = "fixed";
     }
 
 }

@@ -81,7 +81,7 @@ function setAddressForSearchBox(results){
 			 city = results[i].address_components[0].long_name,
 			state = results[i].address_components[2].long_name;
 			setCookie("locAddress", city + ", " + state, 365);
-			if(document.getElementById("lat") != null){
+			if(document.getElementById("lat") != null && document.getElementById("lon") != null){
 		    	document.getElementById("lat").value = results[i].geometry.location.lat();
 				document.getElementById("lon").value = results[i].geometry.location.lng();
 	    	} 

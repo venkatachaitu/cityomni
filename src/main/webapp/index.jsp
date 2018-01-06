@@ -41,7 +41,7 @@
       
       
       <!-- Scripts -->		
-       <script src="js/jquery.min.js"></script>
+      <script src="js/jquery.min.js"></script>
       <script src="js/skel.min.js"></script>
       <script src="js/util.js"></script>
       <script src="js/main.js"></script>
@@ -119,6 +119,19 @@
                                  <option value="tirupati">Tirupati</option>
                               </select> -->
                               <input class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" />  
+                              <span class="bbu" onclick="document.getElementById('searchCity').value = ''">x</span>
+                              <style>
+                               	.bbu{
+                               		width: 11px;
+								    height: 11px;
+								    position: absolute;
+								    margin-top: -3em;
+								    margin-left: 9em;
+								    background-color: #ff000000;
+								    border: none;
+                               	}
+                              
+                              </style>
                               <input type="hidden" name="lat" id="lat" value="">
                               <input type="hidden" name="lon" id="lon" value="">
                               <input type="hidden" name="withIn" value="1000">
@@ -151,8 +164,7 @@
 									});
 							  }
 							</script> 
-							<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&callback=initMap" type="text/javascript"></script> 
-     
+							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&libraries=places&callback=initMap" async defer></script>     
 						<style>
   							   .searchCity{
 	  							    transition: .5s;

@@ -40,8 +40,7 @@
 		<link href='images/favicon.ico' rel='icon' type='image/x-icon'/>
       
  
-      <!-- Scripts -->
-      <script async="" defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&callback=initMap" type="text/javascript"></script> 
+      <!-- Scripts --> 
       <script src="js/jquery.min.js"></script>
       <script src="js/skel.min.js"></script>
       <script src="js/util.js"></script>
@@ -50,6 +49,7 @@
       <script src="js/custom.js"></script>
       <script src="js/jquery-1.10.2.min.js"></script>
       <script src="js/locationCheck.js"></script>
+      
       <link rel="stylesheet" href="css/main.css" />
       <link rel="stylesheet" href="css/bootstrap.min.css" />
       <link rel="stylesheet" href="css/font-awesome.css" />
@@ -62,16 +62,16 @@
 	      ga('create', 'UA-106798328-1', 'auto');
 	      ga('require', 'GTM-M83XQ3G');
 	      ga('send', 'pageview');
-    </script>
-    
-    <!-- <style>.async-hide { opacity: 0 !important} </style> -->
-    <script>
-	    (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
-	    h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
-	    (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
-	    })(window,document.documentElement,'async-hide','dataLayer',4000,
-	    {'GTM-M83XQ3G':true});
-    </script>
+	    </script>
+	    
+	    <!-- <style>.async-hide { opacity: 0 !important} </style> -->
+	    <script>
+		    (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+		    h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+		    (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+		    })(window,document.documentElement,'async-hide','dataLayer',4000,
+		    {'GTM-M83XQ3G':true});
+	    </script>
     
    </head>
    <body>
@@ -117,6 +117,10 @@
                   <div class="flex flex-2 searchInnerDiv" id="">
                      <article style="width: 46% !important;margin-right: 15px;">
                         <header class="selectCity">
+                        	  <input class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" />  
+                              <input type="hidden" name="lat" id="lat" value="">
+                              <input type="hidden" name="lon" id="lon" value="">
+                              <input type="hidden" name="withIn" value="1000">
                            <!-- <select name="city" id="searchCity" required="">
 								<option value="-1">Select City</option>
 								<option value="delhi">Delhi</option>
@@ -130,10 +134,7 @@
 								<option value="surat">Surat</option>
 								<option value="jaipur">Jaipur</option>
 							</select> -->
-							<input class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" />  
-                            <input type="hidden" name="lat" id="lat" value="">
-                            <input type="hidden" name="lon" id="lon" value="">
-                            <input type="hidden" name="withIn" value="1000">
+							 
                             <script> 
 							  function initMap() {
 									var autoComplete = new google.maps.places.Autocomplete(
@@ -149,8 +150,9 @@
 										//alert(loc.lat()+"----"+loc.lng());
 									});
 							  }
-							  
-							</script>
+							</script> 
+							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&libraries=places&callback=initMap" async defer></script>							
+						
 						<style>
   							   .searchCity{
   							        transition: .5s;
