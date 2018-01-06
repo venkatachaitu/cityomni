@@ -75,12 +75,6 @@ function getCurrentAddress(location) {
 	}catch(e){console.log("getCurrentAddress() : "+e);};
 }
 function setAddressForSearchBox(results){
-	//var arrAddress = item.address_components;
-	var itemRoute='';
-	var itemLocality='';
-	var itemCountry='';
-	var itemPc='';
-	var itemSnumber='';
 	var city=false,state=false;
 	for (var i = 0; i < results.length; i++) {
 		if ((!city || !state) && results[i].types[0] === "locality") {
@@ -150,14 +144,14 @@ function getLongitude(){
 function show_error(error){
    switch(error.code) {
         case error.PERMISSION_DENIED:
-        	getLatLogByIp();
         	document.getElementById("locationCheckYellowBottom").style.display = 'block';
         	setTimeout('hidelocationCheckYellowBottom()', 3000);
             setCookie("address", "null", 365);
+            getLatLogByIp();
             break;
         case error.POSITION_UNAVAILABLE:
-        	getLatLogByIp();
-            console.log("Location position unavailable.");
+        	console.log("Location position unavailable.");
+        	getLatLogByIp();            
             break;
         case error.TIMEOUT:
         	console.log("Request timeout.");

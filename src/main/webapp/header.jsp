@@ -153,9 +153,9 @@
 							</script>
 						<style>
   							   .searchCity{
-	  							    transition: .5s;
-								    color: #fff !important;
-								    background-color: rgba(255, 0, 0, 0) !important;
+  							        transition: .5s;
+								    color: #0e0e0e !important;
+								    background-color: rgb(255, 255, 255) !important;
 								    border: 1px solid #c5c5c5;
 								    border-width: 1px;
 								    height: 2em !important;

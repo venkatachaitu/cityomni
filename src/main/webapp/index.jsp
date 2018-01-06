@@ -41,8 +41,7 @@
       
       
       <!-- Scripts -->		
-      <script async="" defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&callback=initMap" type="text/javascript"></script> 
-      <script src="js/jquery.min.js"></script>
+       <script src="js/jquery.min.js"></script>
       <script src="js/skel.min.js"></script>
       <script src="js/util.js"></script>
       <script src="js/main.js"></script>
@@ -151,8 +150,9 @@
 										//alert(loc.lat()+"----"+loc.lng());
 									});
 							  }
-							  
 							</script> 
+							<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&callback=initMap" type="text/javascript"></script> 
+     
 						<style>
   							   .searchCity{
 	  							    transition: .5s;
