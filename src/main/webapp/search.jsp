@@ -2,8 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@include file="header.jsp" %>
 <br><br>  
- <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,visualization&v=3.exp&callback=initMap"></script> 
+ <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.js"></script> -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,visualization&v=3.exp"></script> 
 <script>
 	var dar = [];	
 	var lit = 5;
