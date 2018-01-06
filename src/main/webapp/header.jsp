@@ -118,6 +118,20 @@
                      <article style="width: 46% !important;margin-right: 15px;">
                         <header class="selectCity">
                         	  <input class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" />  
+                              <span class="bbu" onclick="document.getElementById('searchCity').value = ''">x</span>
+                              <style>
+                               	.bbu{
+                               		width: 11px;
+								    height: 11px;
+								    position: absolute;
+								    margin-top: -3em;
+								    margin-left: 9em;
+								    background-color: #ff000000;
+								    border: none;
+								    color: black;
+                               	}
+                              
+                              </style>
                               <input type="hidden" name="lat" id="lat" value="">
                               <input type="hidden" name="lon" id="lon" value="">
                               <input type="hidden" name="withIn" value="1000">

@@ -119,19 +119,28 @@
                                  <option value="tirupati">Tirupati</option>
                               </select> -->
                               <input class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" />  
-                              <span class="bbu" onclick="document.getElementById('searchCity').value = ''">x</span>
+                              <span class="bbu" onclick="clearSearchCity()">x</span>
                               <style>
                                	.bbu{
-                               		width: 11px;
-								    height: 11px;
-								    position: absolute;
-								    margin-top: -3em;
-								    margin-left: 9em;
-								    background-color: #ff000000;
-								    border: none;
+                               		    width: 11px;
+									    height: 11px;
+									    position: absolute;
+									    margin-top: -2.8em;
+									    margin-left: 10em;
+									    background-color: #ff000000;
+									    border: none;
+									    font-size: 0.9em;
+									    color: #c3c3c3;
                                	}
                               
                               </style>
+                              <script>
+                              	function clearSearchCity(){
+                              		document.getElementById('searchCity').value = '';
+                              		document.getElementById('searchCity').focus();
+                              	}
+                              
+                              </script>
                               <input type="hidden" name="lat" id="lat" value="">
                               <input type="hidden" name="lon" id="lon" value="">
                               <input type="hidden" name="withIn" value="1000">

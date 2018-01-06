@@ -18,6 +18,9 @@
     		updateGPSLocation();
             var loc = getCookie("location");
             city = getUrlVars()["city"];
+             
+            //document.getElementById('searchCity').value = decodeURIComponent((city).replace(/\+/g, '%20'));
+            //alert(decodeURIComponent((city).replace(/\+/g, '%20')));
             withIn = getUrlVars()["withIn"];
             document.getElementById("locationHome").innerHTML = loc;
             if(loc == "" || loc == null){
@@ -59,7 +62,21 @@
     }
        	   	  
      function callback3(results, status) {
- 	   	 	this.results = results;
+    	 lat = getLattitude(); 
+         lon = getLongitude();
+         var employees = {
+         	    accounting: []
+         	};
+         
+	         for(var i in results) {    
+	             var item = results[i];   
+	             employees.accounting.push({ 
+	             	"place_id" : results[i]['place_id'],
+	             	"distance" : Math.floor(calcCrow(lat, lon, results[i].geometry.location.lat(), results[i].geometry.location.lng()))
+	             });
+	         }
+	         this.results = employees.accounting.sort(GetSortOrder("distance")); //Pass the attribute to be sorted on  
+ 
  	   		document.getElementById("titleHeader").innerHTML = results.length+" items available.";
         	//alert(results.length+" available.");
  	   	 	console.log("Nb results:" + results.length);
@@ -70,27 +87,41 @@
  	        viewMoreSearch(); 
        }
        	          
-	  var kk = 0 ;var temp = 0;
+	  var kk = 0 ;var temp = 0;var next = 0;
    	  function viewMoreSearch(){
-   		  //alert("kkkkk"+results.length);
-   		 var placeId;
-           for (var i = kk; result = results[i]; i++) {
-   			temp++;
-   			if(temp <= 10){
+ 
+        for(var i = next; i < results.length; i++) {    
+      		console.log(results[i]['distance']+" :" + results[i]['place_id']);
+   			if(temp < 10){
+   				next++;
    				var request = {
    						placeId: results[i]['place_id']
    					};
-   					service = new google.maps.places.PlacesService(map);
-   					service.getDetails(request, callback1);
-   			}else{
+				service = new google.maps.places.PlacesService(map);
+				service.getDetails(request, callback1);
+   			 }else{
    				temp = 0;
+   				//next = next + 11;
    				break;
-   			}
-   		}
+   			}  
+   			temp++;
+             
+        }
    	  }
+   	function GetSortOrder(prop) {  
+   	    return function(a, b) {  
+   	        if (a[prop] > b[prop]) {  
+   	            return 1;  
+   	        } else if (a[prop] < b[prop]) {  
+   	            return -1;  
+   	        }  
+   	        return 0;  
+   	    }  
+   	}
    	  function callback1(place, status) {
    			if (status == google.maps.places.PlacesServiceStatus.OK) { 
-   				console.log(kk+": "+place.name); 	
+   				
+   				//console.log(kk+": "+place.name); 	
    				/*---------------Start--------------------*/
    				var img_url="", name="", address = "", website = "", phoneNumber = "", rating = "", 
 	   				 lat="", lon="", distance = "", map = "", adr = "", reviews="", reviewsLink="";
@@ -100,13 +131,11 @@
    				website = place.website;
    				name = place.name;
 
-   	            lat = getUrlVars()["lat"].trim(); 
-   	            lon = getUrlVars()["lon"].trim();
-   				
-   				//lat=place.geometry.location.lat();
-   				//lon=place.geometry.location.lng()
+   				lat = getLattitude(); 
+   		        lon = getLongitude();
    				 
-              distance = findDistance(place.geometry.location.lat(), place.geometry.location.lng());                                               
+              distance = Math.floor(calcCrow(lat, lon, place.geometry.location.lat(), place.geometry.location.lng()));
+              
               out = out + "<article class='article' data-percentage='"+distance+"'><ul>";                                               
               if (img_url.indexOf("cleardot") == -1) {
                   out = out + "<li><span class=imageSpan><img src='" + img_url + "' width='100%' id=" + count + " onclick=openPreview(" + count + ") style=cursor:pointer;></span></li>";
@@ -436,31 +465,7 @@
    };
 </script>
 <br><br>
-<script>
-	function changeWithIn(){
-		
-		var aa = window.location.toString();
-		var baa = aa.split('?');
-		
-		var ur = baa[0]+ "?city="+city+"&lat="+getUrlVars()["lat"].trim()+"&lon="+getUrlVars()["lon"].trim()+"&withIn="+document.getElementById("withIn").value+"&category="+category.trim()+"&searchContent="+searchContent.trim();
-		/* var aa = paramReplace(window.location, 'withIn', document.getElementById("withIn").value);
-		aa = aa.replace(/(withIn=).*?(&)/,'$1' +  + '$2'); */
-		window.location.href = ur;
-		//alert(baa[0]);
-		 
-          
-	}
-	function setSelectionWith(){
-		var e1 = document.getElementById("withIn");
-        //alert(e1.options.length);
-        for (var ii = 0; ii <= e1.options.length; ii++) {
-            var secLoc = e1.options[ii].value;
-            if (getUrlVars()["withIn"].trim() == secLoc.trim().toLowerCase()) {
-                e1.selectedIndex = ii;
-            }
-        }
-	}
-</script>
+
 <div class="sortSelection">
 	with in : <select name="withIn" id="withIn" onchange="changeWithIn()">
 		<option value="1000">1000 mtrs.</option>
@@ -487,6 +492,32 @@
 		border: 0px;
 	}
 </style>
+<script>
+	function changeWithIn(){
+		
+		var aa = window.location.toString();
+		var baa = aa.split('?');
+		
+		var ur = baa[0]+ "?city="+city+"&lat="+getUrlVars()["lat"].trim()+"&lon="+getUrlVars()["lon"].trim()+"&withIn="+document.getElementById("withIn").value+"&category="+category.trim()+"&searchContent="+searchContent.trim();
+		/* var aa = paramReplace(window.location, 'withIn', document.getElementById("withIn").value);
+		aa = aa.replace(/(withIn=).*?(&)/,'$1' +  + '$2'); */
+		window.location.href = ur;
+		//alert(baa[0]);
+		 
+          
+	}
+	function setSelectionWith(){
+		var e1 = document.getElementById("withIn");
+        //alert(e1.options.length);
+        for (var ii = 0; ii < e1.options.length; ii++) {
+        	//alert(ii+"----"+e1.options.length+"----"+e1.options[ii]);
+            var secLoc = e1.options[ii].value;
+            if (getUrlVars()["withIn"].trim() == secLoc.trim().toLowerCase()) {
+                e1.selectedIndex = ii;
+            }
+        }
+	}
+</script>
 <%@include file="footer.jsp" %>
 
 

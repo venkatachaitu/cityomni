@@ -140,7 +140,7 @@ function selectCityInIndexPage() {
                             var strUser = ess.options[ess.selectedIndex].value;
                             var u = getWebsiteURL();
                             $.getJSON(u + "rest/get/getCat/" + strUser.toLowerCase(), function(data) {
-                                //console.log(JSON.stringify(data));
+                                console.log(JSON.stringify(data));
                                 data = sortObject(data);
                                 var opt = document.createElement('option');
                                 opt.value = 'all';
@@ -223,6 +223,7 @@ function viewSearchBox() {
         document.getElementById('searchClose').style.display = 'inline-block';
         document.getElementById('searchView').style.display = 'none';
         document.getElementById("header").style.position = "inherit";
+        
         try {
             var selectCheck = document.getElementById('searchCategories');
             if (selectCheck.options.length < 2) {
@@ -266,6 +267,8 @@ function viewSearchBox() {
                     }
                 }
             }
+            
+            document.getElementById('searchCity').value = decodeURIComponent((getUrlVars()["city"].trim()).replace(/\+/g, '%20'));
         } catch (e) {
             console.log("viewSearchBox: " + e);
         }
@@ -389,6 +392,44 @@ function normalizePhno(str) {
     return temp;
 }
 
+function findDistance(lat1, lon1) {
+    var cookielat = getCookie("clattitude");
+    var cookielon = getCookie("clongitude");
+    if (cookielat == "" || cookielon == " ") {
+        return 'null';
+    }
+    var R = 6371; // Radius of the earth in km
+    var dLat = deg2rad(cookielat - lat1); // deg2rad below
+    var dLon = deg2rad(cookielon - lon1);
+    var a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(cookielat)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c; // Distance in km
+    return d;
+}
+//This function takes in latitude and longitude of two location and returns the distance between them as the crow flies (in km)
+function calcCrow(lat1, lon1, lat2, lon2) 
+{
+  var R = 6371; // km
+  var dLat = toRad(lat2-lat1);
+  var dLon = toRad(lon2-lon1);
+  var lat1 = toRad(lat1);
+  var lat2 = toRad(lat2);
+
+  var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+  var d = R * c;
+  return d;
+}
+
+// Converts numeric degrees to radians
+function toRad(Value) 
+{
+    return Value * Math.PI / 180;
+}
 function findDistance(lat1, lon1, lat2, lon2, unit) {
     var radlat1 = Math.PI * lat1 / 180;
     var radlat2 = Math.PI * lat2 / 180;
@@ -512,23 +553,7 @@ function Submit() {
 
 }
 
-function findDistance(lat1, lon1) {
-    var cookielat = getCookie("clattitude");
-    var cookielon = getCookie("clongitude");
-    if (cookielat == "" || cookielon == " ") {
-        return 'null';
-    }
-    var R = 6371; // Radius of the earth in km
-    var dLat = deg2rad(cookielat - lat1); // deg2rad below
-    var dLon = deg2rad(cookielon - lon1);
-    var a =
-        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-        Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(cookielat)) *
-        Math.sin(dLon / 2) * Math.sin(dLon / 2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var d = R * c; // Distance in km
-    return d;
-}
+
 
 function deg2rad(deg) {
     return deg * (Math.PI / 180);
