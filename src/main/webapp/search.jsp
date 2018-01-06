@@ -2,18 +2,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@include file="header.jsp" %>
 <br><br>  
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.js"></script>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,visualization&v=3.exp"></script>
-  
+<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.js"></script>-->  
+<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,visualization&v=3.exp&callback=initMap"></script> 
+ -->  
 <script>
 	var dar = [];	
 	var lit = 5;
 	var ct = 0;
 	var city, lat, lon, category, searchContent, withIn;
 	var jsonArr = "[";
-   window.onload = loadSearchPage();   
+    window.onload = loadSearchPage();   
     var results; var arr;var map;var infoWindow; var service; var out="", count=1; var add; var lat; var lon;
-    function loadSearchPage() {
+    function loadSearchPage(){
     	try{
     		updateGPSLocation();
             var loc = getCookie("location");
@@ -42,7 +42,8 @@
          	   }else{
          		  searchContent = sf[0]
          	   }
-            }
+            } 
+            
             add = getCurAdd();  
             lat = getUrlVars()["lat"].trim(); 
             lon = getUrlVars()["lon"].trim();
@@ -58,7 +59,7 @@
 	   		
 	           service.radarSearch(request, callback3);
 	          // alert();
-    	}catch(e){alert(e);}
+    	}catch(e){alert("loadContent : "+e);}
     }
        	   	  
      function callback3(results, status) {
@@ -72,7 +73,7 @@
 	             var item = results[i];   
 	             employees.accounting.push({ 
 	             	"place_id" : results[i]['place_id'],
-	             	"distance" : Math.floor(calcCrow(lat, lon, results[i].geometry.location.lat(), results[i].geometry.location.lng()))
+	             	"distance" :  findDistance(lat, lon, results[i].geometry.location.lat(), results[i].geometry.location.lng())
 	             });
 	         }
 	         this.results = employees.accounting.sort(GetSortOrder("distance")); //Pass the attribute to be sorted on  
@@ -91,8 +92,8 @@
    	  function viewMoreSearch(){
  
         for(var i = next; i < results.length; i++) {    
-      		console.log(results[i]['distance']+" :" + results[i]['place_id']);
-   			if(temp < 10){
+      		//console.log(results[i]['distance']+" :" + results[i]['place_id']);
+   			if(temp < 5){
    				next++;
    				var request = {
    						placeId: results[i]['place_id']
@@ -108,16 +109,7 @@
              
         }
    	  }
-   	function GetSortOrder(prop) {  
-   	    return function(a, b) {  
-   	        if (a[prop] > b[prop]) {  
-   	            return 1;  
-   	        } else if (a[prop] < b[prop]) {  
-   	            return -1;  
-   	        }  
-   	        return 0;  
-   	    }  
-   	}
+   	
    	  function callback1(place, status) {
    			if (status == google.maps.places.PlacesServiceStatus.OK) { 
    				
@@ -126,7 +118,6 @@
    				var img_url="", name="", address = "", website = "", phoneNumber = "", rating = "", 
 	   				 lat="", lon="", distance = "", map = "", adr = "", reviews="", reviewsLink="";
                
-   				
    				adr = place.formatted_address;
    				website = place.website;
    				name = place.name;
@@ -134,7 +125,7 @@
    				lat = getLattitude(); 
    		        lon = getLongitude();
    				 
-              distance = Math.floor(calcCrow(lat, lon, place.geometry.location.lat(), place.geometry.location.lng()));
+              distance =  findDistance(lat, lon, place.geometry.location.lat(), place.geometry.location.lng());
               
               out = out + "<article class='article' data-percentage='"+distance+"'><ul>";                                               
               if (img_url.indexOf("cleardot") == -1) {
@@ -232,7 +223,16 @@
 	    }
 	    return temp;
 	}
-   
+	function GetSortOrder(prop) {  
+   	    return function(a, b) {  
+   	        if (a[prop] > b[prop]) {  
+   	            return 1;  
+   	        } else if (a[prop] < b[prop]) {  
+   	            return -1;  
+   	        }  
+   	        return 0;  
+   	    }  
+   	}
    function sortByDistance(){	   
 	   var $wrapper = $('#viewList');
 	   $wrapper.find('.article').sort(function(a, b) {

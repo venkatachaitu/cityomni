@@ -105,8 +105,9 @@ var tFlag = false;
 	   					    if(website != "" && website.length > 1 && website != null && website.indexOf("null") == -1){						    	
 	   					    	out = out + "<div  ><a target=# class=bottom href=http://www."+ website+"><i class='fa fa-globe' aria-hidden='true'></i></a></div>";
 	   					    }
-	   					 	//distance = findDistance(lat, lon);
-	   					 	 
+	   					    
+	   					 	distance = findDistance(getLattitude(), getLongitude(), lat, lon);
+	   					 
 	   						var ad = addStarsToString(adr.replace(/&amp;/g, '&'));
 	   						var nm = addStarsToString(name);
 	   						
@@ -209,7 +210,6 @@ var tFlag = false;
     });
 </script>
 <!-- Three --><br><br>
-
 <div class="w3-sidebar w3-bar-block w3-dark-grey w3-animate-left" style="display:none; height: 100%;" id="mySidebar">
   <p class="rightNavMenuClose " onclick="openLeftNavClose()">close</p>
   <div id="rightNavMenu" class="rightNavMenu">

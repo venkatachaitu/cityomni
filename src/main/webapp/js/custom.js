@@ -225,50 +225,53 @@ function viewSearchBox() {
         document.getElementById("header").style.position = "inherit";
         
         try {
-            var selectCheck = document.getElementById('searchCategories');
-            if (selectCheck.options.length < 2) {
-                var loc1 = document.getElementById("locationHome").innerText;
-                var loc11 = getUrlVars()["city"];
-                if (typeof loc11 !== "undefined") {
-                    loc1 = loc11;
-                }
-                var e1 = document.getElementById("searchCity");
-                var select = document.getElementById('searchCategories');
-                select.disabled = false;
-                for (var option in select) {
-                    select.remove(option);
-                }
-                for (var ii = 0; ii <= e1.options.length; ii++) {
-                    var secLoc = e1.options[ii].text;
-                    if (loc1.trim().toLowerCase() == secLoc.trim().toLowerCase()) {
-                        e1.selectedIndex = ii;
-                        var ess = document.getElementById("searchCity");
-                        var strUser = ess.options[ess.selectedIndex].value;
-                        var u = getWebsiteURL();
-                        $.getJSON(u + "rest/get/getCat/" + strUser.toLowerCase(), function(data) {
-                            data = sortObject(data);
-                            var opt = document.createElement('option');
-                            opt.value = 'all';
-                            opt.innerHTML = 'All';
-                            select.appendChild(opt);
-                            $.each(data, function(key, val) {
-                                if (key != "undefined") {
-                                    if (val != '999999') {
-                                        var opt1 = document.createElement('option');
-                                        opt1.value = key;
-                                        opt1.innerHTML = addSpaces(key);
-                                        select.appendChild(opt1);
-                                    }
-                                }
-                            });
-                            selectCategory(select);
-                        });
-                        break;
-                    }
-                }
-            }
+        	 if(typeof getUrlVars()["city"] !== "undefined"){
+	   			if(getUrlVars()["city"] != ""){
+	   				document.getElementById('searchCity').value = decodeURIComponent((getUrlVars()["city"].trim()).replace(/\+/g, '%20'));
+	   	        }
+   			}else{
+   				document.getElementById('searchCity').value = decodeURIComponent((getCurAdd().trim()).replace(/\+/g, '%20'));
+   			}
+        	
+        	 if(typeof getUrlVars()["category"] !== "undefined"){
+ 	   			if(getUrlVars()["category"] != ""){
+		 	   			var select = document.getElementById('searchCategories');
+		 				for (var ii = 0; ii < select.options.length; ii++) {
+		 	                var secLoc = select.options[ii].value;
+		 	                if (getUrlVars()["category"].trim().toLowerCase() == secLoc.trim().toLowerCase()) {
+		 	                	select.selectedIndex = ii;
+		 	                }
+		 				}
+        			}
+    			}
+        	 
+        	 if(typeof getUrlVars()["searchContent"] !== "undefined"){
+  	   			if(getUrlVars()["searchContent"] != ""){
+	  	   			var searchContent = getUrlVars()["searchContent"].trim();
+	  	            if(searchContent == "" || searchContent == null){
+	  	         	   searchContent = "qwertyqwerty";
+	  	            }
+	  	            var sf = searchContent.split("%2B");
+	  	            //alert(sf.length);
+	  	            searchContent = "";
+	  	            for(var i = 0; i < sf.length; i++){
+	  	         	   if(sf.length >1){
+	  		            	var tf = sf[i] + '+';
+	  		         	   searchContent = searchContent + tf;
+	  	         	   }else{
+	  	         		  searchContent = sf[0]
+	  	         	   }
+	  	            }
+	  	            if(document.getElementById("searchBoxInput") != null ){
+	  	            	document.getElementById("searchBoxInput").value = addSpaces(searchContent).trim();
+	  	            }
+  	   			}
+  	   			
+  	   		}
+			
             
-            document.getElementById('searchCity').value = decodeURIComponent((getUrlVars()["city"].trim()).replace(/\+/g, '%20'));
+            
+            
         } catch (e) {
             console.log("viewSearchBox: " + e);
         }
@@ -392,60 +395,18 @@ function normalizePhno(str) {
     return temp;
 }
 
-function findDistance(lat1, lon1) {
-    var cookielat = getCookie("clattitude");
-    var cookielon = getCookie("clongitude");
-    if (cookielat == "" || cookielon == " ") {
-        return 'null';
-    }
-    var R = 6371; // Radius of the earth in km
-    var dLat = deg2rad(cookielat - lat1); // deg2rad below
-    var dLon = deg2rad(cookielon - lon1);
-    var a =
-        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-        Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(cookielat)) *
-        Math.sin(dLon / 2) * Math.sin(dLon / 2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var d = R * c; // Distance in km
-    return d;
-}
-//This function takes in latitude and longitude of two location and returns the distance between them as the crow flies (in km)
-function calcCrow(lat1, lon1, lat2, lon2) 
-{
+function findDistance(lat1, lon1, lat2, lon2){
   var R = 6371; // km
-  var dLat = toRad(lat2-lat1);
-  var dLon = toRad(lon2-lon1);
-  var lat1 = toRad(lat1);
-  var lat2 = toRad(lat2);
+  var dLat = (lat2-lat1)* Math.PI / 180;
+  var dLon = (lon2-lon1)* Math.PI / 180;
+  var lat1 = (lat1)* Math.PI / 180;
+  var lat2 = (lat2)* Math.PI / 180;
 
   var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
     Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
   var d = R * c;
   return d;
-}
-
-// Converts numeric degrees to radians
-function toRad(Value) 
-{
-    return Value * Math.PI / 180;
-}
-function findDistance(lat1, lon1, lat2, lon2, unit) {
-    var radlat1 = Math.PI * lat1 / 180;
-    var radlat2 = Math.PI * lat2 / 180;
-    var theta = lon1 - lon2;
-    var radtheta = Math.PI * theta / 180;
-    var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
-    dist = Math.acos(dist);
-    dist = dist * 180 / Math.PI;
-    dist = dist * 60 * 1.1515;
-    if (unit == "K") {
-        dist = dist * 1.609344;
-    };
-    if (unit == "N") {
-        dist = dist * 0.8684;
-    };
-    return dist;
 }
 
 function changeCity() {
@@ -555,9 +516,7 @@ function Submit() {
 
 
 
-function deg2rad(deg) {
-    return deg * (Math.PI / 180);
-}
+
 
 /*function addStarsToString(str) {
     var s = str.trim();

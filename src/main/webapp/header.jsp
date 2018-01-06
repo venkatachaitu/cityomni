@@ -41,6 +41,7 @@
       
  
       <!-- Scripts --> 
+      <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,visualization&v=3.exp&callback=initMap"></script> -->
       <script src="js/jquery.min.js"></script>
       <script src="js/skel.min.js"></script>
       <script src="js/util.js"></script>
@@ -118,7 +119,7 @@
                      <article style="width: 46% !important;margin-right: 15px;">
                         <header class="selectCity">
                         	  <input class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" />  
-                              <span class="bbu" onclick="document.getElementById('searchCity').value = ''">x</span>
+                              <span class="bbu" onclick="clearSearchCity()">x</span>
                               <style>
                                	.bbu{
                                		width: 11px;
@@ -148,25 +149,7 @@
 								<option value="surat">Surat</option>
 								<option value="jaipur">Jaipur</option>
 							</select> -->
-							 
-                            <script> 
-							  function initMap() {
-									var autoComplete = new google.maps.places.Autocomplete(
-									/** @type {!HTMLInputElement} */ (
-										document.getElementById('searchCity')), {
-									  types: ['(regions)']  //regions ,cities
-									});
-									
-									google.maps.event.addListener(autoComplete, 'place_changed', function() {
-										var loc = this.getPlace().geometry.location;
-										document.getElementById("lat").value = loc.lat();
-										document.getElementById("lon").value = loc.lng();
-										//alert(loc.lat()+"----"+loc.lng());
-									});
-							  }
-							</script> 
-							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&libraries=places&callback=initMap" async defer></script>							
-						
+							  
 						<style>
   							   .searchCity{
   							        transition: .5s;
@@ -189,6 +172,33 @@
 		  				   </select>
                         </header>
                      </article>
+                     <script> 	                            
+					  function initMap() {
+							var autoComplete = new google.maps.places.Autocomplete(
+							/** @type {!HTMLInputElement} */ (
+								document.getElementById('searchCity')), {
+							  types: ['(regions)']  //regions ,cities
+							});
+							
+							google.maps.event.addListener(autoComplete, 'place_changed', function() {
+								var loc = this.getPlace().geometry.location;
+								document.getElementById("lat").value = loc.lat();
+								document.getElementById("lon").value = loc.lng();
+								//alert(loc.lat()+"----"+loc.lng());
+							});
+					  }
+					</script> 
+					<!-- 
+					<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&libraries=places&callback=initMap" async defer></script>							
+					  -->
+					 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,visualization&v=3.exp&callback=initMap" async="defer"></script>
+					 
+					<script>
+                    	function clearSearchCity(){
+                    		document.getElementById('searchCity').value = '';
+                    		document.getElementById('searchCity').focus();
+                    	}
+                    </script>
                   </div>
                   <div class="flex flex-2 searchInnerDiv" id="">
                      <article class="searchBoxInputArticle">
