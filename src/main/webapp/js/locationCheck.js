@@ -153,12 +153,12 @@ function show_error(error){
         	console.log("Location position unavailable.");
         	getLatLogByIp();            
             break;
-        case error.TIMEOUT:
+        /*case error.TIMEOUT:
         	console.log("Request timeout.");
             break;
         case error.UNKNOWN_ERROR:
         	console.log("Unknown error.");
-            break;
+            break;*/
     }
 }
 

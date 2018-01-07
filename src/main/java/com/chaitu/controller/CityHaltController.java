@@ -1,19 +1,21 @@
 package com.chaitu.controller;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import javax.servlet.ServletContext;
 
+import org.json.JSONException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -22,6 +24,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.comparator.ComparableComparator;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,11 +34,15 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.chaitu.constants.GetPath;
+import com.chaitu.model.RadarSearchRespose;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RequestMapping("/")
 @Controller
 public class CityHaltController {
 
+	
     Map < String, Object > map = new HashMap < String, Object > ();
     @Autowired
     ServletContext servletContext;
@@ -44,26 +51,33 @@ public class CityHaltController {
     public ModelAndView openAll() {
         return new ModelAndView("index");
     }
-
-    RestTemplate restTemplate = new RestTemplate();
+    
+    @Autowired
+    RestTemplate restTemplate;
     
    
     @GetMapping("/test")
     public Object test() {
-	    final String uri = "http://cityhalt.com.preview.services/atms.json";
+	    /*final String uri = "http://cityhalt.com.preview.services/atms.json";
 	    System.out.println(uri);
 	    File file = new File("http://cityhalt.com.preview.services/atms.json");
-	    System.out.println("file.getName() :"+file.length());
+	    System.out.println("file.getName() :"+file.length());*/
 	    //HttpHeaders headers = new HttpHeaders();
 	    //headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 	    //HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
 	     
 	    // ResponseEntity<String> result = restTemplate.exchange(uri, HttpMethod.GET, entity, String.class);
-	    String result = restTemplate.getForObject(uri, String.class);
+	    /*Object result = restTemplate.getForObject("http://freegeoip.net/json/", Object.class);
 	     System.out.println("result :"+result);
-	    return result;
+	    return new ResponseEntity<Object>(result, HttpStatus.OK);*/
+	    return null;
     }
     
+    @GetMapping("/rest/get/getaddress")
+    public Object getAddressByIP() {
+    	Object result = restTemplate.getForObject("http://freegeoip.net/json/", Object.class);
+	    return new ResponseEntity<Object>(result, HttpStatus.OK);
+    }
     
     @GetMapping("/services")
     public ModelAndView services() {
@@ -426,16 +440,43 @@ public class CityHaltController {
 	}
 
     ///"/rest/get/search/{lat}/{lon}/{cat}/{text}"
-    @GetMapping("/rest/get/search/{lat}/{lon}/{cat}/{text}")
-    public ResponseEntity < Map < String, Integer >> searchGoogleApi(@PathVariable String city) throws Exception {
-    	
-        System.out.println("CityHaltController : /rest/get/getCat/" + city);
-		
-        return null;
-    
+    @GetMapping("/rest/get/search/{clat}/{clon}/{lat}/{lon}/{radius}/{keyword}")
+    public ResponseEntity <List<RadarSearchRespose>> searchGoogleApi(@PathVariable String lat, @PathVariable String lon, @PathVariable String clat, @PathVariable String clon, @PathVariable String radius, @PathVariable String keyword) throws Exception {
+    	String uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&radius="+radius+"&keyword="+keyword+"+&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM";
+    	System.out.println("Search URI : "+uri);
+    	Map<?, ?> result = restTemplate.getForObject(uri, Map.class);
+    	List<RadarSearchRespose> res = sortRadarSearchData(result, Double.parseDouble(clat), Double.parseDouble(clon));
+    	return new ResponseEntity < List<RadarSearchRespose> > (res, HttpStatus.OK);
     }
     
-    
-    
+    List<RadarSearchRespose> al = new ArrayList<RadarSearchRespose>();
+    public List<RadarSearchRespose> sortRadarSearchData(Map<?, ?> map, Double clat, Double clon) throws Exception{    	
+    	List<?> f = (List<?>) map.get("results");
+    	Iterator<?> itr = f.iterator();
+    	while (itr.hasNext()) {
+    		ObjectMapper mapperObj = new ObjectMapper();
+        	String h = mapperObj.writeValueAsString(itr.next());
+        	org.json.JSONObject jsonObj = new org.json.JSONObject(h);
+        	org.json.JSONObject k = (org.json.JSONObject) jsonObj.get("geometry");
+        	org.json.JSONObject l = (org.json.JSONObject) k.get("location");
+        	
+        	Double lat = (Double) l.get("lat");
+        	Double lon = (Double) l.get("lng");
+        	al.add(new RadarSearchRespose(jsonObj.get("place_id").toString(), distance(lat, lon, clat, clon)));
+			
+		}     	
+    	Collections.sort(al, new Comparator<RadarSearchRespose>(){
+			public int compare(RadarSearchRespose s1, RadarSearchRespose s2) {
+				if(s1.distance==s2.distance)  
+					return 0;  
+				else if(s1.distance>s2.distance)  
+					return 1;  
+				else  
+					return -1;  
+			}  
+		});
+    	return al;
+    	
+    }    
     
 }

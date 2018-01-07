@@ -37,7 +37,16 @@ function updateLocationinSearchBox() {
 	/*}*/
 }
 function getLatLogByIp() {
-	$.ajax({
+	var u = getWebsiteURL();
+	$.getJSON(u + "rest/get/getaddress", function(data) {
+		//alert(data);
+		setCookieWithOutReload("clattitude", data.latitude, 365);
+    	setCookieWithOutReload("clongitude", data.longitude, 365);
+    	setAddressForSearchBox(data);
+        initializeCurrent(data.latitude, data.longitude);        
+     });
+	
+	/*$.ajax({
 		    type: "GET",
 		    dataType: 'json',
 		    url: "http://freegeoip.net/json/",
@@ -53,7 +62,7 @@ function getLatLogByIp() {
 	    }).fail( function(xhr, textStatus, errorThrown) {
 	        console.log("getLatLogByIp:xhr.responseText"+xhr.responseText);
 	        console.log("getLatLogByIp:textStatus"+textStatus);
-	    });
+	    });*/
 	}
 function setCookieWithOutReload(cname, cvalue, exdays) {
     try {
@@ -513,25 +522,3 @@ function Submit() {
     }
 
 }
-
-
-
-
-
-/*function addStarsToString(str) {
-    var s = str.trim();
-    var temp = "";
-    for (var i = 0; i < s.length; i++) {
-        if (s[i] == " ") {
-            temp = temp + "+";
-        } else {
-            if (s[i] == '/') {
-                temp = temp + "-";
-            } else {
-                temp = temp + s[i].toLowerCase();
-            }
-        }
-    }
-    //console.log(temp);
-    return temp;
-}*/

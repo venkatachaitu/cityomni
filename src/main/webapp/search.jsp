@@ -5,6 +5,7 @@
  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.js"></script> -->
 <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places,visualization&v=3.exp"></script> --> 
 <script>
+
 	var dar = [];	
 	var lit = 5;
 	var ct = 0;
@@ -46,53 +47,32 @@
             add = getCurAdd();  
             lat = getUrlVars()["lat"].trim(); 
             lon = getUrlVars()["lon"].trim();
-	       map = new google.maps.Map(""); 
-	       service = new google.maps.places.PlacesService(map);
-	   		var request = {
-	   			  location: new google.maps.LatLng(lat, lon),//(12.9066751, 80.0945172),
-	   			  radius: withIn,
-	   			  name: searchContent,
-	   			  //types: category,
-	   			  keyword: category
-	           };
-	   		
-	           service.radarSearch(request, callback3);
-	          // alert();
+	        map = new google.maps.Map(""); 
+            var u = getWebsiteURL();
+            $.getJSON(u + "rest/get/search/"+getLattitude()+"/"+getLongitude()+"/"+lat+"/"+lon+"/"+withIn+"/"+searchContent, function(results) {
+        	   callback3(results, google.maps.places.PlacesServiceStatus.OK);
+            });
     	}catch(e){alert("loadContent : "+e);}
     }
        	   	  
      function callback3(results, status) {
     	 lat = getLattitude(); 
          lon = getLongitude();
-         var employees = {
-         	    accounting: []
-         	};
-         
-	         for(var i in results) {    
-	             var item = results[i];   
-	             employees.accounting.push({ 
-	             	"place_id" : results[i]['place_id'],
-	             	"distance" :  findDistance(lat, lon, results[i].geometry.location.lat(), results[i].geometry.location.lng())
-	             });
-	         }
-	         this.results = employees.accounting.sort(GetSortOrder("distance")); //Pass the attribute to be sorted on  
- 
- 	   		document.getElementById("titleHeader").innerHTML = results.length+" items available.";
-        	//alert(results.length+" available.");
- 	   	 	console.log("Nb results:" + results.length);
- 	           if (status != google.maps.places.PlacesServiceStatus.OK) {
- 	             alert("callback3:status: "+status);
- 	             return;
- 	           }  
- 	        viewMoreSearch(); 
-       }
+		this.results = results;  	
+		document.getElementById("titleHeader").innerHTML = results.length+" items available.";
+		console.log("Nb results:" + results.length);
+	      if (status != google.maps.places.PlacesServiceStatus.OK) {
+	        alert("callback3:status: "+status);
+	        return;
+	      }  
+	   	viewMoreSearch(); 
+     }
        	          
 	  var kk = 0 ;var temp = 0;var next = 0;
    	  function viewMoreSearch(){
  
         for(var i = next; i < results.length; i++) {    
-      		//console.log(results[i]['distance']+" :" + results[i]['place_id']);
-   			if(temp < 5){
+      		if(temp < 5){
    				next++;
    				var request = {
    						placeId: results[i]['place_id']
@@ -101,11 +81,9 @@
 				service.getDetails(request, callback1);
    			 }else{
    				temp = 0;
-   				//next = next + 11;
    				break;
    			}  
    			temp++;
-             
         }
    	  }
    	
@@ -120,7 +98,8 @@
    				adr = place.formatted_address;
    				website = place.website;
    				name = place.name;
-
+   				phoneNumber = place.international_phone_number;
+   				
    				lat = getLattitude(); 
    		        lon = getLongitude();
    				 
