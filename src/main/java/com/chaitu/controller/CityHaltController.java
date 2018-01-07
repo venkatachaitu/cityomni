@@ -21,8 +21,14 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.comparator.ComparableComparator;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -441,16 +447,18 @@ public class CityHaltController {
 
     ///"/rest/get/search/{lat}/{lon}/{cat}/{text}"
     @GetMapping("/rest/get/search/{clat}/{clon}/{lat}/{lon}/{radius}/{keyword}")
-    public ResponseEntity <List<RadarSearchRespose>> searchGoogleApi(@PathVariable String lat, @PathVariable String lon, @PathVariable String clat, @PathVariable String clon, @PathVariable String radius, @PathVariable String keyword) throws Exception {
-    	String uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&radius="+radius+"&keyword="+keyword+"+&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM";
+    public ResponseEntity<List<RadarSearchRespose>> searchGoogleApi(@PathVariable String lat, @PathVariable String lon, @PathVariable String clat, @PathVariable String clon, @PathVariable String radius, @PathVariable String keyword) throws Exception {
+    	String uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&radius="+radius+"&keyword="+keyword+"&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM";
     	System.out.println("Search URI : "+uri);
-    	Map<?, ?> result = restTemplate.getForObject(uri, Map.class);
-    	List<RadarSearchRespose> res = sortRadarSearchData(result, Double.parseDouble(clat), Double.parseDouble(clon));
+		Map<?, ?> result = restTemplate.getForObject(uri, Map.class);
+    	//System.out.println("result : "+result);
+    	List<RadarSearchRespose> res = sortRadarSearchData(result, Double.parseDouble(lat), Double.parseDouble(lon));
     	return new ResponseEntity < List<RadarSearchRespose> > (res, HttpStatus.OK);
     }
     
-    List<RadarSearchRespose> al = new ArrayList<RadarSearchRespose>();
+    List<RadarSearchRespose> al = null;
     public List<RadarSearchRespose> sortRadarSearchData(Map<?, ?> map, Double clat, Double clon) throws Exception{    	
+    	al = new ArrayList<RadarSearchRespose>();
     	List<?> f = (List<?>) map.get("results");
     	Iterator<?> itr = f.iterator();
     	while (itr.hasNext()) {

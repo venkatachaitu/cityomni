@@ -30,26 +30,19 @@
             category = getUrlVars()["category"];
             searchContent = getUrlVars()["searchContent"].trim();
             if(searchContent == "" || searchContent == null){
-         	   searchContent = "qwertyqwerty";
+         	   searchContent = category;
             }
-            var sf = searchContent.split("%2B");
-            //alert(sf.length);
-            searchContent = "";
-            for(var i = 0; i < sf.length; i++){
-         	   if(sf.length >1){
-	            	var tf = sf[i] + '+';
-	         	   searchContent = searchContent + tf;
-         	   }else{
-         		  searchContent = sf[0]
-         	   }
-            } 
-            
+              
+            //alert(decodeURIComponent((searchContent).replace(/\+/g, '%20')));
             add = getCurAdd();  
             lat = getUrlVars()["lat"].trim(); 
             lon = getUrlVars()["lon"].trim();
+            document.getElementById("lat").value = lat;
+            document.getElementById("lon").value = lon;
+            
 	        map = new google.maps.Map(""); 
             var u = getWebsiteURL();
-            $.getJSON(u + "rest/get/search/"+getLattitude()+"/"+getLongitude()+"/"+lat+"/"+lon+"/"+withIn+"/"+searchContent, function(results) {
+            $.getJSON(u + "rest/get/search/"+getLattitude()+"/"+getLongitude()+"/"+lat+"/"+lon+"/"+withIn+"/"+searchContent+"+"+category, function(results) {
         	   callback3(results, google.maps.places.PlacesServiceStatus.OK);
             });
     	}catch(e){alert("loadContent : "+e);}
@@ -106,12 +99,12 @@
               distance =  findDistance(lat, lon, place.geometry.location.lat(), place.geometry.location.lng());
               
               out = out + "<article class='article' data-percentage='"+distance+"'><ul>";                                               
-              if (img_url.indexOf("cleardot") == -1) {
+              /* if (img_url.indexOf("cleardot") == -1) {
                   out = out + "<li><span class=imageSpan><img src='" + img_url + "' width='100%' id=" + count + " onclick=openPreview(" + count + ") style=cursor:pointer;></span></li>";
               }
-              if (img_url.indexOf("cleardot") != -1) {
+              if (img_url.indexOf("cleardot") != -1) { */
                   out = out + "<li><span class=imageSpan><img src='images/noImage.jpg' width=100% id=" + count + " style=cursor:pointer;></span></li>";
-              } 
+              /* } */ 
               out = out + "<li><span class=detailsSpan><header><h3>";
               out = out + place.name;
               out = out + "</h3></header><br><p class=address>";
@@ -120,7 +113,8 @@
               out = out + "<footer class=bottom>";
 
               if (phoneNumber != "" && phoneNumber != null && phoneNumber.indexOf("null") == -1) {
-                  out = out + "<div ><i class='fa fa-phone' aria-hidden='true'></i>&nbsp;" + normalizePhno(phoneNumber) + "</div>";
+                  /* out = out + "<div ><i class='fa fa-phone' aria-hidden='true'></i>&nbsp;" + phoneNumber + "</div>"; */
+                  out = out + "<div ><a href=tel:"+normalizePhno(phoneNumber) + "><i class='fa fa-phone' aria-hidden='true'></i>&nbsp;"+phoneNumber+ "</a></div>";
               }
               if (place.rating != "" && place.rating != null) {
 	               out = out + "<div ><i class='fa fa-star' aria-hidden='true'></i>&nbsp;" + place.rating + "</div>";
