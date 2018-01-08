@@ -520,5 +520,17 @@ function Submit() {
         box.style.borderColor = "red";
         return false;
     }
-
+}
+function viewCommentBox(){
+	 if (document.getElementById('commentBox').style.display == 'none') {
+		 document.getElementById("commentBox").style.display = "block";
+		 document.getElementById("addSubmitButton").style.display = "block";
+		 document.getElementById("addButton").style.transform = "rotate(40deg)";
+		 document.getElementById("addButton").style.backgroundColor = "red";
+	 }else{
+		 document.getElementById("commentBox").style.display = "none";
+		 document.getElementById("addSubmitButton").style.display = "none";
+		 document.getElementById("addButton").style.transform = "rotate(0deg)";
+		 document.getElementById("addButton").style.backgroundColor = "#0095ff";
+	 }    	
 }

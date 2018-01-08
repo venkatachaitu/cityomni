@@ -3158,3 +3158,62 @@ button:disabled,
     transform: rotate(90deg);
     cursor: -webkit-grab;
 }
+
+.leftSide{
+	width: 20%;
+    border: 1px solid #c7c7c7;
+    float: left;
+    padding: 1em;
+}
+.rightSide{
+	width: 20%;
+    border: 1px solid #c7c7c7;
+    float: left;
+}
+.confessionTitle{
+	text-transform: capitalize;
+    color: #ff4f17;
+    font-size: 1.5em;
+    word-spacing: 0.1em;
+    letter-spacing: 0.00001em;
+    font-family: inherit;
+    font-weight: 600;
+    margin: 0;
+    text-align: left;
+}
+.centerSide{
+	width: 80%;
+    border: 1px solid #c7c7c7;
+    border-width: 1px 1px 1px 0px;
+    padding: 1em;
+}
+.addButton{
+	background-color: #0095ff;
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 61px;
+    float: right;
+    margin-top: -1.5em;
+    cursor: pointer;
+    transform: rotate(0deg);
+    width: 25px;
+    height: 25px;
+}
+
+.commentBox{
+	display: none;
+}
+.addSubmitButton{
+	background-color: #0095ff;
+    color: white;
+    padding: 0.5em 1em;
+    text-transform: capitalize;
+    font-size: 1em;
+    font-weight: 800;
+    border-radius: 3px;
+    float: right;
+    cursor: pointer;
+    display: none;
+    width: 100%;
+}

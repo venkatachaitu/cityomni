@@ -8,110 +8,44 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import javax.servlet.ServletContext;
 
-import org.json.JSONException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.converter.StringHttpMessageConverter;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.comparator.ComparableComparator;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.chaitu.constants.GetPath;
 import com.chaitu.model.RadarSearchRespose;
-import com.fasterxml.jackson.core.JsonProcessingException;
+import com.chaitu.utils.JsonFileHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RequestMapping("/")
 @Controller
 public class CityHaltController {
-
-	
     Map < String, Object > map = new HashMap < String, Object > ();
     @Autowired
     ServletContext servletContext;
     
-    @GetMapping("/")
-    public ModelAndView openAll() {
-        return new ModelAndView("index");
-    }
-    
     @Autowired
     RestTemplate restTemplate;
     
-   
-    @GetMapping("/test")
-    public Object test() {
-	    /*final String uri = "http://cityhalt.com.preview.services/atms.json";
-	    System.out.println(uri);
-	    File file = new File("http://cityhalt.com.preview.services/atms.json");
-	    System.out.println("file.getName() :"+file.length());*/
-	    //HttpHeaders headers = new HttpHeaders();
-	    //headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-	    //HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
-	     
-	    // ResponseEntity<String> result = restTemplate.exchange(uri, HttpMethod.GET, entity, String.class);
-	    /*Object result = restTemplate.getForObject("http://freegeoip.net/json/", Object.class);
-	     System.out.println("result :"+result);
-	    return new ResponseEntity<Object>(result, HttpStatus.OK);*/
-	    return null;
-    }
-    
-    @GetMapping("/rest/get/getaddress")
-    public Object getAddressByIP() {
-    	Object result = restTemplate.getForObject("http://freegeoip.net/json/", Object.class);
-	    return new ResponseEntity<Object>(result, HttpStatus.OK);
-    }
-    
-    @GetMapping("/services")
-    public ModelAndView services() {
-        return new ModelAndView("services");
-    }
-
-    @GetMapping("/viewList")
-    public ModelAndView viewList() {
-        return new ModelAndView("viewList");
-    }
-    @GetMapping("/view")
-    public ModelAndView openView() {
-        return new ModelAndView("view");
-    }
-    @GetMapping("/search")
-    public ModelAndView openSearch() {
-        return new ModelAndView("search");
-    }
-    
-    @GetMapping("/aboutUS")
-    public ModelAndView openabout() {
-        return new ModelAndView("aboutUS");
-    }
-    
-    @GetMapping("/metroCities")
-    public ModelAndView metroCities() {
-        return new ModelAndView("metroCities");
-    }
+    @Autowired
+    JsonFileHandler jsonFileHandler;
     
     @Autowired
     GetPath gpath;
