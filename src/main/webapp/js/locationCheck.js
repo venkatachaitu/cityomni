@@ -164,3 +164,12 @@ function show_error(error){
     }
 }
 
+function getLatLogByIp() {
+	var u = getWebsiteURL();
+	$.getJSON(u + "rest/get/getaddress", function(data) {
+		setCookieWithOutReload("clattitude", data.latitude, 365);
+    	setCookieWithOutReload("clongitude", data.longitude, 365);
+    	setAddressForSearchBox(data);
+        initializeCurrent(data.latitude, data.longitude);        
+     });
+}

@@ -36,7 +36,7 @@ function updateLocationinSearchBox() {
 			document.getElementById("searchCity").value = getCookie("locAddress");
 	/*}*/
 }
-function getLatLogByIp() {
+/*function getLatLogByIp() {
 	var u = getWebsiteURL();
 	$.getJSON(u + "rest/get/getaddress", function(data) {
 		//alert(data);
@@ -62,8 +62,8 @@ function getLatLogByIp() {
 	    }).fail( function(xhr, textStatus, errorThrown) {
 	        console.log("getLatLogByIp:xhr.responseText"+xhr.responseText);
 	        console.log("getLatLogByIp:textStatus"+textStatus);
-	    });*/
-	}
+	    });
+	}*/
 function setCookieWithOutReload(cname, cvalue, exdays) {
     try {
         var d = new Date();
