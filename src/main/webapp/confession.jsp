@@ -104,11 +104,21 @@
 </section>
 				<script> 
 						function commentSubmit(){
-							var content = document.getElementById("commentBox").value;
-							alert(content);
-							/* $.getJSON(u + "rest/get/getCat/" + strUser.toLowerCase(), function(data) {
-								
-							} */
+							var data = JSON.stringify( { "user": 'chaitanya', "data": $('#commentBox').val() } );
+							$.ajax({
+							    url: "/rest/add/confession",
+							    dataType: 'json',
+							    type: 'post',
+							    contentType: 'application/json',
+							    data:  data,
+							    processData: false,
+							    success: function( data, textStatus, jQxhr ){
+							        alert("success:"+ JSON.stringify( data ) );
+							    },
+							    error: function( jqXhr, textStatus, errorThrown ){
+							        alert("error:"+ errorThrown );
+							    }
+							});
 						}
 					  function initialize() {
 						    var acInputs = document.getElementsByClassName("searchCity");

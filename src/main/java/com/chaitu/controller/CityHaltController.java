@@ -19,9 +19,11 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -420,5 +422,16 @@ public class CityHaltController {
     	return al;
     	
     }    
+    
+    @CrossOrigin(origins = "*")
+    @PostMapping("/rest/add/confession")
+    public ResponseEntity<Object> addConfession(@RequestBody JSONObject data) throws Exception {
+    	HttpHeaders response = new HttpHeaders();
+	    response.set("Access-Control-Allow-Origin", "*");
+
+	    return new ResponseEntity<Object>(data, response, HttpStatus.OK);
+    }
+    
+    
     
 }
