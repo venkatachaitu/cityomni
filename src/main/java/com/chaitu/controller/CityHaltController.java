@@ -14,6 +14,7 @@ import java.util.Set;
 
 import javax.servlet.ServletContext;
 
+import org.json.JSONException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -388,11 +389,20 @@ public class CityHaltController {
     	System.out.println("Search URI : "+uri);
 		Map<?, ?> result = restTemplate.getForObject(uri, Map.class);
     	//System.out.println("result : "+result);
-    	List<RadarSearchRespose> res = sortRadarSearchData(result, Double.parseDouble(lat), Double.parseDouble(lon));
-    	return new ResponseEntity < List<RadarSearchRespose> > (res, HttpStatus.OK);
+    	List<RadarSearchRespose> al = sortRadarSearchData(result, Double.parseDouble(lat), Double.parseDouble(lon));
+    	return new ResponseEntity < List<RadarSearchRespose> > (al, HttpStatus.OK);
     }
     
-    List<RadarSearchRespose> al = null;
+    ///"/rest/get/search/getDetailsByPlaceId/{place_id}"
+    @GetMapping("/rest/get/search/getDetailsByPlaceId/{place_id}")
+    public ResponseEntity<Object> getDetailsByPlaceId(@PathVariable String place_id) throws Exception {
+    	String uri = "https://maps.googleapis.com/maps/api/place/details/json?placeid="+place_id+"&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM";
+		Map<?, ?> result = restTemplate.getForObject(uri, Map.class);
+    	//System.out.println(result.get("result"));
+    	return new ResponseEntity <Object> (result.get("result"), HttpStatus.OK);
+	}
+
+	List<RadarSearchRespose> al = null;
     public List<RadarSearchRespose> sortRadarSearchData(Map<?, ?> map, Double clat, Double clon) throws Exception{    	
     	al = new ArrayList<RadarSearchRespose>();
     	List<?> f = (List<?>) map.get("results");
@@ -419,8 +429,8 @@ public class CityHaltController {
 					return -1;  
 			}  
 		});
-    	return al;
     	
+    	return al;
     }    
     
     @CrossOrigin(origins = "*")
