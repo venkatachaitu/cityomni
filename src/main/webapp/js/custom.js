@@ -515,11 +515,11 @@ function Submit() {
         return false;
     }*/
 
-    if (box.value.length <= 2) {
+    /*if (box.value.length <= 2) {
         box.focus();
         box.style.borderColor = "red";
         return false;
-    }
+    }*/
 }
 function viewCommentBox(){
 	 if (document.getElementById('commentBox').style.display == 'none') {
