@@ -117,7 +117,8 @@
                                  <option value="vijayawada">Vijayawada</option>                                 
                                  <option value="tirupati">Tirupati</option>
                               </select> -->
-                              <input  class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" />  
+                              <i onclick="setCurrentLocationToSearchBox()" style="color: #00ce08;float:  left;margin-left: -1em;font-size: 1.5em;margin-top:  0.2em;" class="fa fa-map-marker" aria-hidden="true"></i>
+                              <input class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" />  
                               <span class="bbu" onclick="clearSearchCity()">x</span>
                               <style>
                                	.bbu{
@@ -137,6 +138,9 @@
                               	function clearSearchCity(){
                               		document.getElementById('searchCity').value = '';
                               		document.getElementById('searchCity').focus();
+                              	}
+                              	function setCurrentLocationToSearchBox(){
+                              		document.getElementById('searchCity').value = decodeURIComponent((getCurAdd()).replace(/\+/g, '%20'));
                               	}
                               </script>
                               <input type="hidden" name="lat" id="lat" value="">
