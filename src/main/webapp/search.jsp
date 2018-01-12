@@ -12,7 +12,7 @@
 	var city, lat, lon, category, searchContent, withIn;
 	var jsonArr = "[";
     window.onload = loadSearchPage();   
-    var results; var arr;var map;var infoWindow; var service; var out="", count=1; var add; var lat; var lon;
+    var results; var arr;var map;var infoWindow; var service; var out="", count=1; var add; var lat; var lon;var u ;
     function loadSearchPage(){
     	try{
     		updateGPSLocation();
@@ -30,7 +30,7 @@
             category = getUrlVars()["category"];
             searchContent = getUrlVars()["searchContent"].trim();
             if(searchContent == "" || searchContent == null){
-         	   searchContent = category;
+         	   //searchContent = category;
             }
               
             //alert(decodeURIComponent((searchContent).replace(/\+/g, '%20')));
@@ -41,7 +41,7 @@
             document.getElementById("lon").value = lon;
             
 	        map = new google.maps.Map(""); 
-            var u = getWebsiteURL();
+            u = getWebsiteURL();
             $.getJSON(u + "rest/get/search/"+getLattitude()+"/"+getLongitude()+"/"+lat+"/"+lon+"/"+withIn+"/"+searchContent+"+"+category, function(results) {
         	   callback3(results, google.maps.places.PlacesServiceStatus.OK);
             });
@@ -63,15 +63,20 @@
        	          
 	  var kk = 0 ;var temp = 0;var next = 0;
    	  function viewMoreSearch(){
- 
-        for(var i = next; i < results.length; i++) {    
-      		if(temp < 5){
-   				next++;
-   				var request = {
-   						placeId: results[i]['place_id']
-   					};
-				service = new google.maps.places.PlacesService(map);
-				service.getDetails(request, callback1);
+        for(var i = next; i < results.length; i++) {  
+      		
+      		if(temp < 3){
+      			next++;
+   				$.ajax({
+   					url: u + "rest/get/search/getDetailsByPlaceId/"+results[i]['place_id'],
+   					dataType: "json",
+   					async: false,
+   		          	type: 'GET',
+   		         	success: function(results1){
+   						callback1(results1, results[i]['distance']);
+   		         	}
+   	            });
+   				jQuery.ajaxSetup({async:true});
    			 }else{
    				temp = 0;
    				break;
@@ -80,14 +85,12 @@
         }
    	  }
    	
-   	  function callback1(place, status) {
-   			if (status == google.maps.places.PlacesServiceStatus.OK) { 
-   				
-   				//console.log(kk+": "+place.name); 	
+   	  function callback1(place, distFromSearchLocation) {
+	   		 	//console.log(kk+": "+JSON.stringify(place.place_id)+" : "+distFromSearchLocation); 	
    				/*---------------Start--------------------*/
    				var img_url="", name="", address = "", website = "", phoneNumber = "", rating = "", 
 	   				 lat="", lon="", distance = "", map = "", adr = "", reviews="", reviewsLink="";
-               
+   				var loc = getCookie("location");
    				adr = place.formatted_address;
    				website = place.website;
    				name = place.name;
@@ -96,7 +99,7 @@
    				lat = getLattitude(); 
    		        lon = getLongitude();
    				 
-              distance =  findDistance(lat, lon, place.geometry.location.lat(), place.geometry.location.lng());
+              distance =  findDistance(lat, lon, place.geometry.location.lat, place.geometry.location.lng);
               
               out = out + "<article class='article' data-percentage='"+distance+"'><ul>";                                               
               /* if (img_url.indexOf("cleardot") == -1) {
@@ -125,9 +128,10 @@
               
               var ad = addStarsToString(adr);
               var nm = addStarsToString(name);
-				if(adr != "" ){						    	
-			    	out = out + "<div  ><a target=# class=bottom href=https://www.google.co.in/maps/place/"+nm+"+"+adr.substr(0, adr.indexOf(' '))+"/@"+place.geometry.location.lat()+","+place.geometry.location.lng()+"><i class='fa fa-map-marker fa-fw' aria-hidden='true'></i></a></div>";
-			    }
+				/* if(adr != "" ){						    	
+			    	out = out + "<div  ><a target=# class=bottom href=https://www.google.co.in/maps/place/"+nm+"+"+adr.substr(0, adr.indexOf(' '))+"/@"+place.geometry.location.lat+","+place.geometry.location.lng+"><i class='fa fa-map-marker fa-fw' aria-hidden='true'></i></a></div>";
+			    } */
+			    out = out + "<div  ><a target= class=bottom href="+place.url+"><i class='fa fa-map-marker fa-fw' aria-hidden='true'></i></a></div>";
               if(distance != 'null'  && add != 'null'){
 					map = "https://www.google.co.in/maps/dir/"+add+"/"+nm+"+"+ad+"/@"+lat+","+lon;	
 				}else{
@@ -137,16 +141,29 @@
               out = out + "<div  ><a target=# class=bottom href=";
               out = out + map;
               out = out + "><i class='fa fa-location-arrow' aria-hidden='true'></i></a></div>";
-
-               
-               if(distance != 'null' && add != 'null'){
-               		out = out + "<div ><i class='fa fa-car' aria-hidden='true'></i>&nbsp;<span id='dis'>"+Math.floor(distance)+ "</span>&nbsp;km.(approx.)</div>";
+             
+              if(typeof place.reviews !== "undefined"){
+            	  var reviews = place.reviews.length;
+            	  if(reviews == '1'){
+				    		reviews = reviews+ " review";
+				    	}else{
+				    		reviews = reviews+ " reviews";
+				    	}
+            	  
+            		out = out + "<div ><a target=# class=bottom href=><i style='margin:0px;' class='fa fa-pencil' aria-hidden='true'></i>&nbsp;"+reviews+"</a></div>";
+              	} 
+              out = out + '<br>';
+               if(distance != 'null' && distance != ''){
+               		out = out + "<div >from <i style='color: #00ce08;' class='fa fa-map-marker' aria-hidden='true'></i> : <span id='dis'>"+Number.parseFloat(distance).toPrecision(4)+ "</span>&nbsp;km.(approx.)</div>";
+			    }
+               if(distFromSearchLocation != 'null' && distFromSearchLocation != ''){
+              		out = out + "<div >from <i style='transform: rotateY(180deg);color: #00ce08;' class='fa fa-search' aria-hidden='true'></i> : <span id='dis'>"+Number.parseFloat(distFromSearchLocation).toPrecision(4)+ "</span>&nbsp;km.(approx.)</div>";
 			    }
 			    	out = out + "</footer><br></li> </ul> </article>";
    				
    				/*---------------Finish--------------------*/
  				kk++;
-   			}
+   		 
    			//var dd = document.getElementById("viewList").innerHTML;
    			//dd = dd+out;
    			document.getElementById("viewList").innerHTML = out;
@@ -439,12 +456,12 @@
 <br><br>
 
 <div class="sortSelection">
-	with in : <select name="withIn" id="withIn" onchange="changeWithIn()">
-		<option value="1000">1000 mtrs.</option>
-		<option value="10000">10000 mtrs.</option>
-		<option value="100000">100000 mtrs.</option>
-		<option value="500000">500000 mtrs.</option>
-		<option value="1000000">1000000 mtrs.</option>
+	with in :<select name="withIn" id="withIn" onchange="changeWithIn()">
+		<option value="1000">1 km.</option>
+		<option value="10000">10 kms.</option>
+		<option value="100000">100 kms.</option>
+		<option value="500000">500 kms.</option>
+		<option value="1000000">1000 kms.</option>
 	</select>
 </div>
 
