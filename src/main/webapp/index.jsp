@@ -141,6 +141,10 @@
                               	}
                               	function setCurrentLocationToSearchBox(){
                               		document.getElementById('searchCity').value = decodeURIComponent((getCurAdd()).replace(/\+/g, '%20'));
+                              		if(document.getElementById("lat") != null && document.getElementById("lon") != null){
+                        		    	document.getElementById("lat").value = getLattitude();
+                        				document.getElementById("lon").value = getLongitude();
+                        	    	} 
                               	}
                               </script>
                               <input type="hidden" name="lat" id="lat" value="">

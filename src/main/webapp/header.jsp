@@ -199,6 +199,10 @@
                     	}
                       	function setCurrentLocationToSearchBox(){
                       		document.getElementById('searchCity').value = decodeURIComponent((getCurAdd()).replace(/\+/g, '%20'));
+                      		if(document.getElementById("lat") != null && document.getElementById("lon") != null){
+                		    	document.getElementById("lat").value = getLattitude();
+                				document.getElementById("lon").value = getLongitude();
+                	    	}
                       	}
                     </script>
                   </div>
@@ -206,8 +210,9 @@
                      <article class="searchBoxInputArticle">
                         <header>
                            <div>
-                           	  <input id="searchContent" name="searchContent" type="hidden">
-                              <input onkeyup="typeInSearchBox()" autocomplete="off" id="searchBoxInput" class="searchBoxInput" type="text" placeholder="search here">
+                           	  <!-- <input id="searchContent" name="searchContent" type="hidden"> -->
+                           	  <!-- onkeyup="typeInSearchBox()" autocomplete="off" -->
+                              <input name="searchContent" id="searchBoxInput" class="searchBoxInput" type="text" placeholder="search here">
                               <input class="searchBoxSubmit" type="submit" value="Search"  >
                            </div>
                         </header>

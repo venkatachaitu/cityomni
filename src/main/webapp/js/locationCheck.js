@@ -15,7 +15,7 @@ function hidelocationCheckYellowBottom(){
 function updateGPSLocation(){ 
 	try{		
 		if ("geolocation" in navigator){
-            navigator.geolocation.getCurrentPosition(show_location, show_error, {timeout:5000, enableHighAccuracy: true}); //position request
+            navigator.geolocation.getCurrentPosition(show_location, show_error, {timeout:60000, enableHighAccuracy: true}); //position request
         }else{
             console.log("Browser doesn't support geolocation!");
         }		
@@ -28,7 +28,9 @@ function show_location(position){
     currLatLong = geo_loc.split(",");
     lat = currLatLong[0];
     lon = currLatLong[1];
-    document.getElementById("gpsIcon").style.color = "#00ce08";
+    if(document.getElementById("gpsIcon") != null){
+    	document.getElementById("gpsIcon").style.color = "#00ce08";
+    }
     //locationFlag = true;
     var cookielat = getCookie("clattitude");
     var cookielon = getCookie("clongitude");
@@ -37,7 +39,10 @@ function show_location(position){
         setCookie("clongitude", lon, 365);
         initializeCurrent(lat, lon);
     }
-	
+    if(document.getElementById("lat") != null && document.getElementById("lon") != null){
+    	document.getElementById("lat").value = getCookie("clattitude");
+		document.getElementById("lon").value = getCookie("clongitude");
+	}
 }
 
 function processGeolocationResult(position) {
@@ -65,7 +70,9 @@ function getCurrentAddress(location) {
 	        'location': location
 	    }, function (results, status) {
 	        if (status == google.maps.GeocoderStatus.OK) {
+	        	//alert("getCurrentAddress(location)");
 	        	setCookie("address", results[0].formatted_address, 365);
+	        	setCookie("locAddress", results[0].formatted_address, 365);
 	        	setAddressForSearchBox(results);
 	        	updateLocationinSearchBox();
 	        } else {
@@ -74,49 +81,30 @@ function getCurrentAddress(location) {
 	    });
 	}catch(e){console.log("getCurrentAddress() : "+e);};
 }
+function updateLocationinSearchBox() {
+	//alert(getCookie("locAddress"))
+	if(getCookie("locAddress") != null){
+		//alert(document.getElementById("searchCity").value)
+		document.getElementById("searchCity").value = getCookie("locAddress");
+	}
+}
+
 function setAddressForSearchBox(results){
 	var city=false,state=false;
 	for (var i = 0; i < results.length; i++) {
+		//alert(JSON.stringify(results[i])['formatted_address']);
 		if ((!city || !state) && results[i].types[0] === "locality") {
-			 city = results[i].address_components[0].long_name,
-			state = results[i].address_components[2].long_name;
-			setCookie("locAddress", city + ", " + state, 365);
+			city = results[i].address_components[0].long_name,
+			state = ", " +results[i].address_components[2].long_name;
+			setCookie("locAddress", city + "" + state, 365);
 			if(document.getElementById("lat") != null && document.getElementById("lon") != null){
 		    	document.getElementById("lat").value = results[i].geometry.location.lat();
 				document.getElementById("lon").value = results[i].geometry.location.lng();
 	    	} 
+		}else{
+			//setCookie("locAddress", city + "" + state, 365);
 		}
 	}
-	// iterate through address_component array
-	/*$.each(arrAddress, function (i, address_component) {
-	    console.log('address_component:'+i);
-
-	    if (address_component.types[0] == "route"){
-	        console.log(i+": route:"+address_component.long_name);
-	        itemRoute = address_component.long_name;
-	    }
-
-	    if (address_component.types[0] == "locality"){
-	        console.log("town:"+address_component.long_name);
-	        itemLocality = address_component.long_name;
-	    }
-
-	    if (address_component.types[0] == "country"){ 
-	        console.log("country:"+address_component.long_name); 
-	        itemCountry = address_component.long_name;
-	    }
-
-	    if (address_component.types[0] == "postal_code_prefix"){ 
-	        console.log("pc:"+address_component.long_name);  
-	        itemPc = address_component.long_name;
-	    }
-
-	    if (address_component.types[0] == "street_number"){ 
-	        console.log("street_number:"+address_component.long_name);  
-	        itemSnumber = address_component.long_name;
-	    }
-	    //return false; // break the loop   
-	});*/
 }
 function getCurAdd(){
 	var add = getCookie("locAddress");
@@ -144,7 +132,9 @@ function getLongitude(){
 function show_error(error){
    switch(error.code) {
         case error.PERMISSION_DENIED:
-        	document.getElementById("locationCheckYellowBottom").style.display = 'block';
+        	if (document.getElementById("locationCheckYellowBottom") != null) {
+        		document.getElementById("locationCheckYellowBottom").style.display = 'block';
+			}        	
         	setTimeout('hidelocationCheckYellowBottom()', 3000);
             setCookie("address", "null", 365);
             getLatLogByIp();
@@ -159,17 +149,34 @@ function show_error(error){
             break;
         case error.UNKNOWN_ERROR:
         	console.log("Unknown error.");
-        	updateGPSLocation();
+        	getLatLogByIp();
             break; 
     }
 }
 
 function getLatLogByIp() {
 	var u = getWebsiteURL();
-	$.getJSON(u + "rest/get/getaddress", function(data) {
+	$.ajax({
+		    type: "GET",
+		    dataType: 'json',
+		    url: "http://freegeoip.net/json/",
+		    crossDomain : true,
+		    xhrFields: {
+		        withCredentials: true
+		    }
+		}).done(function( data ) {
+	    	setCookieWithOutReload("clattitude", data.latitude, 365);
+	    	setCookieWithOutReload("clongitude", data.longitude, 365);
+	    	//setAddressForSearchBox(data);
+	        initializeCurrent(data.latitude, data.longitude);
+	    }).fail( function(xhr, textStatus, errorThrown) {
+	        console.log("getLatLogByIp:xhr.responseText"+xhr.responseText);
+	        console.log("getLatLogByIp:textStatus"+textStatus);
+	    });
+	}
+	/*$.getJSON(u + "rest/get/getaddress", function(data) {
 		setCookieWithOutReload("clattitude", data.latitude, 365);
     	setCookieWithOutReload("clongitude", data.longitude, 365);
     	setAddressForSearchBox(data);
         initializeCurrent(data.latitude, data.longitude);        
-     });
-}
+     });*/

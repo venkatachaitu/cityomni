@@ -385,8 +385,8 @@ public class CityHaltController {
     ///"/rest/get/search/{lat}/{lon}/{cat}/{text}"
     @GetMapping("/rest/get/search/{clat}/{clon}/{lat}/{lon}/{radius}/{keyword}")
     public ResponseEntity<List<RadarSearchRespose>> searchGoogleApi(@PathVariable String lat, @PathVariable String lon, @PathVariable String clat, @PathVariable String clon, @PathVariable String radius, @PathVariable String keyword) throws Exception {
-    	String uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&radius="+radius+"&keyword="+keyword+"&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM";
-    	System.out.println("Search URI : "+uri);
+    	String uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&radius="+radius+"&name="+keyword+"&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM";
+    	System.out.println("searchGoogleApi : "+uri);
 		Map<?, ?> result = restTemplate.getForObject(uri, Map.class);
     	//System.out.println("result : "+result);
     	List<RadarSearchRespose> al = sortRadarSearchData(result, Double.parseDouble(lat), Double.parseDouble(lon));
@@ -397,7 +397,8 @@ public class CityHaltController {
     @GetMapping("/rest/get/search/getDetailsByPlaceId/{place_id}")
     public ResponseEntity<Object> getDetailsByPlaceId(@PathVariable String place_id) throws Exception {
     	String uri = "https://maps.googleapis.com/maps/api/place/details/json?placeid="+place_id+"&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM";
-		Map<?, ?> result = restTemplate.getForObject(uri, Map.class);
+    	System.out.println("getDetailsByPlaceId : "+uri);
+    	Map<?, ?> result = restTemplate.getForObject(uri, Map.class);
     	//System.out.println(result.get("result"));
     	return new ResponseEntity <Object> (result.get("result"), HttpStatus.OK);
 	}

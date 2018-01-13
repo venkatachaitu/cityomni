@@ -29,9 +29,7 @@
             }           
             category = getUrlVars()["category"];
             searchContent = getUrlVars()["searchContent"].trim();
-            if(searchContent == "" || searchContent == null){
-         	   //searchContent = category;
-            }
+            
               
             //alert(decodeURIComponent((searchContent).replace(/\+/g, '%20')));
             add = getCurAdd();  
@@ -39,10 +37,19 @@
             lon = getUrlVars()["lon"].trim();
             document.getElementById("lat").value = lat;
             document.getElementById("lon").value = lon;
-            
+             
 	        map = new google.maps.Map(""); 
             u = getWebsiteURL();
-            $.getJSON(u + "rest/get/search/"+getLattitude()+"/"+getLongitude()+"/"+lat+"/"+lon+"/"+withIn+"/"+searchContent+"+"+category, function(results) {
+            var uri = "";
+
+            if(searchContent == "" || searchContent == null){
+            	uri = "rest/get/search/"+getLattitude()+"/"+getLongitude()+"/"+lat+"/"+lon+"/"+withIn+"/"+category;
+             }
+            else{
+            	uri = "rest/get/search/"+getLattitude()+"/"+getLongitude()+"/"+lat+"/"+lon+"/"+withIn+"/"+searchContent+"+"+category;
+            }
+            
+            $.getJSON(u + uri, function(results) {
         	   callback3(results, google.maps.places.PlacesServiceStatus.OK);
             });
     	}catch(e){alert("loadContent : "+e);}

@@ -22,48 +22,9 @@ function loadIndexPage() {
             selectCityInIndexPage();
         }
     }
-    updateLocationinSearchBox();
+   // updateLocationinSearchBox();
 }
-function updateLocationinSearchBox() {
-	//alert(getCookie("searchCity"))
-	/*if(getCookie("searchCity") != null){
-		if(getCookie("searchCity") != ''){
-			document.getElementById("searchCity").value = getCookie("searchCity");
-		}else{
-			document.getElementById("searchCity").value = getCookie("locAddress");
-		}
-	}else{*/
-			document.getElementById("searchCity").value = getCookie("locAddress");
-	/*}*/
-}
-/*function getLatLogByIp() {
-	var u = getWebsiteURL();
-	$.getJSON(u + "rest/get/getaddress", function(data) {
-		//alert(data);
-		setCookieWithOutReload("clattitude", data.latitude, 365);
-    	setCookieWithOutReload("clongitude", data.longitude, 365);
-    	setAddressForSearchBox(data);
-        initializeCurrent(data.latitude, data.longitude);        
-     });
-	
-	/*$.ajax({
-		    type: "GET",
-		    dataType: 'json',
-		    url: "http://freegeoip.net/json/",
-		    crossDomain : true,
-		    xhrFields: {
-		        withCredentials: true
-		    }
-		}).done(function( data ) {
-	    	setCookieWithOutReload("clattitude", data.latitude, 365);
-	    	setCookieWithOutReload("clongitude", data.longitude, 365);
-	    	setAddressForSearchBox(data);
-	        initializeCurrent(data.latitude, data.longitude);
-	    }).fail( function(xhr, textStatus, errorThrown) {
-	        console.log("getLatLogByIp:xhr.responseText"+xhr.responseText);
-	        console.log("getLatLogByIp:textStatus"+textStatus);
-	    });
-	}*/
+
 function setCookieWithOutReload(cname, cvalue, exdays) {
     try {
         var d = new Date();
@@ -242,6 +203,21 @@ function viewSearchBox() {
    				document.getElementById('searchCity').value = decodeURIComponent((getCurAdd().trim()).replace(/\+/g, '%20'));
    			}
         	
+        	 if(typeof getUrlVars()["city"] !== "undefined"){
+ 	   			if(getUrlVars()["lat"] != "" && getUrlVars()["lon"] != ""){
+	 	   			if(document.getElementById("lat") != null && document.getElementById("lon") != null){
+	 			    	document.getElementById("lat").value = getUrlVars()["lat"];
+	 					document.getElementById("lon").value = getUrlVars()["lon"];
+	 		    	}
+ 	   	        }
+        	 }else{
+        		 if(document.getElementById("lat") != null && document.getElementById("lon") != null){
+	 			    	document.getElementById("lat").value = getLattitude();
+	 					document.getElementById("lon").value =  getLongitude();
+ 		    		}
+        	 }
+        
+        	 
         	 if(typeof getUrlVars()["category"] !== "undefined"){
  	   			if(getUrlVars()["category"] != ""){
 		 	   			var select = document.getElementById('searchCategories');
