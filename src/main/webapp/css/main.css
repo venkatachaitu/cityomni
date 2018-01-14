@@ -3217,3 +3217,20 @@ button:disabled,
     display: none;
     width: 100%;
 }
+
+.comentbox td{
+	width: 100%;border: 1px solid #dcd9d9;background-color: white;
+}
+
+.areaspan{
+	float: left;
+}
+
+.datespan{
+	float: right;
+}
+
+.comenttext{
+	margin-top: 1.5em;border: 1px solid red;padding-top:  2em;border-width: 1px 0px 0px 0px;border-radius:  0;text-align:  left;
+}
+

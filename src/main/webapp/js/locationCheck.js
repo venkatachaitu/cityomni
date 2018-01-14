@@ -13,7 +13,8 @@ function hidelocationCheckYellowBottom(){
 	document.getElementById("locationCheckYellowBottom").style.display = 'none';	
 }
 function updateGPSLocation(){ 
-	try{		
+	try{
+		displtyTimes();
 		if ("geolocation" in navigator){
             navigator.geolocation.getCurrentPosition(show_location, show_error, {timeout:60000, enableHighAccuracy: true}); //position request
         }else{

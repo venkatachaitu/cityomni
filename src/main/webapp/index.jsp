@@ -84,6 +84,7 @@
                <i class="fa fa-map-marker fa-fw"></i>
                <span id="locationHome"></span>
                </span>  
+               <span class="headerMenu" id="time"></span>
                <a class="headerMenu" href="./">Home</a>
                <a class="headerMenu" href="./aboutUS">AboutUs</a>
                <a class="headerMenu" href="./metroCities">Metro Cities</a>
@@ -119,18 +120,18 @@
                               </select> -->
                               <i onclick="setCurrentLocationToSearchBox()" style="color: #00ce08;float:  left;margin-left: -1em;font-size: 1.5em;margin-top:  0.2em;" class="fa fa-map-marker" aria-hidden="true"></i>
                               <input class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" />  
-                              <span class="bbu" onclick="clearSearchCity()">x</span>
+                              <i class="fa fa-times-circle bbu" aria-hidden="true" onclick="clearSearchCity()"></i>
+                              <!-- <span class="bbu" onclick="clearSearchCity()">x</span> -->
                               <style>
                                	.bbu{
-                               		    width: 11px;
-									    height: 11px;
-									    position: absolute;
-									    margin-top: -2.8em;
-									    margin-left: 10em;
-									    background-color: #ff000000;
-									    border: none;
-									    font-size: 0.9em;
-									    color: #c3c3c3;
+                               		        float: right;
+										    margin: -1em 0em 0em 0em;
+										    font-size: 1.9em;
+										    color: #ff4b4b;
+										    background: #ffffffe0;
+										    width: 1em;
+										    height: 1em;
+										    position: relative;
                                	}
                               
                               </style>

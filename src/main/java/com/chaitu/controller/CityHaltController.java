@@ -3,15 +3,19 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import javax.persistence.EntityManager;
 import javax.servlet.ServletContext;
 
 import org.json.JSONException;
@@ -33,7 +37,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
 import com.chaitu.constants.GetPath;
+import com.chaitu.model.Data;
 import com.chaitu.model.RadarSearchRespose;
+import com.chaitu.service.UserServiceDao;
 import com.chaitu.utils.JsonFileHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -434,15 +440,33 @@ public class CityHaltController {
     	return al;
     }    
     
+    @Autowired
+    UserServiceDao userServiceDao;
+    
     @CrossOrigin(origins = "*")
     @PostMapping("/rest/add/confession")
-    public ResponseEntity<Object> addConfession(@RequestBody JSONObject data) throws Exception {
+    public ResponseEntity<Object> addConfession(@RequestBody Data data) throws Exception {
     	HttpHeaders response = new HttpHeaders();
 	    response.set("Access-Control-Allow-Origin", "*");
-
+	    userServiceDao.addConfession(data);
 	    return new ResponseEntity<Object>(data, response, HttpStatus.OK);
     }
+    @CrossOrigin(origins = "*")
+    @PostMapping("/rest/readall/confession")
+    public ResponseEntity<Object> readAllConfession() throws Exception {
+    	HttpHeaders response = new HttpHeaders();
+	    response.set("Access-Control-Allow-Origin", "*");
+	    return new ResponseEntity<Object>(userServiceDao.readAllConfession(), response, HttpStatus.OK);
+    }
     
+    @CrossOrigin(origins = "*")
+    @PostMapping("/rest/readConfessionByArea/confession/{area}")
+    public ResponseEntity<Object> readConfessionByArea(@PathVariable String area) throws Exception {
+    	HttpHeaders response = new HttpHeaders();
+	    response.set("Access-Control-Allow-Origin", "*");
+	    return new ResponseEntity<Object>(userServiceDao.readConfessionByArea(area), response, HttpStatus.OK);
+    }
     
+
     
 }

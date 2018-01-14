@@ -18,7 +18,8 @@
 	   			}
 	   			document.getElementById('locationHome').innerHTML = loc;
 	   			
-	   			var u = getWebsiteURL();	   			 
+	   			var u = getWebsiteURL();
+	   			
    		}catch(e){alert("loadConfessionPage(): "+e);}
    	}   
    	function setCookieWithOutReload(cname, cvalue, exdays) {
@@ -64,33 +65,43 @@
          <div class="leftSide">
          	<h5>Search your city/area</h5>         
          		<input class="searchCity" name="city" id="searchCityConf" placeholder="Enter a city" type="text" />  
+         		 <i class="fa fa-times-circle bbu" aria-hidden="true" onclick="clearSearchCity()"></i>
+         		 	<style>
+	                 	.bbu{
+	          		        	float: right;
+							    margin: -1.15em 0em 0em 0em;
+							    font-size: 1.4em;
+							    color: #ff4b4b;
+							    /* background: #ffffffe0; */
+							    width: 1em;
+							    height: 1em;
+							    position: relative;
+							    cursor: pointer;
+	                   	}
+					                    
+                    </style>
+                    <script>
+                    	function clearSearchCity(){
+                    		document.getElementById('searchCityConf').value = '';
+                    		document.getElementById('searchCityConf').focus();
+                    		readConfessionByArea('all');
+                    	}
+		          	</script>
 			<hr>
 			<h6>Cities/areas add by users</h6>
 			<hr>
-			<ul>
-				<li>Agiripalli</li>
-				<li>Agiripalli</li>
-				<li>Agiripalli</li>
-				<li>Agiripalli</li>
-				<li>Agiripalli</li>
-				<li>Agiripalli</li>
-				<li>Agiripalli</li>
-				<li>Agiripalli</li>
-				<li>Agiripalli</li>
-				<li>Agiripalli</li>
-				<li>Agiripalli</li>			
-			
-			</ul>
+			<ul style="list-style: none;" id="areasList"></ul>
          </div>
+         
 		<div class="centerSide">
-				<h3  class="confessionTitle" id="titleHeader">Confessions:</h3>
+				<h3  class="confessionTitle" id="titleHeader">Confessions: <span id="comentloc">all</span></h3>
 				<span class="addButton" id="addButton" onclick="viewCommentBox()">+</span>
 	         <hr>
 	         <textarea rows="9" cols="44" id="commentBox" class="commentBox" style="display: none;"></textarea><br>
 	         <span class="addSubmitButton" id="addSubmitButton" onclick="commentSubmit()">add comment</span><br>
-	         
-
-	         <hr>
+	         <span style="color:red;" id="addSubmitResponse"></span>
+	          
+	         <div id="commentsList"></div>
 		</div>
 		<!-- <div class="rightSide">
 				right
@@ -102,36 +113,20 @@
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
    </div>
 </section>
-				<script> 
-						function commentSubmit(){
-							var data = JSON.stringify( { "user": 'chaitanya', "data": $('#commentBox').val() } );
-							$.ajax({
-							    url: "/rest/add/confession",
-							    dataType: 'json',
-							    type: 'post',
-							    contentType: 'application/json',
-							    data:  data,
-							    processData: false,
-							    success: function( data, textStatus, jQxhr ){
-							        alert("success:"+ JSON.stringify( data ) );
-							    },
-							    error: function( jqXhr, textStatus, errorThrown ){
-							        alert("error:"+ errorThrown );
-							    }
-							});
-						}
+				<script>
 					  function initialize() {
+						  loadAllComments();
 						    var acInputs = document.getElementsByClassName("searchCity");
 						    for (var i = 0; i < acInputs.length; i++) {
 						        var autocompleted = new google.maps.places.Autocomplete(acInputs[i]);
 						        //autocompleted.inputId = acInputs[i].id;
 						        google.maps.event.addListener(autocompleted, 'place_changed', function () {
-						        	document.getElementById("titleHeader").innerHTML = "Confessions : "+this.getPlace().vicinity;
-						        	//alert(this.getPlace().vicinity); 
+						        	document.getElementById("comentloc").innerHTML = this.getPlace().vicinity;
+						        	readConfessionByArea(this.getPlace().vicinity);
 						        	});
 						        }
 						    }
 						
-						initialize();					   
+						initialize();
 				</script> 
 <%@include file="footer.jsp" %>

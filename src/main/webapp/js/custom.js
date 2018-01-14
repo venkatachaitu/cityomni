@@ -1,6 +1,5 @@
 function loadIndexPage() { 
     if (!isLocationEnable()) { 
-    	
       // promptForLocation(); 
     	var loc = getCookie("location");
 			var loc11 = getUrlVars()["location"];
@@ -503,10 +502,163 @@ function viewCommentBox(){
 		 document.getElementById("addSubmitButton").style.display = "block";
 		 document.getElementById("addButton").style.transform = "rotate(40deg)";
 		 document.getElementById("addButton").style.backgroundColor = "red";
+		 document.getElementById("addSubmitResponse").style.display = "block";
 	 }else{
 		 document.getElementById("commentBox").style.display = "none";
 		 document.getElementById("addSubmitButton").style.display = "none";
 		 document.getElementById("addButton").style.transform = "rotate(0deg)";
 		 document.getElementById("addButton").style.backgroundColor = "#0095ff";
+		 document.getElementById("addSubmitResponse").style.display = "none";
 	 }    	
+}
+function displtyTimes(){   	
+    d=new Date();
+    minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+    	    hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+    	    ampm = d.getHours() >= 12 ? 'pm' : 'am',
+    	    months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+    	    days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    	    
+    if(document.getElementById('time') != null){
+    	document.getElementById('time').innerHTML= days[d.getDay()]+' '+months[d.getMonth()]+' '+d.getDate()+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    	setTimeout('displtyTimes()','1000');
+    }
+}
+function getCustomDate(){   	
+	var currentdate = new Date(); 
+	var datetime = 	currentdate.getFullYear() + "-"
+					+ (currentdate.getMonth()+1)  + "-" 
+					+ currentdate.getDate() + " "  
+					+ currentdate.getHours() + ":"  
+					+ currentdate.getMinutes() + ":" 
+					+ currentdate.getSeconds();
+					var dt = new Date(datetime);
+	return dt.toISOString();
+}
+function decodeDate(dd){
+	var d = new Date(dd);
+	minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+    	    hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+    	    ampm = d.getHours() >= 12 ? 'pm' : 'am',
+    	    months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+   return  months[d.getMonth()]+' '+d.getDate()+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+        	
+}
+function commentSubmit(){
+	var date = getCustomDate();
+	var com = JSON.stringify($('#commentBox').val());
+	var area = document.getElementById("comentloc").innerHTML;
+	var data = JSON.stringify( { "user": "chaitanya", "area": area, "comment": com, "date": date } );
+	$.ajax({
+	    url: "/rest/add/confession",
+	    dataType: 'json',
+	    type: 'post',
+	    contentType: 'application/json',
+	    data:  data,
+	    processData: false,
+	    success: function( data, textStatus, jQxhr ){
+	    	document.getElementById("addSubmitResponse").innerHTML = "success";
+	        //alert("commentSubmit() : Success:"+ JSON.stringify( data ) );
+	    	loadAllComments();
+	    },
+	    error: function( jqXhr, textStatus, errorThrown ){
+	        alert("commentSubmit() : Error:"+ errorThrown );
+	    }
+	});
+}
+
+var jsonData = [];
+function loadAllComments(){
+	var areas = [];
+	document.getElementById('searchCityConf').value = getCookie("locAddress");
+	
+	$.ajax({
+	    url: "/rest/readall/confession",
+	    dataType: 'json',
+	    type: 'post',
+	    contentType: 'application/json',
+	    //data:  data,
+	    processData: false,
+	    success: function( data, textStatus, jQxhr ){
+	    	var out = "";
+	    	//out = "<li><table><tr><td></td><td></td><td></td></tr></table></li>";
+	    	
+	    	//out = out + "<table>";
+	    	$.each(data, function(key, val) {
+	    		//out = out + "<tr>";
+	    		var user, area, comment, date;
+	    		$.each(val, function(key1, val1) {
+	    			if(key1 == "user"){
+	    				user = val1;
+	    			}else if(key1 == "area"){
+	    				area = val1;
+	    				if(areas.indexOf(area) == -1){
+	    					areas.push(area);
+	    				}	    				
+	    			}else if(key1 == "comment"){
+	    				comment = val1;
+	    			}else if(key1 == "date"){
+	    				date = val1;
+	    			}
+	    			if(typeof area != "undefined" &&  typeof user != "undefined" &&  typeof comment != "undefined" &&  typeof date != "undefined"){
+	    				while (comment.indexOf("\\n") !== -1) {
+	    					comment = comment.replace("\\n", "<br />");
+    					}
+	    				 
+	    				out = out + "<table class='comentbox'><tr><td style=''><span class='areaspan' >"+area+" ("+user+")</span><span class='datespan' >"+decodeDate(date)+"</span><div class='comenttext' style='' >"+comment.replace(/"/g , " ")+"</div></td></tr></table>";
+	    				 
+	    				var obj = "{\"user\":\""+user+"\", \"area\":\""+area+"\", \"comment\":"+comment+", \"date\":\""+decodeDate(date)+"\"}";
+	    				
+	    				jsonData.push(JSON.parse(obj));
+	    			}
+	    				//alert(key1+" : "+val1);
+	    		});
+	    		//out = out + "</tr>"
+	    	});
+	    	//alert("loadAllComments() : "+JSON.stringify(data));
+	    	
+	    	//out = out + "</table>"
+	    	document.getElementById('commentsList').innerHTML = out;
+	    	//return data;
+	    	var out1 = "<li onclick=readConfessionByArea('all')>all areas</li>";
+	    	for (var i = 0; i < areas.length; i++) { 
+	    		out1 = out1 + "<li onclick=readConfessionByArea('"+areas[i]+"')>"+areas[i]+ "</li>";
+	    	}
+	    	document.getElementById('areasList').innerHTML = out1;
+	    	//console.log(jsonData);
+	    	 
+	    },
+	    error: function( jqXhr, textStatus, errorThrown ){
+	        alert("loadAllComments() : Error:"+ errorThrown );
+	    }
+	});
+}
+
+function readConfessionByArea(area){
+	var out = "";
+	out = out + "<table>";
+	$.each(jsonData, function(key, val) {
+		if(area == 'all') {
+			while (val.comment.indexOf("\\n") !== -1) {
+				val.comment = val.comment.replace("\\n", "<br />");
+			}
+			 
+			out = out + "<table class='comentbox'><tr><td style=''><span class='areaspan' >"+val.area+" ("+val.user+")</span><span class='datespan' >"+val.date+"</span><div class='comenttext' style='' >"+val.comment.replace(/"/g , " ")+"</div></td></tr></table>";
+			 
+			//out = out + "<tr><td>"+val.user+"</td><td>"+val.area+"</td><td>"+val.comment+"</td><td>"+val.date+"</td></tr>";
+			//out = out + "<tr><td style='width: 100%;'><div><span style='float:  left;'>"+val.area+"</span><span style='float:  right;'>"+val.date+"</span></div><div  style='margin-top: 1.5em;border-top: 1px solid #b9b6b6;padding-top:  2em;'>"+val.comment+"</div></td></tr>";
+			
+		}else if(val.area == area) {
+			//out = out + "<tr><td>"+val.user+"</td><td>"+val.area+"</td><td>"+val.comment+"</td><td>"+val.date+"</td></tr>";
+			//out = out + "<tr><td style='width: 100%;'><div><span style='float:  left;'>"+val.area+"</span><span style='float:  right;'>"+val.date+"</span></div><div  style='margin-top: 1.5em;border-top: 1px solid #b9b6b6;padding-top:  2em;'>"+val.comment+"</div></td></tr>";
+			while (val.comment.indexOf("\\n") !== -1) {
+				val.comment = val.comment.replace("\\n", "<br />");
+			}
+			 
+			out = out + "<table class='comentbox'><tr><td style=''><span class='areaspan' >"+val.area+" ("+val.user+")</span><span class='datespan' >"+val.date+"</span><div class='comenttext' style='' >"+val.comment.replace(/"/g , " ")+"</div></td></tr></table>";
+			 
+		}
+	});
+	out = out + "</table>"
+	document.getElementById('commentsList').innerHTML = out;
 }

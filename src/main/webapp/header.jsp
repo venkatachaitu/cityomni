@@ -94,8 +94,9 @@
             <nav id="nav" class="menuNav" style="margin-top: -22px;">						
                <span style="display: none;" onclick="changeLocation()" class="headerMenu" >
                <i class="fa fa-map-marker fa-fw"></i>
-               <span id="locationHome"></span>
+               <span id="locationHome"></span>               
                </span>
+               <span class="headerMenu" id="time"></span>
                <a class="headerMenu" href="./">Home</a>
                <a class="headerMenu" href="./aboutUS">AboutUs</a>
                <a class="headerMenu" href="./metroCities">Metro Cities</a>
@@ -118,17 +119,18 @@
                         <header class="selectCity">
 		                      <i onclick="setCurrentLocationToSearchBox()" style="color: #00ce08;float:  left;margin-left: -1em;font-size: 1.5em;margin-top:  0.2em;" class="fa fa-map-marker" aria-hidden="true"></i>
                         	  <input class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" />  
-                              <span class="bbu" onclick="clearSearchCity()">x</span>
+                              <!-- <span class="bbu" onclick="clearSearchCity()">x</span> -->
+                              <i class="fa fa-times-circle bbu" aria-hidden="true" onclick="clearSearchCity()"></i>
                               <style>
                                	.bbu{
-                               		width: 11px;
-								    height: 11px;
-								    position: absolute;
-								    margin-top: -3em;
-								    margin-left: 9em;
-								    background-color: #ff000000;
-								    border: none;
-								    color: black;
+                               		 float: right;
+										    margin: -1em 0em 0em 0em;
+										    font-size: 1.9em;
+										    color: #ff4b4b;
+										    /* background: #ffffffe0; */
+										    width: 1em;
+										    height: 1em;
+										    position: relative;
                                	}
                               
                               </style>
