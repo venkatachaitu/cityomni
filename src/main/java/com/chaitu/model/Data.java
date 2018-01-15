@@ -1,4 +1,4 @@
-package com.chaitu.model;
+/*package com.chaitu.model;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -84,3 +84,4 @@ public class Data {
 	}
 	
 }
+*/

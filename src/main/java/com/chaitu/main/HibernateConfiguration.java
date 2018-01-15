@@ -1,4 +1,4 @@
-package com.chaitu.main;	
+/*package com.chaitu.main;	
 import java.util.Properties;
 
 import javax.sql.DataSource;
@@ -32,8 +32,8 @@ public class HibernateConfiguration {
 	@Value("${hibernate.show_sql}")
 	private String SHOW_SQL;
 
-	/*@Value("${hibernate.hbm2ddl.auto}")
-	private String HBM2DDL_AUTO;*/
+	@Value("${hibernate.hbm2ddl.auto}")
+	private String HBM2DDL_AUTO;
 
 	@Value("${entitymanager.packagesToScan}")
 	private String PACKAGES_TO_SCAN;
@@ -68,4 +68,4 @@ public class HibernateConfiguration {
 		transactionManager.setSessionFactory(sessionFactory().getObject());
 		return transactionManager;
 	}	
-}
+}*/

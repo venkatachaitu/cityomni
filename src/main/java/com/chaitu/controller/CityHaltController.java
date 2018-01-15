@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.persistence.EntityManager;
+//import javax.persistence.EntityManager;
 import javax.servlet.ServletContext;
 
 import org.json.JSONException;
@@ -37,9 +37,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
 import com.chaitu.constants.GetPath;
-import com.chaitu.model.Data;
+//import com.chaitu.model.Data;
 import com.chaitu.model.RadarSearchRespose;
-import com.chaitu.service.UserServiceDao;
+//import com.chaitu.service.UserServiceDao;
 import com.chaitu.utils.JsonFileHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -440,7 +440,7 @@ public class CityHaltController {
     	return al;
     }    
     
-    @Autowired
+    /*@Autowired
     UserServiceDao userServiceDao;
     
     @CrossOrigin(origins = "*")
@@ -467,6 +467,6 @@ public class CityHaltController {
 	    return new ResponseEntity<Object>(userServiceDao.readConfessionByArea(area), response, HttpStatus.OK);
     }
     
-
+*/
     
 }

@@ -1,4 +1,4 @@
-package com.chaitu.service;
+/*package com.chaitu.service;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -48,7 +48,7 @@ public class UserServiceDaoImpl implements UserServiceDao{
 		return (List<Data>) this.sessionFactory.getCurrentSession().createQuery("select d.area FROM Data d").list();
 	}
 
-		/*public void addEmployee(Employee employee) {
+		public void addEmployee(Employee employee) {
 		   sessionFactory.getCurrentSession().saveOrUpdate(employee);
 		 }
 
@@ -63,5 +63,6 @@ public class UserServiceDaoImpl implements UserServiceDao{
 
 		 public void deleteEmployee(Employee employee) {
 		  sessionFactory.getCurrentSession().createQuery("DELETE FROM Employee WHERE empid = "+employee.getEmpId()).executeUpdate();
-		 }*/
+		 }
 }
+*/
