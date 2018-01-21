@@ -97,6 +97,9 @@
    			}  
    			temp++;
         }
+        if(next >= results.length){
+       		document.getElementById("loadingImageLoadMore").style.display = "none";
+        } 
    	  }
    	
    	  function callback1(place, distFromSearchLocation) {
@@ -182,6 +185,9 @@
    			//dd = dd+out;
    			document.getElementById("viewList").innerHTML = out;
    			//setSelectionWith();
+   		  
+         	document.getElementById("loadingImageLoadMore").style.display = "block";
+          
    	  }
  
    function sorting(json_object, key_to_sort_by) {
@@ -247,10 +253,11 @@
        var win = $(window);
        win.scroll(function() {
            if ($(document).height() - 250 <= $(window).scrollTop() + $(window).height()) {
-               //$('#loadMoreButton').show();
+        	   document.getElementById("loadingImageLoadMore").style.display = "block";
+               
                 //setTimeout('loadMore()', 200);
 	           viewMoreSearch(); 
-               //$('#loadMoreButton').hide();
+	           
            }
        });
    });
@@ -296,6 +303,7 @@
       </div>
       <p id="loadMoreButton" class="loadMoreButton" onclick="loadMore()">load more...</p>
       <br><br>
+      <img id="loadingImageLoadMore" style="display: none;" class="loadingImage" src="images/loading2.gif" alt="loading" />	
       <!-- <button onclick="viewMoreSearch()">view more</button> -->
    </div>
 </section>

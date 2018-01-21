@@ -118,7 +118,7 @@
                                  <option value="vijayawada">Vijayawada</option>                                 
                                  <option value="tirupati">Tirupati</option>
                               </select> -->
-                              <i onclick="setCurrentLocationToSearchBox()" style="color: #768176;float:  left;margin-left: -1em;font-size: 1.5em;margin-top:  0.2em;" class="fa fa-map-marker" aria-hidden="true"></i>
+                              <i onclick="setCurrentLocationToSearchBox()" style="color: #e6e6e6;float:  left;margin-left: -1em;font-size: 1.5em;margin-top:  0.2em;" class="fa fa-map-marker" aria-hidden="true"></i>
                               <input class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" />  
                               <i class="fa fa-times-circle bbu" aria-hidden="true" onclick="clearSearchCity()"></i>
                               <!-- <span class="bbu" onclick="clearSearchCity()">x</span> -->
@@ -141,6 +141,7 @@
                               		document.getElementById('searchCity').focus();
                               	}
                               	function setCurrentLocationToSearchBox(){
+                              		//alert("setCurrentLocationToSearchBox()"+getLattitude()+" "+getLongitude());
                               		document.getElementById('searchCity').value = decodeURIComponent((getCurAdd()).replace(/\+/g, '%20'));
                               		if(document.getElementById("lat") != null && document.getElementById("lon") != null){
                         		    	document.getElementById("lat").value = getLattitude();

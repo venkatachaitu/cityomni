@@ -40,9 +40,10 @@ function show_location(position){
         setCookie("clongitude", lon, 365);
         initializeCurrent(lat, lon);
     }
+    //alert("show_location(position)"+getLattitude()+"  "+getLongitude());
     if(document.getElementById("lat") != null && document.getElementById("lon") != null){
-    	document.getElementById("lat").value = getCookie("clattitude");
-		document.getElementById("lon").value = getCookie("clongitude");
+    	document.getElementById("lat").value = getLattitude();
+		document.getElementById("lon").value = getLongitude();
 	}
 }
 
@@ -99,8 +100,10 @@ function setAddressForSearchBox(results){
 			state = ", " +results[i].address_components[2].long_name;
 			setCookie("locAddress", city + "" + state, 365);
 			if(document.getElementById("lat") != null && document.getElementById("lon") != null){
-		    	document.getElementById("lat").value = results[i].geometry.location.lat();
-				document.getElementById("lon").value = results[i].geometry.location.lng();
+				//document.getElementById("lat").value = results[i].geometry.location.lat();
+				//document.getElementById("lon").value = results[i].geometry.location.lng();
+				document.getElementById("lat").value = getLattitude();
+				document.getElementById("lon").value = getLongitude();
 	    	} 
 		}else{
 			//setCookie("locAddress", city + "" + state, 365);
@@ -156,6 +159,7 @@ function show_error(error){
 }
 
 function getLatLogByIp() {
+	//alert("getLatLogByIp()");
 	var u = getWebsiteURL();
 	$.ajax({
 		    type: "GET",

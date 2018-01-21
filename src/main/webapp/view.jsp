@@ -18,8 +18,7 @@
 	   			}
 	   			document.getElementById('locationHome').innerHTML = loc; 
 	   			
-	   			var u = getWebsiteURL();
-	   			    		
+	   			var u = getWebsiteURL();	   			    		
 	   			var desc1 = $('meta[name=description]').attr("content");
 				var descTab = addSpaces(getUrlVars()["name"])+" "+addSpaces(getUrlVars()["address"])+" "+desc1;				
 				

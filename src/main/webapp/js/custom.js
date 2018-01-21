@@ -527,13 +527,14 @@ function viewCommentBox(){
 function displtyTimes(){   	
     d=new Date();
     minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
-    	    hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
-    	    ampm = d.getHours() >= 12 ? 'pm' : 'am',
-    	    months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-    	    days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+    sec = d.getSeconds().toString().length == 1 ? '0'+d.getSeconds() : d.getSeconds(),
+    ampm = d.getHours() >= 12 ? 'pm' : 'am',
+    months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+    days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
     	    
     if(document.getElementById('time') != null){
-    	document.getElementById('time').innerHTML= days[d.getDay()]+' '+months[d.getMonth()]+' '+d.getDate()+' '+d.getFullYear()+' '+hours+':'+minutes+ampm;
+    	document.getElementById('time').innerHTML= days[d.getDay()]+' '+months[d.getMonth()]+' '+d.getDate()+' '+d.getFullYear()+' '+hours+':'+minutes+':'+sec+ampm;
     	setTimeout('displtyTimes()','1000');
     }
 }
