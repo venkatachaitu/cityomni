@@ -31,7 +31,13 @@ var tFlag = false;
 	   				clattitude = 'NA';
 	   				clongitude = 'NA';
 	   			}
-
+	   			
+	   			var desc1 = $('meta[name=description]').attr("content");
+				var descTab = addSpaces(category)+" in "+loc+ " "+desc1;				
+				
+	   			$('meta[name=description]').remove();
+	            $('head').append( "<meta name='description' content='"+descTab+"'>" );
+	            
 
 	   			if(category.toString().trim().toLowerCase() != '' && category.toString().trim().toLowerCase() != 'undefined' && loc.toString().trim().toLowerCase() != '' && loc.toString().trim().toLowerCase() != 'undefined')	{						
 	   				var u = getWebsiteURL();

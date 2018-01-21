@@ -11,11 +11,11 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.chaitu.model.Data;
+import com.chaitu.model.DataTable;
 
 @Repository
 @Transactional
-public class UserServiceDaoImpl implements UserServiceDao{
+public class DbServiceDaoImpl implements DbServiceDao{
 	
 	@Autowired
 	SessionFactory sessionFactory;
@@ -28,24 +28,24 @@ public class UserServiceDaoImpl implements UserServiceDao{
 		this.sessionFactory = sessionFactory;
 	}
 	
-	public void addConfession(Data data) {
+	public void addConfession(DataTable data) {
 		this.sessionFactory.getCurrentSession().saveOrUpdate(data);
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Data> readAllConfession() {
-		List<Data> li =   this.sessionFactory.getCurrentSession().createQuery("from Data order by date(date) desc ").list();
+	public List<DataTable> readAllConfession() {
+		List<DataTable> li =   this.sessionFactory.getCurrentSession().createQuery("from Data order by date(date) desc ").list();
 		Collections.reverse(li);
 		return li;	 
 	}
 	
-	public List<Data> readConfessionByArea(String area) {
+	public List<DataTable> readConfessionByArea(String area) {
 		return null;//(List<Data>) this.sessionFactory.getCurrentSession().createCriteria("FROM Data where area = "+area).list(); 
 	}
  
 	@SuppressWarnings("unchecked")
-	public List<Data> readallAreas() {
-		return (List<Data>) this.sessionFactory.getCurrentSession().createQuery("select d.area FROM Data d").list();
+	public List<DataTable> readallAreas() {
+		return (List<DataTable>) this.sessionFactory.getCurrentSession().createQuery("select d.area FROM Data d").list();
 	}
 
 		public void addEmployee(Employee employee) {

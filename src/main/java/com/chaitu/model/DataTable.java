@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="data")
-public class Data {
+public class DataTable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="pkId")

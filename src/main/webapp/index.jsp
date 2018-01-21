@@ -118,7 +118,7 @@
                                  <option value="vijayawada">Vijayawada</option>                                 
                                  <option value="tirupati">Tirupati</option>
                               </select> -->
-                              <i onclick="setCurrentLocationToSearchBox()" style="color: #00ce08;float:  left;margin-left: -1em;font-size: 1.5em;margin-top:  0.2em;" class="fa fa-map-marker" aria-hidden="true"></i>
+                              <i onclick="setCurrentLocationToSearchBox()" style="color: #768176;float:  left;margin-left: -1em;font-size: 1.5em;margin-top:  0.2em;" class="fa fa-map-marker" aria-hidden="true"></i>
                               <input class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" />  
                               <i class="fa fa-times-circle bbu" aria-hidden="true" onclick="clearSearchCity()"></i>
                               <!-- <span class="bbu" onclick="clearSearchCity()">x</span> -->
@@ -150,7 +150,7 @@
                               </script>
                               <input type="hidden" name="lat" id="lat" value="">
                               <input type="hidden" name="lon" id="lon" value="">
-                              <input type="hidden" name="withIn" value="1000">
+                              <!-- <input type="hidden" name="withIn" value="1000"> -->
                               <!-- <select name="city" id="searchCity" required="">onchange="changeCity()"
 								<option value="-1">Select City</option>
 								<option value="delhi">Delhi</option>
@@ -166,10 +166,12 @@
 							</select> -->
 							<script> 
 							  function initMap() {
+								  var countryRestrict = {'country': 'in'};//http://www.geognos.com/api/en/countries/info/all.json
 									var autoComplete = new google.maps.places.Autocomplete(
 									/** @type {!HTMLInputElement} */ (
 										document.getElementById('searchCity')), {
-									  types: ['(regions)']  //regions ,cities
+									  types: [], //address, establishment, geocode
+									  componentRestrictions: countryRestrict//regions ,cities
 									});
 									
 									google.maps.event.addListener(autoComplete, 'place_changed', function() {

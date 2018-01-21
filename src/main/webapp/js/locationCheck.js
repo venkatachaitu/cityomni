@@ -173,11 +173,12 @@ function getLatLogByIp() {
 	    }).fail( function(xhr, textStatus, errorThrown) {
 	        console.log("getLatLogByIp:xhr.responseText"+xhr.responseText);
 	        console.log("getLatLogByIp:textStatus"+textStatus);
+	        $.getJSON(u + "rest/get/getaddress", function(data) {
+	    		setCookieWithOutReload("clattitude", data.latitude, 365);
+	        	setCookieWithOutReload("clongitude", data.longitude, 365);
+	        	setAddressForSearchBox(data);
+	            initializeCurrent(data.latitude, data.longitude);        
+	         });
 	    });
-	}
-	/*$.getJSON(u + "rest/get/getaddress", function(data) {
-		setCookieWithOutReload("clattitude", data.latitude, 365);
-    	setCookieWithOutReload("clongitude", data.longitude, 365);
-    	setAddressForSearchBox(data);
-        initializeCurrent(data.latitude, data.longitude);        
-     });*/
+}
+	

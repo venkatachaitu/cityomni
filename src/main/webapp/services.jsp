@@ -50,6 +50,13 @@
 		        document.getElementById("services").innerHTML = out;	
 			  	document.getElementById("titleHeader").innerHTML = "Services in "+loc;
 	   			
+			  	var desc1 = $('meta[name=description]').attr("content");
+				var descTab = "services in "+loc+ " "+desc1;				
+				
+	   			$('meta[name=description]').remove();
+	            $('head').append( "<meta name='description' content='"+descTab+"'>" );
+	            
+			  	
 	   			/* $.getJSON(u+"rest/get/getCat/"+loc.toLowerCase(), function( data ) {
 				  var out = "";		
 				  data = sortObject(data);				  

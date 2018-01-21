@@ -21,7 +21,7 @@
              
             //document.getElementById('searchCity').value = decodeURIComponent((city).replace(/\+/g, '%20'));
             //alert(decodeURIComponent((city).replace(/\+/g, '%20')));
-            withIn = getUrlVars()["withIn"];
+            withIn = '50000';//getUrlVars()["withIn"];
             document.getElementById("locationHome").innerHTML = loc;
             if(loc == "" || loc == null){
            	 document.getElementById("locationHome").innerHTML = city;
@@ -41,12 +41,19 @@
 	        map = new google.maps.Map(""); 
             u = getWebsiteURL();
             var uri = "";
-
+			
+			var desc1 = $('meta[name=description]').attr("content");
+			var descTab = addSpaces(category)+"s in "+addSpaces(add)+ " "+desc1;
+			
+            $('meta[name=description]').remove();
+            $('head').append( "<meta name='description' content='"+descTab+"'>" );
+            
+            
             if(searchContent == "" || searchContent == null){
-            	uri = "rest/get/search/"+getLattitude()+"/"+getLongitude()+"/"+lat+"/"+lon+"/"+withIn+"/"+category;
+            	uri = "rest/get/search/"+getLattitude()+"/"+getLongitude()+"/"+lat+"/"+lon+"/"+withIn+"/"+category+"/all";
              }
             else{
-            	uri = "rest/get/search/"+getLattitude()+"/"+getLongitude()+"/"+lat+"/"+lon+"/"+withIn+"/"+searchContent+"+"+category;
+            	uri = "rest/get/search/"+getLattitude()+"/"+getLongitude()+"/"+lat+"/"+lon+"/"+withIn+"/"+category+"/"+searchContent;
             }
             
             $.getJSON(u + uri, function(results) {
@@ -174,7 +181,7 @@
    			//var dd = document.getElementById("viewList").innerHTML;
    			//dd = dd+out;
    			document.getElementById("viewList").innerHTML = out;
-   			setSelectionWith();
+   			//setSelectionWith();
    	  }
  
    function sorting(json_object, key_to_sort_by) {
@@ -236,6 +243,17 @@
 	   })
 	   .appendTo($wrapper);
    }
+   $(document).ready(function() {
+       var win = $(window);
+       win.scroll(function() {
+           if ($(document).height() - 250 <= $(window).scrollTop() + $(window).height()) {
+               //$('#loadMoreButton').show();
+                //setTimeout('loadMore()', 200);
+	           viewMoreSearch(); 
+               //$('#loadMoreButton').hide();
+           }
+       });
+   });
 </script>
  
 <script>
@@ -278,7 +296,7 @@
       </div>
       <p id="loadMoreButton" class="loadMoreButton" onclick="loadMore()">load more...</p>
       <br><br>
-      <button onclick="viewMoreSearch()">click here</button>
+      <!-- <button onclick="viewMoreSearch()">view more</button> -->
    </div>
 </section>
 <style>
@@ -462,7 +480,7 @@
 </script>
 <br><br>
 
-<div class="sortSelection">
+<!-- <div class="sortSelection">
 	with in :<select name="withIn" id="withIn" onchange="changeWithIn()">
 		<option value="1000">1 km.</option>
 		<option value="10000">10 kms.</option>
@@ -470,7 +488,7 @@
 		<option value="500000">500 kms.</option>
 		<option value="1000000">1000 kms.</option>
 	</select>
-</div>
+</div> -->
 
 <style>
 	.sortSelection{

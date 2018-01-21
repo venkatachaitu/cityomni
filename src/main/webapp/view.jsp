@@ -19,7 +19,14 @@
 	   			document.getElementById('locationHome').innerHTML = loc; 
 	   			
 	   			var u = getWebsiteURL();
-	   			    				
+	   			    		
+	   			var desc1 = $('meta[name=description]').attr("content");
+				var descTab = addSpaces(getUrlVars()["name"])+" "+addSpaces(getUrlVars()["address"])+" "+desc1;				
+				
+	   			$('meta[name=description]').remove();
+	            $('head').append( "<meta name='description' content='"+descTab+"'>" );
+	            
+	            
    		}catch(e){alert(e);}			
    	}
    	function setCookieWithOutReload(cname, cvalue, exdays) {

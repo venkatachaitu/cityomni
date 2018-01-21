@@ -3,12 +3,12 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+//import java.text.DateFormat;
+//import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Date;
+//import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -18,13 +18,13 @@ import java.util.Set;
 //import javax.persistence.EntityManager;
 import javax.servlet.ServletContext;
 
-import org.json.JSONException;
+//import org.json.JSONException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
+//import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -37,9 +37,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
 import com.chaitu.constants.GetPath;
-//import com.chaitu.model.Data;
+//import com.chaitu.model.DataTable;
 import com.chaitu.model.RadarSearchRespose;
-//import com.chaitu.service.UserServiceDao;
+//import com.chaitu.service.DbServiceDao;
 import com.chaitu.utils.JsonFileHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -387,11 +387,14 @@ public class CityHaltController {
 			fop.close();
 		}
 	}
-
+    @CrossOrigin(origins = "*")
     ///"/rest/get/search/{lat}/{lon}/{cat}/{text}"
-    @GetMapping("/rest/get/search/{clat}/{clon}/{lat}/{lon}/{radius}/{keyword}")
-    public ResponseEntity<List<RadarSearchRespose>> searchGoogleApi(@PathVariable String lat, @PathVariable String lon, @PathVariable String clat, @PathVariable String clon, @PathVariable String radius, @PathVariable String keyword) throws Exception {
-    	String uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&radius="+radius+"&name="+keyword+"&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM";
+    @GetMapping("/rest/get/search/{clat}/{clon}/{lat}/{lon}/{radius}/{types}/{keyword}")
+    public ResponseEntity<List<RadarSearchRespose>> searchGoogleApi(@PathVariable String lat, @PathVariable String lon, @PathVariable String clat, @PathVariable String clon, @PathVariable String radius, @PathVariable String types, @PathVariable String keyword) throws Exception {
+    	if (keyword.equalsIgnoreCase("all")) {
+    		keyword = "";
+		}
+    	String uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&radius="+radius+"&type="+types+"&keyword="+keyword+"&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM";
     	System.out.println("searchGoogleApi : "+uri);
 		Map<?, ?> result = restTemplate.getForObject(uri, Map.class);
     	//System.out.println("result : "+result);
@@ -441,11 +444,11 @@ public class CityHaltController {
     }    
     
     /*@Autowired
-    UserServiceDao userServiceDao;
+    DbServiceDao userServiceDao;
     
     @CrossOrigin(origins = "*")
     @PostMapping("/rest/add/confession")
-    public ResponseEntity<Object> addConfession(@RequestBody Data data) throws Exception {
+    public ResponseEntity<Object> addConfession(@RequestBody DataTable data) throws Exception {
     	HttpHeaders response = new HttpHeaders();
 	    response.set("Access-Control-Allow-Origin", "*");
 	    userServiceDao.addConfession(data);
@@ -465,8 +468,8 @@ public class CityHaltController {
     	HttpHeaders response = new HttpHeaders();
 	    response.set("Access-Control-Allow-Origin", "*");
 	    return new ResponseEntity<Object>(userServiceDao.readConfessionByArea(area), response, HttpStatus.OK);
-    }
+    }*/
     
-*/
+
     
 }
