@@ -39,13 +39,24 @@
 				
 		<link href='images/favicon.ico' rel='icon' type='image/x-icon'/>
       
-	   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	   	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<script>
 		  (adsbygoogle = window.adsbygoogle || []).push({
 		    google_ad_client: "ca-pub-9571339575910580",
 		    enable_page_level_ads: true
 		  });
 		</script>
+
+	  	 <!-- Begin 33Across SiteCTRL -->
+		<script>
+		var Tynt=Tynt||[];Tynt.push('dqQTVKNB8r54oEaKlgYj8u');
+		(function(){var h,s=document.createElement('script');
+		s.src=(window.location.protocol==='https:'?
+		'https':'http')+'://cdn.tynt.com/ti.js';
+		h=document.getElementsByTagName('script')[0];
+		h.parentNode.insertBefore(s,h);})();
+		</script>
+		<!-- End 33Across SiteCTRL -->
 
       <!-- Scripts -->		
       <script src="js/jquery.min.js"></script>
