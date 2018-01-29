@@ -388,6 +388,25 @@
 			    <a id="servicesLink" href="./metroCities" class="button viewAllMetroCities" >View All Metro cities in Inida</a>
 			</div>
          </div>
+	      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<ins class="adsbygoogle"
+	     style="display:block"
+	     data-ad-format="fluid"
+	     data-ad-layout-key="-fg+5m+7r-g6+16"
+	     data-ad-client="ca-pub-9571339575910580"
+	     data-ad-slot="9602038373"></ins>
+	<script>
+	     (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	  (adsbygoogle = window.adsbygoogle || []).push({
+	    google_ad_client: "ca-pub-9571339575910580",
+	    enable_page_level_ads: true
+	  });
+	</script>
       </section>     
       <%@include file="footer.jsp" %>
    </body>
