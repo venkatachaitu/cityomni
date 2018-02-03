@@ -91,7 +91,7 @@ function updateLocationinSearchBox() {
 	}
 }
 
-function setAddressForSearchBox(results){
+function setAddressForSearchBox(results){ 
 	var city=false,state=false;
 	for (var i = 0; i < results.length; i++) {
 		if ((!city || !state) && results[i].types[0] === "locality") {
