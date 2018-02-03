@@ -692,7 +692,7 @@ function viewDetails(){
    			if (place.hasOwnProperty('international_phone_number')) {
    				document.getElementById('phno').innerHTML = place.international_phone_number; 
    				document.getElementById('phno').href = "tel:"+place.international_phone_number; 
-   			}else{
+   			}else{ 
    				document.getElementById('phno').innerHTML = "N/A"; 
    			}
    			if (place.hasOwnProperty('rating')) {
