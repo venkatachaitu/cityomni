@@ -162,19 +162,19 @@
               if(typeof place.reviews !== "undefined"){
             	  var reviews = place.reviews.length;
             	  if(reviews == '1'){
-				    		reviews = reviews+ " review";
-				    	}else{
-				    		reviews = reviews+ " reviews";
-				    	}
+			    		reviews = reviews+ " review";
+			    	}else{
+			    		reviews = reviews+ " reviews";
+			    	}
             	  
             		out = out + "<div ><a target=# class=bottom href=><i style='margin:0px;' class='fa fa-pencil' aria-hidden='true'></i>&nbsp;"+reviews+"</a></div>";
-              	} 
-              out = out + '<br>';
+               } 
+               out = out + '<br>';
                if(distance != 'null' && distance != ''){
-               		out = out + "<div >from <i style='color: #00ce08;' class='fa fa-map-marker' aria-hidden='true'></i> : <span id='dis'>"+Number.parseFloat(distance).toPrecision(4)+ "</span>&nbsp;km.(approx.)</div>";
+               		out = out + "<div >from <i style='color: #00ce08;' class='fa fa-map-marker' aria-hidden='true'></i> : <span id='dis'>"+Math.round(distance*100)/100+ "</span>&nbsp;km.(approx.)</div>";
 			    }
                if(distFromSearchLocation != 'null' && distFromSearchLocation != ''){
-              		out = out + "<div >from <i style='transform: rotateY(180deg);color: #00ce08;' class='fa fa-search' aria-hidden='true'></i> : <span id='dis'>"+Number.parseFloat(distFromSearchLocation).toPrecision(4)+ "</span>&nbsp;km.(approx.)</div>";
+              		out = out + "<div >from <i style='transform: rotateY(180deg);color: #00ce08;' class='fa fa-search' aria-hidden='true'></i> : <span id='dis'>"+Math.round(distFromSearchLocation*100)/100+ "</span>&nbsp;km.(approx.)</div>";
 			    }
 			    	out = out + "</footer><br></li> </ul> </article>";
    				

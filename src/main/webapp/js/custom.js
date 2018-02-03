@@ -735,8 +735,8 @@ function viewDetails(){
 			}
             dis1 =  findDistance(lat, lon, place.geometry.location.lat, place.geometry.location.lng);
    			dis2 =  findDistance(slat, slon, place.geometry.location.lat, place.geometry.location.lng);
-   			document.getElementById('dis1').innerHTML = dis1;
-   			document.getElementById('dis2').innerHTML = dis2;   			
+   			document.getElementById('dis1').innerHTML =  Math.round(dis1*100)/100;
+   			document.getElementById('dis2').innerHTML = Math.round(dis2*100)/100;   			
        	}
       });
 }
