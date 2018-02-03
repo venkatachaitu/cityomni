@@ -47,6 +47,11 @@ public class PageController {
         return new ModelAndView("search");
     }
     
+    @GetMapping("/searchview")
+    public ModelAndView searchView() {
+        return new ModelAndView("searchview");
+    }
+    
     @GetMapping("/aboutUS")
     public ModelAndView openabout() {
         return new ModelAndView("aboutUS");

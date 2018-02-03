@@ -66,7 +66,7 @@
     	 lat = getLattitude(); 
          lon = getLongitude();
 		this.results = results;  	
-		document.getElementById("titleHeader").innerHTML = results.length+" items available.";
+		document.getElementById("titleHeader").innerHTML = results.length+" search results in "+category+" category.";
 		console.log("Nb results:" + results.length);
 	      if (status != google.maps.places.PlacesServiceStatus.OK) {
 	        alert("callback3:status: "+status);
@@ -125,9 +125,9 @@
               if (img_url.indexOf("cleardot") != -1) { */
                   out = out + "<li><span class=imageSpan><img src='images/noImage.jpg' width=100% id=" + count + " style=cursor:pointer;></span></li>";
               /* } */ 
-              out = out + "<li><span class=detailsSpan><header><h3>";
+              out = out + "<li><span class=detailsSpan><header><h3><a href=searchview?place_id="+place.place_id+">";
               out = out + place.name;
-              out = out + "</h3></header><br><p class=address>";
+              out = out + "</a></h3></header><br><p class=address>";
               out = out + adr;
               out = out + "</p>";
               out = out + "<footer class=bottom>";
@@ -252,7 +252,7 @@
    $(document).ready(function() {
        var win = $(window);
        win.scroll(function() {
-           if ($(document).height() - 250 <= $(window).scrollTop() + $(window).height()) {
+           if ($(document).height() - 450 <= $(window).scrollTop() + $(window).height()) {
         	   document.getElementById("loadingImageLoadMore").style.display = "block";
                
                 //setTimeout('loadMore()', 200);
@@ -294,7 +294,7 @@
    <!-- <div style="display: none;" id="tempContent"></div> -->
       <header style="margin: 0;">
       	<!-- <p onclick="openLeftNavOpen()" id="servicesLink" class="servicesLinkBars" ><i class="fa fa-bars" aria-hidden="true"></i></p> -->
-         <h3  class="servicesTitle" id="titleHeader">Search Result</h3>
+         <h3  class="servicesTitleInSearchPage" id="titleHeader">Search Result</h3>
            <!-- <p style="float: right;margin-top: -31px;" id="sortByLink" onclick="sortByDistance()">Sort by Distance</p> -->  
          <hr>
       </header>

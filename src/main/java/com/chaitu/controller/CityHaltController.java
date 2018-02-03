@@ -389,12 +389,19 @@ public class CityHaltController {
 	}
     @CrossOrigin(origins = "*")
     ///"/rest/get/search/{lat}/{lon}/{cat}/{text}"
-    @GetMapping("/rest/get/search/{clat}/{clon}/{lat}/{lon}/{radius}/{types}/{keyword}")
-    public ResponseEntity<List<RadarSearchRespose>> searchGoogleApi(@PathVariable String lat, @PathVariable String lon, @PathVariable String clat, @PathVariable String clon, @PathVariable String radius, @PathVariable String types, @PathVariable String keyword) throws Exception {
-    	if (keyword.equalsIgnoreCase("all")) {
-    		keyword = "";
+    @GetMapping("/rest/get/search/{clat}/{clon}/{lat}/{lon}/{radius}/{category}/{keyword}")
+    public ResponseEntity<List<RadarSearchRespose>> searchGoogleApi(@PathVariable String lat, @PathVariable String lon, 
+					    			@PathVariable String clat, @PathVariable String clon, @PathVariable String radius, 
+					    			@PathVariable String category, @PathVariable String keyword) throws Exception {
+    	String uri = "";
+    	if (category.equalsIgnoreCase("all")) {
+			uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&rankby=distance&radius="+radius+"&keyword="+keyword+"&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM";
+		}else{
+	    	if (keyword.equalsIgnoreCase("all")) {
+	    		keyword = "";
+			}
+	    	uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&rankby=distance&radius="+radius+"&type="+category+"&keyword="+keyword+"&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM";
 		}
-    	String uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&radius="+radius+"&type="+types+"&keyword="+keyword+"&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM";
     	System.out.println("searchGoogleApi : "+uri);
 		Map<?, ?> result = restTemplate.getForObject(uri, Map.class);
     	//System.out.println("result : "+result);

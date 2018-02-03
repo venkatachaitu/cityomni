@@ -26,7 +26,8 @@ function loadIndexPage() {
 }
 function setCategoryTypes() { 
 	var arr = ["accounting", "airport", "amusement_park", "aquarium", "art_gallery", "atm", "bakery", "bank", "bar", "beauty_salon", "bicycle_store", "book_store", "bowling_alley", "bus_station", "cafe", "campground", "car_dealer", "car_rental", "car_repair", "car_wash", "casino", "cemetery", "church", "city_hall", "clothing_store", "convenience_store", "courthouse", "dentist", "department_store", "doctor", "electrician", "electronics_store", "embassy", "fire_station", "florist", "funeral_home", "furniture_store", "gas_station", "gym", "hair_care", "hardware_store", "hindu_temple", "home_goods_store", "hospital", "insurance_agency", "jewelry_store", "laundry", "lawyer", "library", "liquor_store", "local_government_office", "locksmith", "lodging", "meal_delivery", "meal_takeaway", "mosque", "movie_rental", "movie_theater", "moving_company", "museum", "night_club", "painter", "park", "parking", "pet_store", "pharmacy", "physiotherapist", "plumber", "police", "post_office", "real_estate_agency", "restaurant", "roofing_contractor", "rv_park", "school", "shoe_store", "shopping_mall", "spa", "stadium", "storage", "store", "subway_station", "supermarket", "synagogue", "taxi_stand", "train_station", "transit_station", "travel_agency", "veterinary_care", "zoo"];
-	var out = "<option value='-1'>select category</option>";
+	var out = "<option value='all'>all category</option>";
+	
 	for (i in arr) {
 		out = out + "<option value="+arr[i]+">"+addSpaces(arr[i])+"</option>";
 	}
@@ -406,7 +407,7 @@ function findDistance(lat1, lon1, lat2, lon2){
   return d;
 }
 
-function changeCity() {
+/*function changeCity() {
     try {
         var e = document.getElementById("searchCity");
         var strUser = e.options[e.selectedIndex].value;
@@ -460,7 +461,7 @@ function changeCity() {
     } catch (e) {
         console.log("changeCity : " + e);
     }
-}
+}*/
 
 function typeInSearchBox() {
     var box = document.getElementById("searchBoxInput");
@@ -487,27 +488,27 @@ function Submit() {
     var box = document.getElementById("searchBoxInput");
 
     if (city.value.length <= 0) {
-        alert("Enter city");
+        alert("please Enter City for search.");
         city.focus() ;
         return false;
     }
-    if (cat == '-1') {
+    /*if (cat == '-1') {
         alert("select category.");
         //cat.focus() ;
         return false;
-    }
-    /*if (cat == 'all' && box.value.length == 0) {
+    }*/
+    /*if (cat == 'all') {
         //alert("select category.");
         box.focus();
         box.style.borderColor = "red";
         return false;
     }*/
-
-    /*if (box.value.length <= 2) {
+    //alert(cat);
+    if (cat == 'all' && box.value.length <= 2) {
         box.focus();
         box.style.borderColor = "red";
         return false;
-    }*/
+    }
 }
 function viewCommentBox(){
 	 if (document.getElementById('commentBox').style.display == 'none') {
@@ -675,4 +676,67 @@ function readConfessionByArea(area){
 	});
 	out = out + "</table>"
 	document.getElementById('commentsList').innerHTML = out;
+}
+
+function viewDetails(){
+	var u = getWebsiteURL();	   			
+	$.ajax({
+		url: u + "rest/get/search/getDetailsByPlaceId/"+place_id,
+		dataType: "json",
+		async: false,
+        	type: 'GET',
+       	success: function(place){
+       		
+   			document.getElementById('name').innerHTML = place.name; 
+   			document.getElementById('address').innerHTML = place.formatted_address;
+   			if (place.hasOwnProperty('international_phone_number')) {
+   				document.getElementById('phno').innerHTML = place.international_phone_number; 
+   				document.getElementById('phno').href = "tel:"+place.international_phone_number; 
+   			}else{
+   				document.getElementById('phno').innerHTML = "N/A"; 
+   			}
+   			if (place.hasOwnProperty('rating')) {
+   				document.getElementById('rating').innerHTML = place.rating;   			
+   			}else{
+   				document.getElementById('rating').innerHTML = "N/A"; 
+   			}
+   			document.getElementById('url').href = place.url;
+   			
+   			if (place.hasOwnProperty('website')) {
+   				document.getElementById('website').href = place.website;   			
+   			}else{
+   				document.getElementById('website').href = '#'; 
+   			} 
+   			if (place.hasOwnProperty('reviews')) {
+	   			if (place.reviews.length == 1) {
+	   	   			document.getElementById('reviews').innerHTML = place.reviews.length +"review";	
+				}else{
+					document.getElementById('reviews').innerHTML = place.reviews.length +"reviews";
+	   			}
+	   			$.each(place.reviews, function(key, val) {
+	   				console.log(key, val);
+	   			});
+	   		}else{
+   				document.getElementById('reviews').innerHTML = "0 reviews";
+   			}
+   			var loc = "", map = "", dis1 = "", dis2 = "", nm="", ad="";
+   			loc = getCookie("locAddress");
+   			nm = addStarsToString(place.name);
+   			d = addStarsToString(place.formatted_address);   			 
+   			map = "https://www.google.co.in/maps/dir/"+loc+"/"+nm+"+"+ad+"/@"+place.geometry.location.lat+","+place.geometry.location.lng;
+   			document.getElementById('direction').href = map;
+   			var lat = getLattitude(); 
+            var lon = getLongitude();
+            var slat = lat;
+            var slon = lon;
+            if (getCookie("slat") != '' && getCookie("slon") != '') {
+            	slat = getCookie("slat");
+            	slon = getCookie("slon");
+			}
+            dis1 =  findDistance(lat, lon, place.geometry.location.lat, place.geometry.location.lng);
+   			dis2 =  findDistance(slat, slon, place.geometry.location.lat, place.geometry.location.lng);
+   			document.getElementById('dis1').innerHTML = dis1;
+   			document.getElementById('dis2').innerHTML = dis2;   			
+       	}
+      });
 }

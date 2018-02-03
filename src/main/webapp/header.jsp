@@ -38,57 +38,20 @@
 		<meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  user-scalable=0">
 			
 		<link href='images/favicon.ico' rel='icon' type='image/x-icon'/>
-		 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<script>
-		  (adsbygoogle = window.adsbygoogle || []).push({
-		    google_ad_client: "ca-pub-9571339575910580",
-		    enable_page_level_ads: true
-		  });
-		</script>
-	   	<!-- Begin 33Across SiteCTRL -->
-		<script>
-		var Tynt=Tynt||[];Tynt.push('dqQTVKNB8r54oEaKlgYj8u');
-		(function(){var h,s=document.createElement('script');
-		s.src=(window.location.protocol==='https:'?
-		'https':'http')+'://cdn.tynt.com/ti.js';
-		h=document.getElementsByTagName('script')[0];
-		h.parentNode.insertBefore(s,h);})();
-		</script>
-		<!-- End 33Across SiteCTRL -->
-	   <script type="text/javascript" data-cfasync="false" src="//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js" data-shr-siteid="3a37fe7ea2bcb8a2e20f66e491863b8b" async="async"></script>
-      <!-- Scripts --> 
-      <script src="js/jquery.min.js"></script>
-      <script src="js/skel.min.js"></script>
-      <script src="js/util.js"></script>
-      <script src="js/main.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/custom.js"></script>
-      <script src="js/jquery-1.10.2.min.js"></script>
-      <script src="js/locationCheck.js"></script>
-      
-      <link rel="stylesheet" href="css/main.css" />
-      <link rel="stylesheet" href="css/bootstrap.min.css" />
-      <link rel="stylesheet" href="css/font-awesome.css" />
-      
-      <script>
-	      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	      ga('create', 'UA-106798328-1', 'auto');
-	      ga('require', 'GTM-M83XQ3G');
-	      ga('send', 'pageview');
-	    </script>
-	    
-	    <!-- <style>.async-hide { opacity: 0 !important} </style> -->
-	    <script>
-		    (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
-		    h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
-		    (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
-		    })(window,document.documentElement,'async-hide','dataLayer',4000,
-		    {'GTM-M83XQ3G':true});
-	    </script>
-    
+		
+		<!-- Scripts --> 
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/util.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/custom.js"></script>
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/locationCheck.js"></script>
+		
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/font-awesome.css" />
    </head>
    <body>
     <%@include file="locationPrompt.jsp" %>
@@ -139,15 +102,17 @@
                               <!-- <span class="bbu" onclick="clearSearchCity()">x</span> -->
                               <i class="fa fa-times-circle bbu" aria-hidden="true" onclick="clearSearchCity()"></i>
                               <style>
-                               	.bbu{
-                               		 float: right;
-										    margin: -1em 0em 0em 0em;
-										    font-size: 1.9em;
-										    color: #ff4b4b;
-										    /* background: #ffffffe0; */
-										    width: 1em;
-										    height: 1em;
-										    position: relative;
+                               	.bbu{    
+									float: right;
+								    margin: -1.2em 0.3em 0em 0em;
+								    font-size: 1.3em;
+								    color: #e0e0e0;
+								    width: 1em;
+								    height: 1em;
+								    position: relative;
+                               	}
+                               	.bbu:HOVER{    
+								    color: red;
                                	}
                               
                               </style>
@@ -186,7 +151,7 @@
                      <article style="width: 46% !important;">
                         <header class="selectCity">
                            <select name="category" id="searchCategories" required="">                                 
-							 <option value="-1">select category</option><option value="atm">atms</option><option value="auto_mobiles">auto mobiles</option><option value="bank">banks</option><option value="bar">bars</option><option value="beauty_parlour">beauty parlours</option><option value="blood_and_eye_bank">blood and eye banks</option><option value="bus_station">bus stations</option><option value="coffee_shop">coffee shops</option><option value="college">colleges</option><option value="computer_institute">computer institutes</option><option value="computer_service">computer services</option><option value="dance_school">dance schools</option><option value="fashion_and_cloth_store">fashion and cloth stores</option><option value="fire_station">fire stations</option><option value="gas_and_petrol_station">gas and petrol stations</option><option value="gift_shop">gift shops</option><option value="govt_office">govt offices</option><option value="grocery_store">grocery stores</option><option value="hardware_shop">hardware shops</option><option value="hospital">hospitals</option><option value="hostel">hostels</option><option value="hotel">hotels</option><option value="insurance_company">insurance companies</option><option value="jewellery_store">jewellery shops</option><option value="library">libraries</option><option value="lodge">lodges</option><option value="mobile_store">mobile shops</option><option value="museum">museums</option><option value="packers_and_movers">packers and movers</option><option value="parcel_and_courier">parcel and couriers</option><option value="park">parks</option><option value="party_hall">party halls</option><option value="pharmacy">pharmacy</option><option value="photo_studio">photo studios</option><option value="play_school">play schools</option><option value="police_station">police stations</option><option value="railway_station">railway stations</option><option value="real_estate_agents">real estate agents</option><option value="restaurent">restaurents</option><option value="school">schools</option><option value="shopping_mall">shopping malls</option><option value="software_company">software companies</option><option value="stadium">stadiums</option><option value="temple">temples</option><option value="cinema">theaters</option><option value="tours_and_travels">tours and travels</option><option value="university">universities</option>
+							 <!-- <option value="-1">select category</option><option value="atm">atms</option><option value="auto_mobiles">auto mobiles</option><option value="bank">banks</option><option value="bar">bars</option><option value="beauty_parlour">beauty parlours</option><option value="blood_and_eye_bank">blood and eye banks</option><option value="bus_station">bus stations</option><option value="coffee_shop">coffee shops</option><option value="college">colleges</option><option value="computer_institute">computer institutes</option><option value="computer_service">computer services</option><option value="dance_school">dance schools</option><option value="fashion_and_cloth_store">fashion and cloth stores</option><option value="fire_station">fire stations</option><option value="gas_and_petrol_station">gas and petrol stations</option><option value="gift_shop">gift shops</option><option value="govt_office">govt offices</option><option value="grocery_store">grocery stores</option><option value="hardware_shop">hardware shops</option><option value="hospital">hospitals</option><option value="hostel">hostels</option><option value="hotel">hotels</option><option value="insurance_company">insurance companies</option><option value="jewellery_store">jewellery shops</option><option value="library">libraries</option><option value="lodge">lodges</option><option value="mobile_store">mobile shops</option><option value="museum">museums</option><option value="packers_and_movers">packers and movers</option><option value="parcel_and_courier">parcel and couriers</option><option value="park">parks</option><option value="party_hall">party halls</option><option value="pharmacy">pharmacy</option><option value="photo_studio">photo studios</option><option value="play_school">play schools</option><option value="police_station">police stations</option><option value="railway_station">railway stations</option><option value="real_estate_agents">real estate agents</option><option value="restaurent">restaurents</option><option value="school">schools</option><option value="shopping_mall">shopping malls</option><option value="software_company">software companies</option><option value="stadium">stadiums</option><option value="temple">temples</option><option value="cinema">theaters</option><option value="tours_and_travels">tours and travels</option><option value="university">universities</option> -->
 		  				   </select>
                         </header>
                      </article>
@@ -205,6 +170,8 @@
 								document.getElementById("lat").value = loc.lat();
 								document.getElementById("lon").value = loc.lng();
 								//alert(loc.lat()+"----"+loc.lng());
+								setCookieWithOutReload("slat", loc.lat(), 365);
+								setCookieWithOutReload("slon", loc.lng(), 365);
 							});
 					  }
 					</script> 

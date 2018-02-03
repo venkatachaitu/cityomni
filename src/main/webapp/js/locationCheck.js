@@ -94,10 +94,19 @@ function updateLocationinSearchBox() {
 function setAddressForSearchBox(results){
 	var city=false,state=false;
 	for (var i = 0; i < results.length; i++) {
-		//alert(JSON.stringify(results[i])['formatted_address']);
 		if ((!city || !state) && results[i].types[0] === "locality") {
-			city = results[i].address_components[0].long_name,
-			state = ", " +results[i].address_components[2].long_name;
+			//alert(JSON.stringify(results[i].address_components[2]));
+			city = results[i].address_components[0].long_name;
+			try{
+				if (results[i].address_components[2] != null) {
+					state = ", " +results[i].address_components[2].long_name;
+				}else{
+					state = "";				
+				}
+			}catch (e){
+				console.log("setAddressForSearchBox(results) : "+e);
+				state = "";
+			}
 			setCookie("locAddress", city + "" + state, 365);
 			if(document.getElementById("lat") != null && document.getElementById("lon") != null){
 				//document.getElementById("lat").value = results[i].geometry.location.lat();
