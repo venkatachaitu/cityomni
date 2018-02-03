@@ -47,7 +47,7 @@
 			            <br>
 			            <p class="address" id="address"></p>
 			            <footer class="bottom">
-			               <div><a href="tel:+914433667777"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;<span id="phno"></span></a></div>
+			               <div><a href=""><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;<span id="phno"></span></a></div>
 			               <div><i class="fa fa-star" aria-hidden="true"></i>&nbsp;<span id="rating"></span></div>
 			               <div><a target="." class="bottom" id="website" href="#"><i class="fa fa-globe" aria-hidden="true"></i></a></div>
 			               <div><a target="." id="url" href="#"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i></a></div>
