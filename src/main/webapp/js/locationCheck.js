@@ -98,8 +98,13 @@ function setAddressForSearchBox(results){
 			//alert(JSON.stringify(results[i].address_components[2]));
 			city = results[i].address_components[0].long_name;
 			try{
-				if (results[i].address_components[2] != null) {
-					state = ", " +results[i].address_components[2].long_name;
+				console.log(JSON.stringify(results[i].address_components.length));
+				if (results[i].address_components.length >= 2) {					
+					if(results[i].address_components[2].hasOwnProperty('long_name')){
+						state = ", " +results[i].address_components[2].long_name;
+					}else{
+						state = "";				
+					}
 				}else{
 					state = "";				
 				}

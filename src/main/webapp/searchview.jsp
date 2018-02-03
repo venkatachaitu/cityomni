@@ -47,12 +47,12 @@
 			            <br>
 			            <p class="address" id="address"></p>
 			            <footer class="bottom">
-			               <div><a href=""><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;<span id="phno"></span></a></div>
+			               <div><a id="phnoa" href="#"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;<span id="phno"></span></a></div>
 			               <div><i class="fa fa-star" aria-hidden="true"></i>&nbsp;<span id="rating"></span></div>
 			               <div><a target="." class="bottom" id="website" href="#"><i class="fa fa-globe" aria-hidden="true"></i></a></div>
 			               <div><a target="." id="url" href="#"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i></a></div>
 			               <div><a target="%" class="bottom" id="direction" href="#"><i class="fa fa-location-arrow" aria-hidden="true"></i></a></div>
-			               <div><a target="%" class="bottom" href=""><i style="margin:0px;" class="fa fa-pencil" aria-hidden="true"></i>&nbsp;<span id="reviews"></span> </a></div>
+			               <div id="reviewsView"><i style="margin:0px;" class="fa fa-pencil" aria-hidden="true"></i>&nbsp;<span id="reviews"></span></div>
 			               <br>
 			               <div>from <i style="color: #00ce08;" class="fa fa-map-marker" aria-hidden="true"></i> : <span id="dis1">0.5616</span>&nbsp;km.(approx.)</div>
 			               <div>from <i style="transform: rotateY(180deg);color: #00ce08;" class="fa fa-search" aria-hidden="true"></i> : <span id="dis2">0.5616</span>&nbsp;km.(approx.)</div>
@@ -101,94 +101,89 @@
    	}
 </script>
 <style>
-   /* The modalImage (background) */
-   .modalImage {
-   display: none; /* Hidden by default */
-   position: fixed; /* Stay in place */
-   z-index: 99999999999999999999999999999999; /* Sit on top */
-   padding-top: 100px; /* Location of the box */
-   left: 0;
-   top: 0;
-   width: 100%; /* Full width */
-   height: 100%; /* Full height */
-   overflow: auto; /* Enable scroll if needed */
-   background-color: rgb(0,0,0); /* Fallback color */
-   background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-   }
-   /* modalImage contentImage (image) */
-   .modal-contentImage {
-   margin: auto;
-   display: block;
-   width: 80%;
-   max-width: 700px;
-   }
-   /* Caption of modalImage Image */
-   #caption {
-   margin: auto;
-   display: block;
-   width: 80%;
-   max-width: 700px;
-   text-align: center;
-   color: #ccc;
-   padding: 10px 0;
-   height: 150px;
-   }
-   /* Add Animation */
-   .modal-contentImage, #caption {    
-   -webkit-animation-name: zoom;
-   -webkit-animation-duration: 0.6s;
-   animation-name: zoom;
-   animation-duration: 0.6s;
-   }
-   @-webkit-keyframes zoom {
-   from {-webkit-transform:scale(0)} 
-   to {-webkit-transform:scale(1)}
-   }
-   @keyframes zoom {
-   from {transform:scale(0)} 
-   to {transform:scale(1)}
-   }
-   /* The closeImage Button */
-   .closeImage {
-   position: absolute;
-   top: 15px;
-   right: 35px;
-   color: #f1f1f1;
-   font-size: 40px;
-   font-weight: bold;
-   transition: 0.3s;
-   }
-   .closeImage:hover,
-   .closeImage:focus {
-   color: #bbb;
-   text-decoration: none;
-   cursor: pointer;
-   }
-   /* 100% Image Width on Smaller Screens */
-   @media only screen and (max-width: 700px){
-   .modal-contentImage {
-   width: 100%;
-   }
-   }
+   		/* The Modal (background) */
+		.modalSV {
+		    display: none; /* Hidden by default */
+		    position: fixed; /* Stay in place */
+		    z-index: 1; /* Sit on top */
+		    left: 0;
+		    top: 0;
+		    width: 100%; /* Full width */
+		    height: 100%; /* Full height */
+		    overflow: auto; /* Enable scroll if needed */
+		    background-color: rgb(0,0,0); /* Fallback color */
+		    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+		
+		/* Modal Content/Box */
+		.modalSV-content {
+		    background-color: #fefefe;
+		    margin: 15% auto; /* 15% from the top and centered */
+		    padding: 20px;
+		    border: 1px solid #888;
+		    width: 80%; /* Could be more or less, depending on screen size */
+		}
+		
+		/* The Close Button */
+		.closeSV {
+		    color: #aaa;
+		    float: right;
+		    font-size: 28px;
+		    font-weight: bold;
+		}
+		
+		.closeSV:hover,
+		.closeSV:focus {
+		    color: black;
+		    text-decoration: none;
+		    cursor: pointer;
+		}
 </style>
-<div id="myModalImage" class="modalImage">
-   <span class="closeImage">&times;</span>
-   <img class="modal-contentImage" id="img01Image">
-   <div id="caption"></div>
+<div id="myModalSV" class="modalSV">
+
+  <!-- Modal content -->
+  <div class="modalSV-content">
+    <span class="closeSV">&times;</span>
+    <div>
+    
+    <br><br><br><br>
+    
+    Some text in the Modal..
+    
+    <br><br><br><br>
+    
+    </div>
+  </div>
+
 </div>
 <script>
-   function openPreview(imgImage){
-   	var modalImage = document.getElementById('myModalImage');
-   	var modalImg = document.getElementById("img01Image");
-   	modalImage.style.display = "block";	
-   	
-   	modalImg.src = document.getElementById(imgImage).src;
-   }
-   
-   var spanImage = document.getElementsByClassName("closeImage")[0];
-   spanImage.onclick = function() { 
-   	var modalImage = document.getElementById("myModalImage");
-   	modalImage.style.display = "none";
-   };
+
+	//function viewPopup(){
+		//Get the modal
+		var modalSV = document.getElementById('myModalSV');
+		
+		// Get the button that opens the modal
+		var btn = document.getElementById("reviewsView");
+		
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("closeSV")[0];
+		
+		// When the user clicks on the button, open the modal 
+		btn.onclick = function() {
+		    modalSV.style.display = "block";
+		}
+		
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function() {
+		    modalSV.style.display = "none";
+		}
+		
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+		    if (event.target == modalSV) {
+		        modalSV.style.display = "none";
+		    }
+		}
+	//}
 </script>
 <%@include file="footer.jsp" %>

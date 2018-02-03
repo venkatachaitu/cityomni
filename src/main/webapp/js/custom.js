@@ -18,7 +18,7 @@ function loadIndexPage() {
     } else {
         var location = getCookie("location");
         if (location != "") {
-            selectCityInIndexPage();
+            //selectCityInIndexPage();
         }
     }
     setCategoryTypes();
@@ -43,7 +43,7 @@ function setCookieWithOutReload(cname, cvalue, exdays) {
         
         var loloc = getCookie("location");
         document.getElementById('locationHome').innerHTML = loloc;
-        selectCityInIndexPage();
+        //selectCityInIndexPage();
         
     } catch (e) {
         alert(e);
@@ -691,9 +691,10 @@ function viewDetails(){
    			document.getElementById('address').innerHTML = place.formatted_address;
    			if (place.hasOwnProperty('international_phone_number')) {
    				document.getElementById('phno').innerHTML = place.international_phone_number; 
-   				document.getElementById('phno').href = "tel:"+place.international_phone_number; 
+   				document.getElementById('phnoa').href = "tel:"+place.international_phone_number; 
    			}else{ 
    				document.getElementById('phno').innerHTML = "N/A"; 
+   				document.getElementById('phnoa').href = "#"; 
    			}
    			if (place.hasOwnProperty('rating')) {
    				document.getElementById('rating').innerHTML = place.rating;   			
@@ -733,6 +734,8 @@ function viewDetails(){
             	slat = getCookie("slat");
             	slon = getCookie("slon");
 			}
+            
+            console.log(lat, lon, slat, slon);
             dis1 =  findDistance(lat, lon, place.geometry.location.lat, place.geometry.location.lng);
    			dis2 =  findDistance(slat, slon, place.geometry.location.lat, place.geometry.location.lng);
    			document.getElementById('dis1').innerHTML =  Math.round(dis1*100)/100;

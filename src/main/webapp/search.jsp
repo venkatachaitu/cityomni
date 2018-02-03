@@ -66,12 +66,12 @@
     	 lat = getLattitude(); 
          lon = getLongitude();
 		this.results = results;  	
-		document.getElementById("titleHeader").innerHTML = results.length+" search results in "+category+" category.";
 		console.log("Nb results:" + results.length);
 	      if (status != google.maps.places.PlacesServiceStatus.OK) {
 	        alert("callback3:status: "+status);
 	        return;
-	      }  
+	      } 
+	      document.getElementById("titleHeader").innerHTML = this.results.length+" search results in "+category+" category.";
 	   	viewMoreSearch(); 
      }
        	          
@@ -118,16 +118,16 @@
    				 
               distance =  findDistance(lat, lon, place.geometry.location.lat, place.geometry.location.lng);
               
-              out = out + "<article class='article' data-percentage='"+distance+"'><ul>";                                               
+              out = out + "<article class='article'><ul>";                                               
               /* if (img_url.indexOf("cleardot") == -1) {
                   out = out + "<li><span class=imageSpan><img src='" + img_url + "' width='100%' id=" + count + " onclick=openPreview(" + count + ") style=cursor:pointer;></span></li>";
               }
               if (img_url.indexOf("cleardot") != -1) { */
-                  out = out + "<li><span class=imageSpan><img src='images/noImage.jpg' width=100% id=" + count + " style=cursor:pointer;></span></li>";
+                  //out = out + "<li><span class=imageSpan><img src='images/noImage.jpg' width=100% id=" + count + " style=cursor:pointer;></span></li>";
               /* } */ 
-              out = out + "<li><span class=detailsSpan><header><h3><a href=searchview?place_id="+place.place_id+">";
+              out = out + "<li><span class=detailsSpan><header><h3><a href=searchview?place_id="+place.place_id+" target="+place.place_id+">";
               out = out + place.name;
-              out = out + "</a></h3></header><br><p class=address>";
+              out = out + "</a></h3></header><p class=address>Address: ";
               out = out + adr;
               out = out + "</p>";
               out = out + "<footer class=bottom>";
@@ -167,7 +167,7 @@
 			    		reviews = reviews+ " reviews";
 			    	}
             	  
-            		out = out + "<div ><a target=# class=bottom href=><i style='margin:0px;' class='fa fa-pencil' aria-hidden='true'></i>&nbsp;"+reviews+"</a></div>";
+            		out = out + "<div ><i style='margin:0px;' class='fa fa-pencil' aria-hidden='true'></i>&nbsp;"+reviews+"</div>";
                } 
                out = out + '<br>';
                if(distance != 'null' && distance != ''){
@@ -296,7 +296,7 @@
       	<!-- <p onclick="openLeftNavOpen()" id="servicesLink" class="servicesLinkBars" ><i class="fa fa-bars" aria-hidden="true"></i></p> -->
          <h3  class="servicesTitleInSearchPage" id="titleHeader">Search Result</h3>
            <!-- <p style="float: right;margin-top: -31px;" id="sortByLink" onclick="sortByDistance()">Sort by Distance</p> -->  
-         <hr>
+         <hr style="margin:  1px !important;">
       </header>
       <div class="flex flex-2 viewList" id="viewList">	
          <img id="loadingImage" class="loadingImage" src="images/loading2.gif" alt="loading" />		 
@@ -346,7 +346,8 @@
    transition: .5s;
    }
    .detailsSpan header{
-   /*min-height: 49px;*/
+		width: 80%;
+    	margin: auto !important;
    }
    .detailsSpan p span{
    margin-right: calc(10% - 38px);
@@ -356,16 +357,23 @@
    transition: .5s;
    }
    .detailsSpan h3{
-   color: #ff4f17;
-   font-family: inherit;
-   font-size: 1.5em;
-   font-weight: 700;
-   text-transform: capitalize;
-   letter-spacing: 1px;
-   transition: .5s;
-   margin-top: 25px;
-   margin-bottom: 10px;
+		color: #ff1326;
+	    font-size: 1.5em;
+	    font-weight: 400;
+	    text-transform: capitalize;
    }
+   .detailsSpan h3:HOVER{
+		color: #03a9f4;
+    	font-weight: bold;
+   }
+   .viewList article {
+	    width: 100% !important;
+	    border: 1px solid rgba(255, 36, 54, 0.51);
+	    border-style: dotted;
+	    border-width: 0 0 1px 0;
+        box-shadow: none;
+		margin-bottom: 4px !important;
+	}
    ul{
    padding: 0;
    margin: 0;
@@ -393,6 +401,9 @@
    border-radius: 5px;
    overflow: hidden;
    border-width: 8px;
+   }
+   .bottom div{
+   	cursor: pointer;
    }
 </style>
 <style>

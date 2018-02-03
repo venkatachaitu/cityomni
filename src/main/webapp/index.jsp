@@ -112,7 +112,7 @@
 								    position: relative;
                                	}
                                	.bbu:HOVER{
-								    color: red;
+								    color: #fff;
                                	}
                               
                               </style>
