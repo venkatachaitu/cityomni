@@ -686,7 +686,7 @@ function viewDetails(){
 		async: false,
         	type: 'GET',
        	success: function(place){
-       		
+       		document.getElementById('iconSV').src = place.icon;
    			document.getElementById('name').innerHTML = place.name; 
    			document.getElementById('address').innerHTML = place.formatted_address;
    			if (place.hasOwnProperty('international_phone_number')) {
@@ -701,7 +701,7 @@ function viewDetails(){
    			}else{
    				document.getElementById('rating').innerHTML = "N/A"; 
    			}
-   			document.getElementById('url').href = place.url;
+   			document.getElementById('url').value = place.url;
    			
    			if (place.hasOwnProperty('website')) {
    				document.getElementById('website').href = place.website;   			
@@ -721,13 +721,16 @@ function viewDetails(){
    				document.getElementById('reviews').innerHTML = "0 reviews";
    			}
    			var loc = "", map = "", dis1 = "", dis2 = "", nm="", ad="";
-   			loc = getCookie("locAddress");
-   			nm = addStarsToString(place.name);
-   			d = addStarsToString(place.formatted_address);   			 
-   			map = "https://www.google.co.in/maps/dir/"+loc+"/"+nm+"+"+ad+"/@"+place.geometry.location.lat+","+place.geometry.location.lng;
-   			document.getElementById('direction').href = map;
    			var lat = getLattitude(); 
             var lon = getLongitude();
+   			loc = getCookie("locAddress");
+   			nm = addStarsToString(place.name);
+   			d = addStarsToString(place.formatted_address);
+   			ad = place.formatted_address;
+   			//alert(addStarsToString(loc));
+   			map = "http://www.google.co.in/maps/dir/"+lat+","+lon+"/"+nm+"/"+place.geometry.location.lat+","+place.geometry.location.lng;
+   			document.getElementById('direction').href = map;//decodeURIComponent((map.trim()).replace(/%20/g, ''));
+   			
             var slat = lat;
             var slon = lon;
             if (getCookie("slat") != '' && getCookie("slon") != '') {

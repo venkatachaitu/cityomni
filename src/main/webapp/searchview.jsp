@@ -38,7 +38,7 @@
       <div class="flex flex-2 list" >
 			<article class="article">
 			   <ul>
-			      <li><span class="imageSpan"><img src="images/noImage.jpg" width="100%" id="1" style="cursor:pointer;"></span></li>
+			      <li><span class="imageSpan"><img id="iconSV" src="images/noImage.jpg" ></span></li>
 			      <li>
 			         <span class="detailsSpan">
 			            <header style="margin: 1em 0em -1em 0em;    color: red;">
@@ -50,8 +50,8 @@
 			               <div><a id="phnoa" href="#"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;<span id="phno"></span></a></div>
 			               <div><i class="fa fa-star" aria-hidden="true"></i>&nbsp;<span id="rating"></span></div>
 			               <div><a target="." class="bottom" id="website" href="#"><i class="fa fa-globe" aria-hidden="true"></i></a></div>
-			               <div><a target="." id="url" href="#"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i></a></div>
-			               <div><a target="%" class="bottom" id="direction" href="#"><i class="fa fa-location-arrow" aria-hidden="true"></i></a></div>
+			               <div><button style="background: none;border: 0;" id="url" target="#"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i></button></div>
+			               <div><a target="." class="bottom" id="direction"><i class="fa fa-location-arrow" aria-hidden="true"></i></a></div>
 			               <div id="reviewsView"><i style="margin:0px;" class="fa fa-pencil" aria-hidden="true"></i>&nbsp;<span id="reviews"></span></div>
 			               <br>
 			               <div>from <i style="color: #00ce08;" class="fa fa-map-marker" aria-hidden="true"></i> : <span id="dis1">0.5616</span>&nbsp;km.(approx.)</div>
@@ -103,40 +103,38 @@
 <style>
    		/* The Modal (background) */
 		.modalSV {
-		    display: none; /* Hidden by default */
-		    position: fixed; /* Stay in place */
-		    z-index: 1; /* Sit on top */
+		   	display: none;
+		    position: fixed;
+		    z-index: 1;
 		    left: 0;
 		    top: 0;
-		    width: 100%; /* Full width */
-		    height: 100%; /* Full height */
-		    overflow: auto; /* Enable scroll if needed */
-		    background-color: rgb(0,0,0); /* Fallback color */
-		    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		    width: 100%;
+		    height: 100%;
+		    overflow: auto;
+		    background-color: #000000c9;
 		}
 		
 		/* Modal Content/Box */
 		.modalSV-content {
-		    background-color: #fefefe;
-		    margin: 15% auto; /* 15% from the top and centered */
-		    padding: 20px;
-		    border: 1px solid #888;
-		    width: 80%; /* Could be more or less, depending on screen size */
+		        margin: 6% auto;
+		    width: 90%;
+		    height: 76%;
+		    padding-top: 0;
 		}
 		
 		/* The Close Button */
 		.closeSV {
-		    color: #aaa;
-		    float: right;
-		    font-size: 28px;
-		    font-weight: bold;
+		        color: #ff4f17;
+			    float: right;
+			    font-size: 2em;
+			    font-weight: bold;
+			    margin-bottom: -.1em;
 		}
 		
-		.closeSV:hover,
-		.closeSV:focus {
-		    color: black;
-		    text-decoration: none;
-		    cursor: pointer;
+		.myIframe{
+			width: 100%;
+		    overflow: scroll;
+    		height: calc(100% - 36px) !important;
 		}
 </style>
 <div id="myModalSV" class="modalSV">
@@ -144,34 +142,32 @@
   <!-- Modal content -->
   <div class="modalSV-content">
     <span class="closeSV">&times;</span>
-    <div>
-    
-    <br><br><br><br>
-    
-    Some text in the Modal..
-    
-    <br><br><br><br>
-    
-    </div>
+   
+    <iframe class="myIframe" id="myIframe" alt="loading..."></iframe>    
+ 
   </div>
-
 </div>
 <script>
-
 	//function viewPopup(){
 		//Get the modal
 		var modalSV = document.getElementById('myModalSV');
 		
 		// Get the button that opens the modal
-		var btn = document.getElementById("reviewsView");
+		var locationBtn = document.getElementById("url");
+		var directionBtn = document.getElementById("direction");
 		
 		// Get the <span> element that closes the modal
 		var span = document.getElementsByClassName("closeSV")[0];
 		
 		// When the user clicks on the button, open the modal 
-		btn.onclick = function() {
+		locationBtn.onclick = function() {
 		    modalSV.style.display = "block";
+		    document.getElementById('myIframe').src = document.getElementById('url').value+"&output=embed";
 		}
+		/* directionBtn.onclick = function() {
+		    modalSV.style.display = "block";
+		    document.getElementById('myIframe').src = document.getElementById('direction').value+"?output=embed";
+		} */
 		
 		// When the user clicks on <span> (x), close the modal
 		span.onclick = function() {
@@ -184,6 +180,10 @@
 		        modalSV.style.display = "none";
 		    }
 		}
+		
+			
+		
+		
 	//}
 </script>
 <%@include file="footer.jsp" %>
