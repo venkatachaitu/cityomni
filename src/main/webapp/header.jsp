@@ -52,6 +52,16 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/font-awesome.css" />
+	  	
+	   	<!-- adds enable -->		
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({
+			  google_ad_client: "ca-pub-9571339575910580",
+			  enable_page_level_ads: true
+			 });
+		</script>
+		<!-- adds enable -->		
    </head>
    <body>
     <%@include file="locationPrompt.jsp" %>
