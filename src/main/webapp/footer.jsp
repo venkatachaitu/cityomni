@@ -1,4 +1,15 @@
 <br><br><br>
+<!-- add1 -->		
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- add1 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-9571339575910580"
+     data-ad-slot="6333757458"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- add1 -->
 <!-- Footer -->
 <footer id="footer">
     <div class="inner">
@@ -36,14 +47,38 @@
         </div>
         <br>
         <div class="copyright">
-	    © by <a href="https://www.cityhalt.com" style="color: #fff;">cityhalt.com</a> &nbsp;&nbsp;
+	    Â© by <a href="https://www.cityhalt.com" style="color: #fff;">cityhalt.com</a> &nbsp;&nbsp;
            <a href="mailto:info@cityhalt.com" style="color: #fff;">
 				<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;info@cityhalt.com        
       		</a>
         </div>
+	<!-- add2 -->		
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<ins class="adsbygoogle"
+	     style="display:block"
+	     data-ad-format="fluid"
+	     data-ad-layout-key="-gt-c+2u-36-31"
+	     data-ad-client="ca-pub-9571339575910580"
+	     data-ad-slot="4150447244"></ins>
+	<script>
+	     (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	<!-- add2 -->
         <div id="locationCheckYellowBottom" class="locationCheckYellowBottom"><i>Location found by your IP</i></div>
     </div>	
 </footer>
+<!-- add3 -->		
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+	 style="display:block; text-align:center;"
+	 data-ad-layout="in-article"
+	 data-ad-format="fluid"
+	 data-ad-client="ca-pub-9571339575910580"
+	 data-ad-slot="7873590908"></ins>
+<script>
+	 (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- add3 -->
 <i class="fa fa-map-marker fa-fw" aria-hidden="true" id="gpsIcon" onclick="isGPSEnable()"></i>
 <a href="#top" id="topArrow" class="arrowTop"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
 <script>
