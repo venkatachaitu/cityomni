@@ -75,7 +75,7 @@
 			            }
 			            @media screen and (max-width: 480px) {
 			            	.bottom div{
-			            		font-size: 2em;
+			            		font-size: 1.5em;
 			            	}
 			            }
 			            
