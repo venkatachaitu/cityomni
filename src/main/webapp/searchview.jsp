@@ -208,6 +208,10 @@
          		font-size: 1.15em;
          	}
          }
-         
+         #reviewsHeadTitle{
+         	font-size: 1.5em;
+		    font-weight: 600;
+		    color: red;
+         }
 </style>
 <%@include file="footer.jsp" %>

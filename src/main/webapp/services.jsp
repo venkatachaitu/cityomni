@@ -1,9 +1,5 @@
 <%@include file="header.jsp" %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<style>
-
-</style>
-
 <!-- Three --><br><br>
 <section id="three" class="wrapper align-center">
    <div class="inner">

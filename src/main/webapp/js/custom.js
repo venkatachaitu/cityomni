@@ -725,7 +725,7 @@ function viewDetails(){
 					oout = oout + "<p class=address><i>"+val["text"]+"</i></p>";
 					oout = oout + "<footer class=bottom>";
 					oout = oout + "<div><i class='fa fa-star' aria-hidden='true'></i>&nbsp;"+val["rating"]+"</div>";
-					oout = oout + "<div>"+new Date(val["time"]).toUTCString()+"</div>";
+					oout = oout + "<div>"+new Date(val["time"]*1000).toUTCString()+"</div>";
 					oout = oout + "</li></ul></article>";
 	   				
 	   				console.log(key, val["author_name"]);

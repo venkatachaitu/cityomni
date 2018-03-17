@@ -1,23 +1,8 @@
 <%@include file="header.jsp" %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<style>
-
-</style>
-
 <!-- Three --><br><br>
 <section id="three" class="wrapper align-center">
    <div class="inner">
-   <!-- add1 -->		
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- add1 -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
-     data-ad-client="ca-pub-9571339575910580"
-     data-ad-slot="6333757458"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<!-- add1 -->
       <header>
          <h3 class="servicesTitle" id="titleHeader">Services</h3>
          <hr>
