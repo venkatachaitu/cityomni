@@ -577,22 +577,22 @@
 <style>
 			            @media screen and (max-width: 1680px) {
 			            	.bottom div{
-			            		font-size: 1.15em;
+			            		font-size: 1em;
 			            	}
 			            }
 			            @media screen and (max-width: 980px) {
 			            	.bottom div{
-			            		font-size: 1.15em;
+			            		font-size: 1em;
 			            	}
 			            }
 			            @media screen and (max-width: 730px) {
 			            	.bottom div{
-			            		font-size: 1.5em;
+			            		font-size: 1.15em;
 			            	}
 			            }
 			            @media screen and (max-width: 480px) {
 			            	.bottom div{
-			            		font-size: 1.5em;
+			            		font-size: 1.15em;
 			            	}
 			            }
 			            

@@ -711,13 +711,26 @@ function viewDetails(){
    			} 
    			if (place.hasOwnProperty('reviews')) {
 	   			if (place.reviews.length == 1) {
-	   	   			document.getElementById('reviews').innerHTML = place.reviews.length +"review";	
+	   	   			document.getElementById('reviews').innerHTML = place.reviews.length +" review";	
+	   	   			document.getElementById('reviewsHeadTitle').innerHTML = place.reviews.length +" review";
 				}else{
-					document.getElementById('reviews').innerHTML = place.reviews.length +"reviews";
+					document.getElementById('reviews').innerHTML = place.reviews.length +" reviews";
+					document.getElementById('reviewsHeadTitle').innerHTML = place.reviews.length +" reviews";
 	   			}
-	   			$.each(place.reviews, function(key, val) {
-	   				console.log(key, val);
+	   			var oout="";	   			
+	   			$.each(place.reviews, function(key, val) {	   				
+					oout = oout + "<article class='article' style='padding: 0em;'><ul>";
+					oout = oout + "<li><span class=detailsSpan>";
+					oout = oout + "<h4>"+val["author_name"]+"</h4>";
+					oout = oout + "<p class=address><i>"+val["text"]+"</i></p>";
+					oout = oout + "<footer class=bottom>";
+					oout = oout + "<div><i class='fa fa-star' aria-hidden='true'></i>&nbsp;"+val["rating"]+"</div>";
+					oout = oout + "<div>"+new Date(val["time"]).toUTCString()+"</div>";
+					oout = oout + "</li></ul></article>";
+	   				
+	   				console.log(key, val["author_name"]);
 	   			});
+	   			document.getElementById('reviewsdisplay').innerHTML = oout;
 	   		}else{
    				document.getElementById('reviews').innerHTML = "0 reviews";
    			}
@@ -739,11 +752,13 @@ function viewDetails(){
             	slon = getCookie("slon");
 			}
             
-            console.log(lat, lon, slat, slon);
+            //console.log(lat, lon, slat, slon);
             dis1 =  findDistance(lat, lon, place.geometry.location.lat, place.geometry.location.lng);
    			dis2 =  findDistance(slat, slon, place.geometry.location.lat, place.geometry.location.lng);
    			document.getElementById('dis1').innerHTML =  Math.round(dis1*100)/100;
-   			document.getElementById('dis2').innerHTML = Math.round(dis2*100)/100;   			
+   			document.getElementById('dis2').innerHTML = Math.round(dis2*100)/100;  
+   			
+   			
        	}
       });
 }

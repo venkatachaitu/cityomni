@@ -57,49 +57,16 @@
 			               <div>from <i style="color: #00ce08;" class="fa fa-map-marker" aria-hidden="true"></i> : <span id="dis1">0.5616</span>&nbsp;km.<font style="font-size: .7em;color: #757575">(approx.)</font></div>
 			               <div>from <i style="transform: rotateY(180deg);color: #00ce08;" class="fa fa-search" aria-hidden="true"></i> : <span id="dis2">0.5616</span>&nbsp;km.<font style="font-size: .7em;color: #757575">(approx.)</font></div>
 			            </footer>
-			            <style>
-			            @media screen and (max-width: 1680px) {
-			            	.bottom div{
-			            		font-size: 1.3em;
-			            	}
-			            }
-			            @media screen and (max-width: 980px) {
-			            	.bottom div{
-			            		font-size: 1.3em;
-			            	}
-			            }
-			            @media screen and (max-width: 730px) {
-			            	.bottom div{
-			            		font-size: 1.5em;
-			            	}
-			            }
-			            @media screen and (max-width: 480px) {
-			            	.bottom div{
-			            		font-size: 1.5em;
-			            	}
-			            }
 			            
-			            </style>
-			            <!-- <footer class="bottom">
-			            <h4>reviews</h4><hr>
+			            <footer class="bottom">
+			            <h4 id="reviewsHeadTitle">reviews</h4><hr>
 			             <span id=reviewsdisplay></span>
-			            </footer> -->
+			            </footer>
 			            <br>
 			         </span>
 			      </li>
 			   </ul>
 			</article>
-			<!-- add1 -->		
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- add1 -->
-			<ins class="adsbygoogle"
-			     style="display:inline-block;width:728px;height:90px"
-			     data-ad-client="ca-pub-9571339575910580"
-			     data-ad-slot="6333757458"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
-			<!-- add1 -->
       </div>
    </div>
 </section>
@@ -121,7 +88,7 @@
 	   				setCookieWithOutReload("location", "chennai", 365);
 	   			}
 	   			viewDetails();
-   		}catch(e){alert(e);}			
+   		}catch(e){alert("searchview : "+e);}			
    	}
    	function setCookieWithOutReload(cname, cvalue, exdays) {
    	    try {
@@ -220,4 +187,27 @@
 		
 	//}
 </script>
+<style>
+         @media screen and (max-width: 1680px) {
+         	.bottom div{
+         		font-size: 1em;
+         	}
+         }
+         @media screen and (max-width: 980px) {
+         	.bottom div{
+         		font-size: 1em;
+         	}
+         }
+         @media screen and (max-width: 730px) {
+         	.bottom div{
+         		font-size: 1.15em;
+         	}
+         }
+         @media screen and (max-width: 480px) {
+         	.bottom div{
+         		font-size: 1.15em;
+         	}
+         }
+         
+</style>
 <%@include file="footer.jsp" %>
