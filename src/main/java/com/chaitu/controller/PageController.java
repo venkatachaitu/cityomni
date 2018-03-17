@@ -57,6 +57,21 @@ public class PageController {
         return new ModelAndView("aboutUS");
     }
     
+    @GetMapping("/contact")
+    public ModelAndView opencontact() {
+        return new ModelAndView("aboutUS");
+    }
+    
+    @GetMapping("/states")
+    public ModelAndView states() {
+        return new ModelAndView("states");
+    }
+    
+    @GetMapping("/cities")
+    public ModelAndView cities() {
+        return new ModelAndView("cities");
+    }
+    
     @GetMapping("/metroCities")
     public ModelAndView metroCities() {
         return new ModelAndView("metroCities");

@@ -6,6 +6,7 @@
 		<script>
 		   window.onload = loadAboutPage();
 		   	function loadAboutPage(){
+		   		//readJson();
 		   		updateGPSLocation();
 		   		var loc = getCookie("location");
 	   			var loc11 = getUrlVars()["location"];
@@ -31,6 +32,25 @@
 		   	        alert(e);
 		   	    }
 		   	}
+		   	/* function readJson(){
+		   		$.ajax({
+		   	       url: '/data/cities.json',
+		   	       dataType: 'json',
+		   	       success: function(data) {
+		   	          $.each(data, function(key, val) {
+						//console.log(key, val);
+						$.each(val, function(key1, val1) {
+							console.log(val1.state)
+			   	          });
+		   	          });
+		   	       },
+		   	      statusCode: {
+		   	         404: function() {
+		   	           alert('There was a problem with the server.  Try again soon!');
+		   	         }
+		   	       }
+		   	    });
+		   	} */
 		</script>
 		<div class="inner">
 			<header>

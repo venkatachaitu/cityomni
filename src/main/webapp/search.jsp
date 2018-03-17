@@ -2,6 +2,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@include file="header.jsp" %>
 <br><br>  
+<!-- add1 -->		
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- add1 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-9571339575910580"
+     data-ad-slot="6333757458"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- add1 -->
  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.js"></script> -->
 <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places,visualization&v=3.exp"></script> --> 
 <script>
@@ -28,13 +39,13 @@
            	 loc = city;
             }           
             category = getUrlVars()["category"];
-            searchContent = getUrlVars()["searchContent"].trim();
+            searchContent = getUrlVars()["searchContent"];
             
               
             //alert(decodeURIComponent((searchContent).replace(/\+/g, '%20')));
             add = getCurAdd();  
-            lat = getUrlVars()["lat"].trim(); 
-            lon = getUrlVars()["lon"].trim();
+            lat = getUrlVars()["lat"]; 
+            lon = getUrlVars()["lon"];
             document.getElementById("lat").value = lat;
             document.getElementById("lon").value = lon;
              
@@ -47,13 +58,19 @@
 			
             $('meta[name=description]').remove();
             $('head').append( "<meta name='description' content='"+descTab+"'>" );
-            
-            
+            if(!lat || !lon){
+            	lat = "00.00";
+            	lon = "00.00";
+            }
+            if(!city){
+            	lat = getCookie("clattitude");
+                lon = getCookie("clongitude");
+            } 
             if(searchContent == "" || searchContent == null){
-            	uri = "rest/get/search/"+getLattitude()+"/"+getLongitude()+"/"+lat+"/"+lon+"/"+withIn+"/"+category+"/all";
+            	uri = "rest/get/search/"+city+"/"+getLattitude()+"/"+getLongitude()+"/"+lat+"/"+lon+"/"+withIn+"/"+category+"/all";
              }
             else{
-            	uri = "rest/get/search/"+getLattitude()+"/"+getLongitude()+"/"+lat+"/"+lon+"/"+withIn+"/"+category+"/"+searchContent;
+            	uri = "rest/get/search/"+city+"/"+getLattitude()+"/"+getLongitude()+"/"+lat+"/"+lon+"/"+withIn+"/"+category+"/"+searchContent;
             }
             
             $.getJSON(u + uri, function(results) {
@@ -71,15 +88,19 @@
 	        alert("callback3:status: "+status);
 	        return;
 	      } 
-	      document.getElementById("titleHeader").innerHTML = this.results.length+" search results in "+category+" category.";
-	   	viewMoreSearch(); 
+	      if(!city){
+	    	  document.getElementById("titleHeader").innerHTML = this.results.length+" "+category +" results found in "+getCookie("locAddress");;
+          }else{
+	      	document.getElementById("titleHeader").innerHTML = this.results.length+" "+category +" results found in "+city;
+          }
+	      	viewMoreSearch(); 
      }
        	          
 	  var kk = 0 ;var temp = 0;var next = 0;
    	  function viewMoreSearch(){
         for(var i = next; i < results.length; i++) {  
       		
-      		if(temp < 3){
+      		if(temp < 4){
       			next++;
    				$.ajax({
    					url: u + "rest/get/search/getDetailsByPlaceId/"+results[i]['place_id'],
@@ -294,9 +315,9 @@
    <!-- <div style="display: none;" id="tempContent"></div> -->
       <header style="margin: 0;">
       	<!-- <p onclick="openLeftNavOpen()" id="servicesLink" class="servicesLinkBars" ><i class="fa fa-bars" aria-hidden="true"></i></p> -->
-         <h3  class="servicesTitleInSearchPage" id="titleHeader">Search Result</h3>
+         <h3  class="servicesTitleInSearchPage" id="titleHeader"></h3>
            <!-- <p style="float: right;margin-top: -31px;" id="sortByLink" onclick="sortByDistance()">Sort by Distance</p> -->  
-         <hr style="margin:  1px !important;">
+         <!-- <hr style="margin:  1px !important;"> -->
       </header>
       <div class="flex flex-2 viewList" id="viewList">	
          <img id="loadingImage" class="loadingImage" src="images/loading2.gif" alt="loading" />		 
@@ -551,6 +572,31 @@
         }
 	}
 </script>
+
+
+<style>
+			            @media screen and (max-width: 1680px) {
+			            	.bottom div{
+			            		font-size: 1.15em;
+			            	}
+			            }
+			            @media screen and (max-width: 980px) {
+			            	.bottom div{
+			            		font-size: 1.15em;
+			            	}
+			            }
+			            @media screen and (max-width: 730px) {
+			            	.bottom div{
+			            		font-size: 1.5em;
+			            	}
+			            }
+			            @media screen and (max-width: 480px) {
+			            	.bottom div{
+			            		font-size: 2em;
+			            	}
+			            }
+			            
+			            </style>
 <%@include file="footer.jsp" %>
 
 

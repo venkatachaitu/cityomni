@@ -86,11 +86,13 @@
                <i class="fa fa-map-marker fa-fw"></i>
                <span id="locationHome"></span>               
                </span>
-               <span class="headerMenu" id="time"></span>
-               <a class="headerMenu" href="./">Home</a>
-               <a class="headerMenu" href="./aboutUS">AboutUs</a>
-               <a class="headerMenu" href="./metroCities">Metro Cities</a>
+               <span class="headerMenu" style="display: none;" id="time"></span>
+               <a class="headerMenu" href="./">Home</a>               
+               <a class="headerMenu" href="./states">States</a>
                <a class="headerMenu" href="./services">Services</a>
+               <a class="headerMenu" href="./metroCities">Metro Cities</a>
+               <a class="headerMenu" href="./aboutUS">About</a>
+               <a class="headerMenu" href="./contact">Contact</a>
                <!-- <a href="https://cityhalt.com">Login</a> -->
             </nav>
             <!-- <a href="https://cityhalt.com" class="logo"><strong>city</strong> HALT</a> -->

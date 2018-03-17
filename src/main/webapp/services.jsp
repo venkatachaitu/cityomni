@@ -30,19 +30,21 @@
 	       			}
 	   			}
 	   			if(loc == ""){
-	   				setCookieWithOutReload("location", "chennai", 365);
+	   				setCookieWithOutReload("location", "india", 365);
+	   				setCookieWithOutReload("clattitude", "20.5937", 365);
+	   				setCookieWithOutReload("clongitude", "78.9629", 365);
 	   				loc = getCookie("location");
 	   			}
 	   			document.getElementById('locationHome').innerHTML = loc; 
 	   			var u = getWebsiteURL();
 	   			
 	   			var out = "", key="";
-	   			var arry=["atms","auto_mobiles","banks","bars","beauty_parlours","blood_and_eye_banks","bus_stations","coffee_shops","colleges","computer_institutes","computer_services","dance_schools","fashion_and_cloth_stores","fire_stations","gas_and_petrol_stations","gift_shops","govt_offices","grocery_stores","hardware_shops","hospitals","hostels","hotels","insurance_companies","jewellery_shops","libraries","lodges","mobile_shops","museums","packers_and_movers","parcel_and_couriers","parks","party_halls","pharmacy","photo_studios","play_schools","police_stations","railway_stations","real_estate_agents","restaurents","schools","shopping_malls","software_companies","stadiums","temples","theaters","tours_and_travels","universities"];
+	   			var arry=["accounting", "airport", "amusement_park", "aquarium", "art_gallery", "atm", "bakery", "bank", "bar", "beauty_salon", "bicycle_store", "book_store", "bowling_alley", "bus_station", "cafe", "campground", "car_dealer", "car_rental", "car_repair", "car_wash", "casino", "cemetery", "church", "city_hall", "clothing_store", "convenience_store", "courthouse", "dentist", "department_store", "doctor", "electrician", "electronics_store", "embassy", "fire_station", "florist", "funeral_home", "furniture_store", "gas_station", "gym", "hair_care", "hardware_store", "hindu_temple", "home_goods_store", "hospital", "insurance_agency", "jewelry_store", "laundry", "lawyer", "library", "liquor_store", "local_government_office", "locksmith", "lodging", "meal_delivery", "meal_takeaway", "mosque", "movie_rental", "movie_theater", "moving_company", "museum", "night_club", "painter", "park", "parking", "pet_store", "pharmacy", "physiotherapist", "plumber", "police", "post_office", "real_estate_agency", "restaurant", "roofing_contractor", "rv_park", "school", "shoe_store", "shopping_mall", "spa", "stadium", "storage", "store", "subway_station", "supermarket", "synagogue", "taxi_stand", "train_station", "transit_station", "travel_agency", "veterinary_care", "zoo"];
 		        for(var i=0; i< arry.length; i++){
 		        	key = arry[i];
 		        	out = out + "<article><header>";
 					out = out + "<a target="+key+" href=";
-					out = out + u+"viewList?location=" + loc + "&category="+key;
+					out = out + u+"search?city=" + loc + "&category="+key;
 					out = out + "><h4><img class='viewAllServiceIcons' src='images/serviceIcons/"+key+".png'>";
 					out = out + addSpaces(key);								 
 					out = out + "</h4></a></header></article>";

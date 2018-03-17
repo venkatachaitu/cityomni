@@ -162,6 +162,7 @@ function getWebsiteURL() {
     }
     if (str.indexOf("localhost") != -1) {
         url = "/";
+        //url = window.location.hostname+":5000";
     }
     return url;
 }

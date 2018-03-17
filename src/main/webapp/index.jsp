@@ -74,11 +74,13 @@
                <i class="fa fa-map-marker fa-fw"></i>
                <span id="locationHome"></span>
                </span>  
-               <span class="headerMenu" id="time"></span>
-               <a class="headerMenu" href="./">Home</a>
-               <a class="headerMenu" href="./aboutUS">AboutUs</a>
-               <a class="headerMenu" href="./metroCities">Metro Cities</a>
+               <span class="headerMenu" style="display: none;" id="time"></span>
+               <a class="headerMenu" href="./">Home</a>               
+               <a class="headerMenu" href="./states">States</a>
                <a class="headerMenu" href="./services">Services</a>
+               <a class="headerMenu" href="./metroCities">Metro Cities</a>
+               <a class="headerMenu" href="./aboutUS">About</a>
+               <a class="headerMenu" href="./contact">Contact</a>
                <!-- <a href="https://cityhalt.com">Login</a> -->
             </nav>
             <!-- <a href="https://cityhalt.com" class="logo"><strong>city</strong> HALT</a>  -->
@@ -245,21 +247,21 @@
             </script>	
             <div class="flex ">
                <div style="cursor: pointer;">
-	               <a target="hotels" href="./viewList?category=hotels">
+	               <a target="hotels" href="./search?category=lodging">
 	                  <span class="icon fa fa-bed"></span>
-	                  <h3>Hotels</h3>
+	                  <h3>Lodging</h3>
 	                  <p>5, 3, 2 Star Hotels</p>
 	                </a>
                </div>
                <div style="cursor: pointer;">
-               	<a target="banks" href="./viewList?category=banks">
+               	<a target="banks" href="./search?category=bank">
                   <span class="icon fa-university"></span>
                   <h3>Banks</h3>
                   <p>Central, State Banks, etc.</p>
                   </a>
                </div>
                <div style="cursor: pointer;">
-               	<a target="coffee_shops" href="./viewList?category=coffee_shops">
+               	<a target="coffee_shops" href="./search?category=cafe">
                   <span class="icon fa-coffee"></span>
                   <h3>Coffee Shops</h3>
                   <p>CoffeeDay, Barista, etc.</p>

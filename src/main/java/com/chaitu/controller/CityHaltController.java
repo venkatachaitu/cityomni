@@ -10,13 +10,25 @@ import java.util.Collections;
 import java.util.Comparator;
 //import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+
+
+import java.util.TreeSet;
+
+
+
 //import javax.persistence.EntityManager;
 import javax.servlet.ServletContext;
+
+
+
+
+
 
 //import org.json.JSONException;
 import org.json.simple.JSONArray;
@@ -37,6 +49,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
 import com.chaitu.constants.GetPath;
+import com.chaitu.model.CityLatLon;
 //import com.chaitu.model.DataTable;
 import com.chaitu.model.RadarSearchRespose;
 //import com.chaitu.service.DbServiceDao;
@@ -389,10 +402,18 @@ public class CityHaltController {
 	}
     @CrossOrigin(origins = "*")
     ///"/rest/get/search/{lat}/{lon}/{cat}/{text}"
-    @GetMapping("/rest/get/search/{clat}/{clon}/{lat}/{lon}/{radius}/{category}/{keyword}")
-    public ResponseEntity<List<RadarSearchRespose>> searchGoogleApi(@PathVariable String lat, @PathVariable String lon, 
+    @GetMapping("/rest/get/search/{city}/{clat}/{clon}/{lat}/{lon}/{radius}/{category}/{keyword}")
+    public ResponseEntity<List<RadarSearchRespose>> searchGoogleApi(@PathVariable String city, @PathVariable String lat, @PathVariable String lon, 
 					    			@PathVariable String clat, @PathVariable String clon, @PathVariable String radius, 
 					    			@PathVariable String category, @PathVariable String keyword) throws Exception {
+    	
+    	if (lat.equalsIgnoreCase("00.00") || lon.equalsIgnoreCase("00.00") || lat.equalsIgnoreCase("undefined") || lon.equalsIgnoreCase("undefined")) {
+    		CityLatLon cll = getlatlonBycity(city);
+    		if (cll != null) {
+    			lat = cll.lat;
+        		lon = cll.lon;
+			}	 
+		}
     	String uri = "";
     	if (category.equalsIgnoreCase("all")) {
 			uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&rankby=distance&radius="+radius+"&keyword="+keyword+"&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM";
@@ -477,6 +498,90 @@ public class CityHaltController {
 	    return new ResponseEntity<Object>(userServiceDao.readConfessionByArea(area), response, HttpStatus.OK);
     }*/
     
+//    @CrossOrigin(origins = "*")
+    @GetMapping("/rest/get/latlon/{state}/cities")
+    public ResponseEntity<Object> readCitiesFromFile(@PathVariable String state) throws Exception {
+    	String sourceLocation = gpath.getPath().replace('\\', '/');
+		JSONParser parser = new JSONParser();
+		List < Object > li = new ArrayList < Object > ();
+		JSONObject obj = null;
+		try {     
+        	obj = (JSONObject) parser.parse(new FileReader(sourceLocation+"citiesInIndia.json"));
+            JSONObject jsonObject = (JSONObject) obj;
+            JSONArray msg = (JSONArray) jsonObject.get("statelist");
+            if (msg != null) {
+                for (int i = 0; i <= msg.size() - 1; i++) {
+                	JSONObject ob = (JSONObject) msg.get(i);
+                	state=state.replaceAll("_", " ");
+                	if (ob.get("state").toString().equalsIgnoreCase(state)) {
+                		li.add(ob.get("city_name").toString());
+                	}
+                }
+            }
+		} catch (Exception e) {
+        	System.out.println("readCitiesFromFile() : "+e);
+        }
+		return new ResponseEntity < Object > (li, HttpStatus.OK);
+    }
+    
+    static Map<String, CityLatLon> statesMap = new HashMap<String , CityLatLon>();
+    public CityLatLon getlatlonBycity(String city){
+    	if (statesMap.containsKey(city)) {
+    		System.out.println(statesMap.get(city)+"from map--------------------"+city);
+			return (CityLatLon) statesMap.get(city);
+		}else{
+			System.out.println(statesMap+"from file--------------------"+city);
+	    	String sourceLocation = gpath.getPath().replace('\\', '/');
+			JSONParser parser = new JSONParser();
+			JSONObject obj = null;
+			
+			try {     
+	        	obj = (JSONObject) parser.parse(new FileReader(sourceLocation+"citiesInIndia.json"));
+	            JSONObject jsonObject = (JSONObject) obj;
+	            JSONArray msg = (JSONArray) jsonObject.get("statelist");
+	            if (msg != null) {
+	                for (int i = 0; i <= msg.size() - 1; i++) {
+	                	JSONObject ob = (JSONObject) msg.get(i);
+	                	city=city.replaceAll("_", " ");
+	                	CityLatLon cll = new CityLatLon();
+	                	String city1 = (String)ob.get("city_name");
+	                	cll.city = city1.toLowerCase();
+                		String lat = (String)ob.get("latitude");
+                		String lon = (String)ob.get("longitude");
+                		if (!lat.isEmpty() && !lon.isEmpty()) {
+                			lat = lat.substring(0, lat.indexOf(" "));
+                			lon = lon.substring(0, lon.indexOf(" "));
+						}
+                		cll.lat=lat;
+                		cll.lon=lon;
+	                	statesMap.put(cll.city, cll);
+	                }
+	            }
+			} catch (Exception e) {
+	        	System.out.println("readCitiesFromFile() : "+e);
+	        }
+			return (CityLatLon) statesMap.get(city);
+		} 
+    }
+    
+    
 
+   /* JSONParser parser = new JSONParser();
+    Object obj = null;
+    try {
+        obj = parser.parse(new FileReader(filePath));
+        JSONObject jsonObject = (JSONObject) obj;
+        JSONArray msg = (JSONArray) jsonObject.get(category); //fileName
+        if (msg != null) {
+            List < Object > li = new ArrayList < Object > ();
+            for (int i = 0; i <= msg.size() - 1; i++) {
+                li.add(msg.get(i));
+            }
+            obj = parser.parse(li.toString());
+        }
+    } catch (Exception e) {
+        System.out.println("readDataByCategory : " + e);
+    }
+    return obj;*/
     
 }

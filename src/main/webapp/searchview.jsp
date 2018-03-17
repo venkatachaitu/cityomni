@@ -41,7 +41,7 @@
 			      <li><span class="imageSpan"><img id="iconSV" src="images/noImage.jpg" ></span></li>
 			      <li>
 			         <span class="detailsSpan">
-			            <header style="margin: 1em 0em -1em 0em;    color: red;">
+			            <header style="margin: 1em 0em 1em 0em;    color: red;">
 			               <h3 id="name"></h3>
 			            </header>
 			            <br>
@@ -54,9 +54,32 @@
 			               <div><a target="." class="bottom" id="direction"><i class="fa fa-location-arrow" aria-hidden="true"></i></a></div>
 			               <div id="reviewsView"><i style="margin:0px;" class="fa fa-pencil" aria-hidden="true"></i>&nbsp;<span id="reviews"></span></div>
 			               <br>
-			               <div>from <i style="color: #00ce08;" class="fa fa-map-marker" aria-hidden="true"></i> : <span id="dis1">0.5616</span>&nbsp;km.(approx.)</div>
-			               <div>from <i style="transform: rotateY(180deg);color: #00ce08;" class="fa fa-search" aria-hidden="true"></i> : <span id="dis2">0.5616</span>&nbsp;km.(approx.)</div>
+			               <div>from <i style="color: #00ce08;" class="fa fa-map-marker" aria-hidden="true"></i> : <span id="dis1">0.5616</span>&nbsp;km.<font style="font-size: .7em;color: #757575">(approx.)</font></div>
+			               <div>from <i style="transform: rotateY(180deg);color: #00ce08;" class="fa fa-search" aria-hidden="true"></i> : <span id="dis2">0.5616</span>&nbsp;km.<font style="font-size: .7em;color: #757575">(approx.)</font></div>
 			            </footer>
+			            <style>
+			            @media screen and (max-width: 1680px) {
+			            	.bottom div{
+			            		font-size: 1.3em;
+			            	}
+			            }
+			            @media screen and (max-width: 980px) {
+			            	.bottom div{
+			            		font-size: 1.3em;
+			            	}
+			            }
+			            @media screen and (max-width: 730px) {
+			            	.bottom div{
+			            		font-size: 1.5em;
+			            	}
+			            }
+			            @media screen and (max-width: 480px) {
+			            	.bottom div{
+			            		font-size: 2em;
+			            	}
+			            }
+			            
+			            </style>
 			            <!-- <footer class="bottom">
 			            <h4>reviews</h4><hr>
 			             <span id=reviewsdisplay></span>
@@ -66,6 +89,17 @@
 			      </li>
 			   </ul>
 			</article>
+			<!-- add1 -->		
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- add1 -->
+			<ins class="adsbygoogle"
+			     style="display:inline-block;width:728px;height:90px"
+			     data-ad-client="ca-pub-9571339575910580"
+			     data-ad-slot="6333757458"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+			<!-- add1 -->
       </div>
    </div>
 </section>

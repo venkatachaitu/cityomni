@@ -145,19 +145,19 @@
 			        </footer>
 			    </article>
 			    <article>
-				    <a class="metrocitiesPageCityBlock" href="./services?location=ahmedabad">
+				    <a class="metrocitiesPageCityBlock" href="./services?location=ahmadabad">
 				        <div class="image round">
-				            <img src="images/ahmedabad.png" alt="Ahmedabad">
+				            <img src="images/ahmadabad.png" alt="Ahmadabad">
 				        </div>
 				        <header>
-				            <h3>7. AHMEDABAD-63.52 Lakh</h3>
+				            <h3>7. AHMADABAD-63.52 Lakh</h3>
 				        </header>
 				        <p style="text-align: justify;color: #5f5f5f;">
-				        	7th position of the list is occupied by Ahmedabad, the largest city of Gujarat. Ahmedabad is one of the largest commercial and industrial centres in the western part of the India. It is a port city and has a lot of manufacturing industries in and around the city. It is ranked amongst one of the most polluted cities in the world.
+				        	7th position of the list is occupied by Ahmadabad, the largest city of Gujarat. Ahmadabad is one of the largest commercial and industrial centres in the western part of the India. It is a port city and has a lot of manufacturing industries in and around the city. It is ranked amongst one of the most polluted cities in the world.
 			        	</p>
 		        	</a>
 			        <footer>
-			            <a href="./services?location=ahmedabad" class="button">view all services</a>
+			            <a href="./services?location=ahmadabad" class="button">view all services</a>
 			        </footer>
 			    </article>
 			    <article>

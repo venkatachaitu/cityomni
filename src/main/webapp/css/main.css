@@ -3235,6 +3235,7 @@ button:disabled,
 }
 
 .servicesTitleInSearchPage{
-	color: #ff5c29;
-    font-size: 1.4em;
+	color: #ff2436;
+    font-size: 1.15em;
+    font-weight: 400;
 }
