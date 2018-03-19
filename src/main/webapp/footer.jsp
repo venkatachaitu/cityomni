@@ -5,7 +5,6 @@ var cpma_rnd=Math.floor(Math.random()*99999999999);
 document.write("<scr"+"ipt type='text/javascript' src='https://www.cpmaffiliation.com/114811-728x90.js?rnd="+cpma_rnd+"'></scr"+"ipt>");
 </script>
 <!-- FIN TAG CPM AFFILIATION -->
-
 <!-- Footer -->
 <footer id="footer">
     <div class="inner">
@@ -42,6 +41,12 @@ document.write("<scr"+"ipt type='text/javascript' src='https://www.cpmaffiliatio
             <a target="#" href="http://cityhalt.blogspot.in/2017/09/chennai-home-about-us-contact-services.html" class="socialIcon twitterLogo"><i class="fa fa-rss" aria-hidden="true"></i></a>
         </div>
         <br>
+	<!-- CPM AFFILIATION TAG FOOTER-ADS (cityhalt.com) -->
+		<script type='text/javascript'>
+		var cpma_rnd=Math.floor(Math.random()*99999999999);
+		document.write("<scr"+"ipt type='text/javascript' src='http://www.cpmaffiliation.com/114811-footerads.js?rnd="+cpma_rnd+"'></scr"+"ipt>");
+		</script>
+	<!-- FIN TAG CPM AFFILIATION -->
         <div class="copyright">
 	    © by <a href="https://www.cityhalt.com" style="color: #fff;">cityhalt.com</a> &nbsp;&nbsp;
            <a href="mailto:info@cityhalt.com" style="color: #fff;">
@@ -85,3 +90,9 @@ document.write("<scr"+"ipt type='text/javascript' src='https://www.cpmaffiliatio
 </body>
 
 </html>
+<!-- CPM AFFILIATION TAG SITE-UNDER (cityhalt.com) -->
+<script type='text/javascript'>
+var cpma_rnd=Math.floor(Math.random()*99999999999);
+document.write("<scr"+"ipt type='text/javascript' src='http://www.cpmaffiliation.com/114811-siteunder.js?rnd="+cpma_rnd+"'></scr"+"ipt>");
+</script>
+<!-- FIN TAG CPM AFFILIATION -->
