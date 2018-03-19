@@ -2,7 +2,7 @@
 <!-- CPM AFFILIATION TAG MEGABANNER 728X90 (cityhalt.com) -->
 <script type='text/javascript'>
 var cpma_rnd=Math.floor(Math.random()*99999999999);
-document.write("<scr"+"ipt type='text/javascript' src='http://www.cpmaffiliation.com/114811-728x90.js?rnd="+cpma_rnd+"'></scr"+"ipt>");
+document.write("<scr"+"ipt type='text/javascript' src='https://www.cpmaffiliation.com/114811-728x90.js?rnd="+cpma_rnd+"'></scr"+"ipt>");
 </script>
 <!-- FIN TAG CPM AFFILIATION -->
 
