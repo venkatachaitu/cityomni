@@ -264,9 +264,15 @@
       </section>
       <section id="three" class="wrapper align-center" >
          <div class="inner">
-         <header>
-	         <h3 class="servicesTitle" id="titleHeader">Metro Cities in India</h3>
-	      </header>
+		<!-- CPM AFFILIATION TAG BANNER 468X60 (cityhalt.com) -->
+			<script type='text/javascript'>
+			var cpma_rnd=Math.floor(Math.random()*99999999999);
+			document.write("<scr"+"ipt type='text/javascript' src='http://www.cpmaffiliation.com/114811-468x60.js?rnd="+cpma_rnd+"'></scr"+"ipt>");
+			</script>
+		<!-- FIN TAG CPM AFFILIATION -->
+		<header>
+			<h3 class="servicesTitle" id="titleHeader">Metro Cities in India</h3>
+		</header>
             <div class="flex flex-2">
 			    <a class="indexPageCityBlock" href="./services?location=delhi">
 				    <article>
