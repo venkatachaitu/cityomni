@@ -6,6 +6,12 @@
       <header>
          <h3 class="servicesTitle" id="titleHeader">Services</h3>
          <hr>
+	<!-- CPM AFFILIATION TAG BANNER 468X60 (cityhalt.com) -->
+		<script type='text/javascript'>
+		var cpma_rnd=Math.floor(Math.random()*99999999999);
+		document.write("<scr"+"ipt type='text/javascript' src='http://www.cpmaffiliation.com/114811-468x60.js?rnd="+cpma_rnd+"'></scr"+"ipt>");
+		</script>
+	<!-- FIN TAG CPM AFFILIATION -->
       </header>
       <div class="flex flex-2 services" id="services">
          <img class="loadingImage" src="images/loading2.gif" alt="loading" />
