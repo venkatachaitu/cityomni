@@ -53,6 +53,12 @@
 		   	} */
 		</script>
 		<div class="inner">
+			<!-- CPM AFFILIATION TAG BANNER 468X60 (cityhalt.com) -->
+				<script type='text/javascript'>
+				var cpma_rnd=Math.floor(Math.random()*99999999999);
+				document.write("<scr"+"ipt type='text/javascript' src='http://www.cpmaffiliation.com/114811-468x60.js?rnd="+cpma_rnd+"'></scr"+"ipt>");
+				</script>
+			<!-- FIN TAG CPM AFFILIATION -->
 			<header>
 				<h3>About / Contact us !</h3><hr>
 			</header>
@@ -68,7 +74,13 @@
 			    <h3 style="margin: auto;color: red;">
 			        cityhalt : Site under construction...
 			        &nbsp;<i class="fa fa-exclamation-triangle" aria-hidden="true" style="color: #ffe11b;font-size: 2em;"></i>
-			    </h3>     
+			    </h3>  
+			<!-- CPM AFFILIATION TAG SKYSCRAPER 160X600 (cityhalt.com) -->
+				<script type='text/javascript'>
+				var cpma_rnd=Math.floor(Math.random()*99999999999);
+				document.write("<scr"+"ipt type='text/javascript' src='http://www.cpmaffiliation.com/114811-160x600.js?rnd="+cpma_rnd+"'></scr"+"ipt>");
+				</script>
+			<!-- FIN TAG CPM AFFILIATION -->
 			</div>
 		</div>
 	</section>
