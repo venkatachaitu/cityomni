@@ -52,6 +52,15 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/font-awesome.css" />
+	   <!-- adds enable -->		
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({
+			  google_ad_client: "ca-pub-9571339575910580",
+			  enable_page_level_ads: true
+			 });
+		</script>
+	<!-- adds enable -->
    </head>
    <body onload="loadIndexPage()">      
 	<%@include file="locationPrompt.jsp" %>
@@ -264,12 +273,15 @@
       </section>
       <section id="three" class="wrapper align-center" >
          <div class="inner">
-		<!-- CPM AFFILIATION TAG BANNER 468X60 (cityhalt.com) -->
-			<script type='text/javascript'>
-			var cpma_rnd=Math.floor(Math.random()*99999999999);
-			document.write("<scr"+"ipt type='text/javascript' src='http://www.cpmaffiliation.com/114811-468x60.js?rnd="+cpma_rnd+"'></scr"+"ipt>");
-			</script>
-		<!-- FIN TAG CPM AFFILIATION -->
+		<!-- add1 -->
+		<ins class="adsbygoogle"
+		     style="display:inline-block;width:728px;height:90px"
+		     data-ad-client="ca-pub-9571339575910580"
+		     data-ad-slot="6333757458"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+		<!-- add1 -->
 		<header>
 			<h3 class="servicesTitle" id="titleHeader">Metro Cities in India</h3>
 		</header>
