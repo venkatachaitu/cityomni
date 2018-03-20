@@ -66,8 +66,8 @@
 			 </div>
 			  <div class="flex flex-2">	
 			    <h3 style="margin: auto;color: red;">
-			        cityhalt : Site under construction...
-			        &nbsp;<i class="fa fa-exclamation-triangle" aria-hidden="true" style="color: #ffe11b;font-size: 2em;"></i>
+			        Welcome to CITYHALT: one place for complete city information and services
+			        <!-- &nbsp;<i class="fa fa-exclamation-triangle" aria-hidden="true" style="color: #ffe11b;font-size: 2em;"></i> -->
 			    </h3>  	
 			</div>
 		</div>
