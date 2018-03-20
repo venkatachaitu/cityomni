@@ -1,10 +1,13 @@
 <br><br><br>
-<!-- CPM AFFILIATION TAG MEGABANNER 728X90 (cityhalt.com) -->
-<script type='text/javascript'>
-var cpma_rnd=Math.floor(Math.random()*99999999999);
-document.write("<scr"+"ipt type='text/javascript' src='https://www.cpmaffiliation.com/114811-728x90.js?rnd="+cpma_rnd+"'></scr"+"ipt>");
+<!-- add1 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-9571339575910580"
+     data-ad-slot="6333757458"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<!-- FIN TAG CPM AFFILIATION -->
+<!-- add1 -->
 <!-- Footer -->
 <footer id="footer">
     <div class="inner">
@@ -41,12 +44,18 @@ document.write("<scr"+"ipt type='text/javascript' src='https://www.cpmaffiliatio
             <a target="#" href="http://cityhalt.blogspot.in/2017/09/chennai-home-about-us-contact-services.html" class="socialIcon twitterLogo"><i class="fa fa-rss" aria-hidden="true"></i></a>
         </div>
         <br>
-	<!-- CPM AFFILIATION TAG FOOTER-ADS (cityhalt.com) -->
-		<script type='text/javascript'>
-		var cpma_rnd=Math.floor(Math.random()*99999999999);
-		document.write("<scr"+"ipt type='text/javascript' src='http://www.cpmaffiliation.com/114811-footerads.js?rnd="+cpma_rnd+"'></scr"+"ipt>");
-		</script>
-	<!-- FIN TAG CPM AFFILIATION -->
+	<!-- add2 -->		
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<ins class="adsbygoogle"
+	     style="display:block"
+	     data-ad-format="fluid"
+	     data-ad-layout-key="-gt-c+2u-36-31"
+	     data-ad-client="ca-pub-9571339575910580"
+	     data-ad-slot="4150447244"></ins>
+	<script>
+	     (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	<!-- add2 -->
         <div class="copyright">
 	    © by <a href="https://www.cityhalt.com" style="color: #fff;">cityhalt.com</a> &nbsp;&nbsp;
            <a href="mailto:info@cityhalt.com" style="color: #fff;">
@@ -87,12 +96,17 @@ document.write("<scr"+"ipt type='text/javascript' src='https://www.cpmaffiliatio
         return false;
     });
 </script>
-</body>
-
-</html>
-<!-- CPM AFFILIATION TAG SITE-UNDER (cityhalt.com) -->
-<script type='text/javascript'>
-var cpma_rnd=Math.floor(Math.random()*99999999999);
-document.write("<scr"+"ipt type='text/javascript' src='http://www.cpmaffiliation.com/114811-siteunder.js?rnd="+cpma_rnd+"'></scr"+"ipt>");
+<!-- add3 -->		
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+	 style="display:block; text-align:center;"
+	 data-ad-layout="in-article"
+	 data-ad-format="fluid"
+	 data-ad-client="ca-pub-9571339575910580"
+	 data-ad-slot="7873590908"></ins>
+<script>
+	 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<!-- FIN TAG CPM AFFILIATION -->
+<!-- add3 -->
+</body>
+</html>
