@@ -53,18 +53,6 @@
 		   	} */
 		</script>
 		<div class="inner">
-			<!-- add2 -->		
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<ins class="adsbygoogle"
-			     style="display:block"
-			     data-ad-format="fluid"
-			     data-ad-layout-key="-gt-c+2u-36-31"
-			     data-ad-client="ca-pub-9571339575910580"
-			     data-ad-slot="4150447244"></ins>
-			<script>
-			     (adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
-			<!-- add2 -->
 			<header>
 				<h3>About / Contact us !</h3><hr>
 			</header>
@@ -80,19 +68,7 @@
 			    <h3 style="margin: auto;color: red;">
 			        cityhalt : Site under construction...
 			        &nbsp;<i class="fa fa-exclamation-triangle" aria-hidden="true" style="color: #ffe11b;font-size: 2em;"></i>
-			    </h3>  
-			<!-- add3 -->		
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<ins class="adsbygoogle"
-				 style="display:block; text-align:center;"
-				 data-ad-layout="in-article"
-				 data-ad-format="fluid"
-				 data-ad-client="ca-pub-9571339575910580"
-				 data-ad-slot="7873590908"></ins>
-			<script>
-				 (adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
-			<!-- add3 -->	
+			    </h3>  	
 			</div>
 		</div>
 	</section>
