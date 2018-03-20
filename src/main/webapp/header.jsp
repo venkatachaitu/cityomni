@@ -52,15 +52,6 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/font-awesome.css" />
-		<!-- adds enable -->		
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<script>
-			 (adsbygoogle = window.adsbygoogle || []).push({
-			  google_ad_client: "ca-pub-9571339575910580",
-			  enable_page_level_ads: true
-			 });
-		</script>
-		<!-- adds enable -->
    </head>
    <body>
     <%@include file="locationPrompt.jsp" %>
@@ -188,9 +179,6 @@
 					</script> 
 					 
 					<script src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&libraries=geometry,places,visualization&callback=initMap" ></script>							
-					  
-					 <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,visualization&v=3.exp&callback=initMap" async="defer"></script>
-					  -->
 					<script>
                     	function clearSearchCity(){
                     		document.getElementById('searchCity').value = '';
