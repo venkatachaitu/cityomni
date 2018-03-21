@@ -307,17 +307,6 @@
          <h3  class="servicesTitleInSearchPage" id="titleHeader"></h3>
            <!-- <p style="float: right;margin-top: -31px;" id="sortByLink" onclick="sortByDistance()">Sort by Distance</p> -->  
          <!-- <hr style="margin:  1px !important;"> -->
-	<!-- add1 -->		
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<!-- add1 -->
-	<ins class="adsbygoogle"
-	     style="display:inline-block;width:728px;height:90px"
-	     data-ad-client="ca-pub-9571339575910580"
-	     data-ad-slot="6333757458"></ins>
-	<script>
-	(adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
-	<!-- add1 -->
 	</header>
       <div class="flex flex-2 viewList" id="viewList">	
          <img id="loadingImage" class="loadingImage" src="images/loading2.gif" alt="loading" />		 
