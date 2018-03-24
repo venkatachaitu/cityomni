@@ -16,7 +16,7 @@
 	       			}
 	   			}
 	   			if(loc == ""){
-	   				console.log("aboutUs : location is "+loc);
+	   				console.log("about Page : location is "+loc);
 	   				setCookieWithOutReload("location", "chennai", 365);
 	   				loc = getCookie("location");
 	   			}
@@ -56,20 +56,45 @@
 			<header>
 				<h3>About / Contact us !</h3><hr>
 			</header>
-			 <div class="flex flex-2">		 
-			 	<h2>CityHALT</h2>
-			 	<h3>
-					<a href="mailto:info@cityhalt.com?Subject=Customer%20Email" style="">
-						<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;info@cityhalt.com        
-					</a>
-				</h3>
-			 </div>
+			 
 			  <div class="flex flex-2">	
-			    <h3 style="margin: auto;color: red;">
-			        Welcome to CITYHALT: one place for complete city information and services
-			        <!-- &nbsp;<i class="fa fa-exclamation-triangle" aria-hidden="true" style="color: #ffe11b;font-size: 2em;"></i> -->
-			    </h3>  	
+			  	<img class="aboutPhoto" alt="photo" src="https://scontent.fmaa2-1.fna.fbcdn.net/v/t1.0-1/c0.1.160.160/p160x160/13226850_1182184431812134_555198501487400135_n.jpg?_nc_cat=0&oh=0bfe939ccce0fe9ab1be05abee74f2f5&oe=5B701A20" width="311px" height="311px"><br>
+			  <div style="margin: auto;">
+				    <h3 style="color: red;text-align:center;font-weight: bold;">
+				    	<a href="./about">Chaitanya Kambhampati   </a>
+					</h3>  
+					<h5 style="text-align:  center;">
+				    	Lead Engineer in HCL Technologies, Chennai.
+					</h5>
+					<h5 style="text-align:  center;">
+				    	Home: Vijayawada, Andhrapradesh, India.  
+					</h5> 
+					<hr>
+					<div style=" text-align:  center;">
+						&nbsp;&nbsp;&nbsp;<a target="facebook" href="https://www.facebook.com/chaitanya.kambhampati.999">
+						<i style="font-size: 1.5em;color: #4d5db5;font-weight: bold;" class="fa-facebook-square" aria-hidden="true"></i>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<a target="instagram" href="https://www.instagram.com/chaitanya.kambhampati/">
+						<i style="font-size: 1.5em;color: #ef7878;font-weight: bold;" class="fa-instagram" aria-hidden="true"></i>
+						</a>
+						&nbsp;&nbsp;&nbsp;
+						<a target="twitter" href="https://twitter.com/venkatachaitu">
+						<i style="font-size: 1.5em;color: #03A9F4;font-weight: bold;" class="fa-twitter-square" aria-hidden="true"></i>
+						</a>
+						<br> &nbsp;&nbsp;&nbsp;
+						<i><a style="font-size: 1.15em;color: #646564;font-weight: bold;" href="tel:9908771059">
+						<i style="font-size: 1.5em;color: #179617;font-weight: bold;" class="fa-whatsapp" aria-hidden="true"></i>
+						9908771059</a></i>
+						<h3>
+						<a href="mailto:info@cityhalt.com?Subject=Customer%20Email" style="">
+							<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;info@cityhalt.com        
+						</a>
+				</h3>
+					</div>
+				</div>	
 			</div>
+			 
 		</div>
 	</section>
 <style>

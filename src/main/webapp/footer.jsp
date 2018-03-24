@@ -20,13 +20,13 @@
                 <li><input value="Send Message" class="button alt" type="submit"></li>
             </ul>
         </form>
-        <br>
+        <!-- <br>
         <div>
             <script type="text/javascript" src="https://counter9.freecounter.ovh/private/counter.js?c=xdeclr1tnf326xcdetp7rq5czerxjtxt&down=async" async></script>
             <noscript>
               <a href="https://www.freecounterstat.com" title="hit counter"><img src="https://counter9.freecounter.ovh/private/freecounterstat.php?c=xdeclr1tnf326xcdetp7rq5czerxjtxt" border="0" title="hit counter" alt="hit counter"></a>
              </noscript>
-        </div>
+        </div> -->
         <br>
         <div>
             <a target="#" href="https://www.facebook.com/cityhalt.web" class="socialIcon facebookLogo"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>&nbsp;&nbsp;
@@ -35,10 +35,10 @@
         </div>
         <br>
         <div class="copyright">
-	    All © Reserved by <a href="https://www.cityhalt.com" style="color: #fff;">cityhalt.com</a> &nbsp;&nbsp;
+	    All © by <a href="./about" style="color: #FFEB3B;">Chaitanya Kambhampati.</a> &nbsp;&nbsp; &nbsp;&nbsp;
            <a href="mailto:info@cityhalt.com" style="color: #fff;">
 				<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;info@cityhalt.com        
-      		</a>
+      		</a><br><br>
 		   <!-- Histats.com  (div with counter) -->
 		   <div id="histats_counter"></div>
 		<!-- Histats.com  START  (aync)-->

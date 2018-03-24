@@ -3239,3 +3239,22 @@ button:disabled,
     font-size: 1.15em;
     font-weight: 400;
 }
+
+
+
+
+.aboutPhoto{
+	margin: auto;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #8e8888;
+    border-radius: 311px;
+    overflow: hidden;	
+}
+
+
+
+
+
+
+

@@ -52,14 +52,14 @@ public class PageController {
         return new ModelAndView("searchview");
     }
     
-    @GetMapping("/aboutUS")
+    @GetMapping("/about")
     public ModelAndView openabout() {
-        return new ModelAndView("aboutUS");
+        return new ModelAndView("about");
     }
     
     @GetMapping("/contact")
     public ModelAndView opencontact() {
-        return new ModelAndView("aboutUS");
+        return new ModelAndView("about");
     }
     
     @GetMapping("/states")
