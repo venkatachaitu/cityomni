@@ -58,7 +58,7 @@
 			</header>
 			 
 			  <div class="flex flex-2">	
-			  	<img class="aboutPhoto" alt="photo" src="https://scontent.fmaa2-1.fna.fbcdn.net/v/t1.0-1/c0.1.160.160/p160x160/13226850_1182184431812134_555198501487400135_n.jpg?_nc_cat=0&oh=0bfe939ccce0fe9ab1be05abee74f2f5&oe=5B701A20" width="311px" height="311px"><br>
+			  	<img class="aboutPhoto" alt="photo" src="images/chaitanya.png" width="311px" height="311px"><br>
 			  <div style="margin: auto;">
 				    <h3 style="color: red;text-align:center;font-weight: bold;">
 				    	<a href="./about">Chaitanya Kambhampati   </a>
