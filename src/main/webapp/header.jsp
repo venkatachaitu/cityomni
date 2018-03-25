@@ -82,7 +82,7 @@
                <a class="headerMenu" href="./services">Services</a>
                <a class="headerMenu" href="./metroCities">Metro Cities</a>
                <a class="headerMenu" href="./about">About</a>
-               <a class="headerMenu" href="./contact">Contact</a>
+               <a class="headerMenu" href="./createPlan">Create Plan</a>
                <!-- <a href="https://cityhalt.com">Login</a> -->
             </nav>
             <!-- <a href="https://cityhalt.com" class="logo"><strong>city</strong> HALT</a> -->
@@ -100,7 +100,7 @@
                      <article style="width: 46% !important;margin-right: 15px;">
                         <header class="selectCity">
 		                      <i onclick="setCurrentLocationToSearchBox()" style="color: #768176;float:  left;margin-left: -1em;font-size: 1.5em;margin-top:  0.2em;" class="fa fa-map-marker" aria-hidden="true"></i>
-                        	  <input class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" />  
+                        	  <input class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" style="background-color: white !important;"/>  
                               <!-- <span class="bbu" onclick="clearSearchCity()">x</span> -->
                               <i class="fa fa-times-circle bbu" aria-hidden="true" onclick="clearSearchCity()"></i>
                               <style>

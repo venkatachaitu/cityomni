@@ -19,8 +19,6 @@
             var loc = getCookie("location");
             city = getUrlVars()["city"];
              
-            //document.getElementById('searchCity').value = decodeURIComponent((city).replace(/\+/g, '%20'));
-            //alert(decodeURIComponent((city).replace(/\+/g, '%20')));
             withIn = '50000';//getUrlVars()["withIn"];
             document.getElementById("locationHome").innerHTML = loc;
             if(loc == "" || loc == null){
@@ -42,11 +40,6 @@
             u = getWebsiteURL();
             var uri = "";
 			
-			var desc1 = $('meta[name=description]').attr("content");
-			var descTab = addSpaces(category)+"s in "+addSpaces(add)+ " "+desc1;
-			
-            $('meta[name=description]').remove();
-            $('head').append( "<meta name='description' content='"+descTab+"'>" );
             if(!lat || !lon){
             	lat = "00.00";
             	lon = "00.00";
@@ -200,7 +193,7 @@
           
    	  }
  
-   function sorting(json_object, key_to_sort_by) {
+   /* function sorting(json_object, key_to_sort_by) {
 	    function sortByKey(a, b) {
 	        var x = a[key_to_sort_by];
 	        var y = b[key_to_sort_by];
@@ -220,7 +213,7 @@
 	            temp = temp + str[i]; 
 	    }
 	    return temp;
-	}
+	} */
 	function loadMore() {
 		//console.log(jsonArr);
 		for (var i = ct; i < (ct+lit); i++) {   			 
@@ -234,7 +227,7 @@
 		}		
 	}
 	
-	function removeDoubleQuotes(str) {
+	/*function removeDoubleQuotes(str) {
 	    var temp = "";
 	    for (var i = 0; i < str.length; i++) {
 	    	if (str[i] != '"')
@@ -258,7 +251,7 @@
 	       return +a.getAttribute('data-percentage') - +b.getAttribute('data-percentage');
 	   })
 	   .appendTo($wrapper);
-   }
+   } */
    $(document).ready(function() {
        var win = $(window);
        win.scroll(function() {

@@ -35,7 +35,7 @@
         </div>
         <br>
         <div class="copyright">
-	    All © by <a href="./about" style="color: #FFEB3B;">Chaitanya Kambhampati.</a> &nbsp;&nbsp; &nbsp;&nbsp;
+	    © 2018 <a href="./about" style="color: #FFEB3B;">Chaitanya Kambhampati. </a> (admin@cityhalt)&nbsp;&nbsp; &nbsp;&nbsp;
            <a href="mailto:info@cityhalt.com" style="color: #fff;">
 				<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;info@cityhalt.com        
       		</a><br><br>

@@ -57,11 +57,6 @@ public class PageController {
         return new ModelAndView("about");
     }
     
-    @GetMapping("/contact")
-    public ModelAndView opencontact() {
-        return new ModelAndView("about");
-    }
-    
     @GetMapping("/states")
     public ModelAndView states() {
         return new ModelAndView("states");
@@ -80,6 +75,11 @@ public class PageController {
     @GetMapping("/confession")
     public ModelAndView confession() {
         return new ModelAndView("confession");
+    }
+    
+    @GetMapping("/createPlan")
+    public ModelAndView createPlan() {
+        return new ModelAndView("createPlan");
     }
     
     @GetMapping("/test")
