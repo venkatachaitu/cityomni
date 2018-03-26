@@ -21,8 +21,6 @@
 		<meta name="og_url" property="og:url" content="https://www.cityhalt.com"/>
 		<meta name="og_site_name" property="og:site_name" content="cityhalt"/>			
 	
-		<meta name="google-site-verification" content="9WUvJhUCG0WqXWwFpKyFMnQyYm2Xk79zTUKk6HZdbdA" />
-		
 		<meta name=distribution content=global>
 		<meta name=copyright content=cityhalt>			
 		<meta property=og:type content=website>
