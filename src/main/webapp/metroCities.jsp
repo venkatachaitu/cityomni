@@ -161,6 +161,24 @@
 			        </footer>
 			    </article>
 			    <article>
+			    	<div id="div_3020180327215955">
+						<script>
+							var domain = (window.location != window.parent.location)? document.referrer : document.location.href;
+							var scpt=document.createElement("script");
+							var GetAttribute = "afpftpPixel_"+(Math.floor((Math.random() * 500) + 1))+"_"+Date.now() ;
+							scpt.src="//adgebra.co.in/afpf/GetAfpftpJs?parentAttribute="+GetAttribute;
+							scpt.id=GetAttribute;
+							scpt.setAttribute("data-pubid","1843");
+							scpt.setAttribute("data-slotId","1");
+							scpt.setAttribute("data-templateId","30");
+							scpt.setAttribute("data-accessMode","1");
+							scpt.setAttribute("data-domain",domain);
+							scpt.setAttribute("data-divId","div_3020180327215955");
+							document.getElementById("div_3020180327215955").appendChild(scpt);
+						</script>
+					</div>
+			    </article>
+			    <article>
 				     <a class="metrocitiesPageCityBlock" href="./services?location=pune">
 				        <div class="image round">
 				            <img src="images/pune.png" alt="Pune">
@@ -194,6 +212,25 @@
 			            <a href="./services?location=surat" class="button">view all services</a>
 			        </footer>
 			    </article>
+			    <article>
+			    	<div id="div_2120180327215955">
+						<script>
+							var domain = (window.location != window.parent.location)? document.referrer : document.location.href;
+							var scpt=document.createElement("script");
+							var GetAttribute = "afpftpPixel_"+(Math.floor((Math.random() * 500) + 1))+"_"+Date.now() ;
+							scpt.src="//adgebra.co.in/afpf/GetAfpftpJs?parentAttribute="+GetAttribute;
+							scpt.id=GetAttribute;
+							scpt.setAttribute("data-pubid","1843");
+							scpt.setAttribute("data-slotId","1");
+							scpt.setAttribute("data-templateId","21");
+							scpt.setAttribute("data-accessMode","1");
+							scpt.setAttribute("data-domain",domain);
+							scpt.setAttribute("data-divId","div_2120180327215955");
+							document.getElementById("div_2120180327215955").appendChild(scpt);
+						</script>
+					</div>
+			    </article>
+			    
 			    <article>
 				    <a class="metrocitiesPageCityBlock" href="./services?location=jaipur">
 				        <div class="image round">
