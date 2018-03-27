@@ -35,7 +35,7 @@
         </div>
         <br>
         <div class="copyright">
-	    © 2018 <a href="./about" style="color: #FFEB3B;">Chaitanya Kambhampati. </a> (admin@cityhalt)&nbsp;&nbsp; &nbsp;&nbsp;
+	    Â© 2018 <a href="./about" style="color: #FFEB3B;">Chaitanya Kambhampati. </a> (admin@cityhalt)&nbsp;&nbsp; &nbsp;&nbsp;
            <a href="mailto:info@cityhalt.com" style="color: #fff;">
 				<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;info@cityhalt.com        
       		</a><br><br>
@@ -88,5 +88,6 @@
         return false;
     });
 </script>
+<!-- afp footer code starts here --><script type="text/javascript">	var adgf_p1="1843";	var adgf_p2="flag~custom_params_demographic";	var adgf_p3="0";	var adgf_p4="";	var adgf_p5="";	var adgFtSc=document.createElement("script");	adgFtSc.id="adg_pixel_footer_script";	document.body.appendChild(adgFtSc);	adgFtSc.async=true;	var adgScParam="p1="+adgf_p1+"&p2="+adgf_p2+"&p3="+adgf_p3+"&p4="+adgf_p4+"&p5="+adgf_p5;	adgFtSc.src="//adgebra.co.in/afpf/afpf.js?"+adgScParam;</script><noscript>	<iframe id='adg_footer_pixel_script' src="//adgebra.co.in/afpf/afpf?p1=1843&p2=0&p3=1&p4=&p5=" width="0" height="0" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></noscript> <!-- afp footer code ends here -->
 </body>
 </html>
