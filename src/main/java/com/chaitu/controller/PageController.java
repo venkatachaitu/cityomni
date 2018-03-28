@@ -56,6 +56,11 @@ public class PageController {
     public ModelAndView openabout() {
         return new ModelAndView("about");
     }
+	
+@GetMapping("/contact")
+    public ModelAndView openabout() {
+        return new ModelAndView("about");
+    }
     
     @GetMapping("/states")
     public ModelAndView states() {
