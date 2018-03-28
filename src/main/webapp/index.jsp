@@ -75,7 +75,8 @@
                <a class="headerMenu" href="./services">Services</a>
                <a class="headerMenu" href="./metroCities">Metro Cities</a>
                <a class="headerMenu" href="./about">About</a>
-               <a class="headerMenu" href="./createPlan">Create Plan</a>
+               <a class="headerMenu" href="./contact">Contact</a>
+               <!--<a class="headerMenu" href="./createPlan">Create Plan</a> -->
                <!-- <a href="https://cityhalt.com">Login</a> -->
             </nav>
             <!-- <a href="https://cityhalt.com" class="logo"><strong>city</strong> HALT</a>  -->
