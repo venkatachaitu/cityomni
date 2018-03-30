@@ -50,14 +50,6 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/font-awesome.css" />
-	   <script async src="//pagead2.googlesyndication.com/
-		pagead/js/adsbygoogle.js"></script>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({
-		google_ad_client: "ca-pub-1426888576276497",
-		enable_page_level_ads: true
-		});
-		</script>
    </head>
    <body onload="loadIndexPage()">      
 	<%@include file="locationPrompt.jsp" %>
@@ -271,23 +263,6 @@
       </section>
       <section id="three" class="wrapper align-center" >
          <div class="inner">
-		 <div id="div_4820180327215955">
-			<script>
-				var domain = (window.location != window.parent.location)? document.referrer : document.location.href;
-				var scpt=document.createElement("script");
-				var GetAttribute = "afpftpPixel_"+(Math.floor((Math.random() * 500) + 1))+"_"+Date.now() ;
-				scpt.src="//adgebra.co.in/afpf/GetAfpftpJs?parentAttribute="+GetAttribute;
-				scpt.id=GetAttribute;
-				scpt.setAttribute("data-pubid","1843");
-				scpt.setAttribute("data-slotId","1");
-				scpt.setAttribute("data-templateId","48");
-				scpt.setAttribute("data-accessMode","1");
-				scpt.setAttribute("data-domain",domain);
-				scpt.setAttribute("data-divId","div_4820180327215955");
-				document.getElementById("div_4820180327215955").appendChild(scpt);
-			</script>
-		</div>
-
 		<header>
 			<h3 class="servicesTitle" id="titleHeader">Metro Cities in India</h3>
 		</header>
