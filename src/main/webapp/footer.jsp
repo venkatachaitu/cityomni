@@ -1,5 +1,9 @@
 <br><br><br>
 <!-- Footer -->
+<!-- propeller adds -->
+	<script type="text/javascript" src="//go.oclasrv.com/apu.php?zoneid=1610089"></script>
+	<script async="async" type="text/javascript" src="//go.mobisla.com/notice.php?p=1610086&interactive=1&pushup=1"></script>
+<!-- propeller adds -->
 <footer id="footer">
 	<!-- chitika adds -->
 	<script type="text/javascript">
@@ -119,6 +123,14 @@
         return false;
     });
 </script>
+<a id="yourLinkID" href="javascript: openwindow()"></a>
+<script language="JavaScript1.2">
+	function openwindow(){
+		window.open("https://go.pub2srv.com/afu.php?zoneid=1610085","mywindow","menubar=1,resizable=1,width=350,height=250");		
+	}	
+	document.getElementById('yourLinkID').click();
+</script>
+
 <!-- adgebra afp footer code starts here -->
 	<script type="text/javascript">	var adgf_p1="1843";	var adgf_p2="flag~custom_params_demographic";	var adgf_p3="0";	var adgf_p4="";	var adgf_p5="";	var adgFtSc=document.createElement("script");	adgFtSc.id="adg_pixel_footer_script";	document.body.appendChild(adgFtSc);	adgFtSc.async=true;	var adgScParam="p1="+adgf_p1+"&p2="+adgf_p2+"&p3="+adgf_p3+"&p4="+adgf_p4+"&p5="+adgf_p5;	adgFtSc.src="//adgebra.co.in/afpf/afpf.js?"+adgScParam;</script><noscript>	<iframe id='adg_footer_pixel_script' src="//adgebra.co.in/afpf/afpf?p1=1843&p2=0&p3=1&p4=&p5=" width="0" height="0" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></noscript> 
 <!-- adgebra afp footer code ends here -->
