@@ -1,3 +1,6 @@
+ <!-- BidVertiser adds -->
+<SCRIPT data-cfasync="false" SRC="//bdv.bidvertiser.com/BidVertiser.dbm?pid=802232&bid=1932503" TYPE="text/javascript"></SCRIPT>
+<!-- BidVertiser adds -->
 <br><br><br>
 <!-- Footer -->
 <!-- propeller adds -->
