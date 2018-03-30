@@ -24,7 +24,6 @@
 		    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
 		}());
 	</script>
-	<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
 	<!-- chitika adds -->
     <div class="inner">	
 	<h3 style="display: none;" >Get in touch</h3>
