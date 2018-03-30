@@ -1,6 +1,9 @@
- <!-- BidVertiser adds -->
-<SCRIPT data-cfasync="false" SRC="//bdv.bidvertiser.com/BidVertiser.dbm?pid=802232&bid=1932503" TYPE="text/javascript"></SCRIPT>
-<!-- BidVertiser adds -->
+ 
+<center>
+	<!-- BidVertiser adds -->
+	<SCRIPT data-cfasync="false" SRC="//bdv.bidvertiser.com/BidVertiser.dbm?pid=802232&bid=1932503" TYPE="text/javascript"></SCRIPT>
+	<!-- BidVertiser adds -->
+</center>
 <br><br><br>
 <!-- Footer -->
 <!-- propeller adds -->
@@ -21,7 +24,10 @@
 	<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
 	<!-- chitika adds -->
     <div class="inner">	
-        <h3 style="display: none;" >Get in touch</h3>
+	<center>
+		<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcityhalt.web%2F&tabs=timeline&width=1200&height=120&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="1200" height="120" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+    	</center>
+	<h3 style="display: none;" >Get in touch</h3>
         <form  method="post" style="display: none;">
             <div class="field half first">
                 <label for="name">Name</label>
