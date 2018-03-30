@@ -160,6 +160,7 @@
 			            <a href="./services?location=ahmadabad" class="button">view all services</a>
 			        </footer>
 			    </article>
+		    <!-- adgebra adds -->
 			    <article>
 			    	<div id="div_3020180327215955">
 						<script>
@@ -178,6 +179,7 @@
 						</script>
 					</div>
 			    </article>
+		    <!-- adgebra adds -->
 			    <article>
 				     <a class="metrocitiesPageCityBlock" href="./services?location=pune">
 				        <div class="image round">
@@ -212,6 +214,7 @@
 			            <a href="./services?location=surat" class="button">view all services</a>
 			        </footer>
 			    </article>
+		    <!-- adgebra adds -->
 			    <article>
 			    	<div id="div_2120180327215955">
 						<script>
@@ -230,7 +233,7 @@
 						</script>
 					</div>
 			    </article>
-			    
+			    <!-- adgebra adds -->
 			    <article>
 				    <a class="metrocitiesPageCityBlock" href="./services?location=jaipur">
 				        <div class="image round">
