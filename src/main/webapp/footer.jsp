@@ -97,7 +97,7 @@
 					document.getElementById("div_6620180327215955").appendChild(scpt);
 				</script>
 			</div>
-	    <	!-- adgebra adds -->
+	    <!-- adgebra adds -->
 		
         </div>
         <div id="locationCheckYellowBottom" class="locationCheckYellowBottom"><i>Location found by your IP</i></div>
