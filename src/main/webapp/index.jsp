@@ -50,9 +50,6 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/font-awesome.css" />
-	   <!-- propeller adds -->
-	   	<meta name="propeller" content="1b15bfe674eebf44bc26a238b32ac572">
-	   <!-- propeller adds -->
 	    <!-- infolinks adds -->
 	   <script type="text/javascript"> var infolinks_pid = 3084633; var infolinks_wsid = 0; </script> <script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
 	    <!-- infolinks adds -->
