@@ -1,19 +1,18 @@
 <br><br> 
-<center>
-	<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcityhalt.web%2F&tabs=timeline&width=1200&height=120&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="1200" height="120" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-</center>
+
 <br>
 <!-- Footer -->
-<!-- propeller adds -->
-	<script type="text/javascript" src="//go.oclasrv.com/apu.php?zoneid=1610089"></script>
-	<script async="async" type="text/javascript" src="//go.mobisla.com/notice.php?p=1610086&interactive=1&pushup=1"></script>
-<!-- propeller adds -->
-<footer id="footer">
+<footer id="footer"><br>
+	<!-- Facebook Page -->
 	<center>
+		<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcityhalt.web%2F&tabs=timeline&width=1200&height=120&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="1200" height="120" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+	<!-- Facebook Page -->
+	<br><br>
 		<!-- BidVertiser adds -->
 		<SCRIPT data-cfasync="false" SRC="//bdv.bidvertiser.com/BidVertiser.dbm?pid=802232&bid=1932503" TYPE="text/javascript"></SCRIPT>
 		<!-- BidVertiser adds -->
 	</center>
+	<br><br>
 	<!-- chitika adds -->
 	<script type="text/javascript">
 		  ( function() {
@@ -77,24 +76,30 @@
 		})();</script>
 		<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4033802&101" alt="hitcounter" border="0"></a></noscript>
 		<!-- Histats.com  END  -->
-		    <!-- adgebra adds -->
-		<div id="div_6620180327215955">
-			<script>
-				var domain = (window.location != window.parent.location)? document.referrer : document.location.href;
-				var scpt=document.createElement("script");
-				var GetAttribute = "afpftpPixel_"+(Math.floor((Math.random() * 500) + 1))+"_"+Date.now() ;
-				scpt.src="//adgebra.co.in/afpf/GetAfpftpJs?parentAttribute="+GetAttribute;
-				scpt.id=GetAttribute;
-				scpt.setAttribute("data-pubid","1843");
-				scpt.setAttribute("data-slotId","1");
-				scpt.setAttribute("data-templateId","66");
-				scpt.setAttribute("data-accessMode","1");
-				scpt.setAttribute("data-domain",domain);
-				scpt.setAttribute("data-divId","div_6620180327215955");
-				document.getElementById("div_6620180327215955").appendChild(scpt);
-			</script>
-		</div>
-	    <!-- adgebra adds -->
+		<br>
+		<!-- adgebra adds -->
+			<style>
+				#div_6620180327215955 iframe{
+					margin: auto;
+				}
+			</style>
+			<div id="div_6620180327215955">
+				<script>
+					var domain = (window.location != window.parent.location)? document.referrer : document.location.href;
+					var scpt=document.createElement("script");
+					var GetAttribute = "afpftpPixel_"+(Math.floor((Math.random() * 500) + 1))+"_"+Date.now() ;
+					scpt.src="//adgebra.co.in/afpf/GetAfpftpJs?parentAttribute="+GetAttribute;
+					scpt.id=GetAttribute;
+					scpt.setAttribute("data-pubid","1843");
+					scpt.setAttribute("data-slotId","1");
+					scpt.setAttribute("data-templateId","66");
+					scpt.setAttribute("data-accessMode","1");
+					scpt.setAttribute("data-domain",domain);
+					scpt.setAttribute("data-divId","div_6620180327215955");
+					document.getElementById("div_6620180327215955").appendChild(scpt);
+				</script>
+			</div>
+	    <	!-- adgebra adds -->
 		
         </div>
         <div id="locationCheckYellowBottom" class="locationCheckYellowBottom"><i>Location found by your IP</i></div>
@@ -131,15 +136,12 @@
         return false;
     });
 </script>
-<!-- propeller adds -->
 <a id="yourLinkID" href="javascript: openwindow()"></a>
 <script language="JavaScript1.2">
 	function openwindow(){
-		window.open("https://go.pub2srv.com/afu.php?zoneid=1610085","mywindow","menubar=1,resizable=1,width=350,height=250");		
-	}	
-	document.getElementById('yourLinkID').click();
+		//window.open("https://go.pub2srv.com/afu.php?zoneid=1610085","mywindow","menubar=1,resizable=1,width=350,height=250");		
+	}
 </script>
-<!-- propeller adds -->
 <!-- adgebra afp footer code starts here -->
 	<script type="text/javascript">	var adgf_p1="1843";	var adgf_p2="flag~custom_params_demographic";	var adgf_p3="0";	var adgf_p4="";	var adgf_p5="";	var adgFtSc=document.createElement("script");	adgFtSc.id="adg_pixel_footer_script";	document.body.appendChild(adgFtSc);	adgFtSc.async=true;	var adgScParam="p1="+adgf_p1+"&p2="+adgf_p2+"&p3="+adgf_p3+"&p4="+adgf_p4+"&p5="+adgf_p5;	adgFtSc.src="//adgebra.co.in/afpf/afpf.js?"+adgScParam;</script><noscript>	<iframe id='adg_footer_pixel_script' src="//adgebra.co.in/afpf/afpf?p1=1843&p2=0&p3=1&p4=&p5=" width="0" height="0" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></noscript> 
 <!-- adgebra afp footer code ends here -->
