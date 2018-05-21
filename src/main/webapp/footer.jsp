@@ -1,23 +1,7 @@
 <br><br> <br>
 <!-- Footer -->
-<footer id="footer"><br>
-	<!-- Facebook Page -->
-	<center>
-		<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcityhalt.web%2F&tabs=timeline&width=1200&height=120&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="1200" height="120" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-	<!-- Facebook Page -->
-	</center>
-	<br><br>
-	<!-- chitika adds -->
-	<script type="text/javascript">
-		  ( function() {
-		    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-		    var unit = {"calltype":"async[2]","publisher":"cityhalt","width":728,"height":90,"sid":"Chitika Default"};
-		    var placement_id = window.CHITIKA.units.length;
-		    window.CHITIKA.units.push(unit);
-		    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-		}());
-	</script>
-	<!-- chitika adds -->
+<footer id="footer">
+	<br><br><br>
     <div class="inner">	
 	<h3 style="display: none;" >Get in touch</h3>
         <form  method="post" style="display: none;">
@@ -37,13 +21,6 @@
                 <li><input value="Send Message" class="button alt" type="submit"></li>
             </ul>
         </form>
-        <!-- <br>
-        <div>
-            <script type="text/javascript" src="https://counter9.freecounter.ovh/private/counter.js?c=xdeclr1tnf326xcdetp7rq5czerxjtxt&down=async" async></script>
-            <noscript>
-              <a href="https://www.freecounterstat.com" title="hit counter"><img src="https://counter9.freecounter.ovh/private/freecounterstat.php?c=xdeclr1tnf326xcdetp7rq5czerxjtxt" border="0" title="hit counter" alt="hit counter"></a>
-             </noscript>
-        </div> -->
         <br>
         <div>
             <a target="#" href="https://www.facebook.com/cityhalt.web" class="socialIcon facebookLogo"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>&nbsp;&nbsp;
@@ -70,31 +47,7 @@
 		})();</script>
 		<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4033802&101" alt="hitcounter" border="0"></a></noscript>
 		<!-- Histats.com  END  -->
-		<br>
-		<!-- adgebra adds -->
-			<style>
-				#div_6620180327215955 iframe{
-					margin: auto;
-				}
-			</style>
-			<div id="div_6620180327215955">
-				<script>
-					var domain = (window.location != window.parent.location)? document.referrer : document.location.href;
-					var scpt=document.createElement("script");
-					var GetAttribute = "afpftpPixel_"+(Math.floor((Math.random() * 500) + 1))+"_"+Date.now() ;
-					scpt.src="//adgebra.co.in/afpf/GetAfpftpJs?parentAttribute="+GetAttribute;
-					scpt.id=GetAttribute;
-					scpt.setAttribute("data-pubid","1843");
-					scpt.setAttribute("data-slotId","1");
-					scpt.setAttribute("data-templateId","66");
-					scpt.setAttribute("data-accessMode","1");
-					scpt.setAttribute("data-domain",domain);
-					scpt.setAttribute("data-divId","div_6620180327215955");
-					document.getElementById("div_6620180327215955").appendChild(scpt);
-				</script>
-			</div>
-	    <!-- adgebra adds -->
-		
+		<br>		
         </div>
         <div id="locationCheckYellowBottom" class="locationCheckYellowBottom"><i>Location found by your IP</i></div>
     </div>	
@@ -136,8 +89,5 @@
 		//window.open("https://go.pub2srv.com/afu.php?zoneid=1610085","mywindow","menubar=1,resizable=1,width=350,height=250");		
 	}
 </script>-->
-<!-- adgebra afp footer code starts here -->
-	<script type="text/javascript">	var adgf_p1="1843";	var adgf_p2="flag~custom_params_demographic";	var adgf_p3="0";	var adgf_p4="";	var adgf_p5="";	var adgFtSc=document.createElement("script");	adgFtSc.id="adg_pixel_footer_script";	document.body.appendChild(adgFtSc);	adgFtSc.async=true;	var adgScParam="p1="+adgf_p1+"&p2="+adgf_p2+"&p3="+adgf_p3+"&p4="+adgf_p4+"&p5="+adgf_p5;	adgFtSc.src="//adgebra.co.in/afpf/afpf.js?"+adgScParam;</script><noscript>	<iframe id='adg_footer_pixel_script' src="//adgebra.co.in/afpf/afpf?p1=1843&p2=0&p3=1&p4=&p5=" width="0" height="0" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></noscript> 
-<!-- adgebra afp footer code ends here -->
 </body>
 </html>
