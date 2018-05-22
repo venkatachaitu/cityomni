@@ -50,6 +50,13 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/font-awesome.css" />
+	   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	     (adsbygoogle = window.adsbygoogle || []).push({
+		  google_ad_client: "ca-pub-6321861937289298",
+		  enable_page_level_ads: true
+	     });
+	</script>
    </head>
    <body onload="loadIndexPage()">      
 	<%@include file="locationPrompt.jsp" %>
