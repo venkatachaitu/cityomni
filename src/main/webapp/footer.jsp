@@ -1,15 +1,4 @@
-<br><br>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- add001 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-6321861937289298"
-     data-ad-slot="8758825682"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<br>
+<br><br><br>
 <!-- Footer -->
 <footer id="footer">
     <div class="inner">	
