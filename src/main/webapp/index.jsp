@@ -74,9 +74,7 @@
             <!-- <a href="https://cityhalt.com" class="logo"><strong>city</strong> HALT</a>  -->
            <!-- <a href="./"><img class="logo" src="images/logo.png"></a> -->   
 	 <a href="./">
-		 <h2 class="logo" style=" font-size: 2.5em;font-weight: 600;font-style: italic;text-shadow: 2px 2px 3px #F44336;">city
-	<font style="color: #ffffff; font-style: italic; text-shadow: 2px 2px 3px #03A9F4;font-size: 1.5em;">O</font>
-		mni</h2>
+		 <h2 class="logo" style=" font-size: 2.5em;font-weight: 600;font-style: italic;text-shadow: 2px 2px 3px #F44336;">city<font style="color: #ffffff; font-style: italic; text-shadow: 2px 2px 3px #03A9F4;font-size: 1.5em;">O</font>mni</h2>
 	</a>
             <a href="#navPanel" class="navPanelToggle" ><span class="fa fa-bars"></span></a> 
          </div> 
@@ -86,7 +84,7 @@
       <section id="banner" style="height: 100%;padding-top: 2em;">
          <div class="inner">
             <header>
-               <h1>Welcome to CITYHALT</h1>
+               <h1>Welcome to cityOmni</h1>
                <h4 style="font-style: italic;font-size: 1.2em;">one place for complete city information and services</h4>
             </header>
             <!-- Search Block -->
