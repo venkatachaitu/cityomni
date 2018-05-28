@@ -416,12 +416,12 @@ public class CityHaltController {
 		}
     	String uri = "";
     	if (category.equalsIgnoreCase("all")) {
-			uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&rankby=distance&radius="+radius+"&keyword="+keyword+"&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM";
+			uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&rankby=distance&radius="+radius+"&keyword="+keyword+"&key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ";
 		}else{
 	    	if (keyword.equalsIgnoreCase("all")) {
 	    		keyword = "";
 			}
-	    	uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&rankby=distance&radius="+radius+"&type="+category+"&keyword="+keyword+"&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM";
+	    	uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&rankby=distance&radius="+radius+"&type="+category+"&keyword="+keyword+"&key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ";
 		}
     	System.out.println("searchGoogleApi : "+uri);
 		Map<?, ?> result = restTemplate.getForObject(uri, Map.class);
@@ -433,7 +433,7 @@ public class CityHaltController {
     ///"/rest/get/search/getDetailsByPlaceId/{place_id}"
     @GetMapping("/rest/get/search/getDetailsByPlaceId/{place_id}")
     public ResponseEntity<Object> getDetailsByPlaceId(@PathVariable String place_id) throws Exception {
-    	String uri = "https://maps.googleapis.com/maps/api/place/details/json?placeid="+place_id+"&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM";
+    	String uri = "https://maps.googleapis.com/maps/api/place/details/json?placeid="+place_id+"&key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ";
     	System.out.println("getDetailsByPlaceId : "+uri);
     	Map<?, ?> result = restTemplate.getForObject(uri, Map.class);
     	//System.out.println(result.get("result"));
