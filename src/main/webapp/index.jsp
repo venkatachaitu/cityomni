@@ -36,7 +36,9 @@
 		<meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  user-scalable=0">
 				
 		<link href='images/favicon.ico' rel='icon' type='image/x-icon'/>
-      
+      	
+      	<meta name="google-site-verification" content="WfQZCcri0H3ngUj-lsejT6ihHG5ap2ZDa3fYnXGmpWA" />
+      	
 		<!-- Scripts -->		
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
@@ -171,8 +173,8 @@
 									});
 							  }
 							</script> 
-							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&libraries=places&callback=initMap" async defer></script>
-							<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,visualization&v=3.exp&callback=initMap"></script>      -->
+							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkkyL5XQ2tKjKZrRRp2R9E6ICcIvndtA0&libraries=places&callback=initMap" async defer></script>
+							<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,visualization&v=3.exp&callback=initMap"></script> -->
 						<style>
   							   .searchCity{
 	  							    transition: .5s;

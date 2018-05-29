@@ -37,6 +37,8 @@
 			
 		<link href='images/favicon.ico' rel='icon' type='image/x-icon'/>
 		
+      	<meta name="google-site-verification" content="WfQZCcri0H3ngUj-lsejT6ihHG5ap2ZDa3fYnXGmpWA" />
+      	
 		<!-- Scripts --> 
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
