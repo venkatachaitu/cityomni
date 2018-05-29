@@ -22,13 +22,13 @@
         </form>
         <br>
         <div>
-            <a target="#" href="https://www.facebook.com/cityomni.web" class="socialIcon facebookLogo"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>&nbsp;&nbsp;
+            <a target="#" href="https://www.facebook.com/cityomni.website" class="socialIcon facebookLogo"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>&nbsp;&nbsp;
             <a target="#" href="https://www.instagram.com/cityomni" class="socialIcon instaLogo"><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;&nbsp;
             <a target="#" href="http://cityomni.blogspot.in/2017/09/chennai-home-about-us-contact-services.html" class="socialIcon twitterLogo"><i class="fa fa-rss" aria-hidden="true"></i></a>
         </div>
         <br>
         <div class="copyright">
-	    Â© 2018 <a href="./about" style="color: #FFEB3B;">Chaitanya Kambhampati. </a> (admin@cityomni)&nbsp;&nbsp; &nbsp;&nbsp;
+	    © 2018 <a href="./about" style="color: #FFEB3B;">Chaitanya Kambhampati. </a> (admin@cityomni)&nbsp;&nbsp; &nbsp;&nbsp;
            <a href="mailto:cityomni@gmail.com" style="color: #fff;">
 			<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;cityomni@gmail.com        
       		</a>
