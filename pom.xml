@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.we.cityhalt</groupId>
-	<artifactId>cityhaltweb</artifactId>
+	<groupId>com.we.cityomni</groupId>
+	<artifactId>cityomniweb</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
 
-	<name>cityhaltweb</name>
-	<description>cityhalt web project</description>
+	<name>cityomniweb</name>
+	<description>cityomni web project</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -48,10 +48,10 @@
 			 <groupId>mysql</groupId>
 			 <artifactId>mysql-connector-java</artifactId>
 	    </dependency> -->
-	    <dependency>
+	    <!-- <dependency>
 	        <groupId>org.springframework.boot</groupId>
 	        <artifactId>spring-boot-devtools</artifactId>
-	    </dependency>
+	    </dependency> -->
 	    
 		<!-- JSTL for JSP -->
 		<dependency>

@@ -22,15 +22,15 @@
         </form>
         <br>
         <div>
-            <a target="#" href="https://www.facebook.com/cityhalt.web" class="socialIcon facebookLogo"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>&nbsp;&nbsp;
-            <a target="#" href="https://www.instagram.com/cityhalt" class="socialIcon instaLogo"><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;&nbsp;
-            <a target="#" href="http://cityhalt.blogspot.in/2017/09/chennai-home-about-us-contact-services.html" class="socialIcon twitterLogo"><i class="fa fa-rss" aria-hidden="true"></i></a>
+            <a target="#" href="https://www.facebook.com/cityomni.web" class="socialIcon facebookLogo"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>&nbsp;&nbsp;
+            <a target="#" href="https://www.instagram.com/cityomni" class="socialIcon instaLogo"><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;&nbsp;
+            <a target="#" href="http://cityomni.blogspot.in/2017/09/chennai-home-about-us-contact-services.html" class="socialIcon twitterLogo"><i class="fa fa-rss" aria-hidden="true"></i></a>
         </div>
         <br>
         <div class="copyright">
-	    © 2018 <a href="./about" style="color: #FFEB3B;">Chaitanya Kambhampati. </a> (admin@cityhalt)&nbsp;&nbsp; &nbsp;&nbsp;
-           <a href="mailto:info@cityhalt.com" style="color: #fff;">
-			<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;info@cityhalt.com        
+	    © 2018 <a href="./about" style="color: #FFEB3B;">Chaitanya Kambhampati. </a> (admin@cityomni)&nbsp;&nbsp; &nbsp;&nbsp;
+           <a href="mailto:info@cityomni.com" style="color: #fff;">
+			<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;info@cityomni.com        
       		</a>
 		<br>		
         </div>

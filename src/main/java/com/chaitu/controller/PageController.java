@@ -89,9 +89,9 @@ public class PageController {
     
     @GetMapping("/test")
     public Object test() {
-	    /*final String uri = "http://cityhalt.com.preview.services/atms.json";
+	    /*final String uri = "http://cityomni.com.preview.services/atms.json";
 	    System.out.println(uri);
-	    File file = new File("http://cityhalt.com.preview.services/atms.json");
+	    File file = new File("http://cityomni.com.preview.services/atms.json");
 	    System.out.println("file.getName() :"+file.length());*/
 	    //HttpHeaders headers = new HttpHeaders();
 	    //headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));

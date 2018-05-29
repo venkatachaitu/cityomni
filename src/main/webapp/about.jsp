@@ -87,30 +87,30 @@
 						<i style="font-size: 1.5em;color: #179617;font-weight: bold;" class="fa-whatsapp" aria-hidden="true"></i>
 						9908771059</a></i>
 						<h5 style="font-weight: 600;font-style:  italic;">
-							<a href="mailto:info@cityhalt.com?Subject=Customer%20Email" style="">
-								<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;info@cityhalt.com        
+							<a href="mailto:info@cityomni.com?Subject=Customer%20Email" style="">
+								<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;info@cityomni.com        
 							</a>
 						</h5>
 					</div>
 					
 				</div><br>
 				<div>
-					<h3 style="color:  red;font-weight: 400;">Why Cityhalt ?</h3>
+					<h3 style="color:  red;font-weight: 400;">Why cityOmni ?</h3>
 					<ul style="width:  80%;margin:  auto;color: #444444;">
-						<li>If you are new to the City, CityHalt helps you to navigate to your Destination..</li>
-						<li>While you are in a Journey, Our CityHalt helps you to find all nearest places to take Halt at particular place like Lodging, Restaurants, atm's, Transport, Malls and Temples....</li>
-						<li>You can navigate your Friends and Family to reach the Destination by using our CityHalt.</li>
-						<li>If you are planing to a Trip with your Family or friends, You can make easy and Comfortable by using our CITYHALT to search HALTS and the Spots to visit in Advance.. </li>
-						<li>CityHalt shows the distance from your current location and from the City Position.</li>
+						<li>If you are new to the City, CityOmni helps you to navigate to your Destination..</li>
+						<li>While you are in a Journey, Our CityOmni helps you to find all nearest places to take Halt at particular place like Lodging, Restaurants, atm's, Transport, Malls and Temples....</li>
+						<li>You can navigate your Friends and Family to reach the Destination by using our CityOmni.</li>
+						<li>If you are planing to a Trip with your Family or friends, You can make easy and Comfortable by using our cityOmni to search HALTS and the Spots to visit in Advance.. </li>
+						<li>cityOmni shows the distance from your current location and from the City Position.</li>
 					
-						<li>CITYHALT MAKES YOUR TRIP PLAN EFFORTLESS. </li>
+						<li>cityOmni MAKES YOUR TRIP PLAN EFFORTLESS. </li>
 					</ul>
 					<br>
 					
 					<h5 style="text-align: center;">
 						Please write us to your Valuable feedback and Sugestions : 
-						<a href="mailto:info@cityhalt.com?Subject=Customer%20Email" style="">
-							<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;info@cityhalt.com        
+						<a href="mailto:info@cityomni.com?Subject=Customer%20Email" style="">
+							<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;info@cityomni.com        
 						</a>
 					</h5>
 				</div>	

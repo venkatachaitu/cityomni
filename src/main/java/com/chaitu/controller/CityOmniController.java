@@ -58,7 +58,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RequestMapping("/")
 @Controller
-public class CityHaltController {
+public class CityOmniController {
     Map < String, Object > map = new HashMap < String, Object > ();
     @Autowired
     ServletContext servletContext;
@@ -74,7 +74,7 @@ public class CityHaltController {
     ///rest/get/getCat/{city}}
     @GetMapping("/rest/get/getCat/{city}")
     public ResponseEntity < Map < String, Integer >> getCategories(@PathVariable String city) throws Exception {
-        System.out.println("CityHaltController : /rest/get/getCat/" + city);
+        System.out.println("CityOmniController : /rest/get/getCat/" + city);
         JSONParser parser = new JSONParser();
         String sourceLocation = gpath.getPath().replace('\\', '/');
         Map < String, Integer > m = new HashMap < String, Integer > ();
@@ -110,7 +110,7 @@ public class CityHaltController {
     @SuppressWarnings("unchecked")
     @GetMapping("/rest/searchPage/{city}/{category}/{keyword}")
     public ResponseEntity < ? > searchByKeyword(@PathVariable String city, @PathVariable String category, @PathVariable String keyword) throws Exception {
-        System.out.println("CityHaltController : /rest/searchPage/" + city + "/" + category + "/" + keyword);
+        System.out.println("CityOmniController : /rest/searchPage/" + city + "/" + category + "/" + keyword);
         JSONParser parser = new JSONParser();
         JSONArray ja = new JSONArray();
         String sourceLocation = gpath.getPath().replace('\\', '/');
@@ -149,7 +149,7 @@ public class CityHaltController {
 
     @SuppressWarnings("unchecked")
     public static String readDataByLocation(String city, String location, String category, String[] searchKeyWords) throws Exception {
-        System.out.println("CityHaltController : readDataByLocation " + city + " , " + location + ", " + category + "/" + searchKeyWords.length);
+        System.out.println("CityOmniController : readDataByLocation " + city + " , " + location + ", " + category + "/" + searchKeyWords.length);
         String str = null;
         JSONParser parser = new JSONParser();
         JSONArray ja = new JSONArray();
@@ -191,7 +191,7 @@ public class CityHaltController {
 
     @SuppressWarnings("unchecked")
     public static String readDataFromFiles(String fileName, String filePath, String[] searchKeyWords) {
-        System.out.println("CityHaltController : readDataFromFiles " + fileName + " , " + filePath + ", " + searchKeyWords.length);
+        System.out.println("CityOmniController : readDataFromFiles " + fileName + " , " + filePath + ", " + searchKeyWords.length);
         JSONParser parser = new JSONParser();
         JSONArray ja = new JSONArray();
         try {
@@ -229,7 +229,7 @@ public class CityHaltController {
     ///rest/readDataByCategory/city/category categories
     @GetMapping("/rest/getDataByCategory/{city}/{category}/{clattitude0}/{clongitude0}/get")
     public ResponseEntity < ? > readDataByCategoryRest(@PathVariable String city, @PathVariable String category, @PathVariable String clattitude0, @PathVariable String clongitude0) throws Exception {
-        System.out.println("CityHaltController : /rest/getDataByCategory/" + city + "/" + category + "/" + clattitude0 + "/" + clongitude0);
+        System.out.println("CityOmniController : /rest/getDataByCategory/" + city + "/" + category + "/" + clattitude0 + "/" + clongitude0);
         double clattitude = 0;
         double clongitude = 0;
         if (!clattitude0.equalsIgnoreCase("NA") && !clongitude0.equalsIgnoreCase("NA")) {
@@ -259,7 +259,7 @@ public class CityHaltController {
 
     @SuppressWarnings("unchecked")
     private Object sortByLanLon(Object obj, Double clattitude, Double clongitude) throws ParseException {
-        System.out.println("CityHaltController : sortByLanLon ,  clattitude : " + clattitude + " , clongitude : " + clongitude);
+        System.out.println("CityOmniController : sortByLanLon ,  clattitude : " + clattitude + " , clongitude : " + clongitude);
         List < Double > li = null;
         List < JSONObject > li1 = null;
         JSONParser parser = new JSONParser();
@@ -324,7 +324,7 @@ public class CityHaltController {
     }
 
     private static Object readDataByCategory(String filePath, String category) {
-        System.out.println("CityHaltController : readDataByCategory : filePath: " + filePath + " , category :" + category);
+        System.out.println("CityOmniController : readDataByCategory : filePath: " + filePath + " , category :" + category);
         JSONParser parser = new JSONParser();
         Object obj = null;
         try {

@@ -31,7 +31,7 @@
 <section id="" style="height: 100%;padding-top: 2em;">
 	<div class="inner">
 	<header>
-		<h3>CityHalt : Top 10 Metro cities in INDIA.</h3><hr>
+		<h3>CityOmni : Top 10 Metro cities in INDIA.</h3><hr>
 	</header>
 	<article>     
     <br>

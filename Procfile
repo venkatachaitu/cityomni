@@ -1,1 +1,1 @@
-web: java -jar target/cityhaltweb-1.0.war
+web: java -jar target/cityomniweb-1.0.war
