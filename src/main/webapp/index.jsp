@@ -72,10 +72,10 @@
                <!-- <a href="https://cityomni.com">Login</a> -->
             </nav>
             <!-- <a href="https://cityomni.com" class="logo"><strong>city</strong> omni</a>  -->
-           <!-- <a href="./"><img class="logo" src="images/logo.png"></a> -->   
-	 <a href="./">
+           <a href="./"><img class="logo" src="images/logo.png"></a>   
+	 <!-- <a href="./">
 		 <h2 class="logo" style=" font-size: 2.5em;font-weight: 600;font-style: italic;text-shadow: 2px 2px 3px #F44336;">city<font style="color: #ffffff; font-style: italic; text-shadow: 2px 2px 3px #03A9F4;font-size: 1.5em;">O</font>mni</h2>
-	</a>
+	</a> -->
             <a href="#navPanel" class="navPanelToggle" ><span class="fa fa-bars"></span></a> 
          </div> 
       </header>

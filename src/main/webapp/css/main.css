@@ -2521,9 +2521,9 @@ button:disabled,
     top: 0;
     font-size: 2em;
     margin-bottom: 15px;
-    width: 15%;
+    width: 20%;
     margin-top: 0px;
-    image-rendering: pixelated;
+    /* image-rendering: pixelated; */
 }
 #header .logo:HOVER{
 	opacity: 1;
@@ -2611,7 +2611,7 @@ button:disabled,
     }
     #header .logo{
 		width: 20%;
-	    margin-top: 7px;	
+	    margin-top: 14px;	
 	}    
 }
 @media screen and (max-width: 736px) {
@@ -2626,7 +2626,7 @@ button:disabled,
     }
     #header .logo{
 	    width: 26%;
-	    margin-top: 10px;
+	    margin-top: 16px;
 	}
 	.headerMenu {
 	    border-bottom: 1px solid #ff867d;
@@ -2644,7 +2644,7 @@ button:disabled,
     }
     #header .logo{
 	    width: 30%;
-	    margin-top: 6px;	
+	    margin-top: 14px;	
 	}
     .searchButton {
         width: 50%;
