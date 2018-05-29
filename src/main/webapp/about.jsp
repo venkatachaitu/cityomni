@@ -87,8 +87,8 @@
 						<i style="font-size: 1.5em;color: #179617;font-weight: bold;" class="fa-whatsapp" aria-hidden="true"></i>
 						9908771059</a></i>
 						<h5 style="font-weight: 600;font-style:  italic;">
-							<a href="mailto:info@cityomni.com?Subject=Customer%20Email" style="">
-								<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;info@cityomni.com        
+							<a href="mailto:cityomni@gmail.com?Subject=Customer%20Email" style="">
+								<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;cityomni@gmail.com        
 							</a>
 						</h5>
 					</div>
@@ -109,8 +109,8 @@
 					
 					<h5 style="text-align: center;">
 						Please write us to your Valuable feedback and Sugestions : 
-						<a href="mailto:info@cityomni.com?Subject=Customer%20Email" style="">
-							<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;info@cityomni.com        
+						<a href="mailto:cityomni@gmail?Subject=Customer%20Email" style="">
+							<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;cityomni@gmail.com        
 						</a>
 					</h5>
 				</div>	

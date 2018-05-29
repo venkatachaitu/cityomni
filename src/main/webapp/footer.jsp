@@ -29,8 +29,8 @@
         <br>
         <div class="copyright">
 	    © 2018 <a href="./about" style="color: #FFEB3B;">Chaitanya Kambhampati. </a> (admin@cityomni)&nbsp;&nbsp; &nbsp;&nbsp;
-           <a href="mailto:info@cityomni.com" style="color: #fff;">
-			<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;info@cityomni.com        
+           <a href="mailto:cityomni@gmail.com" style="color: #fff;">
+			<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;cityomni@gmail.com        
       		</a>
 		<br>		
         </div>
