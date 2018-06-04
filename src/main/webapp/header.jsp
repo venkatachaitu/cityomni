@@ -179,7 +179,7 @@
 					  }
 					</script> 
 					 
-					<script src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ&libraries=geometry,places,visualization&callback=initMap" ></script>							
+					<script src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyAUXFb_W1nIrcTjrAqftl4mW8ytG9TsLZc&libraries=geometry,places,visualization&callback=initMap" ></script>							
 					<script>
                     	function clearSearchCity(){
                     		document.getElementById('searchCity').value = '';
