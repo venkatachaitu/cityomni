@@ -416,12 +416,12 @@ public class CityOmniController {
 		}
     	String uri = "";
     	if (category.equalsIgnoreCase("all")) {
-			uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&rankby=distance&radius="+radius+"&keyword="+keyword+"&key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ";
+			uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&rankby=distance&radius="+radius+"&keyword="+keyword+"&key=AIzaSyAUXFb_W1nIrcTjrAqftl4mW8ytG9TsLZc";
 		}else{
 	    	if (keyword.equalsIgnoreCase("all")) {
 	    		keyword = "";
 			}
-	    	uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&rankby=distance&radius="+radius+"&type="+category+"&keyword="+keyword+"&key=AIzaSyBcocvrcdtgWatcKzXLrLvmL8QPH3BABcQ";
+	    	uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&rankby=distance&radius="+radius+"&type="+category+"&keyword="+keyword+"&key=AIzaSyAUXFb_W1nIrcTjrAqftl4mW8ytG9TsLZc";
 		}
     	System.out.println("searchGoogleApi : "+uri);
 		Map<?, ?> result = restTemplate.getForObject(uri, Map.class);
