@@ -196,7 +196,7 @@
 					  }
 					</script> 
 					 
-					<script src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyAUXFb_W1nIrcTjrAqftl4mW8ytG9TsLZc&libraries=geometry,places,visualization&callback=initMap" ></script>							
+					<script src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyCw-Viepxab4m9pRRQyjm_yRq1uhOj9iPc&libraries=geometry,places,visualization&callback=initMap" ></script>							
 					<script>
                     	function clearSearchCity(){
                     		document.getElementById('searchCity').value = '';
