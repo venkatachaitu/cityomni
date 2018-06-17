@@ -192,7 +192,7 @@
 									});
 							  }
 							</script> 
-							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUXFb_W1nIrcTjrAqftl4mW8ytG9TsLZc&libraries=places&callback=initMap" async defer></script>
+							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw-Viepxab4m9pRRQyjm_yRq1uhOj9iPc&libraries=places&callback=initMap" async defer></script>
 							<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,visualization&v=3.exp&callback=initMap"></script> -->
 						<style>
   							   .searchCity{
