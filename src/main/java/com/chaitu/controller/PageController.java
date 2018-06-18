@@ -23,23 +23,13 @@ public class PageController {
 	
 	@GetMapping("/rest/get/getaddress")
     public Object getAddressByIP() {
-    	Object result = restTemplate.getForObject("http://freegeoip.net/json/", Object.class);
+    	Object result = restTemplate.getForObject("https://api.ipdata.co/", Object.class);
 	    return new ResponseEntity<Object>(result, HttpStatus.OK);
     }
 	
     @GetMapping("/services")
     public ModelAndView services() {
         return new ModelAndView("services");
-    }
-
-    @GetMapping("/viewList")
-    public ModelAndView viewList() {
-        return new ModelAndView("viewList");
-    }
-    
-    @GetMapping("/view")
-    public ModelAndView openView() {
-        return new ModelAndView("view");
     }
     
     @GetMapping("/search")

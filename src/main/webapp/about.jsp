@@ -3,55 +3,6 @@
 <%@include file="header.jsp" %>
 <br><br><br><br><br>
 <section id="" style="height: 100%;padding-top: 2em;">
-		<script>
-		   window.onload = loadAboutPage();
-		   	function loadAboutPage(){
-		   		//readJson();
-		   		updateGPSLocation();
-		   		var loc = getCookie("location");
-	   			var loc11 = getUrlVars()["location"];
-	   			if(typeof loc11 !== "undefined"){
-		   			if(loc11 != ""){
-	       				loc = loc11;
-	       			}
-	   			}
-	   			if(loc == ""){
-	   				console.log("about Page : location is "+loc);
-	   				setCookieWithOutReload("location", "chennai", 365);
-	   				loc = getCookie("location");
-	   			}
-	   			document.getElementById('locationHome').innerHTML = loc;
-		   	}
-		   	function setCookieWithOutReload(cname, cvalue, exdays) {
-		   	    try {
-		   	        var d = new Date();
-		   	        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-		   	        var expires = "expires=" + d.toUTCString();
-		   	        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-		   	    } catch (e) {
-		   	        alert(e);
-		   	    }
-		   	}
-		   	/* function readJson(){
-		   		$.ajax({
-		   	       url: '/data/cities.json',
-		   	       dataType: 'json',
-		   	       success: function(data) {
-		   	          $.each(data, function(key, val) {
-						//console.log(key, val);
-						$.each(val, function(key1, val1) {
-							console.log(val1.state)
-			   	          });
-		   	          });
-		   	       },
-		   	      statusCode: {
-		   	         404: function() {
-		   	           alert('There was a problem with the server.  Try again soon!');
-		   	         }
-		   	       }
-		   	    });
-		   	} */
-		</script>
 		<div class="inner">
 			<header>
 				<h3>About & Contact us !</h3><hr>

@@ -27,7 +27,7 @@ public class GetPath {
 				
 				//return "/app/src/main/webapp/data/";
 				
-				return //"D:/test-workspace/cityomniweb/src/main/webapp/data/";
+				return //"C:/Chaitanya/cityomni-GIT/cityomni/src/main/webapp/data/";
 					"/app/src/main/webapp/data/";//decoded;
 	}
 }

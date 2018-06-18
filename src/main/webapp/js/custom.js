@@ -1,37 +1,13 @@
 function loadIndexPage() { 
-    if (!isLocationEnable()) { 
-      // promptForLocation(); 
-    	var loc = getCookie("location");
-			var loc11 = getUrlVars()["location"];
-			if(typeof loc11 !== "undefined"){
-	   			if(loc11 != ""){
-	   				loc = loc11;
-	   			}
-			}
-			if(loc == ""){
-				setCookieWithOutReload("location", "chennai", 365);
-				loc = getCookie("location");
-			}else{			
-				console.log("Home Page : location is "+loc);
-				setCookieWithOutReload("location", loc, 365);
-			}    	
-    } else {
-        var location = getCookie("location");
-        if (location != "") {
-            //selectCityInIndexPage();
-        }
-    }
+	updateGPSLocation();
     setCategoryTypes();
-   // updateLocationinSearchBox();
 }
 function setCategoryTypes() { 
 	var arr = ["accounting", "airport", "amusement_park", "aquarium", "art_gallery", "atm", "bakery", "bank", "bar", "beauty_salon", "bicycle_store", "book_store", "bowling_alley", "bus_station", "cafe", "campground", "car_dealer", "car_rental", "car_repair", "car_wash", "casino", "cemetery", "church", "city_hall", "clothing_store", "convenience_store", "courthouse", "dentist", "department_store", "doctor", "electrician", "electronics_store", "embassy", "fire_station", "florist", "funeral_home", "furniture_store", "gas_station", "gym", "hair_care", "hardware_store", "hindu_temple", "home_goods_store", "hospital", "insurance_agency", "jewelry_store", "laundry", "lawyer", "library", "liquor_store", "local_government_office", "locksmith", "lodging", "meal_delivery", "meal_takeaway", "mosque", "movie_rental", "movie_theater", "moving_company", "museum", "night_club", "painter", "park", "parking", "pet_store", "pharmacy", "physiotherapist", "plumber", "police", "post_office", "real_estate_agency", "restaurant", "roofing_contractor", "rv_park", "school", "shoe_store", "shopping_mall", "spa", "stadium", "storage", "store", "subway_station", "supermarket", "synagogue", "taxi_stand", "train_station", "transit_station", "travel_agency", "veterinary_care", "zoo"];
 	var out = "<option value='all'>all category</option>";
-	
 	for (i in arr) {
 		out = out + "<option value="+arr[i]+">"+addSpaces(arr[i])+"</option>";
 	}
-	
 	document.getElementById("searchCategories").innerHTML = out;
 }
 function setCategoryTypesCreatePlan() { 
@@ -60,7 +36,7 @@ function setCookieWithOutReload(cname, cvalue, exdays) {
     }
 }
 
-function isLocationEnable() {
+/*function isLocationEnable() {
     updateGPSLocation();
     var location = getCookie("location");
     if (location != "") {
@@ -70,7 +46,7 @@ function isLocationEnable() {
     } else {
         return locationFlag;
     }
-}
+}*/
 
 function setCookie(cname, cvalue, exdays) {
     try {
@@ -328,7 +304,7 @@ function addStarsToString(str) {
             if (s[i] == '/') {
                 temp = temp + "-";
             } else {
-                temp = temp + s[i].toLowerCase();
+                temp = temp + s[i];
             }
         }
     }
@@ -744,10 +720,10 @@ function viewDetails(){
 	   		}else{
    				document.getElementById('reviews').innerHTML = "0 reviews";
    			}
-   			var loc = "", map = "", dis1 = "", dis2 = "", nm="", ad="";
+   			var map = "", dis1 = "", dis2 = "", nm="", ad="", loc = "";
    			var lat = getLattitude(); 
             var lon = getLongitude();
-   			loc = getCookie("locAddress");
+   			//loc = getCookie("locAddress");
    			nm = addStarsToString(place.name);
    			d = addStarsToString(place.formatted_address);
    			ad = place.formatted_address;

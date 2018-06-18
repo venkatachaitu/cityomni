@@ -36,16 +36,16 @@
 		<meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  user-scalable=0">
 			
 		<link href='images/favicon.ico' rel='icon' type='image/x-icon'/>
+		<meta name="google-site-verification" content="WfQZCcri0H3ngUj-lsejT6ihHG5ap2ZDa3fYnXGmpWA" />
 		
-		 <meta name="google-site-verification" content="WfQZCcri0H3ngUj-lsejT6ihHG5ap2ZDa3fYnXGmpWA" />
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<script>
-		  (adsbygoogle = window.adsbygoogle || []).push({
-		    google_ad_client: "ca-pub-3816265946625313",
-		    enable_page_level_ads: true
-		  });
-		</script>
-		<!-- Scripts --> 
+			(adsbygoogle = window.adsbygoogle || []).push({
+			  google_ad_client: "ca-pub-3816265946625313",
+			  enable_page_level_ads: true
+			});
+		</script> -->
+ 
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/util.js"></script>
@@ -59,17 +59,14 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/font-awesome.css" />
    </head>
-   <body>   
+   <body onload="updateGPSLocation()">   
     <%@include file="locationPrompt.jsp" %>
       <style>
 	      #header{
 	      	    background: #ff2436;
 			    top: 0 !important;
 			    padding-top: 2em;
-			    transition: .5s;
-			    /*background: linear-gradient(to bottom right, rgba(1, 1, 1, 0.77), rgba(0, 0, 0, 0.9), rgb(0, 0, 0));*/
-			    /*border-bottom: 3px #ff1800;
-			    border-style: ridge;*/      
+			    transition: .5s;     
 	      }
       </style>
       <!-- Header -->

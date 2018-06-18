@@ -36,16 +36,16 @@
 		<meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  user-scalable=0">
 				
 		<link href='images/favicon.ico' rel='icon' type='image/x-icon'/>
-      	
       	<meta name="google-site-verification" content="WfQZCcri0H3ngUj-lsejT6ihHG5ap2ZDa3fYnXGmpWA" />
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<script>
-	  (adsbygoogle = window.adsbygoogle || []).push({
-	    google_ad_client: "ca-pub-3816265946625313",
-	    enable_page_level_ads: true
-	  });
-	</script>
-		<!-- Scripts -->		
+
+		<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({
+			  google_ad_client: "ca-pub-3816265946625313",
+			  enable_page_level_ads: true
+			});
+		</script> -->
+				
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/util.js"></script>

@@ -2,17 +2,21 @@ var currgeocoder;var lon = ""; var lat=""; var lloc = ""; var locationFlag = fal
 function isGPSEnable(){
 	var ad = getCookie("address");
 	if(ad != "" && ad != "null"){
-		alert("Your Location : "+ad);
+		var colo = document.getElementById("gpsIcon").style.color;
+		if(colo.length == 0)
+			alert("Please Enable Your Device/Browser Location..\n\n"+ad);
+		else
+			alert("Your Location : "+ad);
 	}else{
 		document.getElementById("locationCheckYellowBottom").style.display = 'block';
 		setTimeout('hidelocationCheckYellowBottom()', 3000);
-		//alert("Your Location is Disabled.");
 	}
 }
 function hidelocationCheckYellowBottom(){
 	document.getElementById("locationCheckYellowBottom").style.display = 'none';	
 }
 function updateGPSLocation(){ 
+	console.log("--updateGPSLocation()--");
 	try{
 		displtyTimes();
 		if ("geolocation" in navigator){
@@ -32,7 +36,6 @@ function show_location(position){
     if(document.getElementById("gpsIcon") != null){
     	document.getElementById("gpsIcon").style.color = "#00ce08";
     }
-    //locationFlag = true;
     var cookielat = getCookie("clattitude");
     var cookielon = getCookie("clongitude");
     if(cookielat != lat || cookielon != lon){
@@ -40,7 +43,6 @@ function show_location(position){
         setCookie("clongitude", lon, 365);
         initializeCurrent(lat, lon);
     }
-    //alert("show_location(position)"+getLattitude()+"  "+getLongitude());
     if(document.getElementById("lat") != null && document.getElementById("lon") != null){
     	document.getElementById("lat").value = getLattitude();
 		document.getElementById("lon").value = getLongitude();
@@ -72,9 +74,8 @@ function getCurrentAddress(location) {
 	        'location': location
 	    }, function (results, status) {
 	        if (status == google.maps.GeocoderStatus.OK) {
-	        	//alert("getCurrentAddress(location)");
 	        	setCookie("address", results[0].formatted_address, 365);
-	        	setCookie("locAddress", results[0].formatted_address, 365);
+	        	//setCookie("locAddress", results[0].formatted_address, 365);
 	        	setAddressForSearchBox(results);
 	        	updateLocationinSearchBox();
 	        } else {
@@ -84,21 +85,24 @@ function getCurrentAddress(location) {
 	}catch(e){console.log("getCurrentAddress() : "+e);};
 }
 function updateLocationinSearchBox() {
-	//alert(getCookie("locAddress"))
-	if(getCookie("locAddress") != null){
-		//alert(document.getElementById("searchCity").value)
-		document.getElementById("searchCity").value = getCookie("locAddress");
+	if(getCookie("address") != null){
+		document.getElementById("searchCity").value = getCookie("address");
 	}
 }
 
 function setAddressForSearchBox(results){
-	var city=false,state=false; 
+	setCookie("address",  results[0].formatted_address, 365);
+	if(document.getElementById("lat") != null && document.getElementById("lon") != null){
+		document.getElementById("lat").value = getLattitude();
+		document.getElementById("lon").value = getLongitude();
+	}
+	/*var city=false,state=false; 
 	for (var i = 0; i < results.length; i++) {
 		if ((!city || !state) && results[i].types[0] === "locality") {
-			//alert(JSON.stringify(results[i].address_components[2]));
+			//console.log(JSON.stringify(results));
 			city = results[i].address_components[0].long_name;			
 			try{
-				alert(results[i].address_components.length+"----:----"+JSON.stringify(results[i].address_components));
+				//console.log(results[i].address_components.length+"----:----"+JSON.stringify(results[i].address_components));
 				if (results[i].address_components.length >= 2) {					
 					if(results[i].address_components[2].hasOwnProperty('long_name')){
 						state = ", " +results[i].address_components[2].long_name;
@@ -122,10 +126,10 @@ function setAddressForSearchBox(results){
 		}else{
 			//setCookie("locAddress", city + "" + state, 365);
 		}
-	}
+	}*/
 }
 function getCurAdd(){
-	var add = getCookie("locAddress");
+	var add = getCookie("address");
 	if(add != "" && add != "null")
 		return addStarsToString(add);
 	else
@@ -173,30 +177,24 @@ function show_error(error){
 }
 
 function getLatLogByIp() {
-	//alert("getLatLogByIp()");
 	var u = getWebsiteURL();
 	$.ajax({
 		    type: "GET",
 		    dataType: 'json',
-		    url: "http://freegeoip.net/json/",
-		    crossDomain : true,
-		    xhrFields: {
-		        withCredentials: true
-		    }
-		}).done(function( data ) {
-	    	setCookieWithOutReload("clattitude", data.latitude, 365);
-	    	setCookieWithOutReload("clongitude", data.longitude, 365);
-	    	//setAddressForSearchBox(data);
-	        initializeCurrent(data.latitude, data.longitude);
-	    }).fail( function(xhr, textStatus, errorThrown) {
-	        console.log("getLatLogByIp:xhr.responseText"+xhr.responseText);
-	        console.log("getLatLogByIp:textStatus"+textStatus);
-	        $.getJSON(u + "rest/get/getaddress", function(data) {
-	    		setCookieWithOutReload("clattitude", data.latitude, 365);
-	        	setCookieWithOutReload("clongitude", data.longitude, 365);
-	        	setAddressForSearchBox(data);
-	            initializeCurrent(data.latitude, data.longitude);        
-	         });
-	    });
+		    url: "https://api.ipdata.co/", 
+		    success: function(data) { 	  
+			    	setCookieWithOutReload("clattitude", data.latitude, 365);
+			    	setCookieWithOutReload("clongitude", data.longitude, 365);
+			        initializeCurrent(data.latitude, data.longitude);
+		    	},
+		    error: function(data) { 
+		    		console.log("getLatLogByIp() : error ");        
+			        $.getJSON(u + "rest/get/getaddress", function(data) {
+			    		setCookieWithOutReload("clattitude", data.latitude, 365);
+			        	setCookieWithOutReload("clongitude", data.longitude, 365);
+			        	initializeCurrent(data.latitude, data.longitude);        
+			         });
+		    	}
+		});
 }
 	

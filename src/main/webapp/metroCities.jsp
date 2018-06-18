@@ -1,39 +1,4 @@
 <%@include file="header.jsp" %>
-<script>
-   window.onload = loadMetroCities();
-   	function loadMetroCities(){			
-   		try{ 
-   			updateGPSLocation();
-   			//if(isLocationEnable()){   			
-	   			var loc = getCookie("location");
-	   			var loc11 = getUrlVars()["location"];
-	   			if(typeof loc11 !== "undefined"){
-		   			if(loc11 != ""){
-	       				loc = loc11;
-	       			}
-	   			}
-	   			if(loc == ""){
-	   				console.log("services : location is "+loc);
-	   				setCookieWithOutReload("location", "chennai", 365);
-	   				loc = getCookie("location");
-	   			}
-	   			document.getElementById('locationHome').innerHTML = loc; 
-	   			
-	   			var u = getWebsiteURL();
-	   			    				
-   		}catch(e){alert(e);}			
-   	}
-   	function setCookieWithOutReload(cname, cvalue, exdays) {
-   	    try {
-   	        var d = new Date();
-   	        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-   	        var expires = "expires=" + d.toUTCString();
-   	        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-   	    } catch (e) {
-   	        alert(e);
-   	    }
-   	}
-</script>
 <br><br><br><br>
 <section id="three" class="wrapper align-center">
          <div class="inner">
@@ -42,7 +7,7 @@
 	      </header>
             <div class="flex  metrocitiesPageFlex">
 			   <article>
-				   	<a class="metrocitiesPageCityBlock" href="./services?location=delhi">
+				   	<a class="metrocitiesPageCityBlock" href="./services?city=delhi">
 				        <div class="image round">
 				            <img src="images/delhi.png" alt="Delhi">
 				        </div>
@@ -55,12 +20,12 @@
 				        </p>
 			        </a>
 			        <footer>
-			    	    <a href="./services?location=delhi" class="button">view all services</a>
+			    	    <a href="./services?city=delhi" class="button">view all services</a>
 			        </footer>
 			    </article>
 			    
 			   <article>
-			   		<a class="metrocitiesPageCityBlock" href="./services?location=mumbai">
+			   		<a class="metrocitiesPageCityBlock" href="./services?city=mumbai">
 				        <div class="image round">
 				            <img src="images/mumbai.png" alt="Mumbai">
 				        </div>
@@ -73,12 +38,12 @@
 			        	</p>
 			        </a>
 			        <footer>
-						<a href="./services?location=mumbai" class="button">view all services</a>
+						<a href="./services?city=mumbai" class="button">view all services</a>
 			        </footer>
 			    </article>
 			    
 			    <article>
-			    	<a class="metrocitiesPageCityBlock" href="./services?location=kolkata">
+			    	<a class="metrocitiesPageCityBlock" href="./services?city=kolkata">
 				        <div class="image round">
 				            <img src="images/kolkata.png" alt="Kolkata">
 				        </div>
@@ -90,12 +55,12 @@
 			        	</p>
 			        </a>
 			        <footer>
-			        	<a href="./services?location=kolkata" class="button">view all services</a>
+			        	<a href="./services?city=kolkata" class="button">view all services</a>
 			        </footer>
 			    </article>
 			    
 			    <article>
-			    	<a class="metrocitiesPageCityBlock" href="./services?location=chennai">
+			    	<a class="metrocitiesPageCityBlock" href="./services?city=chennai">
 				        <div class="image round">
 				            <img src="images/chennai.png" alt="chennai">
 				        </div>
@@ -107,12 +72,12 @@
 			        	</p>
 			        </a>
 			        <footer>
-			        	<a href="./services?location=chennai" class="button">view all services</a>
+			        	<a href="./services?city=chennai" class="button">view all services</a>
 			        </footer>
 			    </article>
 			    
 			    <article>
-			    	<a class="metrocitiesPageCityBlock" href="./services?location=bangalore">
+			    	<a class="metrocitiesPageCityBlock" href="./services?city=bangalore">
 				        <div class="image round">
 				            <img src="images/bangalore.png" alt="Bangalore">
 				        </div>
@@ -125,11 +90,11 @@
 			        	</p>
 			        </a>
 			        <footer>
-						<a href="./services?location=bangalore" class="button">view all services</a>
+						<a href="./services?city=bangalore" class="button">view all services</a>
 			        </footer>
 			    </article>
 			    <article>
-			    	<a class="metrocitiesPageCityBlock" href="./services?location=hyderabad">
+			    	<a class="metrocitiesPageCityBlock" href="./services?city=hyderabad">
 				        <div class="image round">
 				            <img src="images/hyderabad.png" alt="Hyderabad">
 				        </div>
@@ -141,11 +106,11 @@
 			        	</p>
 			        </a>
 			        <footer>
-						<a href="./services?location=hyderabad" class="button">view all services</a>
+						<a href="./services?city=hyderabad" class="button">view all services</a>
 			        </footer>
 			    </article>
 			    <article>
-				    <a class="metrocitiesPageCityBlock" href="./services?location=ahmadabad">
+				    <a class="metrocitiesPageCityBlock" href="./services?city=ahmadabad">
 				        <div class="image round">
 				            <img src="images/ahmadabad.png" alt="Ahmadabad">
 				        </div>
@@ -157,31 +122,11 @@
 			        	</p>
 		        	</a>
 			        <footer>
-			            <a href="./services?location=ahmadabad" class="button">view all services</a>
+			            <a href="./services?city=ahmadabad" class="button">view all services</a>
 			        </footer>
 			    </article>
-		    <!-- adgebra adds -->
 			    <article>
-			    	<div id="div_3020180327215955">
-						<script>
-							var domain = (window.location != window.parent.location)? document.referrer : document.location.href;
-							var scpt=document.createElement("script");
-							var GetAttribute = "afpftpPixel_"+(Math.floor((Math.random() * 500) + 1))+"_"+Date.now() ;
-							scpt.src="//adgebra.co.in/afpf/GetAfpftpJs?parentAttribute="+GetAttribute;
-							scpt.id=GetAttribute;
-							scpt.setAttribute("data-pubid","1843");
-							scpt.setAttribute("data-slotId","1");
-							scpt.setAttribute("data-templateId","30");
-							scpt.setAttribute("data-accessMode","1");
-							scpt.setAttribute("data-domain",domain);
-							scpt.setAttribute("data-divId","div_3020180327215955");
-							document.getElementById("div_3020180327215955").appendChild(scpt);
-						</script>
-					</div>
-			    </article>
-		    <!-- adgebra adds -->
-			    <article>
-				     <a class="metrocitiesPageCityBlock" href="./services?location=pune">
+				     <a class="metrocitiesPageCityBlock" href="./services?city=pune">
 				        <div class="image round">
 				            <img src="images/pune.png" alt="Pune">
 				        </div>
@@ -194,11 +139,11 @@
 			        	</p>
 		        	 </a>
 			        <footer>
-			            <a href="./services?location=pune" class="button">view all services</a>
+			            <a href="./services?city=pune" class="button">view all services</a>
 			        </footer>
 			    </article>
 			    <article>
-				    <a class="metrocitiesPageCityBlock" href="./services?location=surat">
+				    <a class="metrocitiesPageCityBlock" href="./services?city=surat">
 				        <div class="image round">
 				            <img src="images/surat.png" alt="Surat">
 				        </div>
@@ -211,31 +156,11 @@
 			        	</p>
 		        	</a>
 			        <footer>
-			            <a href="./services?location=surat" class="button">view all services</a>
+			            <a href="./services?city=surat" class="button">view all services</a>
 			        </footer>
 			    </article>
-		    <!-- adgebra adds -->
 			    <article>
-			    	<div id="div_2120180327215955">
-						<script>
-							var domain = (window.location != window.parent.location)? document.referrer : document.location.href;
-							var scpt=document.createElement("script");
-							var GetAttribute = "afpftpPixel_"+(Math.floor((Math.random() * 500) + 1))+"_"+Date.now() ;
-							scpt.src="//adgebra.co.in/afpf/GetAfpftpJs?parentAttribute="+GetAttribute;
-							scpt.id=GetAttribute;
-							scpt.setAttribute("data-pubid","1843");
-							scpt.setAttribute("data-slotId","1");
-							scpt.setAttribute("data-templateId","21");
-							scpt.setAttribute("data-accessMode","1");
-							scpt.setAttribute("data-domain",domain);
-							scpt.setAttribute("data-divId","div_2120180327215955");
-							document.getElementById("div_2120180327215955").appendChild(scpt);
-						</script>
-					</div>
-			    </article>
-			    <!-- adgebra adds -->
-			    <article>
-				    <a class="metrocitiesPageCityBlock" href="./services?location=jaipur">
+				    <a class="metrocitiesPageCityBlock" href="./services?city=jaipur">
 				        <div class="image round">
 				            <img src="images/jaipur.png" alt="Jaipur">
 				        </div>
@@ -248,7 +173,7 @@
 			        	</p>
 		        	 </a>
 			        <footer>
-			            <a href="./services?location=jaipur" class="button">view all services</a>
+			            <a href="./services?city=jaipur" class="button">view all services</a>
 			        </footer>
 			    </article>
 			</div>

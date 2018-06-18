@@ -71,9 +71,9 @@
 	        return;
 	      } 
 	      if(!city){
-	    	  document.getElementById("titleHeader").innerHTML = this.results.length+" "+category +" results found in "+getCookie("locAddress");;
+	    	  document.getElementById("titleHeader").innerHTML = this.results.length+" "+category +" results found";
           }else{
-	      	document.getElementById("titleHeader").innerHTML = this.results.length+" "+category +" results found in "+city;
+	      	document.getElementById("titleHeader").innerHTML = this.results.length+" "+category +" results found";
           }
 	      	viewMoreSearch(); 
      }
