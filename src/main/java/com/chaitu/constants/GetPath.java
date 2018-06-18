@@ -28,6 +28,6 @@ public class GetPath {
 				//return "/app/src/main/webapp/data/";
 				
 				return //"C:/Chaitanya/cityomni-GIT/cityomni/src/main/webapp/data/";
-					"/app/src/main/webapp/data/";//decoded;
+					"/app/src/main/webapp/data/";//decoded; 
 	}
 }
