@@ -367,7 +367,6 @@ function addSpaces(str) {
     }
     return temp;
 }
-
 function normalizePhno(str) {
     var s = str.trim();
     var temp = "";
