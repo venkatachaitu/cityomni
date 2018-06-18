@@ -72,7 +72,7 @@ public class PageController {
         return new ModelAndView("confession");
     }
     
-    @GetMapping("/createPlan")
+    @GetMapping("/plans")
     public ModelAndView createPlan() {
         return new ModelAndView("createPlan");
     }

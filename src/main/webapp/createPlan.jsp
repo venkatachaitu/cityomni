@@ -5,37 +5,7 @@
 	var ct = 0;
 	var city, lat, lon, category, searchContent, withIn;
 	var jsonArr = "[";
-   window.onload = createPlanPage();
-   	function createPlanPage(){
-   		try{ 
-   			updateGPSLocation();
-   			//if(isLocationEnable()){				
-	   			var loc = getCookie("location");
-	   			var loc11 = getUrlVars()["location"];
-	   			if(typeof loc11 !== "undefined"){
-		   			if(loc11 != "")
-		   				loc = loc11;
-	   			}
-	   			if(loc == ""){
-	   				console.log("confession page : location is "+loc);
-	   				setCookieWithOutReload("location", "chennai", 365);
-	   				loc = getCookie("location");
-	   			}
-	   			document.getElementById('locationHome').innerHTML = loc;
-	   			
-	   			var u = getWebsiteURL();
-   		}catch(e){alert("loadConfessionPage(): "+e);}
-   	}   
-   	function setCookieWithOutReload(cname, cvalue, exdays) {
-   	    try {
-   	        var d = new Date();
-   	        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-   	        var expires = "expires=" + d.toUTCString();
-   	        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-   	    } catch (e) {
-   	        alert(e);
-   	    }
-   	}
+       
     
 </script>
 <style>
@@ -77,7 +47,7 @@
                      <div class="flex flex-2 searchInnerDiv" id="" style="margin: 0;">
                         <article style="background-color: rgba(255, 0, 0, 0);">
                            <header class="selectCity" style="background-color: rgba(255, 0, 0, 0);">
-                              <i onclick="setCurrentLocationToSearchBox5()" style="color: #e6e6e6;float:  left;margin-left: -1em;font-size: 1.5em;margin-top:  0.2em;" class="fa fa-map-marker" aria-hidden="true"></i>
+                              <i onclick="setCurrentLocationToSearchBox5()" style="color: #3e3e3e;float:  left;margin-left: -1em;font-size: 1.5em;margin-top:  0.2em;" class="fa fa-map-marker" aria-hidden="true"></i>
                               <input class="searchCity" name="city" id="searchCity5" placeholder="Enter a city" type="text" />  
                               <i class="fa fa-times-circle bbu" aria-hidden="true" onclick="clearSearchCity5()"></i>
                                <style>
@@ -91,7 +61,7 @@
 									    position: relative;
 	                               	}
 	                               	.bbu:HOVER{
-									    color: #fff;
+									    color: red;
 	                               	}
                               
                               </style>
@@ -345,16 +315,18 @@
 					        	document.getElementById("lat5").value = loc.lat();
 								document.getElementById("lon5").value = loc.lng();
 								 
-				        	}); 
+				        	}); 	
 					    }
-						
 						initialize();
-
 			   			setCategoryTypesCreatePlan();
-			   			document.getElementById('searchCity5').value = decodeURIComponent((getCurAdd()).replace(/\+/g, '%20'));
+			   			//document.getElementById('searchCity5').value = decodeURIComponent((getCurAdd()).replace(/\+/g, '%20'));
 			   			if(document.getElementById("lat5") != null && document.getElementById("lon5") != null){
             		    	document.getElementById("lat5").value = getLattitude();
             				document.getElementById("lon5").value = getLongitude();
             	    	} 
+			   			
+			   			 
+			   		   	
+			   		   	
 				</script> 
 <%@include file="footer.jsp" %>
