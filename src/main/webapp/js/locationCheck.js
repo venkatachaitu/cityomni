@@ -96,9 +96,9 @@ function setAddressForSearchBox(results){
 	for (var i = 0; i < results.length; i++) {
 		if ((!city || !state) && results[i].types[0] === "locality") {
 			//alert(JSON.stringify(results[i].address_components[2]));
-			city = results[i].address_components[0].long_name;
+			city = results[i].address_components[0].long_name;			
 			try{
-				console.log(JSON.stringify(results[i].address_components.length));
+				alert(results[i].address_components.length+"----:----"+JSON.stringify(results[i].address_components));
 				if (results[i].address_components.length >= 2) {					
 					if(results[i].address_components[2].hasOwnProperty('long_name')){
 						state = ", " +results[i].address_components[2].long_name;
