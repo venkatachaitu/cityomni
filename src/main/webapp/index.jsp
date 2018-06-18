@@ -60,7 +60,7 @@
 		<link rel="stylesheet" href="css/font-awesome.css" />
    </head>
    <body onload="loadIndexPage()">  
-	<%@include file="locationPrompt.jsp" %>
+	<%-- <%@include file="locationPrompt.jsp" %> --%>
       <!-- Header -->
       <header id="header" >
          <div class="inner">

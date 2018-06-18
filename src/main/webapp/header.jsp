@@ -60,7 +60,6 @@
 		<link rel="stylesheet" href="css/font-awesome.css" />
    </head>
    <body onload="updateGPSLocation()">   
-    <%@include file="locationPrompt.jsp" %>
       <style>
 	      #header{
 	      	    background: #ff2436;
