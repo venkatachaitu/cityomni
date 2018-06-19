@@ -16,7 +16,7 @@ function hidelocationCheckYellowBottom(){
 	document.getElementById("locationCheckYellowBottom").style.display = 'none';	
 }
 function updateGPSLocation(){ 
-	console.log("--updateGPSLocation()--");
+	console.log("--updating GPS Location--");
 	try{
 		displtyTimes();
 		if ("geolocation" in navigator){
