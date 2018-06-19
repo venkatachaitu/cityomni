@@ -23,7 +23,7 @@
         <br>
         <div>
             <a target="#" href="https://www.facebook.com/cityomni.website" class="socialIcon facebookLogo"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>&nbsp;&nbsp;
-            <a target="#" href="https://www.instagram.com/cityomni" class="socialIcon instaLogo"><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;&nbsp;
+            <a target="#" href="https://www.instagram.com/city.omni" class="socialIcon instaLogo"><i class="fa fa-instagram" aria-hidden="true"></i></a>&nbsp;&nbsp;
             <a target="#" href="http://cityomni.blogspot.in/2017/09/chennai-home-about-us-contact-services.html" class="socialIcon twitterLogo"><i class="fa fa-rss" aria-hidden="true"></i></a>
         </div>
         <br>
