@@ -292,6 +292,7 @@
 	}
 </script>
 <section id="three" class="wrapper align-center">
+<br> 
    <div class="inner">
    <!-- <div style="display: none;" id="tempContent"></div> -->
       <header style="margin: 0;">

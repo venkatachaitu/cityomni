@@ -25,7 +25,7 @@
 	        	out = out + "<article><header>";
 				out = out + "<a target="+key+" href=";
 				out = out + u+"cities?state=" + removeSpaces(key);
-				out = out + "><h4><img class='viewAllServiceIcons' src='images/serviceIcons/"+key+".png'>";
+				out = out + "><h4><span class='viewAllServiceIcons icon fa fa-thumb-tack'></span>";
 				out = out + addSpaces(key);								 
 				out = out + "</h4></a></header></article>";
 			 }

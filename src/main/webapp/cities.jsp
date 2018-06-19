@@ -27,7 +27,7 @@
 					  out = out + "<a target='' href=";
 					  out = out + u+"services?city="+removeSpaces(data[i].toString());
 					  //out = out + "&lat="+data[i]['lat'].toString()+"&lon="+data[i]['lon'].toString();
-					  out = out + "><h4><img class='viewAllServiceIcons' src='images/serviceIcons/.png'>";
+					  out = out + "><h4><span class='viewAllServiceIcons icon fa fa-thumb-tack'></span>";
 					  out = out + data[i];								 
 					  out = out + "</h4></a></header></article>"
 	   				}
