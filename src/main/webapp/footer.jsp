@@ -70,7 +70,7 @@
 </script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120222630-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120222630-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -78,9 +78,9 @@
 
   gtag('config', 'UA-120222630-1');
 </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
 
-
-<a id="yourLinkID" href="javascript: openwindow()"></a>
+<!--<a id="yourLinkID" href="javascript: openwindow()"></a>
 <script language="JavaScript1.2">
 	function openwindow(){
 		//window.open("https://go.pub2srv.com/afu.php?zoneid=1610085","mywindow","menubar=1,resizable=1,width=350,height=250");		
