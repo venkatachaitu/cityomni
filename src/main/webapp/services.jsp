@@ -39,7 +39,7 @@
 					out = out + "</h4></a></header></article>";
 				 }
 		        document.getElementById("services").innerHTML = out;	
-			  	document.getElementById("titleHeader").innerHTML = "Services in "+loc;
+			  	document.getElementById("titleHeader").innerHTML = "Services Available.;
 
    		}catch(e){alert(e);}			
    	}
