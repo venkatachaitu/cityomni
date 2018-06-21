@@ -4,7 +4,7 @@
 <section id="three" class="wrapper align-center">
    <div class="inner">
       <header>
-         <h3 class="servicesTitle" id="titleHeader">Services</h3>
+         <h3 class="servicesTitle" id="titleHeader">Services Available.</h3>
          <hr>
       </header>
       <div class="flex flex-2 services" id="services">
@@ -39,8 +39,7 @@
 					out = out + "</h4></a></header></article>";
 				 }
 		        document.getElementById("services").innerHTML = out;	
-			  	document.getElementById("titleHeader").innerHTML = "Services Available.;
-
+			
    		}catch(e){alert(e);}			
    	}
 </script>
