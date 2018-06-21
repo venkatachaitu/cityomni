@@ -33,7 +33,7 @@
 		        	key = arry[i];
 		        	out = out + "<article><header>";
 					out = out + "<a target="+key+" href=";
-					out = out + u+"search?city=" + loc + "&category="+key;
+					out = out + u+"search?category="+key;
 					out = out + "><h4><img class='viewAllServiceIcons' src='images/serviceIcons/"+key.replace(/_/g, "-")+".svg'>";
 					out = out + addSpaces(key);								 
 					out = out + "</h4></a></header></article>";
