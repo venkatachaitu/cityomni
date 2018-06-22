@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
    <head>
 		<title>cityomni - Welcome to cityomni one place for complete city information and services</title>	
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
 		<meta http-equiv="pragma" content="no-cache" />
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 		<meta http-equiv="expires" content="0" />
