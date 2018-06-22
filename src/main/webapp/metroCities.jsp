@@ -75,7 +75,9 @@
 			        	<a href="./services?city=chennai" class="button">view all services</a>
 			        </footer>
 			    </article>
-			    
+			    <article>
+			    	<div id="p_1778106"></div><script src="//native.propellerads.com/1?z=1778106&eid=p_1778106"></script>
+			    </article>		    
 			    <article>
 			    	<a class="metrocitiesPageCityBlock" href="./services?city=bangalore">
 				        <div class="image round">
@@ -108,6 +110,9 @@
 			        <footer>
 						<a href="./services?city=hyderabad" class="button">view all services</a>
 			        </footer>
+			    </article>
+		    		<article>
+			    	<div id="p_1778106"></div><script src="//native.propellerads.com/1?z=1778106&eid=p_1778106"></script>
 			    </article>
 			    <article>
 				    <a class="metrocitiesPageCityBlock" href="./services?city=ahmadabad">
@@ -159,22 +164,8 @@
 			            <a href="./services?city=surat" class="button">view all services</a>
 			        </footer>
 			    </article>
-			    <article>
-				    <a class="metrocitiesPageCityBlock" href="./services?city=jaipur">
-				        <div class="image round">
-				            <img src="images/jaipur.png" alt="Jaipur">
-				        </div>
-				        <header>
-				            <h3>10. JAIPUR- 30.73 Lakh</h3>
-				        </header>
-				        <p style="text-align: justify;color: #5f5f5f;">
-				        	jaipur, Top 10 Metropolitan Cities in India 2017
-							Jaipur has occupied the 10th position in this list and has a population of 30.73 Lakh. Being the capital city of the largest state of India, Rajasthan, Jaipur is also a center of numerous multinational companies. History of Jaipur dates back to the year 1727, when it was founded by Jai Singh II, the King of Amer. Since its foundation to the present, Jaipur has transformed drastically and compete with other metropolitan cities in terms of infrastructure, employment opportunities and connectivity.
-			        	</p>
-		        	 </a>
-			        <footer>
-			            <a href="./services?city=jaipur" class="button">view all services</a>
-			        </footer>
+		    		<article>
+			    	<div id="p_1778106"></div><script src="//native.propellerads.com/1?z=1778106&eid=p_1778106"></script>
 			    </article>
 			    <article>
 				    <a class="metrocitiesPageCityBlock" href="./services?city=jaipur">
@@ -193,7 +184,26 @@
 			            <a href="./services?city=jaipur" class="button">view all services</a>
 			        </footer>
 			    </article>
-			    
+			    <article>
+				    <a class="metrocitiesPageCityBlock" href="./services?city=jaipur">
+				        <div class="image round">
+				            <img src="images/jaipur.png" alt="Jaipur">
+				        </div>
+				        <header>
+				            <h3>10. JAIPUR- 30.73 Lakh</h3>
+				        </header>
+				        <p style="text-align: justify;color: #5f5f5f;">
+				        	jaipur, Top 10 Metropolitan Cities in India 2017
+							Jaipur has occupied the 10th position in this list and has a population of 30.73 Lakh. Being the capital city of the largest state of India, Rajasthan, Jaipur is also a center of numerous multinational companies. History of Jaipur dates back to the year 1727, when it was founded by Jai Singh II, the King of Amer. Since its foundation to the present, Jaipur has transformed drastically and compete with other metropolitan cities in terms of infrastructure, employment opportunities and connectivity.
+			        	</p>
+		        	 </a>
+			        <footer>
+			            <a href="./services?city=jaipur" class="button">view all services</a>
+			        </footer>
+			    </article>
+			    <article>
+			    	<div id="p_1778106"></div><script src="//native.propellerads.com/1?z=1778106&eid=p_1778106"></script>
+			    </article>
 			</div>
          </div>
       </section>
