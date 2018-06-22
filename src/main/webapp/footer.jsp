@@ -1,6 +1,7 @@
 <br><br><br>
 <!-- Footer -->
 <footer id="footer">
+<script id="rc-react" type="text/javascript" src="//trends.revcontent.com/reactions.js.php?r=452"></script>
     <div class="inner">	
 	<h3 style="display: none;" >Get in touch</h3>
         <form  method="post" style="display: none;">
