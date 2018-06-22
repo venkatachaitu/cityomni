@@ -72,7 +72,7 @@
                <!-- <a href="https://cityomni.com">Login</a> -->
             </nav>
             <!-- <a href="https://cityomni.com" class="logo"><strong>city</strong> omni</a> -->
-            <a href="./"><img class="logo" src="images/logo.png"></a>
+            <a href="./"><img class="logo" src="images/logo.png" alt="cityhalt"></a>
             <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a> 
          </div>
          <section id="searchBlock" class="wrapper align-center" style="display:none;padding-top: 0;">
@@ -138,9 +138,7 @@
                      </article>
                      <article style="width: 46% !important;">
                         <header class="selectCity">
-                           <select name="category" id="searchCategories" required="">                                 
-							 <!-- <option value="-1">select category</option><option value="atm">atms</option><option value="auto_mobiles">auto mobiles</option><option value="bank">banks</option><option value="bar">bars</option><option value="beauty_parlour">beauty parlours</option><option value="blood_and_eye_bank">blood and eye banks</option><option value="bus_station">bus stations</option><option value="coffee_shop">coffee shops</option><option value="college">colleges</option><option value="computer_institute">computer institutes</option><option value="computer_service">computer services</option><option value="dance_school">dance schools</option><option value="fashion_and_cloth_store">fashion and cloth stores</option><option value="fire_station">fire stations</option><option value="gas_and_petrol_station">gas and petrol stations</option><option value="gift_shop">gift shops</option><option value="govt_office">govt offices</option><option value="grocery_store">grocery stores</option><option value="hardware_shop">hardware shops</option><option value="hospital">hospitals</option><option value="hostel">hostels</option><option value="hotel">hotels</option><option value="insurance_company">insurance companies</option><option value="jewellery_store">jewellery shops</option><option value="library">libraries</option><option value="lodge">lodges</option><option value="mobile_store">mobile shops</option><option value="museum">museums</option><option value="packers_and_movers">packers and movers</option><option value="parcel_and_courier">parcel and couriers</option><option value="park">parks</option><option value="party_hall">party halls</option><option value="pharmacy">pharmacy</option><option value="photo_studio">photo studios</option><option value="play_school">play schools</option><option value="police_station">police stations</option><option value="railway_station">railway stations</option><option value="real_estate_agents">real estate agents</option><option value="restaurent">restaurents</option><option value="school">schools</option><option value="shopping_mall">shopping malls</option><option value="software_company">software companies</option><option value="stadium">stadiums</option><option value="temple">temples</option><option value="cinema">theaters</option><option value="tours_and_travels">tours and travels</option><option value="university">universities</option> -->
-		  				   </select>
+                           <select name="category" id="searchCategories" ></select>
                         </header>
                      </article>
                      <script> 	                            
@@ -179,7 +177,7 @@
                       	}
                     </script>
                   </div>
-                  <div class="flex flex-2 searchInnerDiv" id="">
+                  <div class="flex flex-2 searchInnerDiv" >
                      <article class="searchBoxInputArticle">
                         <header>
                            <div>

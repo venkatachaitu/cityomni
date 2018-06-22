@@ -63,7 +63,7 @@
                <!-- <a href="https://cityomni.com">Login</a> -->
             </nav>
             <!-- <a href="https://cityomni.com" class="logo"><strong>city</strong> omni</a>  -->
-           <a href="./"><img class="logo" src="images/logo.png"></a>   
+           <a href="./"><img class="logo" src="images/logo.png" alt="cityhalt"></a>   
 	 <!-- <a href="./">
 		 <h2 class="logo" style=" font-size: 2.5em;font-weight: 600;font-style: italic;text-shadow: 2px 2px 3px #F44336;">city<font style="color: #ffffff; font-style: italic; text-shadow: 2px 2px 3px #03A9F4;font-size: 1.5em;">O</font>mni</h2>
 	</a> -->
@@ -190,13 +190,11 @@
                         &nbsp;&nbsp;&nbsp; 
                         <article style="background-color: rgba(255, 0, 0, 0);">
                            <header class="selectCity" style="background-color: rgba(255, 0, 0, 0);">
-                              <select name="category" id="searchCategories" required="">                                 
-								<!-- <option value="-1">select category</option><option value="atm">atms</option><option value="auto_mobiles">auto mobiles</option><option value="bank">banks</option><option value="bar">bars</option><option value="beauty_parlour">beauty parlours</option><option value="blood_and_eye_bank">blood and eye banks</option><option value="bus_station">bus stations</option><option value="coffee_shop">coffee shops</option><option value="college">colleges</option><option value="computer_institute">computer institutes</option><option value="computer_service">computer services</option><option value="dance_school">dance schools</option><option value="fashion_and_cloth_store">fashion and cloth stores</option><option value="fire_station">fire stations</option><option value="gas_and_petrol_station">gas and petrol stations</option><option value="gift_shop">gift shops</option><option value="govt_office">govt offices</option><option value="grocery_store">grocery stores</option><option value="hardware_shop">hardware shops</option><option value="hospital">hospitals</option><option value="hostel">hostels</option><option value="hotel">hotels</option><option value="insurance_company">insurance companies</option><option value="jewellery_store">jewellery shops</option><option value="library">libraries</option><option value="lodge">lodges</option><option value="mobile_store">mobile shops</option><option value="museum">museums</option><option value="packers_and_movers">packers and movers</option><option value="parcel_and_courier">parcel and couriers</option><option value="park">parks</option><option value="party_hall">party halls</option><option value="pharmacy">pharmacy</option><option value="photo_studio">photo studios</option><option value="play_school">play schools</option><option value="police_station">police stations</option><option value="railway_station">railway stations</option><option value="real_estate_agents">real estate agents</option><option value="restaurent">restaurents</option><option value="school">schools</option><option value="shopping_mall">shopping malls</option><option value="software_company">software companies</option><option value="stadium">stadiums</option><option value="temple">temples</option><option value="cinema">theaters</option><option value="tours_and_travels">tours and travels</option><option value="university">universities</option> -->
-			  				  </select>
+                              <select name="category" id="searchCategories" required></select>
                            </header>
                         </article>
                      </div>
-                     <div class="flex flex-2 searchInnerDiv" id="" style="margin: 0;padding: 0;">
+                     <div class="flex flex-2 searchInnerDiv" style="margin: 0;padding: 0;">
                         <article class="searchBoxInputArticle" style="width: 100% !important; margin-top: 1em !important;">
                            <header>
                               <div>
@@ -261,8 +259,9 @@
 			<h3 class="servicesTitle" id="titleHeader">Metro Cities in India</h3>
 		</header>
             <div class="flex flex-2">
-			    <a class="indexPageCityBlock" href="./services?location=delhi">
-				    <article>
+			    
+			    <article>
+				    <a class="indexPageCityBlock" href="./services?location=delhi">
 				        <div class="image round">
 				            <img src="images/delhi.png" alt="Delhi">
 				        </div>
@@ -271,12 +270,12 @@
 				        </header>
 				        <p style="text-align: justify;color: #5f5f5f;">Among all metropolitan cities in India, Delhi stands on top with a population of 4.6 Crore. National Capital Territory of Delhi or Delhi is one of the largest commercial centres of the country with a GDP of more than $160 Billion. Delhi is also a centre of esteemed educational institutions of different domains like engineering, medical, law, commerce, science, etc.</p>
 				        <footer>
-				            <a href="./services?location=delhi" class="button">View More</a>
+				            <h2 class="button" >View More</h2>
 				        </footer>
-				    </article>
-			    </a>
-			    <a class="indexPageCityBlock" href="./services?location=mumbai">
-				    <article>
+			        </a>
+			    </article>
+			    <article>
+				    <a class="indexPageCityBlock" href="./services?location=mumbai">
 				        <div class="image round">
 				            <img src="images/mumbai.png" alt="Mumbai">
 				        </div>
@@ -285,12 +284,12 @@
 				        </header>
 				        <p style="text-align: justify;color: #5f5f5f;">Popularly known as City of Dreams, Mumbai with a population of 1.84 Crore stand at 2nd in the list of top 10 metropolitan cities in India. Being Financial Capital of India, Mumbai contributes more than 6% of the country's GDP and has a GDP of more than $200 Billion. Mumbai is the headquarter of many public sector companies, government institutions and giant corporations.</p>
 				        <footer>
-				            <a href="./services?location=mumbai" class="button">View More</a>
+				             <h2 class="button" >View More</h2>
 				        </footer>
-				    </article>
-			    </a>
-			    <a class="indexPageCityBlock" href="./services?location=kolkata">
-				    <article>
+				    </a>
+			    </article>
+			     <article>
+				    <a class="indexPageCityBlock" href="./services?location=kolkata">					   
 				        <div class="image round">
 				            <img src="images/kolkata.png" alt="Kolkata">
 				        </div>
@@ -299,12 +298,12 @@
 				        </header>
 				        <p style="text-align: justify;color: #5f5f5f;">Kolkata, also known as Cultural Capital of India is among the most developed cities in India and occupied 3rd place in this list. Capital City of West Bengal, Kolkata with a GDP of more than $150 Billion is 3rd largest city in the country in terms of GDP. Kolkata is the largest commercial city of the eastern part of India and a centre of numerous private and public sector companies.</p>
 				        <footer>
-				            <a href="./services?location=kolkata" class="button">View More</a>
+				             <h2 class="button" >View More</h2>
 				        </footer>
-				    </article>
-			    </a>
-			    <a class="indexPageCityBlock" href="./services?location=chennai">
-				    <article>
+				    </a>
+			     </article>
+			     <article>
+				    <a class="indexPageCityBlock" href="./services?location=chennai">
 				        <div class="image round">
 				            <img src="images/chennai.png" alt="chennai">
 				        </div>
@@ -313,26 +312,26 @@
 				        </header>
 				        <p style="text-align: justify;color: #5f5f5f;">Chennai formerly known as Madras is the capital of the Indian state of Tamil Nadu. Located on the Coromandel Coast off the Bay of Bengal, it is one of the biggest cultural, economic and educational centres in South India. According to the 2011 Indian census (adjusted for the new limits of Chennai city), it is the fifth-largest city and fourth-most populous urban agglomeration in India.</p>
 				        <footer>
-				            <a href="./services?location=chennai" class="button">View More</a>
+				             <h2 class="button" >View More</h2>
 				        </footer>
-				    </article>
-			    </a>
-			    <a class="indexPageCityBlock" href="./services?location=bangalore">
+				    </a>
+			    </article> 
 			    <article>
-			        <div class="image round">
-			            <img src="images/bangalore.png" alt="Chennai">
-			        </div>
-			        <header>
-			            <h3>5. Bangalore</h3>
-			        </header>
-			        <p style="text-align: justify;color: #5f5f5f;">Bangalore officially known as Bengaluru is the capital of the Indian state of Karnataka. It has a population of about 8.42 million and a metropolitan population of about 8.52 million, making it the third most populous city and fifth most populous urban agglomeration in India.Its elevation is over 900 m (3,000 ft) above sea level, the highest of India's major cities.</p>
-			        <footer>
-			            <a href="./services?location=bangalore" class="button">View More</a>
-			        </footer>
-			    </article>
-			    </a>
-			    <a class="indexPageCityBlock" href="./services?location=hyderabad">
-				    <article>
+			    	<a class="indexPageCityBlock" href="./services?location=bangalore">
+				        <div class="image round">
+				            <img src="images/bangalore.png" alt="Chennai">
+				        </div>
+				        <header>
+				            <h3>5. Bangalore</h3>
+				        </header>
+				        <p style="text-align: justify;color: #5f5f5f;">Bangalore officially known as Bengaluru is the capital of the Indian state of Karnataka. It has a population of about 8.42 million and a metropolitan population of about 8.52 million, making it the third most populous city and fifth most populous urban agglomeration in India.Its elevation is over 900 m (3,000 ft) above sea level, the highest of India's major cities.</p>
+				        <footer>
+				             <h2 class="button" >View More</h2>
+				        </footer>
+			        </a>
+			    </article> 
+			    <article>
+				    <a class="indexPageCityBlock" href="./services?location=hyderabad">
 				        <div class="image round">
 				            <img src="images/hyderabad.png" alt="Hyderabad">
 				        </div>
@@ -341,10 +340,11 @@
 				        </header>
 				        <p style="text-align: justify;color: #5f5f5f;">Hyderabad is the capital of the southern Indian state of Telangana and de jure capital of Andhra Pradesh. Occupying 650 square kilometres (250 sq mi) along the banks of the Musi River, it has a population of about 6.7 million and a metropolitan population of about 7.75 million, making it the fourth most populous city and sixth most populous urban agglomeration in India.</p>
 				        <footer>
-				            <a href="./services?location=hyderabad" class="button">View More</a>
+				             <h2 class="button" >View More</h2>
 				        </footer>
-				    </article>
-			    </a>
+			        </a>
+			    </article>
+			    
 			    <a id="servicesLink" href="./metroCities" class="button viewAllMetroCities" >View All Metro cities in Inida</a>
 			</div>
          </div>
