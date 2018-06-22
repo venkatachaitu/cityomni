@@ -23,7 +23,7 @@ public class PageController {
 	
 	@GetMapping("/rest/get/getaddress")
     public Object getAddressByIP() {
-    	Object result = restTemplate.getForObject("https://api.ipdata.co/", Object.class);
+    	Object result = restTemplate.getForObject("https://api.ipdata.co/?api-key=d0e8408a008f8466593c9914927ce6659fccffcdf7b06942fd400251", Object.class);
 	    return new ResponseEntity<Object>(result, HttpStatus.OK);
     }
 	
