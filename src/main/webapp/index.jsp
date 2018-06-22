@@ -3,20 +3,16 @@
 <html lang="en-US">
    <head>
 		<title>cityomni - Welcome to cityomni one place for complete city information and services</title>	
-		<meta http-equiv="pragma" content="no-cache" />
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 		<meta name=distribution content=global />
 		<meta name=copyright content=cityomni.com />
-		<meta http-equiv="cache-control" content="no-cache,must-revalidate" />
 		<meta name=viewport content="width=device-width, initial-scale=1"/>
-		
 		<meta name="Keywords" content="cityomni, city omni, cityomni.com , Atms, Auto Mobiles, Banks, Bars, Beauty Parlours, Blood And Eye Banks, Bus Stations, Coffee Shops, Colleges, Computer Institutes, Computer Services, Dance Schools, Fashion And Cloth Stores, Fire Stations, Gas And Petrol Stations, Gift Shops, Govt Offices, Grocery Stores, Hardware Shops, Hospitals, Hostels, Hotels, Insurance Companies, Jewellery Shops, Libraries, Lodges, Mobile Shops, Museums, Packers And Movers, Parcel And Couriers, Parks, Party Halls, Pharmacy, Photo Studios, Play Schools, Police Stations, Railway Stations, Real Estate Agents, Restaurents, Schools, Shopping Malls, Software Companies, Stadiums, Temples, Theaters, Tours And Travels, Universities" />		
 		<meta name="description" content="cityomni city omni cityomni.com : Welcome to cityomni one place for complete city information of Metro cities in india : DELHI MUMBAI KOLKATA CHENNAI BANGALORE HYDERABAD AHMEDABAD PUNE SURAT JAIPUR Welcome to CITYomni one place for complete city information and services like Atms, Auto Mobiles, Banks, Bars, Beauty Parlours, Blood And Eye Banks, Bus Stations, Coffee Shops, Colleges, Computer Institutes, Computer Services, Dance Schools, Fashion And Cloth Stores, Fire Stations, Gas And Petrol Stations, Gift Shops, Govt Offices, Grocery Stores, Hardware Shops, Hospitals, Hostels, Hotels, Insurance Companies, Jewellery Shops, Libraries, Lodges, Mobile Shops, Museums, Packers And Movers, Parcel And Couriers, Parks, Party Halls, Pharmacy, Photo Studios, Play Schools, Police Stations, Railway Stations, Real Estate Agents, Restaurents, Schools, Shopping Malls, Software Companies, Stadiums, Temples, Theaters, Tours And Travels, Universities in cityomni, city omni, cityomni.com metro cities in india and services like Atms, Auto Mobiles, Banks, Bars, Beauty Parlours, Blood And Eye Banks, Bus Stations, Coffee Shops, Colleges, Computer Institutes, Computer Services, Dance Schools, Fashion And Cloth Stores, Fire Stations, Gas And Petrol Stations, Gift Shops, Govt Offices, Grocery Stores, Hardware Shops, Hospitals, Hostels, Hotels, Insurance Companies, Jewellery Shops, Libraries, Lodges, Mobile Shops, Museums, Packers And Movers, Parcel And Couriers, Parks, Party Halls, Pharmacy, Photo Studios, Play Schools, Police Stations, Railway Stations, Real Estate Agents, Restaurents, Schools, Shopping Malls, Software Companies, Stadiums, Temples, Theaters, Tours And Travels, Universities in cityomni, city omni, cityomni.com" />
 		
-		
-		<link href="images/favicon.ico" rel="icon" type="image/x-icon" >
       	<meta name="google-site-verification" content="WfQZCcri0H3ngUj-lsejT6ihHG5ap2ZDa3fYnXGmpWA" />
 
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" ></script>
@@ -36,6 +32,7 @@
 		<script src="js/jquery-1.10.2.min.js" ></script>
 		<script src="js/locationCheck.js" ></script>
 		
+		<link href="images/favicon.ico" rel="icon" type="image/x-icon" >
 		<link rel="stylesheet" href="css/main.css" >
 		<link rel="stylesheet" href="css/bootstrap.min.css" >
 		<link rel="stylesheet" href="css/font-awesome.css" >
@@ -189,7 +186,7 @@
                         &nbsp;&nbsp;&nbsp; 
                         <article style="background-color: rgba(255, 0, 0, 0);">
                            <header class="selectCity" style="background-color: rgba(255, 0, 0, 0);">
-                              <select name="category" id="searchCategories" required></select>
+                              <select name="category" id="searchCategories" required="required"><option value="">Choose</option></select>
                            </header>
                         </article>
                      </div>
