@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
 <%@include file="header.jsp" %>
 <br><br>  
  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.js"></script> -->
