@@ -1,24 +1,21 @@
 <br><br><br>
-
 <!-- ====adgebra===== -->
-
 <!-- ====adgebra===== -->
-
 <!-- Footer -->
 <footer id="footer">
-
 <!-- ====propeller zone1===== -->
-<script type="text/javascript" src="//go.pub2srv.com/apu.php?zoneid=1777521"></script>
-<!-- ====propeller===== -->
-
+	<script type="text/javascript" src="//go.pub2srv.com/apu.php?zoneid=1777521"></script>
 <!-- ====propeller zone2===== -->
-<script src="//basepush.com/ntfc.php?p=1777523" data-cfasync="false" async></script>
-<!-- ====propeller===== -->
-
+	<!-- <script src="//basepush.com/ntfc.php?p=1777523" data-cfasync="false" async></script>-->
 <!-- ====propeller zone3===== -->
-<div id="p_1777541"></div><script src="//native.propellerads.com/1?z=1777541&eid=p_1777541"></script>
-<!-- ====propeller===== -->
-
+	<div id="p_1777541"></div><script src="//native.propellerads.com/1?z=1777541&eid=p_1777541"></script>
+	<style>
+		#p_1777541{
+			max-height: 120px;
+			width: 75%;
+			margin: auto;
+		}
+	</style>
     <div class="inner">	
 	<h3 style="display: none;" >Get in touch</h3>
         <form  method="post" style="display: none;">
@@ -46,7 +43,7 @@
         </div>
         <br>
         <div class="copyright">
-	    © 2018 <a href="./about" style="color: #FFEB3B;">Chaitanya Kambhampati. </a> (admin@cityomni)&nbsp;&nbsp; &nbsp;&nbsp;
+	    Â© 2018 <a href="./about" style="color: #FFEB3B;">Chaitanya Kambhampati. </a> (admin@cityomni)&nbsp;&nbsp; &nbsp;&nbsp;
            <a href="mailto:cityomni@gmail.com" style="color: #fff;">
 			<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;cityomni@gmail.com        
       		</a>
