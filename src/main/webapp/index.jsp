@@ -1,44 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xmlns:fb="http://ogp.me/ns/fb#">
+<!DOCTYPE html>
+<html>
    <head>
-		<title>cityomni - Welcome to cityomni one place for complete city information and services</title>
-	
+		<title>cityomni - Welcome to cityomni one place for complete city information and services</title>	
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta http-equiv="pragma" content="no-cache"/>
-		<meta http-equiv="cache-control" content="no-cache,must-revalidate"/>
-		<meta http-equiv="expires" content="0"/>
-
-		<meta property="og:title" content="cityomni city omni cityomni.com - Welcome to cityomni one place for complete city information and services">
-		<meta property="og:description" content="cityomni city omni cityomni.com - Welcome to cityomni one place for complete city information and services like Atms, Auto Mobiles, Banks, Bars, Beauty Parlours, Blood And Eye Banks, Bus Stations, Coffee Shops, Colleges, Computer Institutes, Computer Services, Dance Schools, Fashion And Cloth Stores, Fire Stations, Gas And Petrol Stations, Gift Shops, Govt Offices, Grocery Stores, Hardware Shops, Hospitals, Hostels, Hotels, Insurance Companies, Jewellery Shops, Libraries, Lodges, Mobile Shops, Museums, Packers And Movers, Parcel And Couriers, Parks, Party Halls, Pharmacy, Photo Studios, Play Schools, Police Stations, Railway Stations, Real Estate Agents, Restaurents, Schools, Shopping Malls, Software Companies, Stadiums, Temples, Theaters, Tours And Travels, Universities in cityomni, city omni, cityomni.com"/>
-		<meta property="og:image" content="https://www.cityomni.com/images/logo_cityomni.png"/>
-		<meta property="og:image:width" content="550"/>
-		<meta property="og:image:height" content="370"/>
-		<meta name="Keywords" content="cityomni, city omni, cityomni.com , Atms, Auto Mobiles, Banks, Bars, Beauty Parlours, Blood And Eye Banks, Bus Stations, Coffee Shops, Colleges, Computer Institutes, Computer Services, Dance Schools, Fashion And Cloth Stores, Fire Stations, Gas And Petrol Stations, Gift Shops, Govt Offices, Grocery Stores, Hardware Shops, Hospitals, Hostels, Hotels, Insurance Companies, Jewellery Shops, Libraries, Lodges, Mobile Shops, Museums, Packers And Movers, Parcel And Couriers, Parks, Party Halls, Pharmacy, Photo Studios, Play Schools, Police Stations, Railway Stations, Real Estate Agents, Restaurents, Schools, Shopping Malls, Software Companies, Stadiums, Temples, Theaters, Tours And Travels, Universities"/>		
-		<meta name="description" content="cityomni city omni cityomni.com : Welcome to cityomni one place for complete city information of Metro cities in india : DELHI MUMBAI KOLKATA CHENNAI BANGALORE HYDERABAD AHMEDABAD PUNE SURAT JAIPUR Welcome to CITYomni one place for complete city information and services like Atms, Auto Mobiles, Banks, Bars, Beauty Parlours, Blood And Eye Banks, Bus Stations, Coffee Shops, Colleges, Computer Institutes, Computer Services, Dance Schools, Fashion And Cloth Stores, Fire Stations, Gas And Petrol Stations, Gift Shops, Govt Offices, Grocery Stores, Hardware Shops, Hospitals, Hostels, Hotels, Insurance Companies, Jewellery Shops, Libraries, Lodges, Mobile Shops, Museums, Packers And Movers, Parcel And Couriers, Parks, Party Halls, Pharmacy, Photo Studios, Play Schools, Police Stations, Railway Stations, Real Estate Agents, Restaurents, Schools, Shopping Malls, Software Companies, Stadiums, Temples, Theaters, Tours And Travels, Universities in cityomni, city omni, cityomni.com metro cities in india and services like Atms, Auto Mobiles, Banks, Bars, Beauty Parlours, Blood And Eye Banks, Bus Stations, Coffee Shops, Colleges, Computer Institutes, Computer Services, Dance Schools, Fashion And Cloth Stores, Fire Stations, Gas And Petrol Stations, Gift Shops, Govt Offices, Grocery Stores, Hardware Shops, Hospitals, Hostels, Hotels, Insurance Companies, Jewellery Shops, Libraries, Lodges, Mobile Shops, Museums, Packers And Movers, Parcel And Couriers, Parks, Party Halls, Pharmacy, Photo Studios, Play Schools, Police Stations, Railway Stations, Real Estate Agents, Restaurents, Schools, Shopping Malls, Software Companies, Stadiums, Temples, Theaters, Tours And Travels, Universities in cityomni, city omni, cityomni.com"/>
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta name=distribution content=global />
+		<meta name=copyright content=cityomni.com />
+		<meta http-equiv="cache-control" content="no-cache,must-revalidate" />
+		<meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  user-scalable=0" />
 		
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 	
-		<meta name="og_url" property="og:url" content="https://www.cityomni.com"/>
-		<meta name="og_site_name" property="og:site_name" content="cityomni"/>			
-	
-		<meta name=distribution content=global>
-		<meta name=copyright content=cityomni>			
-		<meta property=og:type content=website>
-		<meta property=og:sitename content="cityomni city omni cityomni.com - Welcome to cityomni one place for complete city information and services">
-		<meta property=og:locale content=en_GB>
-		<meta property=twitter:card content=summary>
-		<meta property=twitter:site content=cityomni>
-		<meta property=twitter:title content="Cityomni">
-		<meta property=twitter:description content="cityomni city omni cityomni.com - Welcome to cityomni one place for complete city information and services">
-		<meta name=twitter:domain content=Cityomni>
-		<link rel=alternate href="android-app://cityomni.com cityomni">
-		<meta name=format-detection content="telephone=no">
-		<meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  user-scalable=0">
-				
-		<link href='images/favicon.ico' rel='icon' type='image/x-icon'/>
+		<meta name="Keywords" content="cityomni, city omni, cityomni.com , Atms, Auto Mobiles, Banks, Bars, Beauty Parlours, Blood And Eye Banks, Bus Stations, Coffee Shops, Colleges, Computer Institutes, Computer Services, Dance Schools, Fashion And Cloth Stores, Fire Stations, Gas And Petrol Stations, Gift Shops, Govt Offices, Grocery Stores, Hardware Shops, Hospitals, Hostels, Hotels, Insurance Companies, Jewellery Shops, Libraries, Lodges, Mobile Shops, Museums, Packers And Movers, Parcel And Couriers, Parks, Party Halls, Pharmacy, Photo Studios, Play Schools, Police Stations, Railway Stations, Real Estate Agents, Restaurents, Schools, Shopping Malls, Software Companies, Stadiums, Temples, Theaters, Tours And Travels, Universities" />		
+		<meta name="description" content="cityomni city omni cityomni.com : Welcome to cityomni one place for complete city information of Metro cities in india : DELHI MUMBAI KOLKATA CHENNAI BANGALORE HYDERABAD AHMEDABAD PUNE SURAT JAIPUR Welcome to CITYomni one place for complete city information and services like Atms, Auto Mobiles, Banks, Bars, Beauty Parlours, Blood And Eye Banks, Bus Stations, Coffee Shops, Colleges, Computer Institutes, Computer Services, Dance Schools, Fashion And Cloth Stores, Fire Stations, Gas And Petrol Stations, Gift Shops, Govt Offices, Grocery Stores, Hardware Shops, Hospitals, Hostels, Hotels, Insurance Companies, Jewellery Shops, Libraries, Lodges, Mobile Shops, Museums, Packers And Movers, Parcel And Couriers, Parks, Party Halls, Pharmacy, Photo Studios, Play Schools, Police Stations, Railway Stations, Real Estate Agents, Restaurents, Schools, Shopping Malls, Software Companies, Stadiums, Temples, Theaters, Tours And Travels, Universities in cityomni, city omni, cityomni.com metro cities in india and services like Atms, Auto Mobiles, Banks, Bars, Beauty Parlours, Blood And Eye Banks, Bus Stations, Coffee Shops, Colleges, Computer Institutes, Computer Services, Dance Schools, Fashion And Cloth Stores, Fire Stations, Gas And Petrol Stations, Gift Shops, Govt Offices, Grocery Stores, Hardware Shops, Hospitals, Hostels, Hotels, Insurance Companies, Jewellery Shops, Libraries, Lodges, Mobile Shops, Museums, Packers And Movers, Parcel And Couriers, Parks, Party Halls, Pharmacy, Photo Studios, Play Schools, Police Stations, Railway Stations, Real Estate Agents, Restaurents, Schools, Shopping Malls, Software Companies, Stadiums, Temples, Theaters, Tours And Travels, Universities in cityomni, city omni, cityomni.com" />
+		
+		
+		<link href="images/favicon.ico" rel="icon" type="image/x-icon" >
       	<meta name="google-site-verification" content="WfQZCcri0H3ngUj-lsejT6ihHG5ap2ZDa3fYnXGmpWA" />
 
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" ></script>
 		<script>
 			(adsbygoogle = window.adsbygoogle || []).push({
 			  google_ad_client: "ca-pub-3816265946625313",
@@ -46,18 +28,18 @@
 			});
 		</script>
 				
-		<script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/util.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/custom.js"></script>
-		<script src="js/jquery-1.10.2.min.js"></script>
-		<script src="js/locationCheck.js"></script>
+		<script src="js/jquery.min.js" ></script>
+		<script src="js/skel.min.js" ></script>
+		<script src="js/util.js" ></script>
+		<script src="js/main.js" ></script>
+		<script src="js/bootstrap.min.js" ></script>
+		<script src="js/custom.js" ></script>
+		<script src="js/jquery-1.10.2.min.js" ></script>
+		<script src="js/locationCheck.js" ></script>
 		
-		<link rel="stylesheet" href="css/main.css" />
-		<link rel="stylesheet" href="css/bootstrap.min.css" />
-		<link rel="stylesheet" href="css/font-awesome.css" />
+		<link rel="stylesheet" href="css/main.css" >
+		<link rel="stylesheet" href="css/bootstrap.min.css" >
+		<link rel="stylesheet" href="css/font-awesome.css" >
    </head>
    <body onload="loadIndexPage()">  
 	<%-- <%@include file="locationPrompt.jsp" %> --%>
@@ -100,7 +82,7 @@
             <section id="searchBlock" class="wrapper align-center" style="padding: 0;">
                <div class="inner" style="padding: 0px 13px;">
                   <form action="./search" method="get" onsubmit="return Submit()">
-                     <div class="flex flex-2 searchInnerDiv" id="" style="margin: 0;">
+                     <div class="flex flex-2 searchInnerDiv"  style="margin: 0;">
                         <article style="background-color: rgba(255, 0, 0, 0);">
                            <header class="selectCity" style="background-color: rgba(255, 0, 0, 0);">
                               <!-- <select name="city" id="searchCity" onchange="changeCity()" required>
