@@ -64,22 +64,6 @@
 					</h5>
 				</div>	
 			</div>
-			<div id="div_5720180622152106">
-				<script>
-					var domain = (window.location != window.parent.location)? document.referrer : document.location.href;
-					var scpt=document.createElement("script");
-					var GetAttribute = "afpftpPixel_"+(Math.floor((Math.random() * 500) + 1))+"_"+Date.now() ;
-					scpt.src="//adgebra.co.in/afpf/GetAfpftpJs?parentAttribute="+GetAttribute;
-					scpt.id=GetAttribute;
-					scpt.setAttribute("data-pubid","1843");
-					scpt.setAttribute("data-slotId","1");
-					scpt.setAttribute("data-templateId","57");
-					scpt.setAttribute("data-accessMode","1");
-					scpt.setAttribute("data-domain",domain);
-					scpt.setAttribute("data-divId","div_5720180622152106");
-					document.getElementById("div_5720180622152106").appendChild(scpt);
-				</script>
-			</div>
 			
 		</div>
 	</section>
