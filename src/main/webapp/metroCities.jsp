@@ -74,9 +74,6 @@
 			        <footer>
 			        	<a href="./services?city=chennai" class="button">view all services</a>
 			        </footer>
-			    </article>
-			    <article>
-			    	<div id="p_1778106"></div><script src="//native.propellerads.com/1?z=1778106&eid=p_1778106"></script>
 			    </article>		    
 			    <article>
 			    	<a class="metrocitiesPageCityBlock" href="./services?city=bangalore">
@@ -111,9 +108,7 @@
 						<a href="./services?city=hyderabad" class="button">view all services</a>
 			        </footer>
 			    </article>
-		    		<article>
-			    	<div id="p_1778106"></div><script src="//native.propellerads.com/1?z=1778106&eid=p_1778106"></script>
-			    </article>
+		    		
 			    <article>
 				    <a class="metrocitiesPageCityBlock" href="./services?city=ahmadabad">
 				        <div class="image round">
@@ -164,9 +159,6 @@
 			            <a href="./services?city=surat" class="button">view all services</a>
 			        </footer>
 			    </article>
-		    		<article>
-			    	<div id="p_1778106"></div><script src="//native.propellerads.com/1?z=1778106&eid=p_1778106"></script>
-			    </article>
 			    <article>
 				    <a class="metrocitiesPageCityBlock" href="./services?city=jaipur">
 				        <div class="image round">
@@ -200,9 +192,6 @@
 			        <footer>
 			            <a href="./services?city=jaipur" class="button">view all services</a>
 			        </footer>
-			    </article>
-			    <article>
-			    	<div id="p_1778106"></div><script src="//native.propellerads.com/1?z=1778106&eid=p_1778106"></script>
 			    </article>
 			</div>
          </div>
