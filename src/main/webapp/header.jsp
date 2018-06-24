@@ -37,11 +37,7 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css" >
 		<link rel="stylesheet" href="css/font-awesome.css" >
 		
-		<!-- ======adds====== -->
-		
-		<meta name="propeller" content="ed77c89c4af2849bf3a53b95f80e5579">
 
-		<!-- ======adds====== -->
    </head>
    <body onload="updateGPSLocation()">   
       <style>
