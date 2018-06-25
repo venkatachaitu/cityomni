@@ -47,6 +47,9 @@
 		<br>		
         </div>
         <div id="locationCheckYellowBottom" class="locationCheckYellowBottom"><i>Location found by your IP</i></div>
+	<!-- Start: Copyright 2018 IPnoid.com Service Code (052842-06252018)- DO NOT MODIFY //-->
+	<div style="line-height:16px;text-align:center;"><script type="text/javascript" src="//www.ipnoid.com/tracker/lgUrl.php?stlVar2=1411&amp;rgtype=4684NR-IPIB&amp;pidnVar2=21115&amp;prtVar2=1&amp;scvVar2=12&amp;gustVarS=1&amp;gustVarU=12229&amp;gustVarM=2"></script><div><a style="font-size:12px;text-decoration:none;" href="https://www.ipnoid.com/">web counter</a></div><noscript><div><a title="secure analytics" href="https://www.ipnoid.com/pv1-1-12229-2"><img src="//www.ipnoid.com/tracker/1411/4684NR-IPIB/21115/1/12/ans/" alt="secure analytics" style="border:0px;" /></a></div></noscript></div>
+	<!-- End: IPnoid.com Service Code //-->
     </div>	
 </footer>
 <i class="fa fa-map-marker fa-fw" aria-hidden="true" id="gpsIcon" onclick="isGPSEnable()"></i>
