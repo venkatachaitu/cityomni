@@ -74,7 +74,19 @@
 			        <footer>
 			        	<a href="./services?city=chennai" class="button">view all services</a>
 			        </footer>
-			    </article>		    
+			    </article>	
+				<article>
+			    <script type="text/javascript">
+				  ( function() {
+				    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+				    var unit = {"calltype":"async[2]","publisher":"cityomni","width":300,"height":250,"sid":"Chitika Default"};
+				    var placement_id = window.CHITIKA.units.length;
+				    window.CHITIKA.units.push(unit);
+				    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+				}());
+				</script>
+				<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+				</article>	
 			    <article>
 			    	<a class="metrocitiesPageCityBlock" href="./services?city=bangalore">
 				        <div class="image round">
@@ -125,6 +137,18 @@
 			            <a href="./services?city=ahmadabad" class="button">view all services</a>
 			        </footer>
 			    </article>
+		    	<article>
+			    <script type="text/javascript">
+				  ( function() {
+				    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+				    var unit = {"calltype":"async[2]","publisher":"cityomni","width":300,"height":250,"sid":"Chitika Default"};
+				    var placement_id = window.CHITIKA.units.length;
+				    window.CHITIKA.units.push(unit);
+				    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+				}());
+				</script>
+				<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+				</article>
 			    <article>
 				     <a class="metrocitiesPageCityBlock" href="./services?city=pune">
 				        <div class="image round">
