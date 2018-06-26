@@ -36,31 +36,53 @@
 		<link rel="stylesheet" href="css/main.css" >
 		<link rel="stylesheet" href="css/bootstrap.min.css" >
 		<link rel="stylesheet" href="css/font-awesome.css" >
+
+		<!-- ======adds====== -->	
 		<!-- PopAds.net Popunder Code for cityomni.com -->
 		<script type="text/javascript" data-cfasync="false">
-		/*<![CDATA[/* */
-		  var _pop = _pop || [];
-		  _pop.push(['siteId', 2714692]);
-		  _pop.push(['minBid', 0]);
-		  _pop.push(['popundersPerIP', 0]);
-		  _pop.push(['delayBetween', 0]);
-		  _pop.push(['default', false]);
-		  _pop.push(['defaultPerDay', 0]);
-		  _pop.push(['topmostLayer', false]);
-		  (function() {
-		    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
-		    var s = document.getElementsByTagName('script')[0]; 
-		    pa.src = '//c1.popads.net/pop.js';
-		    pa.onerror = function() {
-		      var sa = document.createElement('script'); sa.type = 'text/javascript'; sa.async = true;
-		      sa.src = '//c2.popads.net/pop.js';
-		      s.parentNode.insertBefore(sa, s);
-		    };
-		    s.parentNode.insertBefore(pa, s);
-		  })();
-		/*]]>/* */
+			/*<![CDATA[/* */
+			  var _pop = _pop || [];
+			  _pop.push(['siteId', 2714692]);
+			  _pop.push(['minBid', 0]);
+			  _pop.push(['popundersPerIP', 0]);
+			  _pop.push(['delayBetween', 0]);
+			  _pop.push(['default', false]);
+			  _pop.push(['defaultPerDay', 0]);
+			  _pop.push(['topmostLayer', false]);
+			  (function() {
+			    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
+			    var s = document.getElementsByTagName('script')[0]; 
+			    pa.src = '//c1.popads.net/pop.js';
+			    pa.onerror = function() {
+			      var sa = document.createElement('script'); sa.type = 'text/javascript'; sa.async = true;
+			      sa.src = '//c2.popads.net/pop.js';
+			      s.parentNode.insertBefore(sa, s);
+			    };
+			    s.parentNode.insertBefore(pa, s);
+			  })();
+			/*]]>/* */
 		</script>
-		<!-- PopAds.net Popunder Code End -->
+		<!-- PopAds.net Popunder Code End -->	
+		<meta name="propeller" content="ed77c89c4af2849bf3a53b95f80e5579">
+		<!-- afp footer code starts here -->
+			<script type="text/javascript">
+				var adgf_p1 = "2496";
+				var adgf_p2 = "flag~custom_params_demographic";
+				var adgf_p3 = "0";
+				var adgf_p4 = "";
+				var adgf_p5 = "";
+				var adgFtSc = document.createElement("script");
+				adgFtSc.id = "adg_pixel_footer_script";
+				document.body.appendChild(adgFtSc);
+				adgFtSc.async = true;
+				var adgScParam = "p1=" + adgf_p1 + "&p2=" + adgf_p2 + "&p3=" + adgf_p3 + "&p4=" + adgf_p4 + "&p5=" + adgf_p5;
+				adgFtSc.src = "//adgebra.co.in/afpf/afpf.js?" + adgScParam;
+			</script>
+			<noscript>
+				<iframe id='adg_footer_pixel_script' src="//adgebra.co.in/afpf/afpf?p1=2496&p2=0&p3=1&p4=&p5=" width="0" height="0" frameBorder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+			</noscript>
+		<!-- afp footer code ends here -->
+	<!-- ======adds====== -->
    </head>
    <body onload="loadIndexPage()">  
 	<%-- <%@include file="locationPrompt.jsp" %> --%>
@@ -276,6 +298,25 @@
       </section>
       <section id="three" class="wrapper align-center" >
          <div class="inner"> 
+         	<!-- ====ADGEBRA 728x90===== -->
+			<div id="div_6620180626113352">
+				<script>
+					var domain = (window.location != window.parent.location)? document.referrer : document.location.href;
+					if(domain==""){domain = (window.location != window.parent.location) ? window.parent.location: document.location.href;}
+					var scpt=document.createElement("script");
+					var GetAttribute = "afpftpPixel_"+(Math.floor((Math.random() * 500) + 1))+"_"+Date.now() ;
+					scpt.src="//adgebra.co.in/afpf/GetAfpftpJs?parentAttribute="+GetAttribute;
+					scpt.id=GetAttribute;
+					scpt.setAttribute("data-pubid","2496");
+					scpt.setAttribute("data-slotId","1");
+					scpt.setAttribute("data-templateId","66");
+					scpt.setAttribute("data-accessMode","1");
+					scpt.setAttribute("data-domain",domain);
+					scpt.setAttribute("data-divId","div_6620180626113352");
+					document.getElementById("div_6620180626113352").appendChild(scpt);
+				</script>
+			</div>
+			<!-- ====ADGEBRA 728x90===== -->
 		<header>
 			<h3 class="servicesTitle" id="titleHeader">Metro Cities in India</h3>
 		</header>

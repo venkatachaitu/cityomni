@@ -14,6 +14,28 @@
 	</script>
 	<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
 	<!--   =========CHITIKA=============== -->
+	<!-- ====propeller zone3===== -->
+		<div id="p_1777541"></div><script src="//native.propellerads.com/1?z=1777541&eid=p_1777541"></script>
+	<!-- ====propeller===== -->
+	<!-- ====ADGEBRA 728x90===== -->
+	<div id="div_6620180626113352">
+		<script>
+			var domain = (window.location != window.parent.location)? document.referrer : document.location.href;
+			if(domain==""){domain = (window.location != window.parent.location) ? window.parent.location: document.location.href;}
+			var scpt=document.createElement("script");
+			var GetAttribute = "afpftpPixel_"+(Math.floor((Math.random() * 500) + 1))+"_"+Date.now() ;
+			scpt.src="//adgebra.co.in/afpf/GetAfpftpJs?parentAttribute="+GetAttribute;
+			scpt.id=GetAttribute;
+			scpt.setAttribute("data-pubid","2496");
+			scpt.setAttribute("data-slotId","1");
+			scpt.setAttribute("data-templateId","66");
+			scpt.setAttribute("data-accessMode","1");
+			scpt.setAttribute("data-domain",domain);
+			scpt.setAttribute("data-divId","div_6620180626113352");
+			document.getElementById("div_6620180626113352").appendChild(scpt);
+		</script>
+	</div>
+	<!-- ====ADGEBRA 728x90===== -->
 	<h3 style="display: none;" >Get in touch</h3>
         <form  method="post" style="display: none;">
             <div class="field half first">
