@@ -37,32 +37,7 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css" >
 		<link rel="stylesheet" href="css/font-awesome.css" >
 				
-		<!-- ======adds====== -->	
-		<!-- PopAds.net Popunder Code for cityomni.com -->
-		<script type="text/javascript" data-cfasync="false">
-			/*<![CDATA[/* */
-			  var _pop = _pop || [];
-			  _pop.push(['siteId', 2714692]);
-			  _pop.push(['minBid', 0]);
-			  _pop.push(['popundersPerIP', 0]);
-			  _pop.push(['delayBetween', 0]);
-			  _pop.push(['default', false]);
-			  _pop.push(['defaultPerDay', 0]);
-			  _pop.push(['topmostLayer', false]);
-			  (function() {
-			    var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;
-			    var s = document.getElementsByTagName('script')[0]; 
-			    pa.src = '//c1.popads.net/pop.js';
-			    pa.onerror = function() {
-			      var sa = document.createElement('script'); sa.type = 'text/javascript'; sa.async = true;
-			      sa.src = '//c2.popads.net/pop.js';
-			      s.parentNode.insertBefore(sa, s);
-			    };
-			    s.parentNode.insertBefore(pa, s);
-			  })();
-			/*]]>/* */
-		</script>
-		<!-- PopAds.net Popunder Code End -->	
+		<!-- ======adds====== -->		
 		<meta name="propeller" content="ed77c89c4af2849bf3a53b95f80e5579">
 		<!-- afp footer code starts here -->
 			<script type="text/javascript">
