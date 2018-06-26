@@ -125,6 +125,10 @@
 			        </footer>
 			    </article>
 			    <article>
+			    <!-- Zone 6 -->
+			    <div id="p_1778106"></div><script src="//native.propellerads.com/1?z=1778106&eid=p_1778106"></script>
+			    </article>
+			    <article>
 			    	<a class="metrocitiesPageCityBlock" href="./services?city=hyderabad">
 				        <div class="image round">
 				            <img src="images/hyderabad.png" alt="Hyderabad">
@@ -205,6 +209,10 @@
 			        <footer>
 			            <a href="./services?city=pune" class="button">view all services</a>
 			        </footer>
+			    </article>
+			    <article>
+			    <!-- Zone 5 -->
+			    <div id="p_1778090"></div><script src="//native.propellerads.com/1?z=1778090&eid=p_1778090"></script>
 			    </article>
 			    <article>
 				    <a class="metrocitiesPageCityBlock" href="./services?city=surat">

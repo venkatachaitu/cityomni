@@ -64,6 +64,8 @@
 					</h5>
 				</div>	
 			</div>
+			<!-- Zone 7 -->
+			<div id="p_1788746"></div><script async="async" data-cfasync="false" src="//native.propellerads.com/1?z=1788746&eid=p_1788746"></script>
 			<!-- ========CHITIKA========= -->
 			<script type="text/javascript">
 			  ( function() {
