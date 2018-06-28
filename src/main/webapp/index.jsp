@@ -256,7 +256,7 @@
       <section id="three" class="wrapper align-center" >
          <div class="inner"> 
          	<!-- ====ADGEBRA 728x90===== -->
-			<div id="div_6620180628123454">
+			<div id="div_1220180628123854">
 				<script>
 				var domain = (window.location != window.parent.location)? document.referrer : document.location.href;
 				if(domain==""){domain = (window.location != window.parent.location) ? window.parent.location: document.location.href;}
@@ -269,8 +269,8 @@
 				scpt.setAttribute("data-templateId","66");
 				scpt.setAttribute("data-accessMode","1");
 				scpt.setAttribute("data-domain",domain);
-				scpt.setAttribute("data-divId","div_6620180628123454");
-				document.getElementById("div_6620180628123454").appendChild(scpt);
+				scpt.setAttribute("data-divId","div_1220180628123854");
+				document.getElementById("div_1220180628123854").appendChild(scpt);
 				</script>
 			</div>
 			<!-- ====ADGEBRA 728x90===== -->

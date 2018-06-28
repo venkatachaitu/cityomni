@@ -79,7 +79,7 @@
 			<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
 			<!-- ========CHITIKA========= -->
 		<!-- ====ADGEBRA 750x432===== -->
-		<div id="div_5720180626113352">
+		<div id="div_1220180628123854">
 			<script>
 				var domain = (window.location != window.parent.location)? document.referrer : document.location.href;
 				if(domain==""){domain = (window.location != window.parent.location) ? window.parent.location: document.location.href;}
@@ -92,8 +92,8 @@
 				scpt.setAttribute("data-templateId","57");
 				scpt.setAttribute("data-accessMode","1");
 				scpt.setAttribute("data-domain",domain);
-				scpt.setAttribute("data-divId","div_5720180626113352");
-				document.getElementById("div_5720180626113352").appendChild(scpt);
+				scpt.setAttribute("data-divId","div_1220180628123854");
+				document.getElementById("div_1220180628123854").appendChild(scpt);
 			</script>
 		</div>
 		<!-- ====ADGEBRA 750x432===== -->
