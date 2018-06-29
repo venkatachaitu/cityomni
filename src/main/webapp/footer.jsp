@@ -1,4 +1,14 @@
 <script type="text/javascript">
+	atOptions = {
+		'key' : 'de2360a70e27389a7e190abe8a9c002c',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.bcloudhost.com/de2360a70e27389a7e190abe8a9c002c/invoke.js"></scr' + 'ipt>');
+</script>
+<script type="text/javascript">
 var infolinks_pid = 3108381;
 var infolinks_wsid = 0;
 </script>
