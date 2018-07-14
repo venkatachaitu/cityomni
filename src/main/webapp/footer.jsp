@@ -1,4 +1,5 @@
 <br><br><br>
+<a href="https://www.trafficbot.uk/free-trial?ref=72535">Free Traffic</a>
 <!-- Footer -->
 <footer id="footer">
     <div class="inner">	
