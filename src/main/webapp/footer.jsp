@@ -1,5 +1,8 @@
 <br><br><br>
 <a href="https://www.trafficbot.uk/free-trial?ref=72535">Free Traffic</a>
+ <!-- Begin BidVertiser code -->
+<SCRIPT data-cfasync="false" SRC="//bdv.bidvertiser.com/BidVertiser.dbm?pid=814397&bid=1951473" TYPE="text/javascript"></SCRIPT>
+<!-- End BidVertiser code --> 
 <!-- Footer -->
 <footer id="footer">
     <div class="inner">	
