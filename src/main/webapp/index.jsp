@@ -77,6 +77,18 @@
             <header>
                <h1>Welcome to cityOmni</h1>
                <h4 style="font-style: italic;font-size: 1.2em;">one place for complete city information and services</h4>
+		   <!--   =========CHITIKA=============== -->
+		<script type="text/javascript">
+		  ( function() {
+		    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+		    var unit = {"calltype":"async[2]","publisher":"cityomni","width":728,"height":90,"sid":"Chitika Default"};
+		    var placement_id = window.CHITIKA.units.length;
+		    window.CHITIKA.units.push(unit);
+		    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+		}());
+		</script>
+		<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+		<!--   =========CHITIKA=============== -->
             </header>
             <!-- Search Block -->
             <section id="searchBlock" class="wrapper align-center" style="padding: 0;">
