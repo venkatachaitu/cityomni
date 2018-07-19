@@ -31,6 +31,18 @@
 <!-- Three --><br><br>
 <section id="three" class="wrapper align-center">
    <div class="inner">
+	   <!--   =========CHITIKA=============== -->
+    	<script type="text/javascript">
+	  ( function() {
+	    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+	    var unit = {"calltype":"async[2]","publisher":"cityomni","width":728,"height":90,"sid":"Chitika Default"};
+	    var placement_id = window.CHITIKA.units.length;
+	    window.CHITIKA.units.push(unit);
+	    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+	}());
+	</script>
+	<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+	<!--   =========CHITIKA=============== -->
       <%-- <header>
          <h3 class="servicesTitle" id="titleHeader"><%= request.getParameter("name") %></h3>
          <hr>
@@ -69,6 +81,19 @@
 			</article>
       </div>
    </div>
+	<!--   =========CHITIKA=============== -->
+	<script type="text/javascript">
+	  ( function() {
+	    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+	    var unit = {"calltype":"async[2]","publisher":"cityomni","width":550,"height":250,"sid":"Chitika Default"};
+	    var placement_id = window.CHITIKA.units.length;
+	    window.CHITIKA.units.push(unit);
+	    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+	}());
+	</script>
+	<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+	<!--   =========CHITIKA=============== -->
+	
 </section>
 <script>
 	var place_id = '';
