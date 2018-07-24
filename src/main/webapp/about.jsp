@@ -19,32 +19,32 @@
 			</header>
 			 
 			  <div class="flex flex-2">	
-			  	<img class="aboutPhoto" alt="photo" src="images/chaitanya.png" width="311px" height="311px"><br>
+			  	<img class="aboutPhoto" alt="photo" src="images/chaitagnya.png" width="311px" height="311px"><br>
 			  	<div style="margin: auto;">
 				    <h3 style="color: red;text-align:center;font-weight: bold;">
-				    	<a href="./about">Chaitanya Kambhampati   </a>
+				    	<a href="./about">admin team   </a>
 					</h3>  
 					<h5 style="text-align:  center;">
-				    	Lead Engineer in HCL Technologies, Chennai.
+				    	software developer, Chennai.
 					</h5>
 					<h5 style="text-align:  center;">
-				    	Home: Vijayawada, Andhrapradesh, India.  
+				    	Home: at my home. 
 					</h5> 
 					<hr>
 					<div style=" text-align:  center;">
-						&nbsp;&nbsp;&nbsp;<a target="facebook" href="https://www.facebook.com/chaitanya.kambhampati.999">
+						&nbsp;&nbsp;&nbsp;<a target="facebook" href="https://www.facebook.com/cityomni.website">
 						<i style="font-size: 1.5em;color: #4d5db5;font-weight: bold;" class="fa-facebook-square" aria-hidden="true"></i>
 						</a>
 						&nbsp;&nbsp;&nbsp;
-						<a target="instagram" href="https://www.instagram.com/chaitanya.kambhampati/">
+						<a target="instagram" href="https://www.instagram.com/city.omni/">
 						<i style="font-size: 1.5em;color: #ef7878;font-weight: bold;" class="fa-instagram" aria-hidden="true"></i>
 						</a>
 						&nbsp;&nbsp;&nbsp;
-						<a target="twitter" href="https://twitter.com/venkatachaitu">
+						<a target="twitter" href="https://twitter.com/cityomni">
 						<i style="font-size: 1.5em;color: #03A9F4;font-weight: bold;" class="fa-twitter-square" aria-hidden="true"></i>
 						</a>
 						<br> &nbsp;&nbsp;&nbsp;
-						<i><a style="font-size: 1.15em;color: #646564;font-weight: bold;" href="tel:9908771059">
+						<i><a style="font-size: 1.15em;color: #646564;font-weight: bold;" href="tel:0000000000">
 						<i style="font-size: 1.5em;color: #179617;font-weight: bold;" class="fa-whatsapp" aria-hidden="true"></i>
 						9908771059</a></i>
 						<h5 style="font-weight: 600;font-style:  italic;">
