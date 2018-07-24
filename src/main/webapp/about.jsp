@@ -46,7 +46,7 @@
 						<br> &nbsp;&nbsp;&nbsp;
 						<i><a style="font-size: 1.15em;color: #646564;font-weight: bold;" href="tel:0000000000">
 						<i style="font-size: 1.5em;color: #179617;font-weight: bold;" class="fa-whatsapp" aria-hidden="true"></i>
-						9908771059</a></i>
+						0000000000</a></i>
 						<h5 style="font-weight: 600;font-style:  italic;">
 							<a href="mailto:cityomni@gmail.com?Subject=Customer%20Email" style="">
 								<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;cityomni@gmail.com        
