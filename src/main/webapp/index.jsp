@@ -52,7 +52,7 @@
                <span id="locationHome"></span>
                </span>  
                <span class="headerMenu" style="display: none;" id="time"></span>
-               <a class="headerMenu" href="https://go.pub2srv.com/afu.php?zoneid=1835205">Home</a>               
+               <a class="headerMenu" href="./">Home</a>               
                <a class="headerMenu" href="./states">States</a>
                <a class="headerMenu" href="./services">Services</a>
                <a class="headerMenu" href="./metroCities">Metro Cities</a>
