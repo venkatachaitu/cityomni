@@ -1,3 +1,6 @@
+<!--   =========revenuehits=============== -->
+<script data-cfasync='false' type='text/javascript' src='//p302864.clksite.com/adServe/banners?tid=302864_590581_0'></script>
+<!--   =========revenuehits=============== -->
 <br><br><br>
 <!-- Propeller Native Subscriptions (CPS) -->
 	<script src="//pushno.com/ntfc.php?p=1841789&tco=1" data-cfasync="false" async></script>
