@@ -1,5 +1,5 @@
 <!--   =========revenuehits=============== -->
-<script data-cfasync='false' type='text/javascript' src='//p302864.clksite.com/adServe/banners?tid=302864_590581_0'></script>
+<!-- <script data-cfasync='false' type='text/javascript' src='//p302864.clksite.com/adServe/banners?tid=302864_590581_0'></script>
 <!--   =========revenuehits=============== -->
 <br><br><br>
 <!-- Propeller Native Subscriptions (CPS) -->
