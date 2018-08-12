@@ -1,3 +1,15 @@
+<!--   =========CHITIKA=============== -->
+<script type="text/javascript">
+  ( function() {
+    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+    var unit = {"calltype":"async[2]","publisher":"itsmytirupati","width":550,"height":250,"sid":"Chitika Default"};
+    var placement_id = window.CHITIKA.units.length;
+    window.CHITIKA.units.push(unit);
+    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+}());
+</script>
+<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+<!--   =========CHITIKA=============== -->
 <!--   =========revenuehits===============  
  <script data-cfasync='false' type='text/javascript' src='//p302864.clksite.com/adServe/banners?tid=302864_590581_0'></script>
 <!--   =========revenuehits=============== -->
@@ -9,7 +21,18 @@
 <!-- Footer -->
 <footer id="footer">
     <div class="inner">	
-	
+    <!--   =========CHITIKA=============== -->
+	<script type="text/javascript">
+	  ( function() {
+	    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+	    var unit = {"calltype":"async[2]","publisher":"itsmytirupati","width":728,"height":90,"sid":"Chitika Default"};
+	    var placement_id = window.CHITIKA.units.length;
+	    window.CHITIKA.units.push(unit);
+	    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+	}());
+	</script>
+	<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+    <!--   =========CHITIKA=============== -->
 	<!-- ====propeller zone3===== -->
 		<div id="p_1777541"></div><script src="//native.propellerads.com/1?z=1777541&eid=p_1777541"></script>
 	<!-- ====propeller===== -->
