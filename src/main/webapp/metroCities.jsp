@@ -42,25 +42,19 @@
 			        </footer>
 			    </article>
 			    <article>
-				    <!-- ====ADGEBRA 400x432===== -->
-				    <div id="div_1220180628123854">
-						<script>
-							var domain = (window.location != window.parent.location)? document.referrer : document.location.href;
-							if(domain==""){domain = (window.location != window.parent.location) ? window.parent.location: document.location.href;}
-							var scpt=document.createElement("script");
-							var GetAttribute = "afpftpPixel_"+(Math.floor((Math.random() * 500) + 1))+"_"+Date.now() ;
-							scpt.src="//adgebra.co.in/afpf/GetAfpftpJs?parentAttribute="+GetAttribute;
-							scpt.id=GetAttribute;
-							scpt.setAttribute("data-pubid","2496");
-							scpt.setAttribute("data-slotId","1");
-							scpt.setAttribute("data-templateId","21");
-							scpt.setAttribute("data-accessMode","1");
-							scpt.setAttribute("data-domain",domain);
-							scpt.setAttribute("data-divId","div_1220180628123854");
-							document.getElementById("div_1220180628123854").appendChild(scpt);
-						</script>
-					</div>
-				     <!-- ====ADGEBRA 400x432===== -->
+				    
+			<!-- ====CHITIKA===== -->
+			<script type="text/javascript">
+			  ( function() {
+			    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+			    var unit = {"calltype":"async[2]","publisher":"itsmytirupati","width":300,"height":250,"sid":"Chitika Default"};
+			    var placement_id = window.CHITIKA.units.length;
+			    window.CHITIKA.units.push(unit);
+			    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+			}());
+			</script>
+			<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+			<!-- ====CHITIKA===== -->
 			     </article>
 			    <article>
 			    	<a class="metrocitiesPageCityBlock" href="./services?city=kolkata">
