@@ -64,25 +64,6 @@
 					</h5>
 				</div>	
 			</div>
-		<!-- ====ADGEBRA 750x432===== -->
-		<div id="div_1220180628123854">
-			<script>
-				var domain = (window.location != window.parent.location)? document.referrer : document.location.href;
-				if(domain==""){domain = (window.location != window.parent.location) ? window.parent.location: document.location.href;}
-				var scpt=document.createElement("script");
-				var GetAttribute = "afpftpPixel_"+(Math.floor((Math.random() * 500) + 1))+"_"+Date.now() ;
-				scpt.src="//adgebra.co.in/afpf/GetAfpftpJs?parentAttribute="+GetAttribute;
-				scpt.id=GetAttribute;
-				scpt.setAttribute("data-pubid","2496");
-				scpt.setAttribute("data-slotId","1");
-				scpt.setAttribute("data-templateId","57");
-				scpt.setAttribute("data-accessMode","1");
-				scpt.setAttribute("data-domain",domain);
-				scpt.setAttribute("data-divId","div_1220180628123854");
-				document.getElementById("div_1220180628123854").appendChild(scpt);
-			</script>
-		</div>
-		<!-- ====ADGEBRA 750x432===== -->
 		</div>
 	</section>
 <style>
