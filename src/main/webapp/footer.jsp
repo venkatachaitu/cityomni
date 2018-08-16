@@ -5,44 +5,13 @@ var infolinks_wsid = 0;
 </script>
 <script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
 <!--   =========INFOLINKS=============== -->
-<!--   =========CHITIKA=============== -->
-<script type="text/javascript">
-  ( function() {
-    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-    var unit = {"calltype":"async[2]","publisher":"itsmytirupati","width":550,"height":250,"sid":"Chitika Default"};
-    var placement_id = window.CHITIKA.units.length;
-    window.CHITIKA.units.push(unit);
-    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-}());
-</script>
-<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-<!--   =========CHITIKA=============== -->
 <!--   =========revenuehits===============  
  <script data-cfasync='false' type='text/javascript' src='//p302864.clksite.com/adServe/banners?tid=302864_590581_0'></script>
 <!--   =========revenuehits=============== -->
 <br><br><br>
-<!-- Propeller Native Subscriptions (CPS) -->
-	<script src="//pushno.com/ntfc.php?p=1841789&tco=1" data-cfasync="false" async></script>
-<!-- Propeller Native Subscriptions (CPS) -->
-<a href="https://www.trafficbot.uk/free-trial?ref=72535"></a>
 <!-- Footer -->
 <footer id="footer">
     <div class="inner">	
-    <!--   =========CHITIKA=============== -->
-	<script type="text/javascript">
-	  ( function() {
-	    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-	    var unit = {"calltype":"async[2]","publisher":"itsmytirupati","width":728,"height":90,"sid":"Chitika Default"};
-	    var placement_id = window.CHITIKA.units.length;
-	    window.CHITIKA.units.push(unit);
-	    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-	}());
-	</script>
-	<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-    <!--   =========CHITIKA=============== -->
-	<!-- ====propeller zone3===== -->
-		<div id="p_1777541"></div><script src="//native.propellerads.com/1?z=1777541&eid=p_1777541"></script>
-	<!-- ====propeller===== -->
 	<h3 style="display: none;" >Get in touch</h3>
         <form  method="post" style="display: none;">
             <div class="field half first">
