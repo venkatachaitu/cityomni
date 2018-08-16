@@ -2,18 +2,6 @@
 <br><br><br><br><br>
 <section id="" style="height: 100%;padding-top: 2em;">
 		<div class="inner">
-			<!-- ====CHITIKA===== -->
-			<script type="text/javascript">
-			  ( function() {
-			    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-			    var unit = {"calltype":"async[2]","publisher":"itsmytirupati","width":300,"height":250,"sid":"Chitika Default"};
-			    var placement_id = window.CHITIKA.units.length;
-			    window.CHITIKA.units.push(unit);
-			    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-			}());
-			</script>
-			<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-			<!-- ====CHITIKA===== -->
 			<header>
 				<h3>About & Contact us !</h3><hr>
 			</header>
@@ -76,8 +64,6 @@
 					</h5>
 				</div>	
 			</div>
-			<!-- Zone 7 -->
-			<div id="p_1788746"></div><script async="async" data-cfasync="false" src="//native.propellerads.com/1?z=1788746&eid=p_1788746"></script>
 		<!-- ====ADGEBRA 750x432===== -->
 		<div id="div_1220180628123854">
 			<script>
