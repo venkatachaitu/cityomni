@@ -13,16 +13,7 @@
 		<meta name="Keywords" content="cityomni, city omni, cityomni.com , Atms, Auto Mobiles, Banks, Bars, Beauty Parlours, Blood And Eye Banks, Bus Stations, Coffee Shops, Colleges, Computer Institutes, Computer Services, Dance Schools, Fashion And Cloth Stores, Fire Stations, Gas And Petrol Stations, Gift Shops, Govt Offices, Grocery Stores, Hardware Shops, Hospitals, Hostels, Hotels, Insurance Companies, Jewellery Shops, Libraries, Lodges, Mobile Shops, Museums, Packers And Movers, Parcel And Couriers, Parks, Party Halls, Pharmacy, Photo Studios, Play Schools, Police Stations, Railway Stations, Real Estate Agents, Restaurents, Schools, Shopping Malls, Software Companies, Stadiums, Temples, Theaters, Tours And Travels, Universities" />		
 		<meta name="description" content="cityomni city omni cityomni.com : Welcome to cityomni one place for complete city information of Metro cities in india : DELHI MUMBAI KOLKATA CHENNAI BANGALORE HYDERABAD AHMEDABAD PUNE SURAT JAIPUR Welcome to CITYomni one place for complete city information and services like Atms, Auto Mobiles, Banks, Bars, Beauty Parlours, Blood And Eye Banks, Bus Stations, Coffee Shops, Colleges, Computer Institutes, Computer Services, Dance Schools, Fashion And Cloth Stores, Fire Stations, Gas And Petrol Stations, Gift Shops, Govt Offices, Grocery Stores, Hardware Shops, Hospitals, Hostels, Hotels, Insurance Companies, Jewellery Shops, Libraries, Lodges, Mobile Shops, Museums, Packers And Movers, Parcel And Couriers, Parks, Party Halls, Pharmacy, Photo Studios, Play Schools, Police Stations, Railway Stations, Real Estate Agents, Restaurents, Schools, Shopping Malls, Software Companies, Stadiums, Temples, Theaters, Tours And Travels, Universities in cityomni, city omni, cityomni.com metro cities in india and services like Atms, Auto Mobiles, Banks, Bars, Beauty Parlours, Blood And Eye Banks, Bus Stations, Coffee Shops, Colleges, Computer Institutes, Computer Services, Dance Schools, Fashion And Cloth Stores, Fire Stations, Gas And Petrol Stations, Gift Shops, Govt Offices, Grocery Stores, Hardware Shops, Hospitals, Hostels, Hotels, Insurance Companies, Jewellery Shops, Libraries, Lodges, Mobile Shops, Museums, Packers And Movers, Parcel And Couriers, Parks, Party Halls, Pharmacy, Photo Studios, Play Schools, Police Stations, Railway Stations, Real Estate Agents, Restaurents, Schools, Shopping Malls, Software Companies, Stadiums, Temples, Theaters, Tours And Travels, Universities in cityomni, city omni, cityomni.com" />
 		
-      	<meta name="google-site-verification" content="WfQZCcri0H3ngUj-lsejT6ihHG5ap2ZDa3fYnXGmpWA" />
-
-		<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" ></script>
-		<script>
-			(adsbygoogle = window.adsbygoogle || []).push({
-			  google_ad_client: "ca-pub-3816265946625313",
-			  enable_page_level_ads: true
-			});
-		</script> -->
-				
+	      	<meta name="google-site-verification" content="WfQZCcri0H3ngUj-lsejT6ihHG5ap2ZDa3fYnXGmpWA" />	
 		<script src="js/jquery.min.js" ></script>
 		<script src="js/skel.min.js" ></script>
 		<script src="js/util.js" ></script>
@@ -36,10 +27,6 @@
 		<link rel="stylesheet" href="css/main.css" >
 		<link rel="stylesheet" href="css/bootstrap.min.css" >
 		<link rel="stylesheet" href="css/font-awesome.css" >
-
-		<!-- ======adds====== -->		
-		<meta name="propeller" content="ed77c89c4af2849bf3a53b95f80e5579">
-		<!-- ======adds====== -->
    </head>
    <body onload="loadIndexPage()">  
 	<%-- <%@include file="locationPrompt.jsp" %> --%>
@@ -255,19 +242,6 @@
       </section>
       <section id="three" class="wrapper align-center" >
          <div class="inner"> 
-		 
-			<!-- ====CHITIKA===== -->
-			<script type="text/javascript">
-			  ( function() {
-			    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-			    var unit = {"calltype":"async[2]","publisher":"itsmytirupati","width":300,"height":250,"sid":"Chitika Default"};
-			    var placement_id = window.CHITIKA.units.length;
-			    window.CHITIKA.units.push(unit);
-			    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-			}());
-			</script>
-			<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-			<!-- ====CHITIKA===== -->
          	<!-- ====ADGEBRA 728x90===== -->
 			<div id="div_1220180628123854">
 				<script>
