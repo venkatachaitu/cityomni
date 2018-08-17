@@ -1,3 +1,10 @@
+<!--   =========POPCASH=============== -->
+<script type="text/javascript">
+  var uid = '209651';
+  var wid = '441526';
+</script>
+<script type="text/javascript" src="//cdn.popcash.net/pop.js"></script>
+<!--   =========POPCASH=============== -->
 <!--   =========INFOLINKS=============== -->
 <script type="text/javascript">
 var infolinks_pid = 3108381;
@@ -12,6 +19,18 @@ var infolinks_wsid = 0;
 <!-- Footer -->
 <footer id="footer">
     <div class="inner">	
+	    <!--   =========ADSTERRA=============== -->
+	    <script type="text/javascript">
+		atOptions = {
+			'key' : 'de2360a70e27389a7e190abe8a9c002c',
+			'format' : 'iframe',
+			'height' : 90,
+			'width' : 728,
+			'params' : {}
+		};
+		document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.bcloudhost.com/de2360a70e27389a7e190abe8a9c002c/invoke.js"></scr' + 'ipt>');
+	</script>
+	    <!--   =========ADSTERRA=============== -->
 	<h3 style="display: none;" >Get in touch</h3>
         <form  method="post" style="display: none;">
             <div class="field half first">
