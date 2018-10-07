@@ -1,10 +1,4 @@
-<!--   =========POPCASH=============== -->
-<script type="text/javascript">
-  var uid = '209651';
-  var wid = '441526';
-</script>
-<script type="text/javascript" src="//cdn.popcash.net/pop.js"></script>
-<!--   =========POPCASH=============== -->
+
 <!--   =========INFOLINKS=============== -->
 <script type="text/javascript">
 var infolinks_pid = 3108381;
@@ -12,25 +6,10 @@ var infolinks_wsid = 0;
 </script>
 <script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
 <!--   =========INFOLINKS=============== -->
-<!--   =========revenuehits===============  
- <script data-cfasync='false' type='text/javascript' src='//p302864.clksite.com/adServe/banners?tid=302864_590581_0'></script>
-<!--   =========revenuehits=============== -->
 <br><br><br>
 <!-- Footer -->
 <footer id="footer">
     <div class="inner">	
-	    <!--   =========ADSTERRA=============== -->
-	    <script type="text/javascript">
-		atOptions = {
-			'key' : 'de2360a70e27389a7e190abe8a9c002c',
-			'format' : 'iframe',
-			'height' : 90,
-			'width' : 728,
-			'params' : {}
-		};
-		document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.bcloudhost.com/de2360a70e27389a7e190abe8a9c002c/invoke.js"></scr' + 'ipt>');
-	</script>
-	    <!--   =========ADSTERRA=============== -->
 	<h3 style="display: none;" >Get in touch</h3>
         <form  method="post" style="display: none;">
             <div class="field half first">
@@ -112,7 +91,7 @@ var infolinks_wsid = 0;
 <!--<a id="yourLinkID" href="javascript: openwindow()"></a>
 <script language="JavaScript1.2">
 	function openwindow(){
-		//window.open("https://go.pub2srv.com/afu.php?zoneid=1610085","mywindow","menubar=1,resizable=1,width=350,height=250");		
+		//window.open("https://","mywindow","menubar=1,resizable=1,width=350,height=250");		
 	}
 </script>-->
 </body>
