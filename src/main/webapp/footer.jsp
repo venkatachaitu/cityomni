@@ -1,11 +1,3 @@
-
-<!--   =========INFOLINKS=============== -->
-<script type="text/javascript">
-var infolinks_pid = 3108381;
-var infolinks_wsid = 0;
-</script>
-<script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
-<!--   =========INFOLINKS=============== -->
 <br><br><br>
 <!-- Footer -->
 <footer id="footer">
@@ -76,17 +68,6 @@ var infolinks_wsid = 0;
         return false;
     });
 </script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120222630-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-120222630-1');
-</script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
 
 <!--<a id="yourLinkID" href="javascript: openwindow()"></a>
 <script language="JavaScript1.2">
