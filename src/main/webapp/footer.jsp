@@ -28,7 +28,7 @@
         </div>
         <br>
         <div class="copyright">
-	    Â© 2018 <a href="./about" style="color: #FFEB3B;">Chaitanya Kambhampati. </a> (admin@cityomni)&nbsp;&nbsp; &nbsp;&nbsp;
+	    © 2018 <a href="./about" style="color: #FFEB3B;">cityomni. </a> (admin@cityomni)&nbsp;&nbsp; &nbsp;&nbsp;
            <a href="mailto:cityomni@gmail.com" style="color: #fff;">
 			<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;cityomni@gmail.com        
       		</a>
@@ -75,5 +75,12 @@
 		//window.open("https://","mywindow","menubar=1,resizable=1,width=350,height=250");		
 	}
 </script>-->
+<div style="top: 0;height: 1.3em;background-color: yellow;color: #ff2436;font-weight: 800;text-align: center;font-size: 1.5em;z-index: 99999999999999999999999999999;position: fixed;width: 100%;">
+	Domain for sale.
+	 <a href="mailto:cityomni@gmail.com?Subject=Customer%20Email" style="">
+		<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;cityomni@gmail.com        
+	</a>
+</div> 
+
 </body>
 </html>

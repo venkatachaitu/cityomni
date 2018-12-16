@@ -13,10 +13,12 @@
 				    	<a href="./about">admin team   </a>
 					</h3>  
 					<h5 style="text-align:  center;">
-				    	software developer, Chennai.
+				    	contact: <a href="mailto:cityomni@gmail.com?Subject=Customer%20Email" style="">
+		<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;cityomni@gmail.com        
+	</a>
 					</h5>
 					<h5 style="text-align:  center;">
-				    	Home: at my home. 
+				    	 
 					</h5> 
 					<hr>
 					<div style=" text-align:  center;">
