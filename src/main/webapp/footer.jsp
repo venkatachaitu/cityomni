@@ -1,4 +1,13 @@
 <br><br><br>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120222630-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-120222630-1');
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
 <!-- Footer -->
 <footer id="footer">
     <div class="inner">	
@@ -28,7 +37,7 @@
         </div>
         <br>
         <div class="copyright">
-	    © 2018 <a href="./about" style="color: #FFEB3B;">cityomni. </a> (admin@cityomni)&nbsp;&nbsp; &nbsp;&nbsp;
+	    Â© 2018 <a href="./about" style="color: #FFEB3B;">cityomni. </a> (admin@cityomni)&nbsp;&nbsp; &nbsp;&nbsp;
            <a href="mailto:cityomni@gmail.com" style="color: #fff;">
 			<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;cityomni@gmail.com        
       		</a>
