@@ -89,12 +89,12 @@ var infolinks_wsid = 0;
 		//window.open("https://","mywindow","menubar=1,resizable=1,width=350,height=250");		
 	}
 </script>-->
-<div style="top: 0;height: 1.3em;background-color: yellow;color: #ff2436;font-weight: 800;text-align: center;font-size: 1.5em;z-index: 99999999999999999999999999999;position: fixed;width: 100%;">
+<!--<div style="top: 0;height: 1.3em;background-color: yellow;color: #ff2436;font-weight: 800;text-align: center;font-size: 1.5em;z-index: 99999999999999999999999999999;position: fixed;width: 100%;">
 	Domain for sale.
 	 <a href="mailto:cityomni@gmail.com?Subject=Customer%20Email" style="">
 		<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;cityomni@gmail.com        
 	</a>
-</div> 
+</div> -->
 
 </body>
 </html>
