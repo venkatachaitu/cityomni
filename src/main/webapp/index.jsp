@@ -134,7 +134,7 @@
 									var autoComplete = new google.maps.places.Autocomplete(
 									/** @type {!HTMLInputElement} */ (
 										document.getElementById('searchCity')), {
-									  types: ["address", "establishment", "geocode"], //address, establishment, geocode
+									  types: [], //address, establishment, geocode
 									  componentRestrictions: countryRestrict//regions ,cities
 									});
 									
