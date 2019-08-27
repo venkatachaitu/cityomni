@@ -62,7 +62,7 @@
       <section id="banner" style="height: 100%;padding-top: 2em;">
          <div class="inner">
             <header>
-               <h1>Welcome to cityOmni.com</h1>
+               <h1>Welcome to cityOmni</h1>
                <h4 style="font-style: italic;font-size: 1.2em;">one place for complete city information and services</h4>
             </header>
             <!-- Search Block -->
