@@ -215,7 +215,7 @@ public class PageController {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			 ModelAndView modelAndView = new ModelAndView("importPreview.jsp");
+			 ModelAndView modelAndView = new ModelAndView("importPreview");
 				modelAndView.addObject("error", "Data mismatched / File doesn't support...!");
 				modelAndView.addObject("fileName", fileName);
 				
