@@ -175,7 +175,7 @@ public class PageController {
 					continue;
 				}
 				if(headers.isEmpty()) {
-					 ModelAndView modelAndView = new ModelAndView("importPreview.jsp");
+					 ModelAndView modelAndView = new ModelAndView("importPreview");
 						modelAndView.addObject("error", "Data mismatched / File doesn't support...!");
 						modelAndView.addObject("fileName", fileName);
 						return modelAndView;
