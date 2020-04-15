@@ -10,7 +10,7 @@
 			  	<img class="aboutPhoto" alt="photo" src="images/chaitagnya.png" width="311px" height="311px"><br>
 			  	<div style="margin: auto;">
 				    <h3 style="color: red;text-align:center;font-weight: bold;">
-				    	<a href="./about">admin team   </a>
+				    	<a href="./about">Chaitanya Kambhampati</a>
 					</h3>  
 					<h5 style="text-align:  center;">
 				    	contact: <a href="mailto:cityomni@gmail.com?Subject=Customer%20Email" style="">
@@ -34,9 +34,9 @@
 						<i style="font-size: 1.5em;color: #03A9F4;font-weight: bold;" class="fa-twitter-square" aria-hidden="true"></i>
 						</a>
 						<br> &nbsp;&nbsp;&nbsp;
-						<i><a style="font-size: 1.15em;color: #646564;font-weight: bold;" href="tel:0000000000">
+						<i><a style="font-size: 1.15em;color: #646564;font-weight: bold;" href="tel:9908771059">
 						<i style="font-size: 1.5em;color: #179617;font-weight: bold;" class="fa-whatsapp" aria-hidden="true"></i>
-						0000000000</a></i>
+						9908771059</a></i>
 						<h5 style="font-weight: 600;font-style:  italic;">
 							<a href="mailto:cityomni@gmail.com?Subject=Customer%20Email" style="">
 								<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;cityomni@gmail.com        
