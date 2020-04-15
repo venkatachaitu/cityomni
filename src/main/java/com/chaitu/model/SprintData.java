@@ -1,4 +1,4 @@
-package com.excel.model;
+package com.chaitu.model;
 
 public class SprintData {
 	public String sprintName;
