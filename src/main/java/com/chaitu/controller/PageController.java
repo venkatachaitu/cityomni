@@ -151,8 +151,7 @@ public class PageController {
 			map = new HashMap<String, SprintData>();
 			String st = "", startDate = "", endDate = "", sprintName = "";
 			HashMap<Integer, String> headers = new HashMap<Integer, String>();
-			int issueKey = 0, assignee = 0, points = 0, status = 0, sprint = 0;
-			;
+			int issueKey = 999999999, assignee = 999999999, points = 999999999, status = 999999999, sprint = 999999999;
 			for (Row row : sheet) {
 				if (row.getRowNum() == 0) {
 					for (int i = 0; i < row.getLastCellNum(); i++) {
@@ -170,15 +169,16 @@ public class PageController {
 						}else{
 							continue;
 						}
-						headers.put(i, cell.toString());
+						if(issueKey != 999999999 && assignee != 999999999 && points != 999999999 && status != 999999999 && sprint != 999999999)
+							headers.put(i, cell.toString());
 					}
 					continue;
 				}
 				if(headers.isEmpty()) {
-					 ModelAndView modelAndView = new ModelAndView("importPreview");
-						modelAndView.addObject("error", "Data mismatched / File doesn't support...!");
-						modelAndView.addObject("fileName", fileName);
-						return modelAndView;
+					ModelAndView modelAndView = new ModelAndView("importPreview");
+					modelAndView.addObject("error", " * Required Fields => Issue key, Name, Story Points, Status, Sprint.");
+					modelAndView.addObject("fileName", fileName);
+					return modelAndView;
 				}
 				reportData2 = new ReportData2();
 				reportData2.setIssueKey(row.getCell(issueKey).toString());
