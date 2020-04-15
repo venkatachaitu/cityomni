@@ -167,10 +167,18 @@ public class PageController {
 							status = i;
 						} else if (cell.toString().equalsIgnoreCase("sprint")) {
 							sprint = i;
+						}else{
+							continue;
 						}
 						headers.put(i, cell.toString());
 					}
 					continue;
+				}
+				if(headers.isEmpty()) {
+					 ModelAndView modelAndView = new ModelAndView("importPreview.jsp");
+						modelAndView.addObject("error", "Data mismatched / File doesn't support...!");
+						modelAndView.addObject("fileName", fileName);
+						return modelAndView;
 				}
 				reportData2 = new ReportData2();
 				reportData2.setIssueKey(row.getCell(issueKey).toString());
