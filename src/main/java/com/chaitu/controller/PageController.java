@@ -117,12 +117,12 @@ public class PageController {
 	
 	@GetMapping(value = "/excelImport")
 	public ModelAndView getIndexPage() {
-		return new ModelAndView("excelImport.jsp");
+		return new ModelAndView("excelImport");
 	}
 
 	@GetMapping(value = "/importPreview")
 	public String getImportView() {
-		return "importPreview.jsp";
+		return "importPreview";
 	}
 
 	@PostMapping(value = "/import")
@@ -137,7 +137,7 @@ public class PageController {
 		int totalPoints = 0;
 		try {
 			 if(fileName== null || (!fileName.endsWith(".xls") && !fileName.endsWith(".xlsx"))) {
-				 ModelAndView modelAndView = new ModelAndView("importPreview.jsp");
+				 ModelAndView modelAndView = new ModelAndView("importPreview");
 					modelAndView.addObject("error", "File doesn't support...!");
 					modelAndView.addObject("fileName", fileName);
 					
@@ -219,7 +219,7 @@ public class PageController {
 			ie.printStackTrace();
 		}
 
-		ModelAndView modelAndView = new ModelAndView("importPreview.jsp");
+		ModelAndView modelAndView = new ModelAndView("importPreview");
 		modelAndView.addObject("cells", cells);
 		modelAndView.addObject("open", open);
 		modelAndView.addObject("inDev", inDev);
