@@ -213,11 +213,14 @@ public class PageController {
 
 			totalPoints = cells.stream().mapToInt(e -> e.getPoints()).sum();
 
-		} catch (FileNotFoundException fe) {
-			fe.printStackTrace();
-		} catch (IOException ie) {
-			ie.printStackTrace();
-		}
+		} catch (Exception e) {
+			e.printStackTrace();
+			 ModelAndView modelAndView = new ModelAndView("importPreview.jsp");
+				modelAndView.addObject("error", "Data mismatched / File doesn't support...!");
+				modelAndView.addObject("fileName", fileName);
+				
+				return modelAndView;
+		}  
 
 		ModelAndView modelAndView = new ModelAndView("importPreview");
 		modelAndView.addObject("cells", cells);
