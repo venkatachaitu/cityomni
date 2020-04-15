@@ -1,4 +1,4 @@
-package com.excel.model;
+package com.chaitu.model;
 
 public class ReportData2 {
 	public String issueKey;
