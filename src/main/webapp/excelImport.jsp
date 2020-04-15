@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<head>
+	<title>
+		Excel sheet Reader.
+	</title>
+</head>
 <h2>Import Excel sheet</h2>
 <form action="./import" method="post" enctype="multipart/form-data" >
 <input type="file" name="filename" value="" required="required">
