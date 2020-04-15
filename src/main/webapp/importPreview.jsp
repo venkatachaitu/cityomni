@@ -4,7 +4,7 @@
 
 <%@include file="excelImport.jsp" %>
 <hr><br>
-<%@page import="java.util.*, com.excel.model.*"%>
+<%@page import="java.util.*, com.chaitu.model.*"%>
 <style>
 body{
 font-family: sans-serif;
