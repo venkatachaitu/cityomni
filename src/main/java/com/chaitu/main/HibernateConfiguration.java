@@ -1,4 +1,4 @@
-/*package com.chaitu.main;	
+package com.chaitu.main;	
 import java.util.Properties;
 
 import javax.sql.DataSource;
@@ -56,7 +56,7 @@ public class HibernateConfiguration {
 		Properties hibernateProperties = new Properties();
 		hibernateProperties.put("hibernate.dialect", DIALECT);
 		hibernateProperties.put("hibernate.show_sql", SHOW_SQL);
-		//hibernateProperties.put("hibernate.hbm2ddl.auto", HBM2DDL_AUTO);
+		hibernateProperties.put("hibernate.hbm2ddl.auto", HBM2DDL_AUTO);
 		sessionFactory.setHibernateProperties(hibernateProperties);
 
 		return sessionFactory;
@@ -68,4 +68,4 @@ public class HibernateConfiguration {
 		transactionManager.setSessionFactory(sessionFactory().getObject());
 		return transactionManager;
 	}	
-}*/
+}

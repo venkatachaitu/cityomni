@@ -1,6 +1,6 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <head>
 	<title>
 		Excel sheet Reader.
@@ -30,3 +30,12 @@ font-size: 16px;
 	%>
 
 </form> 
+
+<style>
+.footer{
+    bottom: 0;
+}
+
+</style>
+<br><br>
+<div class="footer"> &copy; reserved by cityomni.  Developed by Chaitanya Kambhampati</div>

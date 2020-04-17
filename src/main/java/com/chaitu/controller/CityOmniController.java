@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 //import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -36,6 +37,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 //import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -50,8 +52,10 @@ import org.springframework.web.client.RestTemplate;
 
 import com.chaitu.constants.GetPath;
 import com.chaitu.model.CityLatLon;
+import com.chaitu.model.DataTable;
 //import com.chaitu.model.DataTable;
 import com.chaitu.model.RadarSearchRespose;
+import com.chaitu.service.DbServiceDao;
 //import com.chaitu.service.DbServiceDao;
 import com.chaitu.utils.JsonFileHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -471,7 +475,7 @@ public class CityOmniController {
     	return al;
     }    
     
-    /*@Autowired
+    @Autowired
     DbServiceDao userServiceDao;
     
     @CrossOrigin(origins = "*")
@@ -479,6 +483,7 @@ public class CityOmniController {
     public ResponseEntity<Object> addConfession(@RequestBody DataTable data) throws Exception {
     	HttpHeaders response = new HttpHeaders();
 	    response.set("Access-Control-Allow-Origin", "*");
+	    data.setDate(new Date());
 	    userServiceDao.addConfession(data);
 	    return new ResponseEntity<Object>(data, response, HttpStatus.OK);
     }
@@ -496,7 +501,7 @@ public class CityOmniController {
     	HttpHeaders response = new HttpHeaders();
 	    response.set("Access-Control-Allow-Origin", "*");
 	    return new ResponseEntity<Object>(userServiceDao.readConfessionByArea(area), response, HttpStatus.OK);
-    }*/
+    }
     
 //    @CrossOrigin(origins = "*")
     @GetMapping("/rest/get/latlon/{state}/cities")

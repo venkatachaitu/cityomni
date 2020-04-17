@@ -549,7 +549,7 @@ function commentSubmit(){
 	var date = getCustomDate();
 	var com = JSON.stringify($('#commentBox').val());
 	var area = document.getElementById("comentloc").innerHTML;
-	var data = JSON.stringify( { "user": "chaitanya", "area": area, "comment": com, "date": date } );
+	var data = JSON.stringify( { "user": "user1", "area": area, "comment": com, "date": date } );
 	$.ajax({
 	    url: "/rest/add/confession",
 	    dataType: 'json',
@@ -608,9 +608,9 @@ function loadAllComments(){
 	    				 
 	    				out = out + "<table class='comentbox'><tr><td style=''><span class='areaspan' >"+area+" ("+user+")</span><span class='datespan' >"+decodeDate(date)+"</span><div class='comenttext' style='' >"+comment.replace(/"/g , " ")+"</div></td></tr></table>";
 	    				 
-	    				var obj = "{\"user\":\""+user+"\", \"area\":\""+area+"\", \"comment\":"+comment+", \"date\":\""+decodeDate(date)+"\"}";
+	    				var obj = "{\"user\":\""+user+"\", \"area\":\""+area+"\", \"comment\":\""+comment+"\", \"date\":\""+decodeDate(date)+"\"}";
 	    				
-	    				jsonData.push(JSON.parse(obj));
+	    				jsonData.push(obj);
 	    			}
 	    				//alert(key1+" : "+val1);
 	    		});
@@ -623,7 +623,7 @@ function loadAllComments(){
 	    	//return data;
 	    	var out1 = "<li onclick=readConfessionByArea('all')>all areas</li>";
 	    	for (var i = 0; i < areas.length; i++) { 
-	    		out1 = out1 + "<li onclick=readConfessionByArea('"+areas[i]+"')>"+areas[i]+ "</li>";
+	    		out1 = out1 + "<li style='cursor: pointer;' onclick=readConfessionByArea('"+areas[i]+"')>"+areas[i]+ "</li>";
 	    	}
 	    	document.getElementById('areasList').innerHTML = out1;
 	    	//console.log(jsonData);
@@ -637,8 +637,16 @@ function loadAllComments(){
 
 function readConfessionByArea(area){
 	var out = "";
+	//alert(area);
 	out = out + "<table>";
+	//alert(jsonData[0]);
 	$.each(jsonData, function(key, val) {
+		//alert(val);
+		 val = JSON.parse(val);
+		//var v = JSON.parse(val);
+		//alert(v.area);
+		
+		
 		if(area == 'all') {
 			while (val.comment.indexOf("\\n") !== -1) {
 				val.comment = val.comment.replace("\\n", "<br />");

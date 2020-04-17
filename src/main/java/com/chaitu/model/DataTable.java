@@ -1,8 +1,5 @@
-/*package com.chaitu.model;
+package com.chaitu.model;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -14,7 +11,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@Entity
+@Entity(name="data")
 @Table(name="data")
 public class DataTable {
 	@Id
@@ -36,6 +33,19 @@ public class DataTable {
 	public Date date;
 
 	 
+
+	public DataTable() {
+		super();
+	}
+
+	public DataTable(int pkId, String user, String area, String comment, Date date) {
+		super();
+		this.pkId = pkId;
+		this.user = user;
+		this.area = area;
+		this.comment = comment;
+		this.date = date;
+	}
 
 	public int getPkId() {
 		return pkId;
@@ -84,4 +94,3 @@ public class DataTable {
 	}
 	
 }
-*/

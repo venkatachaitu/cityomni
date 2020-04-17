@@ -1,4 +1,4 @@
-/*package com.chaitu.service;
+package com.chaitu.service;
 
 import java.util.List;
 
@@ -17,4 +17,3 @@ public interface DbServiceDao {
 	public List<DataTable> readallAreas();
 
 }
-*/
