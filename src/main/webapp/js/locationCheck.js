@@ -76,10 +76,12 @@ function getCurrentAddress(location) {
 	        if (status == google.maps.GeocoderStatus.OK) {
 	        	setCookie("address", results[0].formatted_address, 365);
 	        	//setCookie("locAddress", results[0].formatted_address, 365);
-	        	setAddressForSearchBox(results);
+	        	setAddressForSearchBox();
 	        	updateLocationinSearchBox();
 	        } else {
 	            console.log('Geocode was not successful for the following reason: ' + status);
+	            setAddressForSearchBox(results);
+	            getLatLogByIp();
 	        }
 	    });
 	}catch(e){console.log("getCurrentAddress() : "+e);};
@@ -90,8 +92,8 @@ function updateLocationinSearchBox() {
 	}
 }
 
-function setAddressForSearchBox(results){
-	setCookie("address",  results[0].formatted_address, 365);
+function setAddressForSearchBox(){
+	//setCookie("address",  results[0].formatted_address, 365);
 	if(document.getElementById("lat") != null && document.getElementById("lon") != null){
 		document.getElementById("lat").value = getLattitude();
 		document.getElementById("lon").value = getLongitude();
@@ -181,18 +183,23 @@ function getLatLogByIp() {
 	$.ajax({
 		    type: "GET",
 		    dataType: 'json',
-		    url: "https://api.ipdata.co/?api-key=d0e8408a008f8466593c9914927ce6659fccffcdf7b06942fd400251", 
+		    uri: "./rest/get/getaddress",
+		    //url: "https://api.ipdata.co/?api-key=d0e8408a008f8466593c9914927ce6659fccffcdf7b06942fd400251", 
 		    success: function(data) { 	  
 			    	setCookieWithOutReload("clattitude", data.latitude, 365);
 			    	setCookieWithOutReload("clongitude", data.longitude, 365);
-			        initializeCurrent(data.latitude, data.longitude);
+			    	setCookie("address", data.city, 365);
+			    	updateLocationinSearchBox();
+			        //initializeCurrent(data.latitude, data.longitude);
 		    	},
 		    error: function(data) { 
 		    		console.log("getLatLogByIp() : error ");        
 			        $.getJSON(u + "rest/get/getaddress", function(data) {
 			    		setCookieWithOutReload("clattitude", data.latitude, 365);
 			        	setCookieWithOutReload("clongitude", data.longitude, 365);
-			        	initializeCurrent(data.latitude, data.longitude);        
+			        	setCookie("address", data.city, 365);
+			        	updateLocationinSearchBox();
+			        	//initializeCurrent(data.latitude, data.longitude);        
 			         });
 		    	}
 		});

@@ -34,7 +34,7 @@
             document.getElementById("lat").value = lat;
             document.getElementById("lon").value = lon;
              
-	        map = new google.maps.Map(""); 
+	       // map = new google.maps.Map(""); 
             u = getWebsiteURL();
             var uri = "";
 			
