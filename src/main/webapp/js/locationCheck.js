@@ -183,8 +183,8 @@ function getLatLogByIp() {
 	$.ajax({
 		    type: "GET",
 		    dataType: 'json',
-		    uri: "./rest/get/getaddress",
-		    //url: "https://api.ipdata.co/?api-key=d0e8408a008f8466593c9914927ce6659fccffcdf7b06942fd400251", 
+		    // uri: "./rest/get/getaddress",
+		    url: "https://api.ipdata.co/?api-key=d0e8408a008f8466593c9914927ce6659fccffcdf7b06942fd400251", 
 		    success: function(data) { 	  
 			    	setCookieWithOutReload("clattitude", data.latitude, 365);
 			    	setCookieWithOutReload("clongitude", data.longitude, 365);
