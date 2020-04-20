@@ -62,7 +62,7 @@
      function callback3(results, status) {
     	 lat = getLattitude(); 
          lon = getLongitude();
-		this.results = results;  	
+		this.results = results.results;  	
 		console.log("Nb results:" + results.length);
 	      if (status != google.maps.places.PlacesServiceStatus.OK) {
 	        alert("callback3:status: "+status);
@@ -79,10 +79,10 @@
 	  var kk = 0 ;var temp = 0;var next = 0;
    	  function viewMoreSearch(){
         for(var i = next; i < results.length; i++) {  
-      		
       		if(temp < 4){
       			next++;
-   				$.ajax({
+      			callback1(results[i], results[i]['distance']);
+   				/* $.ajax({
    					url: u + "rest/get/search/getDetailsByPlaceId/"+results[i]['place_id'],
    					dataType: "json",
    					async: false,
@@ -91,7 +91,7 @@
    						callback1(results1, results[i]['distance']);
    		         	}
    	            });
-   				jQuery.ajaxSetup({async:true});
+   				jQuery.ajaxSetup({async:true}); */
    			 }else{
    				temp = 0;
    				break;
@@ -109,7 +109,7 @@
    				var img_url="", name="", address = "", website = "", phoneNumber = "", rating = "", 
 	   				 lat="", lon="", distance = "", map = "", adr = "", reviews="", reviewsLink="";
    				var loc = getCookie("location");
-   				adr = place.formatted_address;
+   				adr = place.address;
    				website = place.website;
    				name = place.name;
    				phoneNumber = place.international_phone_number;
@@ -117,7 +117,8 @@
    				lat = getLattitude(); 
    		        lon = getLongitude();
    				 
-              distance =  findDistance(lat, lon, place.geometry.location.lat, place.geometry.location.lng);
+   		       // alert(lat, lon, place.location.lat, place.location.lng)
+              distance =  findDistance(lat, lon, place.location.lat, place.location.lng);
               
               out = out + "<article class='article'><ul>";                                               
               /* if (img_url.indexOf("cleardot") == -1) {
@@ -146,16 +147,23 @@
               
               var ad = addStarsToString(adr);
               var nm = addStarsToString(name);
+      	    console.log(getCookie("clattitude")+"-------------------------"+ getCookie("clongitude"))
+		    var clats = getCookie("clattitude");
+		    var clons = getCookie("clongitude");
+		    var plac = "https://www.google.co.in/maps/dir/"+nm+","+ad+"/@"+place.location.lat+","+place.location.lng+"/";
 				/* if(adr != "" ){						    	
 			    	out = out + "<div  ><a target=# class=bottom href=https://www.google.co.in/maps/place/"+nm+"+"+adr.substr(0, adr.indexOf(' '))+"/@"+place.geometry.location.lat+","+place.geometry.location.lng+"><i class='fa fa-map-marker fa-fw' aria-hidden='true'></i></a></div>";
 			    } */
-			    out = out + "<div  ><a target= class=bottom href="+place.url+"><i class='fa fa-map-marker fa-fw' aria-hidden='true'></i></a></div>";
-              if(distance != 'null'  && add != 'null'){
+			    out = out + "<div  ><a target= class=bottom href="+plac+"><i class='fa fa-map-marker fa-fw' aria-hidden='true'></i></a></div>";
+             
+		
+			    map = "https://www.google.co.in/maps/dir/"+clats+","+clons+"/"+nm+","+ad+"/@"+place.location.lat+","+place.location.lng+"/";	
+			    /* if(distance != 'null'  && add != 'null'){
 					map = "https://www.google.co.in/maps/dir/"+add+"/"+nm+"+"+ad+"/@"+lat+","+lon;	
 				}else{
 					map = "https://www.google.co.in/maps/dir/"+loc+"/"+nm+"+"+ad+"/@"+lat+","+lon;
-				}
-              
+				} */
+              //alert(map)
               out = out + "<div  ><a target=# class=bottom href=";
               out = out + map;
               out = out + "><i class='fa fa-location-arrow' aria-hidden='true'></i></a></div>";
@@ -174,9 +182,9 @@
                if(distance != 'null' && distance != ''){
                		out = out + "<div >from <i style='color: #00ce08;' class='fa fa-map-marker' aria-hidden='true'></i> : <span id='dis'>"+Math.round(distance*100)/100+ "</span>&nbsp;km.(approx.)</div>";
 			    }
-               if(distFromSearchLocation != 'null' && distFromSearchLocation != ''){
+              /*  if(distFromSearchLocation != 'null' && distFromSearchLocation != ''){
               		out = out + "<div >from <i style='transform: rotateY(180deg);color: #00ce08;' class='fa fa-search' aria-hidden='true'></i> : <span id='dis'>"+Math.round(distFromSearchLocation*100)/100+ "</span>&nbsp;km.(approx.)</div>";
-			    }
+			    } */
 			    	out = out + "</footer><br></li> </ul> </article>";
    				
    				/*---------------Finish--------------------*/

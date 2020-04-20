@@ -27,6 +27,7 @@
 		<link rel="stylesheet" href="css/main.css" >
 		<link rel="stylesheet" href="css/bootstrap.min.css" >
 		<link rel="stylesheet" href="css/font-awesome.css" >
+		<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap"></script> -->
    </head>
    <body onload="loadIndexPage()">  
 	<%-- <%@include file="locationPrompt.jsp" %> --%>
@@ -149,8 +150,7 @@
 									});
 							  }
 							</script> 
-							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCw-Viepxab4m9pRRQyjm_yRq1uhOj9iPc&libraries=places&callback=initMap" async defer></script>
-							<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,visualization&v=3.exp&callback=initMap"></script> -->
+							<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places,visualization&v=3.exp&callback=initMap"></script>
 						<style>
   							   .searchCity{
 	  							    transition: .5s;

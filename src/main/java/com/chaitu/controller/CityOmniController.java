@@ -3,6 +3,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URLEncoder;
+import java.nio.charset.Charset;
 //import java.text.DateFormat;
 //import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -26,20 +28,19 @@ import java.util.TreeSet;
 //import javax.persistence.EntityManager;
 import javax.servlet.ServletContext;
 
-
-
-
-
-
+import org.apache.commons.codec.binary.Base64;
 //import org.json.JSONException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 //import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -48,6 +49,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import com.chaitu.constants.GetPath;
@@ -59,6 +62,11 @@ import com.chaitu.service.DbServiceDao;
 //import com.chaitu.service.DbServiceDao;
 import com.chaitu.utils.JsonFileHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
 
 @RequestMapping("/")
 @Controller
@@ -404,10 +412,27 @@ public class CityOmniController {
 			fop.close();
 		}
 	}
+    
+    @CrossOrigin(origins = "*")
+    @RequestMapping(path = "/geocode", method = RequestMethod.GET )
+    public Response getGeocode(@RequestParam String address) throws IOException {
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+        		.url("https://trueway-places.p.rapidapi.com/FindPlacesNearby?type=cafe&radius=150&language=en&location=37.783366%252C-122.402325")
+        		.get()
+        		.addHeader("x-rapidapi-host", "trueway-places.p.rapidapi.com")
+        		.addHeader("x-rapidapi-key", "17defe8344msh14c09b6da4a1a4bp12b5fcjsn7b9aa98b0e06")
+        		.build();
+        Response responseBody = client.newCall(request).execute();
+        System.out.println("--responseBody.string()---:: "+responseBody.exchange());
+        return responseBody;
+    }
+    
+    //static ResponseEntity<Map> response = null;
     @CrossOrigin(origins = "*")
     ///"/rest/get/search/{lat}/{lon}/{cat}/{text}"
     @GetMapping("/rest/get/search/{city}/{clat}/{clon}/{lat}/{lon}/{radius}/{category}/{keyword}")
-    public ResponseEntity<List<RadarSearchRespose>> searchGoogleApi(@PathVariable String city, @PathVariable String lat, @PathVariable String lon, 
+    public ResponseEntity<Map> searchGoogleApi(@PathVariable String city, @PathVariable String lat, @PathVariable String lon, 
 					    			@PathVariable String clat, @PathVariable String clon, @PathVariable String radius, 
 					    			@PathVariable String category, @PathVariable String keyword) throws Exception {
     	
@@ -419,20 +444,41 @@ public class CityOmniController {
 			}	 
 		}
     	String uri = "";
+    	
     	if (category.equalsIgnoreCase("all")) {
-			uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&rankby=distance&radius="+radius+"&keyword="+keyword+"&key=AIzaSyCQ0FD8o_1KjowT5c_c0qY6cQhvGiNwWPg";
+    		uri = "https://trueway-places.p.rapidapi.com/FindPlacesNearby?type="+category+"&radius=500000&language=en&location="+lat+","+lon;
+	    	//uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&rankby=distance&radius="+radius+"&keyword="+keyword+"&key=AIzaSyCQ0FD8o_1KjowT5c_c0qY6cQhvGiNwWPg";
 		}else{
 	    	if (keyword.equalsIgnoreCase("all")) {
 	    		keyword = "";
 			}
-	    	uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&rankby=distance&radius="+radius+"&type="+category+"&keyword="+keyword+"&key=AIzaSyCQ0FD8o_1KjowT5c_c0qY6cQhvGiNwWPg";
+	    	uri = "https://trueway-places.p.rapidapi.com/FindPlacesNearby?type="+category+"&radius=500000&language=en&location="+lat+","+lon;
+	    	//uri = "https://maps.googleapis.com/maps/api/place/radarsearch/json?location="+lat+","+lon+"&rankby=distance&radius="+radius+"&type="+category+"&keyword="+keyword+"&key=AIzaSyCQ0FD8o_1KjowT5c_c0qY6cQhvGiNwWPg";
 		}
-    	System.out.println("searchGoogleApi : "+uri);
-		Map<?, ?> result = restTemplate.getForObject(uri, Map.class);
-    	//System.out.println("result : "+result);
-    	List<RadarSearchRespose> al = sortRadarSearchData(result, Double.parseDouble(lat), Double.parseDouble(lon));
-    	return new ResponseEntity < List<RadarSearchRespose> > (al, HttpStatus.OK);
+    	System.out.println("trueway-places.p.rapidapi.com :: "+uri);
+
+    	final  HttpHeaders headers = new HttpHeaders();
+    	headers.set("x-rapidapi-key", "17defe8344msh14c09b6da4a1a4bp12b5fcjsn7b9aa98b0e06");
+    	
+    	final HttpEntity<String> entity = new HttpEntity<String>(headers);
+    	 
+    	/*if(response != null) {
+    		return new ResponseEntity <Map> (response.getBody(), HttpStatus.OK);
+    	}else {*/
+	    	ResponseEntity<Map> response = restTemplate.exchange(uri, HttpMethod.GET, entity, Map.class);        
+	        System.out.println(response.getBody());
+    	//}
+    	return new ResponseEntity <Map> (response.getBody(), HttpStatus.OK);
     }
+    public HttpHeaders createHeaders(String username, String password){
+    	   return new HttpHeaders() {{
+    	         String auth = username + ":" + password;
+    	         byte[] encodedAuth = Base64.encodeBase64( 
+    	            auth.getBytes(Charset.forName("US-ASCII")) );
+    	         String authHeader = "Basic " + new String( encodedAuth );
+    	         set( "Authorization", authHeader );
+    	      }};
+    	}
     
     ///"/rest/get/search/getDetailsByPlaceId/{place_id}"
     @GetMapping("/rest/get/search/getDetailsByPlaceId/{place_id}")
@@ -568,25 +614,4 @@ public class CityOmniController {
 			return (CityLatLon) statesMap.get(city);
 		} 
     }
-    
-    
-
-   /* JSONParser parser = new JSONParser();
-    Object obj = null;
-    try {
-        obj = parser.parse(new FileReader(filePath));
-        JSONObject jsonObject = (JSONObject) obj;
-        JSONArray msg = (JSONArray) jsonObject.get(category); //fileName
-        if (msg != null) {
-            List < Object > li = new ArrayList < Object > ();
-            for (int i = 0; i <= msg.size() - 1; i++) {
-                li.add(msg.get(i));
-            }
-            obj = parser.parse(li.toString());
-        }
-    } catch (Exception e) {
-        System.out.println("readDataByCategory : " + e);
-    }
-    return obj;*/
-    
 }

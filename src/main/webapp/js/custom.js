@@ -295,19 +295,23 @@ function selectCategory(select) {
 }
 
 function addStarsToString(str) {
-    var s = str.trim();
-    var temp = "";
-    for (var i = 0; i < s.length; i++) {
-        if (s[i] == " ") {
-            temp = temp + "+";
-        } else {
-            if (s[i] == '/') {
-                temp = temp + "-";
-            } else {
-                temp = temp + s[i];
-            }
-        }
-    }
+	var temp = "";
+	if( typeof str !== 'undefined' ) {
+		console.log(str+"------------")
+	    var s = str.trim();
+	    for (var i = 0; i < s.length; i++) {
+	        if (s[i] == " ") {
+	            temp = temp + "+";
+	        } else {
+	            if (s[i] == '/') {
+	                temp = temp + "-";
+	            } else {
+	                temp = temp + s[i];
+	            }
+	        }
+	    }
+	}
+	
     //console.log(temp);
     return temp;
 }
