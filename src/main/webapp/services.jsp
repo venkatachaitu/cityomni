@@ -17,7 +17,7 @@
    window.onload = loadServicesPage();
    	function loadServicesPage(){			
    		try{ 	
-   				updateGPSLocation();
+   				updateGPSLocation(); 
 	   			var city = getUrlVars()["city"];
 	   			var u = getWebsiteURL();
 	   			var out = "", key="";

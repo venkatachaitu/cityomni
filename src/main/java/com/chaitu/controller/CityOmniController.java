@@ -548,7 +548,7 @@ public class CityOmniController {
 	    response.set("Access-Control-Allow-Origin", "*");
 	    return new ResponseEntity<Object>(userServiceDao.readConfessionByArea(area), response, HttpStatus.OK);
     }
-    
+    @CrossOrigin(origins = "*")
 //    @CrossOrigin(origins = "*")
     @GetMapping("/rest/get/latlon/{state}/cities")
     public ResponseEntity<Object> readCitiesFromFile(@PathVariable String state) throws Exception {
@@ -614,4 +614,18 @@ public class CityOmniController {
 			return (CityLatLon) statesMap.get(city);
 		} 
     }
+    
+    @CrossOrigin(origins = "*")
+    @GetMapping("/rest/get/address/{lat}/{lon}/")
+    public ResponseEntity<Map> getAddressFromLatLon(@PathVariable String lat, @PathVariable String lon) throws Exception {
+    	String uri = "https://trueway-geocoding.p.rapidapi.com/ReverseGeocode?language=en&location="+lat+","+lon;
+    	System.out.println("getAddressFromLatLon() :: "+uri);
+    	final  HttpHeaders headers = new HttpHeaders();
+    	headers.set("x-rapidapi-key", "17defe8344msh14c09b6da4a1a4bp12b5fcjsn7b9aa98b0e06");
+    	
+    	final HttpEntity<String> entity = new HttpEntity<String>(headers);
+    	ResponseEntity<Map> response = restTemplate.exchange(uri, HttpMethod.GET, entity, Map.class);        
+        System.out.println("getAddressFromLatLon() :: "+response.getBody());
+    	return new ResponseEntity <Map> (response.getBody(), HttpStatus.OK);
+	}
 }

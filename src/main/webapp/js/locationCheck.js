@@ -56,12 +56,12 @@ function processGeolocationResult(position) {
 	    html5Lon = position.coords.longitude; // Get longitude
 	    html5TimeStamp = position.timestamp; // Get timestamp
 	    html5Accuracy = position.coords.accuracy; // Get accuracy in meters
-	   //alert(html5Lat+"---"+html5Lon);
-	    distance();
-	    var meters = 28250;
+	  // alert(html5Lat+"---"+html5Lon);
+	   // distance();
+	   /* var meters = 28250;
 	    var coef = meters * 0.0000089;
 	    var new_lat = html5Lat + coef;
-	    var new_long = html5Lon + coef / Math.cos(html5Lat * 0.018);
+	    var new_long = html5Lon + coef / Math.cos(html5Lat * 0.018);*/
 	    
 	    	
 	    //alert(html5Lat+"---"+html5Lon+"---"+new_lat+"---"+new_long);
@@ -69,7 +69,7 @@ function processGeolocationResult(position) {
 	    return (html5Lat).toFixed(8) + ", " + (html5Lon).toFixed(8);
 	}catch(e){};
 }
-function toRadians(val){
+/*function toRadians(val){
     var PI = 3.1415926535;
     return val / 180.0 * PI;
 }
@@ -81,14 +81,14 @@ function distance() {
 	var unit = "N";
 	var R = 6371e3;
 	
- /*
+ 
 	 * var radlat1 = Math.PI * lat1/180 var radlat2 = Math.PI * lat2/180 var
 	 * theta = lon1-lon2 var radtheta = Math.PI * theta/180 var dist =
 	 * Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) *
 	 * Math.cos(radlat2) * Math.cos(radtheta); dist = Math.acos(dist) dist =
 	 * dist * 180/Math.PI dist = dist * 60 * 1.1515 if (unit=="K") { dist = dist *
 	 * 1.609344 } if (unit=="N") { dist = dist * 0.8684 }
-	 */
+	 
 	
 	var lat1radians = toRadians(lat1);
 	   var lat2radians = toRadians(lat2);
@@ -149,11 +149,12 @@ function destVincenty(lat1, lon1, brng, dist) {
 	 console.log('17.50602352841195', 78.56040045794143)
 	 
 	 console.log(toDeg(lat2), (lon1 + toDeg(L)))
-}
+}*/
 	
 	
 
 function initializeCurrent(latcurr, longcurr) {
+	 getAddressFromLL(latcurr,longcurr); 
     try{
     	currgeocoder = new google.maps.Geocoder();	   
 	    if (latcurr != '' && longcurr != '') {
@@ -162,6 +163,19 @@ function initializeCurrent(latcurr, longcurr) {
 	    }
     }catch(e){};
 }
+
+function getAddressFromLL(lat, lon){
+	//alert("rest/get/address/"+lat+"/"+lon+"/")
+	var uri = "rest/get/address/"+lat+"/"+lon+"/";
+	$.getJSON(uri, function(results) {
+		var res = results.results;
+		console.log(res[0]['sublocality']+","+res[0]['locality']+","+res[0]['area']+","+res[0]['region'])
+		setCookie("address", res[0]['sublocality']+","+res[0]['locality']+","+res[0]['area']+","+res[0]['region'], 365);
+		setAddressForSearchBox();
+    	updateLocationinSearchBox();
+	});
+}
+
 function getCurrentAddress(location) {
 	try{
 		 currgeocoder.geocode({
@@ -174,7 +188,7 @@ function getCurrentAddress(location) {
 	        	updateLocationinSearchBox();
 	        } else {
 	            console.log('Geocode was not successful for the following reason: ' + status);
-	            setAddressForSearchBox(results);
+	            setAddressForSearchBox();
 	            getLatLogByIpAllow();
 	        }
 	    });

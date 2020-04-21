@@ -52,7 +52,8 @@
             else{
             	uri = "rest/get/search/"+city+"/"+getLattitude()+"/"+getLongitude()+"/"+lat+"/"+lon+"/"+withIn+"/"+category+"/"+searchContent;
             }
-            
+           	//alert(uri)
+           	uri = uri.toLowerCase();
             $.getJSON(u + uri, function(results) {
         	   callback3(results, google.maps.places.PlacesServiceStatus.OK);
             });
