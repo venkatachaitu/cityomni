@@ -44,10 +44,10 @@
                <a class="headerMenu" href="./states">States</a>
                <a class="headerMenu" href="./services">Services</a>
                <a class="headerMenu" href="./metroCities">Metro Cities</a>
-               <!-- <a class="headerMenu" href="./plans">Plans</a> -->
+               <a class="headerMenu" href="./plans">Plans</a>
+               <!-- <a class="headerMenu" href="./contact">Contact</a> -->
+               <a class="headerMenu" href="./confession">Confession</a>
                <a class="headerMenu" href="./about">About</a>
-               <a class="headerMenu" href="./contact">Contact</a>
-               <!--<a class="headerMenu" href="./createPlan">Create Plan</a> -->
                <!-- <a href="https://cityomni.com">Login</a> -->
             </nav>
             <!-- <a href="https://cityomni.com" class="logo"><strong>city</strong> omni</a>  -->
@@ -378,12 +378,12 @@
 			</script>
 			<style>
 			.tilesDiv{
-			    background-color: #00000045;
+		        background-color: #00000054;
 			    margin: 1em 0.25em;
 			    border-radius: 13px;
 			    transition: 1s;
-			    border: 1px solid #00000021;
-			    box-shadow: inset 0.5px 0.5px 5px #e8f436;
+			    border: 1px solid #f443366b;
+			    box-shadow: inset 0.5px 0.5px 5px #F44336;
 			    padding: 1.5em 4em;
 			}
 			.tilesDiv:hover{
@@ -396,16 +396,22 @@
 			.viewIndexIcons{
 				width: 32px;
 			    height: 32px;
-			    filter: invert(78%) sepia(155%) saturate(2959%) hue-rotate(-13deg) brightness(100%) contrast(118%);
+			    /* filter: invert(78%) sepia(155%) saturate(2959%) hue-rotate(-13deg) brightness(100%) contrast(118%); */
+			    filter: invert(29%) sepia(211%) saturate(4075%) hue-rotate(354deg) brightness(124%) contrast(147%);
 			    vertical-align: bottom;
 			}
 			.viewIndexIcons:hover{
 			}
 			.viewIndexLable{
-			    color: #ffee55;
+			    color: #fff;
 			}
 			img[alt="example"] {
 			    
+			}
+			@media only screen and (max-width: 736px) {
+			  .tilesDiv {
+			  	padding: 0.5em 2em;
+			  }
 			}
 			</style>     
       <%@include file="footer.jsp" %>

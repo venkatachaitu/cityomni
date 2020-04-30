@@ -54,10 +54,10 @@
                <a class="headerMenu" href="./states">States</a>
                <a class="headerMenu" href="./services">Services</a>
                <a class="headerMenu" href="./metroCities">Metro Cities</a>
-               <!-- <a class="headerMenu" href="./plans">Plans</a> -->
+               <a class="headerMenu" href="./plans">Plans</a>
+               <!-- <a class="headerMenu" href="./contact">Contact</a> -->
+               <a class="headerMenu" href="./confession">Confession</a>
                <a class="headerMenu" href="./about">About</a>
-               <a class="headerMenu" href="./contact">Contact</a>
-               <!--<a class="headerMenu" href="./createPlan">Create Plan</a> -->
                <!-- <a href="https://cityomni.com">Login</a> -->
             </nav>
             <!-- <a href="https://cityomni.com" class="logo"><strong>city</strong> omni</a> -->
