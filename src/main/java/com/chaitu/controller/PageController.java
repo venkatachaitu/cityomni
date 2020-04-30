@@ -68,7 +68,7 @@ public class PageController {
         return new ModelAndView("about");
     }
 	
-@GetMapping("/contact")
+    @GetMapping("/contact")
     public ModelAndView openContact() {
         return new ModelAndView("about");
     }

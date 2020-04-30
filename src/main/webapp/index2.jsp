@@ -60,30 +60,30 @@
       </header>
       
       <!-- Banner -->
-      <section id="banner" style="height: 100%;padding-top: 2em;padding-bottom: 0.5em;">
+      <section id="banner" style="height: 100%;padding-top: 2em;">
          <div class="inner">
             <header>
                <h1>Welcome to cityOmni</h1>
                <h4 style="font-style: italic;font-size: 1.2em;">one place for complete city information and services</h4>
             </header>
             <!-- Search Block -->
-            <!-- <section id="searchBlock" class="wrapper align-center" style="padding: 0;">
+            <section id="searchBlock" class="wrapper align-center" style="padding: 0;">
                <div class="inner" style="padding: 0px 13px;">
                   <form action="./search" method="get" onsubmit="return Submit()">
                      <div class="flex flex-2 searchInnerDiv"  style="margin: 0;">
                         <article style="background-color: rgba(255, 0, 0, 0);">
                            <header class="selectCity" style="background-color: rgba(255, 0, 0, 0);">
-                              <select name="city" id="searchCity" onchange="changeCity()" required>
+                              <!-- <select name="city" id="searchCity" onchange="changeCity()" required>
                                  <option value="-1">Select City</option>
                                  <option value="delhi">Delhi</option>                                 
                                  <option value="chennai">Chennai</option>
                                  <option value="vijayawada">Vijayawada</option>                                 
                                  <option value="tirupati">Tirupati</option>
-                              </select>
+                              </select> -->
                               <i onclick="setCurrentLocationToSearchBox()" style="color: #e6e6e6;float:  left;margin-left: -1em;font-size: 1.5em;margin-top:  0.2em;" class="fa fa-map-marker" aria-hidden="true"></i>
                               <input readonly class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" />  
                               <i class="fa fa-times-circle bbu" aria-hidden="true" onclick="clearSearchCity()"></i>
-                              <span class="bbu" onclick="clearSearchCity()">x</span>
+                              <!-- <span class="bbu" onclick="clearSearchCity()">x</span> -->
                               <style>
                                	.bbu{
 								    float: right;
@@ -115,8 +115,8 @@
                               </script>
                               <input type="hidden" name="lat" id="lat" value="">
                               <input type="hidden" name="lon" id="lon" value="">
-                              <input type="hidden" name="withIn" value="1000">
-                              <select name="city" id="searchCity" required="">onchange="changeCity()"
+                              <!-- <input type="hidden" name="withIn" value="1000"> -->
+                              <!-- <select name="city" id="searchCity" required="">onchange="changeCity()"
 								<option value="-1">Select City</option>
 								<option value="delhi">Delhi</option>
 								<option value="mumbai">Mumbai</option>
@@ -128,7 +128,7 @@
 								<option value="pune">Pune</option>
 								<option value="surat">Surat</option>
 								<option value="jaipur">Jaipur</option>
-							</select>
+							</select> -->
 							<script> 
 							  function initMap() {
 								  var countryRestrict = {'country': 'in'};//http://www.geognos.com/api/en/countries/info/all.json
@@ -166,14 +166,14 @@
   						</style>
                            </header>
                         </article>
-                        &nbsp;&nbsp;&nbsp; 
+                        <!-- &nbsp;&nbsp;&nbsp; 
                         <article style="background-color: rgba(255, 0, 0, 0);">
                            <header class="selectCity" style="background-color: rgba(255, 0, 0, 0);">
                               <select name="category" id="searchCategories" required>
                                  <option value="-1">Select Category</option>
                               </select>
                            </header>
-                        </article>
+                        </article> -->
                         &nbsp;&nbsp;&nbsp; 
                         <article style="background-color: rgba(255, 0, 0, 0);">
                            <header class="selectCity" style="background-color: rgba(255, 0, 0, 0);">
@@ -194,9 +194,7 @@
                      </div>
                   </form>
                </div>
-            </section> --><br>
-            <h4 style="color: yellow; font-size: 1em; " id="indexPageLocation"></h4>
-             
+            </section>
             <style>
                select{
                background-color: rgba(245, 228, 228, 0) !important;
@@ -213,11 +211,9 @@
                $('.dropdown-menu a').on('click', function(){    
                	$('.dropdown-toggle').html($(this).html() + '<span class="caret"></span>');    
                })
-            </script>
-            
-            
-            <div class="flex" id="services" style="justify-content: space-evenly;display: flex;">
-               <!-- <div style="cursor: pointer;">
+            </script>	
+            <div class="flex ">
+               <div style="cursor: pointer;">
 	               <a target="hotels" href="./search?category=lodging">
 	                  <span class="icon fa fa-bed"></span>
 	                  <h3>Lodging</h3>
@@ -237,11 +233,11 @@
                   <h3>Coffee Shops</h3>
                   <p>CoffeeDay, Barista, etc.</p>
                   </a>
-               </div> -->
+               </div>
             </div>
-            <!-- <footer>
+            <footer>
                <a id="servicesLink" href="./services" class="button viewAllButtonHomePage">View All Services</a>
-            </footer> -->
+            </footer>
          </div>
       </section>
       <section id="three" class="wrapper align-center" >
@@ -252,7 +248,7 @@
             <div class="flex flex-2">
 			    
 			    <article>
-				    <a class="indexPageCityBlock" href="./services?city=delhi">
+				    <a class="indexPageCityBlock" href="./services?location=delhi">
 				        <div class="image round">
 				            <img src="images/delhi.png" alt="Delhi">
 				        </div>
@@ -266,7 +262,7 @@
 			        </a>
 			    </article>
 			    <article>
-				    <a class="indexPageCityBlock" href="./services?city=mumbai">
+				    <a class="indexPageCityBlock" href="./services?location=mumbai">
 				        <div class="image round">
 				            <img src="images/mumbai.png" alt="Mumbai">
 				        </div>
@@ -280,7 +276,7 @@
 				    </a>
 			    </article>
 			     <article>
-				    <a class="indexPageCityBlock" href="./services?city=kolkata">					   
+				    <a class="indexPageCityBlock" href="./services?location=kolkata">					   
 				        <div class="image round">
 				            <img src="images/kolkata.png" alt="Kolkata">
 				        </div>
@@ -294,7 +290,7 @@
 				    </a>
 			     </article>
 			     <article>
-				    <a class="indexPageCityBlock" href="./services?city=chennai">
+				    <a class="indexPageCityBlock" href="./services?location=chennai">
 				        <div class="image round">
 				            <img src="images/chennai.png" alt="chennai">
 				        </div>
@@ -308,7 +304,7 @@
 				    </a>
 			    </article> 
 			    <article>
-			    	<a class="indexPageCityBlock" href="./services?city=bangalore">
+			    	<a class="indexPageCityBlock" href="./services?location=bangalore">
 				        <div class="image round">
 				            <img src="images/bangalore.png" alt="Chennai">
 				        </div>
@@ -322,7 +318,7 @@
 			        </a>
 			    </article> 
 			    <article>
-				    <a class="indexPageCityBlock" href="./services?city=hyderabad">
+				    <a class="indexPageCityBlock" href="./services?location=hyderabad">
 				        <div class="image round">
 				            <img src="images/hyderabad.png" alt="Hyderabad">
 				        </div>
@@ -339,73 +335,5 @@
 			    <a id="servicesLink" href="./metroCities" class="button viewAllMetroCities" >View All Metro cities in Inida</a>
 			</div>
          </div>
-      </section>
-      <script>
-			   window.onload = loadIndexPage();
-			   	function loadIndexPage(){			
-			   		try{ 	
-			   				updateGPSLocation(); 
-				   			
-				   			var u = getWebsiteURL();
-				   			var out = "", key="";
-				   			//var arry=["accounting", "airport", "amusement_park", "aquarium", "art_gallery", "atm", "bakery", "bank", "bar", "beauty_salon", "bicycle_store", "book_store", "bowling_alley", "bus_station", "cafe", "campground", "car_dealer", "car_rental", "car_repair", "car_wash", "casino", "cemetery", "church", "city_hall", "clothing_store", "convenience_store", "courthouse", "dentist", "department_store", "doctor", "electrician", "electronics_store", "embassy", "fire_station", "florist", "funeral_home", "furniture_store", "gas_station", "gym", "hair_care", "hardware_store", "hindu_temple", "home_goods_store", "hospital", "insurance_agency", "jewelry_store", "laundry", "lawyer", "library", "liquor_store", "local_government_office", "locksmith", "lodging", "meal_delivery", "meal_takeaway", "mosque", "movie_rental", "movie_theater", "moving_company", "museum", "night_club", "painter", "park", "parking", "pet_store", "pharmacy", "physiotherapist", "plumber", "police", "post_office", "real_estate_agency", "restaurant", "roofing_contractor", "rv_park", "school", "shoe_store", "shopping_mall", "spa", "stadium", "storage", "store", "subway_station", "supermarket", "synagogue", "taxi_stand", "train_station", "transit_station", "travel_agency", "veterinary_care", "zoo"];
-					        var arry = ["airport","amusement_park","aquarium","art_gallery","atm","bakery","bank","bar","beauty_salon","bicycle_store","book_store","bowling","bus_station","cafe","campground","car_dealer","car_rental","car_repair","car_wash","casino","cemetery","church","cinema","city_hall","clothing_store","convenience_storecourthouse","dentist","department_store","doctor","electrician","electronics_store","embassy","fire_station","flowers_store","funeral_service","furniture_store","gas_station","government_office","grocery_store","gym","hairdressing_salon","hardware_store","homegoodsstore","hospital","insurance_agency","jewelry_store","laundry","lawyer","library","liquor_store","locksmith","lodging","mosque","museum","night_club","park","parking","pet_store","pharmacy","plumber","police_station","post_office","primary_school","rail_station","realestateagency","restaurant","rv_park","school","secondary_school","shoe_store","shopping_center","spa","stadium","storage","store","subway_station","supermarket","synagogue","taxi_stand","temple","tourist_attraction","train_station","transit_station","travel_agency","university","veterinarian","zoo"];
-				   			for(var i=0; i< arry.length; i++){
-					        	key = arry[i];
-					        	out = out + "<a  class='tilesDiv' target="+key+" href= ";
-					        	
-								if(typeof city !== "undefined"){
-									out = out + u+"search?category="+key;
-								}else{
-									out = out + u+"search?category="+key;
-								}
-								out = out + ">";
-								out = out + "<span class='viewIndexLable'><img alt = '' class='viewIndexIcons' src='images/serviceIcons/"+key.replace(/_/g, "-")+".svg'><br>";
-								out = out + "<lable class='viewIndexLable'>"+addSpaces(key)+"</lable></span>";								 
-								out = out + "</a>";
-							 }
-					        document.getElementById("services").innerHTML = out;	
-					        showAddressInIndexPage();
-					        
-			   		}catch(e){alert(e);}			
-			   	}
-			   	function showAddressInIndexPage(){
-			   	 if( getCookie("address") != '' && getCookie("address") != null){
-			    		document.getElementById("indexPageLocation").innerHTML = "Services Available in :: "+getCookie("address")+".";
-			    	}
-			   	}
-			   	/* <i style=' font-size: 1.5em; color: #89ff00; ' class='fa fa-map-marker fa-fw'></i> */
-			</script>
-			<style>
-			.tilesDiv{
-			    background-color: #00000045;
-			    margin: 1em 0.25em;
-			    border-radius: 13px;
-			    transition: 1s;
-			    border: 1px solid #00000021;
-			    box-shadow: inset 0.5px 0.5px 5px #e8f436;
-			    padding: 1.5em 4em;
-			}
-			.tilesDiv:hover{
-			    filter: invert(0%) sepia(1%) saturate(9%) hue-rotate(-13deg) brightness(109%) contrast(118%);
-			    cursor: pointer;
-			    box-shadow: 1px 1px 10px #ffffff;
-			    background-color: #01ff0b00;
-			    border: 1px solid #ffffffa8;
-			}
-			.viewIndexIcons{
-				width: 32px;
-			    height: 32px;
-			    filter: invert(78%) sepia(155%) saturate(2959%) hue-rotate(-13deg) brightness(100%) contrast(118%);
-			    vertical-align: bottom;
-			}
-			.viewIndexIcons:hover{
-			}
-			.viewIndexLable{
-			    color: #ffee55;
-			}
-			img[alt="example"] {
-			    
-			}
-			</style>     
+      </section>     
       <%@include file="footer.jsp" %>

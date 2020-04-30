@@ -75,7 +75,7 @@
                      <article style="width: 46% !important;margin-right: 15px;">
                         <header class="selectCity">
 		                      <i onclick="setCurrentLocationToSearchBox()" style="color: #768176;float:  left;margin-left: -1em;font-size: 1.5em;margin-top:  0.2em;" class="fa fa-map-marker" aria-hidden="true"></i>
-                        	  <input class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" style="background-color: white !important;"/>  
+                        	  <input readonly class="searchCity" name="city" id="searchCity" placeholder="Enter a city" type="text" style="background-color: white !important;"/>  
                               <!-- <span class="bbu" onclick="clearSearchCity()">x</span> -->
                               <i class="fa fa-times-circle bbu" aria-hidden="true" onclick="clearSearchCity()"></i>
                               <style>

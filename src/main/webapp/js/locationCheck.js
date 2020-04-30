@@ -170,7 +170,7 @@ function getAddressFromLL(lat, lon){
 	$.getJSON(uri, function(results) {
 		var res = results.results;
 		console.log(res[0]['sublocality']+","+res[0]['locality']+","+res[0]['area']+","+res[0]['region'])
-		setCookie("address", res[0]['sublocality']+","+res[0]['locality']+","+res[0]['area']+","+res[0]['region'], 365);
+		setCookie("address", res[0]['sublocality']+", "+res[0]['locality']+", "+res[0]['area']+", "+res[0]['region'], 365);
 		setAddressForSearchBox();
     	updateLocationinSearchBox();
 	});
@@ -195,7 +195,8 @@ function getCurrentAddress(location) {
 	}catch(e){console.log("getCurrentAddress() : "+e);};
 }
 function updateLocationinSearchBox() {
-	if(getCookie("address") != null){
+	showAddressInIndexPage();
+	if(getCookie("address") != null && document.getElementById("searchCity") != null){
 		document.getElementById("searchCity").value = getCookie("address");
 	}
 }
