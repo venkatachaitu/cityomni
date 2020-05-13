@@ -44,9 +44,40 @@
                <a class="headerMenu" href="./states">States</a>
                <a class="headerMenu" href="./services">Services</a>
                <a class="headerMenu" href="./metroCities">Metro Cities</a>
-               <a class="headerMenu" href="./plans">Plans</a>
+              <!-- <a class="headerMenu" href="./plans">Plans</a> -->
                <!-- <a class="headerMenu" href="./contact">Contact</a> -->
-               <a class="headerMenu" href="./confession">Confession</a>
+              <!--  <a class="headerMenu" href="./confession">Confession</a> -->
+               <%
+					Cookie cookie = null;
+					Cookie[] cookies = null;
+					cookies = request.getCookies();
+					boolean flag=false; boolean flag1 = false;
+					if (cookies != null) {
+						for (int i = 0; i < cookies.length; i++) {
+							cookie = cookies[i];
+							if((cookie.getName( )).compareTo("username") == 0){
+								if(cookie.getValue() != ""){
+									flag = true;
+									flag1 = false;
+									%>
+									<a class="headerMenu" href="./timeline">Timeline</a>
+									 <a class="headerMenu" href="./logout">Logout</a>
+									<%
+									break;
+								}else{
+									flag1 = true;
+								}
+							}else{
+								flag1 = true;
+							}
+						}
+					}
+					if(flag1){
+						%>
+						 <a class="headerMenu" href="./login">Login</a>
+						 <%
+					}
+				%>
                <a class="headerMenu" href="./about">About</a>
                <!-- <a href="https://cityomni.com">Login</a> -->
             </nav>
