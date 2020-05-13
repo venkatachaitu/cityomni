@@ -104,7 +104,7 @@ function updatePostsOnTimeline(userName){
 					}
 				}
 				//code for privacy checkup
-				var privacyBox = "";
+				var privacyBox = ""; 
 				if(val.privacy == 'Public')
 					privacyBox = "<select onchange=(updatePrivacy(this)) id='"+val.postId+"'><option selected>Public</option><option>Private</option></select>";
 				else
