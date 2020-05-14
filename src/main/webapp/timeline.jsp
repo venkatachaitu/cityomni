@@ -25,9 +25,9 @@ input {
 		response.sendRedirect("/login");
 %>
 <script>
-
+var pageData = [];
 $(document).ready(function() {
-	updatePostsOnTimeline(getCookie("username"));
+	updatePostsOnTimeline(getCookie("username"), false, null);
 	$('#expandAddPost').click(
 		function() {
 			 if($("#userPostButton").css('display')== 'none'){
@@ -49,7 +49,8 @@ $(document).ready(function() {
 				var userPost = $("#userPost").val();
 				var data = JSON.stringify({
 					"userName" : userName,
-					"userPost" : userPost
+					"userPost" : userPost,
+					"dateTime" : new Date().toString()
 				});
 				var url = "/user/timeline/addPost";
 				$.ajax({
@@ -60,8 +61,9 @@ $(document).ready(function() {
 					data : data,
 					processData : false,
 					success : function(data, textStatus, jQxhr) {
-						//alert(textStatus)
-						updatePostsOnTimeline(userName);
+						$("#userPost").css('display', 'none');
+						$("#userPostButton").css('display', 'none'); 
+						updatePostsOnTimeline(userName, true, data);
 					},
 					error : function(jqXhr, textStatus, errorThrown) {
 						alert("commentSubmit() : Error:" + errorThrown);
@@ -71,59 +73,90 @@ $(document).ready(function() {
 	});
 	
 });
-
-function updatePostsOnTimeline(userName){
+ 
+function updatePostsOnTimeline(userName, update, data){
 	//var data = JSON.parse('[{"postId":"TueMay1218:22:44IST2020venkatachaitu","dateTime":"Tue May 12 18:22:44 IST 2020","userPost":"nvjndsjkvnkjdsvknsdkjvnkd","likeUsers":"pqr,stu,wxy,ppp","userName":"venkatachaitu","privacy":"public"},{"postId":"TueMay1223:00:41IST2020venkatachaitu","dateTime":"Tue May 12 23:00:41 IST 2020","userPost":"jcabsjcnksjnckjndkcnksncsz","likeUsers":null,"userName":"venkatachaitu","privacy":"public"}]');
-	var url = "/user/timeline/getPosts?user="+userName;
-	$.ajax({
-		url : url,
-		dataType : 'json',
-		type : 'get',
-		contentType : 'application/json',
-		//data : data,
-		processData : false,
-		success : function(data, textStatus, jQxhr) {
+	if(update){
+		//insert latest post at top
+		var temp = [];
+		temp.push(data);
+		for(var i in pageData)
+			temp.push(pageData [i]);
+		//updating main array with updated order
+		pageData=temp;
+		prepareTimelinePosts(pageData , userName);
+	}else{
+		var url = "/user/timeline/getPosts?user="+userName;
+		$.ajax({
+			url : url,
+			dataType : 'json',
+			type : 'get',
+			contentType : 'application/json',
+			//data : data,
+			processData : false,
+			success : function(data, textStatus, jQxhr) {
+				for(var i in data)
+					pageData.push(data [i]);
+				prepareTimelinePosts(pageData, userName);
+			},
+			error : function(jqXhr, textStatus, errorThrown) {
+				alert("commentSubmit() : Error:" + errorThrown);
+			}
+		});
+	}	
+}
+function addZero(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+function prepareTimelinePosts(data, userName){
+		try{
 			$("#pageLoading").css("display", "none");
+		if(data == ''){
+			document.getElementById('commentsList').innerHTML = "<h5>Your Timeline is Empty...!</h5>";
+		}else{
 			var out="";
-			$.each(data, function(key, val) {
-				var likes = 0; var likeuser = 'Like';
-				// code for liked users count
-				if(val.likeUsers == null){}else{
-					var spl = val.likeUsers.split(',');
-					for (var i = 0; i < spl.length; i++) {
-						var check = true;
-						if(spl[i] != ''){
-							likes = likes+1;
-							check = false;
-						}
-						if(spl[i] === userName){
-							if(check)
+				$.each(data, function(key, val) {
+					var d = new Date(val.dateTime);
+					var timeFormat = d.getDate()+"-"+(d.getMonth()+1)+"-"+d.getFullYear()+" "+d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true})
+					
+					var likes = 0; var likeuser = 'Like';
+					// code for liked users count
+					if(val.likeUsers == null){}else{
+						var spl = val.likeUsers.split(',');
+						for (var i = 0; i < spl.length; i++) {
+							var check = true;
+							if(spl[i] != ''){
 								likes = likes+1;
-							likeuser = 'DisLike';
+								check = false;
+							}
+							if(spl[i] === userName){
+								if(check)
+									likes = likes+1;
+								likeuser = 'DisLike';
+							}
 						}
 					}
-				}
-				//code for privacy checkup
-				var privacyBox = ""; 
-				if(val.privacy == 'Public')
-					privacyBox = "<select onchange=(updatePrivacy(this)) id='"+val.postId+"'><option selected>Public</option><option>Private</option></select>";
-				else
-					privacyBox = "<select onchange=(updatePrivacy(this)) id='"+val.postId+"'><option>Public</option><option selected>Private</option></select>";
+					//code for privacy checkup
+					var privacyBox = "";
+					if(val.privacy == 'Public' || val.privacy == 'public')
+						privacyBox = "<select onchange=(updatePrivacy(this)) id='"+val.postId+"'><option selected>Public</option><option>Private</option></select>&nbsp;&nbsp;&nbsp;&nbsp;";
+					else
+						privacyBox = "<select onchange=(updatePrivacy(this)) id='"+val.postId+"'><option>Public</option><option selected>Private</option></select>&nbsp;&nbsp;&nbsp;&nbsp;";
+					
+					 out = out + "<table class='comentbox'><tr><td style=''><span onclick=deletePost(this) id='"+val.postId+"' style=' float: right; font-weight: bold; color: red; cursor: pointer; font-size: 1.25em; margin: -5px 0em 1em 1em; '>X</span><input id='"+val.postId+"' value='"+val.postId+"' type='hidden'>";
+					 out = out + "<span class='areaspan' >"+timeFormat+"</span><span class='datespan' style='float: left;margin-left: 3em; '>";
+					 out = out + "<input id='"+val.postId+"likeButton' onclick=userLike(this,'"+val.postId+"') type='button' value='"+likeuser+"' style=' all: unset;padding-right: 1em; color: blue !important; cursor: pointer; '><span id='"+val.postId+"likesCount'>"+likes+"</span> Likes</span>";
+					 out = out + "<span class='privacyDropdown' >"+privacyBox+"</span><div class='comenttext' style='padding: 1em 4em;' >"+val.userPost.replace(/"/g , " ")+"</div></td></tr></table>";
 				
-				 out = out + "<table class='comentbox'><tr><td style=''><input id='"+val.postId+"' value='"+val.postId+"' type='hidden'><span class='areaspan' >"+val.dateTime+"</span><span class='datespan' ><input class='"+val.postId+"' onclick=userLike('"+val.postId+"') type='button' value='"+likeuser+"' style=' all: unset; margin: 0em 1em; color: blue !important; cursor: pointer; '>"+likes+" Likes</span><span class='privacyDropdown' >"+privacyBox+"</span><div class='comenttext' style='' >"+val.userPost.replace(/"/g , " ")+"</div></td></tr></table>";
-			
-			//$('#'+val.postId+"privacy").html("");
-			
-			});
+				});
 			document.getElementById('commentsList').innerHTML = out;
-		},
-		error : function(jqXhr, textStatus, errorThrown) {
-			alert("commentSubmit() : Error:" + errorThrown);
 		}
-	});
-	
-	
+	}catch(e){alert(e)};
 }
+
 function updatePrivacy(element){
 	var url = "/user/timeline/updatePrivacy?postId="+element.id+"&privacy="+element.value+"&userName="+getCookie("username");
 	$.ajax({
@@ -140,9 +173,19 @@ function updatePrivacy(element){
 		}
 	});
 }
-
-
-	function userLike(postId){
+	function userLike(element, postId){
+		var ids = postId.trim()+'likesCount';
+		var likesCount = document.getElementById(ids).innerHTML;
+		if(element.value == 'Like'){
+			$(element).val('Dislike')
+			likesCount++;
+		}else{
+			$(element).val('Like')
+			if(likesCount != '0'){
+				likesCount--;
+			}
+		}
+		document.getElementById(ids).innerHTML = likesCount
 		var url = "/user/timeline/likeUser?postId="+postId+"&userName="+getCookie("username");
 		$.ajax({
 			url : url,
@@ -151,7 +194,34 @@ function updatePrivacy(element){
 			contentType : 'application/json',
 			processData : false,
 			success : function(data, textStatus, jQxhr) {
-				updatePostsOnTimeline(getCookie("username"));
+				console.log("post like updated.");
+				//updatePostsOnTimeline(getCookie("username"));
+			},
+			error : function(jqXhr, textStatus, errorThrown) {
+				alert("commentSubmit() : Error:" + errorThrown);
+			}
+		});
+	}
+	
+	function deletePost(element){
+		var temp = [];
+		for(var i in pageData){
+			if(pageData[i].postId.toLowerCase() != element.id.trim().toLowerCase())
+			  temp.push(pageData [i]);
+		}
+		pageData=temp;
+		prepareTimelinePosts(pageData , element.userName);
+		
+		var url = "/user/timeline/deletePost?postId="+element.id;
+		$.ajax({
+			url : url,
+			dataType : 'json',
+			type : 'get',
+			contentType : 'application/json',
+			processData : false,
+			success : function(data, textStatus, jQxhr) {
+				console.log("post deleted.");
+				//updatePostsOnTimeline(getCookie("username"));
 			},
 			error : function(jqXhr, textStatus, errorThrown) {
 				alert("commentSubmit() : Error:" + errorThrown);
@@ -161,12 +231,22 @@ function updatePrivacy(element){
 	
 </script>
 <style>
-
-.privacyDropdown{
+.privacyDropdown {
+	float: right;
+	line-height: 1px;
+	font-size: 12px;
+	margin: -12px;
+}
+#userPostButton{
+	    all: unset;
+    margin: 5px 0px 9px 0px;
+    padding: 0px 34px;
     float: right;
-    line-height: 1px;
-    font-size: 12px;
-    margin: -12px;
+    background-color: #3F51B5;
+    color: #fff !important;
+    line-height: 28px;
+    border-radius: 4px;
+    font-weight: 400;
 }
 </style>
 <section id="three" class="wrapper align-center">
@@ -176,21 +256,18 @@ function updatePrivacy(element){
 		<div class="flex flex-2 " id="confessionFlex">
 			<header style="margin: 0px; width: 100%;">
 				<h3
-					style="color: red; font-size: 1.55em; line-height: 2em; text-align: left;">
-					Add Your Post Here<font id="expandAddPost"
-						style="font-weight: bold; font-size: 1.25em; cursor: pointer;">
-						+</font>
+					style="color: red;font-size: 1.25em;text-align: left;margin: 0;line-height: 1px;">
+					<font id="expandAddPost" style="font-size: 12px;cursor: pointer;line-height: 0px;color: #131313;">Add post </font>
 				</h3>
-				<textarea id="userPost" style="display: none;"
-					placeholder="what's on your mind..!" rows="" cols=""
+				<textarea id="userPost" style="display: none;margin-top: 1em;border-radius: 0;"	placeholder="what's on your mind..!" rows="" cols=""
 					name="userPost"></textarea>
-				<br> <input id="userPostButton"
+				  <input id="userPostButton"
 					style="display: none; float: right;" type="button" value="post">
 			</header>
 
-			<h4>Your Posts Here.</h4>
+			<!-- <h4 style=" margin-top: 0px; ">Your Posts.</h4> -->
 
-			<div class="flex flex-2 services" id="services">
+			<div style=" margin-top: 14px; " class="flex flex-2 services" id="services">
 				<div id="pageLoading"
 					style="margin-top: 5em; margin-bottom: 5em; margin: 6em auto;">
 					<img style="display:; width: 50px;" src="images/loading2.gif"

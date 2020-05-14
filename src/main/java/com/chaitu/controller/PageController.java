@@ -145,10 +145,19 @@ public class PageController {
 	@CrossOrigin(origins = "*")
     @PostMapping("/user/timeline/addPost")
 	public ResponseEntity<Object> addUserPost(@RequestBody UserPosts post) {
-		boolean updateUser = userServiceDao.addUserPost(post);
+		UserPosts updateUser = userServiceDao.addUserPost(post);
 		HttpHeaders response = new HttpHeaders();
 	    response.set("Access-Control-Allow-Origin", "*");
 	    return new ResponseEntity<Object>(updateUser, response, HttpStatus.OK);
+	}
+	
+	@CrossOrigin(origins = "*")
+    @GetMapping("/user/timeline/deletePost")
+	public ResponseEntity<Object> deletePost(@RequestParam(name="postId") String postId) {
+		userServiceDao.deletePost(postId);
+		HttpHeaders response = new HttpHeaders();
+	    response.set("Access-Control-Allow-Origin", "*");
+	    return new ResponseEntity<Object>(new UserPosts(), response, HttpStatus.OK);
 	}
 	
 	@CrossOrigin(origins = "*")
@@ -172,10 +181,8 @@ public class PageController {
 	@GetMapping("/user/timeline/updatePrivacy")
 	public ResponseEntity<Object> updatePrivacy(@RequestParam(name = "postId") String postId, @RequestParam(name = "userName") String userName, @RequestParam(name = "privacy") String privacy) {
 		userServiceDao.updatePrivacy(postId,userName,privacy);
-		
 		HttpHeaders response = new HttpHeaders();
 	    response.set("Access-Control-Allow-Origin", "*");
-	    userServiceDao.likeUser(postId, userName);
 	    return new ResponseEntity<Object>(new UserPosts(), response, HttpStatus.OK);
 	}
 	

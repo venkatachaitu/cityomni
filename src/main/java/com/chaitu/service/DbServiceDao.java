@@ -28,7 +28,7 @@ public interface DbServiceDao {
 	
 	public String lastLoginTimeUpdate(String userName, String string);
 	
-	public boolean addUserPost(UserPosts post);
+	public UserPosts addUserPost(UserPosts post);
 	
 	public List<UserPosts> readAllPosts(String user);
 
@@ -39,6 +39,8 @@ public interface DbServiceDao {
 	public List<String> findFriends(String value);
 
 	public UserLogin viewSearchProfile(String userName);
+
+	public void deletePost(String postId);
 	
 	
 }

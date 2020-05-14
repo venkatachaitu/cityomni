@@ -142,18 +142,29 @@ public class DbServiceDaoImpl implements DbServiceDao{
 	}
 
 	@Override
-	public boolean addUserPost(UserPosts post) {
+	public UserPosts addUserPost(UserPosts post) {
 		try {
 			Session session = this.sessionFactory.getCurrentSession();
 			post.setPostId(new Date().toString().replaceAll(" ", "")+""+post.getuserName());
-			post.setDateTime(new Date().toString());
-			post.setPrivacy("public");
+			//post.setDateTime(new Date().toString());
+			post.setPrivacy("Public");
+			post.setLikeUsers("");
 			session.save(post);
-			return true;
+			return post;
 		}catch(Exception e) {
 			System.out.println("-----addUserPost-----"+e);
 		}
-		return false;
+		return null;
+	}
+	
+	@Override
+	public void deletePost(String postId) {
+		try {
+			Session session = this.sessionFactory.getCurrentSession();
+			session.delete(new UserPosts(postId, "", "", "", "", ""));
+		}catch(Exception e) {
+			System.out.println("-----deletePost-----"+e);
+		}
 	}
 
 	@Override
@@ -208,6 +219,7 @@ public class DbServiceDaoImpl implements DbServiceDao{
 			Object o=session.load(UserPosts.class, postId);
 			UserPosts u = (UserPosts)o;
 			u.setPrivacy(privacy);
+			System.out.println("-----updatePrivacy-11----"+u);
 			session.update(u);
 		}catch(Exception e) {
 			System.out.println("-----updatePrivacy-----"+e);
@@ -242,6 +254,8 @@ public class DbServiceDaoImpl implements DbServiceDao{
 		}
 		return null;
 	}
+
+	
 
 }
 
