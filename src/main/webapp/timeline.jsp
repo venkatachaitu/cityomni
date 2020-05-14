@@ -32,6 +32,7 @@ $(document).ready(function() {
 		function() {
 			 if($("#userPostButton").css('display')== 'none'){
 				$("#userPost").css('display', '');
+				$("#userPost").val('');
 				$("#userPostButton").css('display', '');
 			 }else{
 				$("#userPost").css('display', 'none');
@@ -142,11 +143,11 @@ function prepareTimelinePosts(data, userName){
 					//code for privacy checkup
 					var privacyBox = "";
 					if(val.privacy == 'Public' || val.privacy == 'public')
-						privacyBox = "<select onchange=(updatePrivacy(this)) id='"+val.postId+"'><option selected>Public</option><option>Private</option></select>&nbsp;&nbsp;&nbsp;&nbsp;";
+						privacyBox = "<select style='height: 2em; margin-top: 5px; ' onchange=(updatePrivacy(this)) id='"+val.postId+"'><option selected>Public</option><option>Private</option></select>&nbsp;&nbsp;&nbsp;&nbsp;";
 					else
-						privacyBox = "<select onchange=(updatePrivacy(this)) id='"+val.postId+"'><option>Public</option><option selected>Private</option></select>&nbsp;&nbsp;&nbsp;&nbsp;";
+						privacyBox = "<select style='height: 2em; margin-top: 5px; ' onchange=(updatePrivacy(this)) id='"+val.postId+"'><option>Public</option><option selected>Private</option></select>&nbsp;&nbsp;&nbsp;&nbsp;";
 					
-					 out = out + "<table class='comentbox'><tr><td style=''><span onclick=deletePost(this) id='"+val.postId+"' style=' float: right; font-weight: bold; color: red; cursor: pointer; font-size: 1.25em; margin: -5px 0em 1em 1em; '>X</span><input id='"+val.postId+"' value='"+val.postId+"' type='hidden'>";
+					 out = out + "<table class='comentbox'><tr><td style=''><span onclick=deletePost(this) id='"+val.postId+"' style=' float: right;color: #fff;cursor: pointer;margin: -5px 0em 0em 1em;background-color: #ff2436;width: 20px;border-radius: 2px; '>X</span><input id='"+val.postId+"' value='"+val.postId+"' type='hidden'>";
 					 out = out + "<span class='areaspan' >"+timeFormat+"</span><span class='datespan' style='float: left;margin-left: 3em; '>";
 					 out = out + "<input id='"+val.postId+"likeButton' onclick=userLike(this,'"+val.postId+"') type='button' value='"+likeuser+"' style=' all: unset;padding-right: 1em; color: blue !important; cursor: pointer; '><span id='"+val.postId+"likesCount'>"+likes+"</span> Likes</span>";
 					 out = out + "<span class='privacyDropdown' >"+privacyBox+"</span><div class='comenttext' style='padding: 1em 4em;' >"+val.userPost.replace(/"/g , " ")+"</div></td></tr></table>";
@@ -247,6 +248,7 @@ function updatePrivacy(element){
     line-height: 28px;
     border-radius: 4px;
     font-weight: 400;
+    cursor: pointer;
 }
 </style>
 <section id="three" class="wrapper align-center">
@@ -259,7 +261,7 @@ function updatePrivacy(element){
 					style="color: red;font-size: 1.25em;text-align: left;margin: 0;line-height: 1px;">
 					<font id="expandAddPost" style="font-size: 12px;cursor: pointer;line-height: 0px;color: #131313;">Add post </font>
 				</h3>
-				<textarea id="userPost" style="display: none;margin-top: 1em;border-radius: 0;"	placeholder="what's on your mind..!" rows="" cols=""
+				<textarea rows=10 id="userPost" style="display: none;margin-top: 1em;border-radius: 0;"	placeholder="what's on your mind..!" rows="" cols=""
 					name="userPost"></textarea>
 				  <input id="userPostButton"
 					style="display: none; float: right;" type="button" value="post">
